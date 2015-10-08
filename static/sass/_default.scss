@@ -10,13 +10,13 @@
 //-----------------
 
 //Main Color Variables
-$main-color: #f7691f;
-$dark-color: #ea281f; //Link Color
+$main-color: #b5b4b5;
+$dark-color: #b5b4b5; //Link Color
 $light-color: #f4e00c; //Selected Header BG Color, ie. calendar        ***Custom, not from palette***
 $bg-color: #f7fe81; //Selected Content BG Color, ie. calendar          ***Custom, not from palette***
 
 //Main BG Color Variables
-$main-bg: #822537;
+$main-bg: #dedede;     // customized by Sendr
 $main-bg-60: lighten($main-bg, 18.5%); //Main Border/HR Color
 $main-bg-25: lighten($main-bg, 25%); 
 
@@ -49,7 +49,7 @@ $body-font-family: $sans-serif;
 
 $theme-serif-font: 'Crimson Text';
 $serif: $theme-serif-font, $serif;
-
+$text-color: #ffffff;
 
 
 
@@ -59,13 +59,11 @@ $serif: $theme-serif-font, $serif;
 
 $body-bg: $gray-1;
 $container-bg: $gray-1;
-$login-register-bg: $gray-1;
-$content-wrapper-bg: $gray-1;
+//$login-register-bg: $cust-background;
+//$content-wrapper-bg: $cust-background;
 $header-image: none;
-$header-bg: transparentize(lighten($secondary, 18.5%), .25);
 $courseware-header-image: none;
 $courseware-header-bg: transparentize(lighten($secondary, 18.5%), .25);
-$footer-bg: $secondary-25;
 $courseware-footer-border: 1px solid $main-bg-60;
 $courseware-footer-shadow: box-shadow(2px 1px 0 rgba(0, 0, 0, .1));
 $courseware-footer-margin: 50px;
@@ -176,6 +174,9 @@ $sidebar-active-image: $gray-3;
 $form-bg-color: $gray-1;
 $modal-bg-color: $gray-1;
 
+// Container background
+//$homepage-bg-image: url('../themes/default/images/background-repeat-retina.png');
+
 //TOP HEADER IMAGE MARGIN
 $header_image_margin: -77px;
 
@@ -185,12 +186,20 @@ $footer_margin: ($baseline/4) 0;
 //-----------------
 //  CSS BG Images
 //-----------------
-$homepage-bg-image: url('../themes/default/images/sunrise.jpg');
+$homepage-bg-image: url('../themes/default/images/Back_main.png');
 
 $login-banner-image: none;
 $register-banner-image: none;
 
 $video-thumb-url: '../themes/default/images/edx.png';
+
+
+// my variables
+
+$header-bg: linear-gradient(to bottom, rgb(53,53,73), rgb(37,37,54));// transparentize(lighten($secondary, 18.5%), .25);
+$footer-bg: linear-gradient(to bottom, rgb(53,53,73), rgb(37,37,54)); // $secondary-25;
+
+
 
 //-----------------
 //  Mixin Styles
@@ -205,4 +214,208 @@ $video-thumb-url: '../themes/default/images/edx.png';
 @mixin footer_references_style {
     margin: 0 !important;
     text-align: right;
+}
+
+.find-courses {
+  background: none;
+}
+
+header.global {
+  border-bottom: none;
+
+  .nav-courseware {
+    a.cta:hover {
+      color: #ffffff !important;
+      background-color: #72bb25 !important;
+    }
+    li {
+      .cta {
+        background: #b5b4b5;
+        color: #222222;
+      }
+    }
+  }
+
+  h1.logo {
+    margin: -18px 39px 0 0;
+
+    a:hover {
+      opacity: 0.8;
+    }
+  }
+  h1.logo:after {
+    background-image: -webkit-linear-gradient(#fff 0%, #fff);
+    background-image: linear-gradient(to , #fff);
+    background: transparent;
+    height: 100%;
+    width: 1px;
+  }
+  .nav-global {
+    li {
+      a {
+        color: #b5b4b5;
+      }
+      a:hover {
+        color: #72bb25;
+      }
+    }
+  }
+}
+
+header.global.slim {
+  h1.logo::before {
+    background-image: none !important;
+  }
+  h2 {
+    text-shadow: none !important;
+    color: #b5b4b5 !important;
+
+    .provider {
+      color: #b5b4b5 !important;
+    }
+  }
+}
+
+.inner-wrapper {
+  hgroup {
+    background: #fbfbfb !important;
+  }
+}
+
+.wrapper-footer {
+  border-top: none;
+
+  footer {
+    a:hover {
+      border-bottom: 0;
+    }
+    .colophon {
+      .nav-colophon {
+        ol {
+          li {
+            a {
+              color: #b5b4b5;
+            }
+            a:hover {
+              text-decoration: none;
+              color: #72bb25 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.references {
+  span {
+    color: #b5b4b5;
+    a {
+      color: #b5b4b5;
+    }
+    a:hover {
+      text-decoration: none;
+      opacity: 0.8;
+    }
+  }
+}
+
+.content-wrapper {
+  width: flex-grid(12);
+  margin: 0 auto;
+  background: url("../themes/default/images/background-repeat_retina.png") !important;
+  background-size: 393px 396px !important;
+  padding-bottom: ($baseline*2);
+}
+
+.view-register {
+  .content-wrapper {
+    background: url("../themes/default/images/background-repeat_retina.png");
+    background-size: 393px 396px;
+  }
+}
+
+//.cta {
+//  .cta-login {
+//    background: #b5b4b5;
+//    color: #222222;
+//
+//    a:hover {
+//      color: #ffffff;
+//    }
+//  }
+//}
+
+.home {
+  header {
+    border-bottom: 0 !important;
+
+    .outer-wrapper {
+      padding: 168px 10px 0 !important;
+    }
+
+    .title {
+      background: #fbfbfb !important;
+      margin-left: 0;
+      margin: 0 auto;
+      float: none;
+      width: 98.15254%;
+      text-align: center;
+
+      hgroup {
+        text-align: center;
+
+        h1 {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.course-material {
+  .course-tabs a:hover {
+    background-color: #B8DD92 !important;
+  }
+  ol.course-tabs {
+    a.active {
+      background-color: #7E7E7E !important;
+    }
+  }
+}
+
+.course-index {
+  div#accordion {
+    h3.ui-accordion-header {
+      a {
+        color: #3992D6 !important;
+      }
+    }
+  }
+}
+
+.find-courses {
+  header.search {
+    .inner-wrapper {
+      hgroup {
+       width: 93%;
+      }
+    }
+  }
+}
+
+.dashboard {
+  .my-courses {
+    .course {
+      .info {
+        hgroup {
+          h3 {
+            a {
+              color: #7e7e7e !important;
+            }
+          }
+        }
+      }
+    }
+  }
 }
