@@ -237,7 +237,7 @@ header.global {
   }
 
   h1.logo {
-    margin: -18px 39px 0 0;
+    margin: -18px 39px 0 0 !important;
 
     a:hover {
       opacity: 0.8;
@@ -256,7 +256,7 @@ header.global {
         color: #b5b4b5;
       }
       a:hover {
-        color: #72bb25;
+        color: #72bb25 !important;
       }
     }
   }
@@ -356,10 +356,10 @@ header.global.slim {
 
     .title {
       background: #fbfbfb !important;
-      margin-left: 0;
-      margin: 0 auto;
-      float: none;
-      width: 98.15254%;
+      margin-left: 0 !important;
+      margin: 0 auto !important;
+      float: none !important;
+      width: 98.15254% !important;
       text-align: center;
 
       hgroup {
