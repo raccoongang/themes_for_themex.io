@@ -263,12 +263,20 @@ header.global {
 }
 
 header.global.slim {
+  h1.logo {
+    img {
+      height: 60px !important;
+      margin-top: 8px !important;
+    }
+  }
+
   h1.logo::before {
     background-image: none !important;
   }
   h2 {
     text-shadow: none !important;
     color: #b5b4b5 !important;
+    width: inherit !important;
 
     .provider {
       color: #b5b4b5 !important;
