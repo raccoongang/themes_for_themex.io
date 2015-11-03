@@ -11,7 +11,7 @@
 
 //Main Color Variables
 $main-color: #b5b4b5;
-$dark-color: #b5b4b5; //Link Color
+$dark-color: #919191; //Link Color
 $light-color: #f4e00c; //Selected Header BG Color, ie. calendar        ***Custom, not from palette***
 $bg-color: #f7fe81; //Selected Content BG Color, ie. calendar          ***Custom, not from palette***
 
@@ -437,4 +437,41 @@ header.global.slim {
             height: 32px;
         }
     }
+}
+
+.login-register {
+  .form-wrapper {
+    padding-bottom: 25px;
+  }
+}
+
+.course-title {
+  a {
+    color: #8A8A8A;
+  }
+}
+
+.u-field-message {
+  .u-field-message-notification {
+    color: #5f5f5f;
+
+    a {
+      color: #757575;
+    }
+    a:hover, a:visited {
+      color: #72bb25;
+    }
+  }
+}
+
+.u-field-value-readonly {
+  span:hover, span:visited {
+    color: #676767 !important;
+  }
+}
+
+.u-field.mode-placeholder {
+  span {
+    color: #6b6b6b !important;
+  }
 }
