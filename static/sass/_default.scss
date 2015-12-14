@@ -500,3 +500,14 @@ header.global.slim {
     }
   }
 }
+
+.course-info {
+  header.course-profile {
+    padding-top:50px !important;
+    height: initial !important;
+
+    .intro-inner-wrapper {
+      margin-bottom: 20px !important;
+    }
+  }
+}
