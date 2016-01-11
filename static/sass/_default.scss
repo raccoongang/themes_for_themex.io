@@ -217,7 +217,8 @@ $footer-bg: linear-gradient(to bottom, rgb(53,53,73), rgb(37,37,54)); // $second
 }
 
 .find-courses {
-  background: none;
+  background: url('../themes/default/static/images/background-repeat_retina.png') !important;
+  background-size: 393px 396px !important;
 }
 
 header.global {
