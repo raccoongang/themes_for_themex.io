@@ -476,3 +476,26 @@ header.global.slim {
     color: #6b6b6b !important;
   }
 }
+
+.view-passwordreset {
+  .wrapper-footer {
+    footer {
+      width: 100% !important;
+      margin: auto !important;
+    }
+  }
+}
+
+.view-passwordreset {
+  .introduction header {
+    background: none !important;
+  }
+}
+
+.view-passwordreset {
+  header.global {
+     nav {
+      width: 100% !important;
+    }
+  }
+}
