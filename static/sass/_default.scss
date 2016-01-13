@@ -224,6 +224,14 @@ $footer-bg: linear-gradient(to bottom, rgb(53,53,73), rgb(37,37,54)); // $second
 header.global {
   border-bottom: none;
 
+  .user {
+    .primary:last-child {
+      a {
+        padding: 4px 10px 12px !important;
+      }
+    }
+  }
+
   .nav-courseware {
     a.cta:hover {
       color: #ffffff !important;
