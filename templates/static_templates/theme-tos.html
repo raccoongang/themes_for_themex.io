@@ -84,6 +84,6 @@
     <li>${_(u'You will not submit the work of any other person.')}</li>
   </ul>
   <p>${_(u'We care about the confidentiality and security of your personal information. Please see our ')}
-    <a href="http://edx.sandbox.raccoongang.com/privacy">Privacy Policy</a>
+    <a href=${"http://{}/privacy".format(settings.SITE_NAME)}>Privacy Policy</a>
     ${_(u' for more information about your personal details which Raccoon Gang collects and uses.')}</p>
 </section>
