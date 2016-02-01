@@ -525,3 +525,11 @@ p {
     color: #72bb25 !important;
   }
 }
+
+.courses-container {
+  .courses {
+    .course {
+      z-index: 0 !important;
+    }
+  }
+}
