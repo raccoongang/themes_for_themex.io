@@ -427,6 +427,11 @@ header.global.slim {
 .dashboard {
   .my-courses {
     .course {
+      .wrapper-messages-primary {
+        .messages-list {
+          list-style: none !important;
+        }
+      }
       .info {
         hgroup {
           h3 {
