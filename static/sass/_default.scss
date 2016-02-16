@@ -217,7 +217,7 @@ $footer-bg: linear-gradient(to bottom, rgb(53,53,73), rgb(37,37,54)); // $second
 }
 
 .find-courses {
-  background: url('../themes/default/static/images/background-repeat_retina.png') !important;
+  background: url('../images/background-repeat_retina.png') !important;
   background-size: 393px 396px !important;
 }
 
@@ -343,14 +343,14 @@ header.global.slim {
 .content-wrapper {
   width: flex-grid(12);
   margin: 0 auto;
-  background: url("../themes/default/images/background-repeat_retina.png") !important;
+  background: url("../images/background-repeat_retina.png") !important;
   background-size: 393px 396px !important;
   padding-bottom: ($baseline*2);
 }
 
 .view-register {
   .content-wrapper {
-    background: url("../themes/default/images/background-repeat_retina.png");
+    background: url("../images/background-repeat_retina.png");
     background-size: 393px 396px;
   }
 }
