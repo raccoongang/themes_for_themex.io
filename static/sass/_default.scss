@@ -12,7 +12,7 @@
 //Main Color Variables
 $main-color: #b5b4b5;
 $dark-color: #919191; //Link Color
-$light-color: #f4e00c; //Selected Header BG Color, ie. calendar        ***Custom, not from palette***
+$light-color: #C3C3C3; //Selected Header BG Color, ie. calendar        ***Custom, not from palette***
 $bg-color: #f7fe81; //Selected Content BG Color, ie. calendar          ***Custom, not from palette***
 
 //Main BG Color Variables
@@ -552,4 +552,16 @@ p {
 
 #pre-requisite-course {
   width: 100%;
+}
+
+.dashboard {
+  .my-courses {
+    .listing-courses {
+      .course-item {
+        .course-container {
+          background: #fff;
+        }
+      }
+    }
+  }
 }
