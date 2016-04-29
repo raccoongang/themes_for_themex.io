@@ -24,3 +24,9 @@ License
 
 The code in this repo is licensed under the Apache 2.0 License.
 See [LICENSE.txt](LICENSE.txt) for more info.
+
+Need to do in templates
+=======================
+Some TO DO for startig this thems
+
+- add block <%block name="theme_header"></%block> in template edx-platform/lms/templates/navigation.html after string <header id="global-navigation">

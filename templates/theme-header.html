@@ -4,7 +4,21 @@
 <%inherit file="/navigation.html"/>
 
 ## TODO: this will eventually be moved to the Sass
-<%block name="navigation_logo">
-  <img src="${static.url('themes/default/images/logo_header.png')}" height="76" alt="Home Page" />
+<%block name="theme_header">
+    <div class="theme-header-info">
+        <div class="theme-header-info_contact">
+            <span class="theme-header-info_text">Have any question?</span>
+            <span class="theme-header-info_phone">(00) 123 456 789</span>
+            <a class="theme-header-info_mail" href="#">hello@edx.com</a>
+        </div>
+        <div class="theme-header-info_social">
+            <span class="theme-header-info_text">Find us in social network</span>
+            <ul class="theme-header-info_social-list">
+                <li class="theme-header-info_item"><a class="theme-header-info_twitter" href="#"></a></li>
+                <li class="theme-header-info_item"><a class="theme-header-info_facebook" href="#"></a></li>
+                <li class="theme-header-info_item"><a class="theme-header-info_linkedin" href="#"></a></li>
+            </ul>
+        </div>
+    </div>
 </%block>
 
