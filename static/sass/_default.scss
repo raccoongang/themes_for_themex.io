@@ -1,5 +1,16 @@
+@import "fonts";
 @import "const";
 @import "mixins";
-
-$theme-img-path: "../themes/default/images/header/";
-@import "header/header-info"
+$theme-img-path: "../themes/default/images/header-info/";
+@import "header-info/header-info";
+$theme-img-path: "../themes/default/images/nav-wrapper/";
+@import "nav-wrapper/nav-wrapper";
+$theme-img-path: "../themes/default/images/theme-main-nav/";
+@import "theme-main-nav/theme-main-nav";
+$theme-img-path: "../themes/default/images/theme-courses/";
+@import "theme-courses/theme-courses";
+@import "promo-box/promo-box";
+$theme-img-path: "../themes/default/images/box-new/";
+@import "box-new/box-new";
+$theme-img-path: "../themes/default/images/theme-footer/";
+@import "theme-footer/theme-footer"

@@ -1,0 +1,74 @@
+.theme-nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 $mobile-indent 28px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    @media all and (min-width: 450px){
+        flex-wrap: nowrap;
+    }
+    @media all and (min-width: 1600px){
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &:after {
+        display: none;
+    }
+    &_holder {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    &_logo-holder {
+        display: block;
+        overflow: hidden;
+        width: 54px;
+        @media all and (min-width: 600px){
+            display: inline;
+        }
+    }
+    .nav-courseware .cta-login {
+        font: 14px/1.3 muliregular;
+        color: #74bb00;
+        border: 2px solid #74bb00;
+        padding: 7px 24px 6px;
+        box-shadow: none;
+        border-radius: 0;
+        background: none;
+        text-transform: uppercase;
+    }
+    .nav-global {
+        margin: 0 10px 0 0;
+        font: 0/0 a;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        @media all and (min-width: 600px){
+            margin-right: 21px;
+        }
+
+        .cta-discovery {
+            @include inline-block;
+            font: 0/0 a;
+            width: 22px;
+            height: 22px;
+            padding: 0;
+            background: url('#{$theme-img-path}search.png') no-repeat 0 50%;
+            margin-right: 10px;
+            @media all and (min-width: 600px){
+                margin-right: 21px;
+            }
+        }
+        .cta-register {
+            font: 14px/18px muliregular;
+            color: #515e66;
+            text-transform: uppercase;
+        }
+    }
+    .nav-courseware {
+        margin: 0;
+    }
+}

@@ -1,36 +1,62 @@
 .theme-header-info {
-    max-width: 1600px;
+    box-sizing: border-box;
+    padding: 14px $mobile-indent 36px;
+    max-width: 1170px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    box-sizing: border-box;
-    padding: 14px 15px 25px;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: mulilight;
+    @media all and (min-width: 450px){
+        flex-wrap: nowrap;
+    }
     @media all and (min-width: 1600px){
         padding-left: 0;
         padding-right: 0;
     }
 
     &_contact {
-        order: 1;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+        @media all and (min-width: 450px){
+            width: auto;
+            justify-content: flex-start;
+        }
     }
     &_social {
-        order: 2;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        padding-top: 14px;
+        @media all and (min-width: 450px){
+            padding: 0;
+            width: auto;
+            justify-content: flex-start;
+        }
     }
     &_text {
         font-size: 12px;
         line-height: 15px;
         color: $theme-color-grey;
+        display: none;
+        @media all and (min-width: 860px){
+            display: block;
+        }
     }
     &_phone {
-        @include inline-block;
         font-size: 12px;
         line-height: 15px;
         color: $theme-color-grey;
         padding-left: 18px;
         background: url('#{$theme-img-path}phone.png') no-repeat 0 50%;
-        margin-left: 28px;
+        @media all and (min-width: 860px){
+            margin-left: 24px;
+        }
     }
     &_mail {
-        @include inline-block;
         font-size: 12px;
         line-height: 15px;
         color: $theme-color-grey;
@@ -39,14 +65,17 @@
         margin-left: 18px;
     }
     &_social-list {
-        @include inline-block;
-        font: 0/0 a;
         margin: 0;
         padding: 0 0 0 16px;
         list-style: none;
+        display: flex;
+        align-items: center;
+        font: 0/0 a;
+        @media all and (min-width: 860px){
+            margin: 0;
+        }
     }
     &_item {
-        @include inline-block;
         padding-left: 16px;
 
         &:first-child {

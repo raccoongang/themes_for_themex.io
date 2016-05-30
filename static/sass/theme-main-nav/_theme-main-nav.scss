@@ -1,0 +1,49 @@
+.theme-main-nav {
+    background: #1f1b4d;
+
+    &_holder {
+        max-width: 1170px;
+        margin: 0 auto;
+    }
+    &_list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        @media all and (min-width: 860px){
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+        }
+    }
+    &_link {
+        font: 15px/1.3 muliregular;
+        padding: 12px 30px 13px;
+        text-align: center;
+        display: block;
+        color: #fff !important;
+        @media all and (min-width: 450px){
+            text-align: left;
+        }
+        @media all and (min-width: 860px){
+            @include inline-block;
+            text-align: center;
+        }
+
+        &:hover {
+            background: #413a8d;
+            text-decoration: none;
+        }
+    }
+    &_item {
+        width: 100%;
+        border-top: 1px solid #2A358A;
+        @media all and (min-width: 860px){
+            flex-wrap: nowrap;
+            border: none;
+            width: auto;
+        }
+
+        &:first-child {
+            border: none;
+        }
+    }
+}

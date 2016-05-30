@@ -1,0 +1,101 @@
+.theme-footer {
+
+    &_holder {
+        padding-top: 53px;
+
+        &__color {
+            background: #33383f;
+        }
+    }
+    &_header {
+        font: 18px/1.3 muliregular;
+        color: #111827;
+        text-align: center;
+        margin: 0 0 37px;
+        text-transform: none;
+    }
+    &_list {
+        box-sizing: border-box;
+        list-style: none;
+        max-width: 1140px;
+        margin: 0 auto 48px;
+        padding: 0 15px;
+        @media all and (min-width: 400px){
+            column-count: 2;
+        }
+        @media all and (min-width: 720px){
+            column-count: 5;
+        }
+    }
+    &_list-item {
+        padding: 5px;
+    }
+    &_list-link {
+        font: 16px/1.3 muliregular;
+        color: #868686 !important;
+    }
+    &_section {
+        border-top: 1px solid #ececec;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 28px 15px;
+
+        .theme-footer_holder__color & {
+            border-color: #2f343b;
+        }
+    }
+    &_link {
+        display: inline-block;
+        font: 14px/1.3 muliregular;
+        color: #85d600 !important;
+        border: 1px solid #85d600;
+        padding: 11px 48px 10px;
+        text-transform: uppercase;
+    }
+    &_wrapper {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1140px;
+        margin: 0 auto 20px;
+        padding: 0 15px;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+        @media all and (min-width: 600px){
+            flex-wrap: nowrap;
+        }
+    }
+    &_col-header {
+        display: block;
+        font: 14px/1.3 muliregular;
+        color: #fff;
+        padding: 0 0 13px;
+        border-bottom: 1px solid #2f343b;
+        text-transform: uppercase;
+    }
+    &_col-holder {
+        margin: 0 0 11px;
+    }
+    &_col-link {
+        font: 14px/1.3 muliregular;
+        color: #7f848c !important;
+    }
+    &_text {
+        font: 17px/1.3 muliregular;
+        color: #5a666e;
+        margin-right: 50px;
+    }
+    &_copyright {
+        font: 13px/1.3 muliregular;
+        color: #7f848c;
+    }
+    &_col {
+        width: 100%;
+        margin: 0 0 25px;
+        @media all and (min-width: 600px){
+            width: auto;
+        }
+    }
+}
