@@ -57,23 +57,11 @@ site_status_msg = get_site_status_msg(course_id)
       <a href="${marketing_link('ROOT')}">
         <%block name="navigation_logo">
             <span class="theme-nav-wrapper_logo-holder">
-                <img src="../static/images/header-info/logo-racoon.png" alt="racoon logo"/>
+                <img src="/static/images/header-info/logo-racoon.png" alt="racoon logo"/>
             </span>
         </%block>
       </a>
 
-    % if course:
-    <h2 class="course-header"><span class="provider">${course.display_org_with_default | h}:</span>
-      <span class="course-number">${course.display_number_with_default | h}</span>
-      <%
-        display_name = course.display_name_with_default
-        if settings.FEATURES.get('CUSTOM_COURSES_EDX', False):
-          ccx = get_current_ccx(course.id)
-          if ccx:
-            display_name = ccx.display_name
-      %>
-      <span class="course-name">${display_name}</span></h2>
-    % endif
     <div class="theme-nav-wrapper_holder">
     % if user.is_authenticated():
     <ol class="left nav-global authenticated">
