@@ -2,18 +2,23 @@
 @import 'const';
 @import 'fonts';
 @import 'mixins';
-$theme-img-path: "../images/box-new/";
+$theme-img-path: "/static/images/box-new/";
 @import "box-new/box-new";
-$theme-img-path: "../images/header-info/";
+$theme-img-path: "/static/images/header-info/";
 @import "header-info/header-info";
-$theme-img-path: "../images/nav-wrapper/";
+$theme-img-path: "/static/images/nav-wrapper/";
 @import "nav-wrapper/nav-wrapper";
+$theme-img-path: "/static/images/theme-courses/";
 @import "theme-courses/theme-courses";
-$theme-img-path: "../images/theme-main-nav/";
+$theme-img-path: "/static/images/theme-main-nav/";
 @import "theme-main-nav/theme-main-nav";
-$theme-img-path: "../images/theme-footer/";
+$theme-img-path: "/static/images/theme-footer/";
 @import "theme-footer/theme-footer";
 @import "promo-box/promo-box";
+$theme-img-path: "/static/images/intro-course/";
+@import "intro-course/intro-course";
+@import "theme-content/theme-content";
+@import "theme-aside/theme-aside";
 
 // Import the original styles from edx-platform.
 @import 'lms/static/sass/lms-main';

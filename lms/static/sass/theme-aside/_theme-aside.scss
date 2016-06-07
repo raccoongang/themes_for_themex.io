@@ -1,0 +1,12 @@
+.theme-aside {
+    width: 100%;
+    border: 1px solid #dae4ee;
+    text-align: center;
+    padding: 20px;
+
+    &_list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+}

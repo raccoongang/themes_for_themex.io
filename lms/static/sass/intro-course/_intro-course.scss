@@ -1,0 +1,45 @@
+.intro-course {
+    position: relative;
+    min-height: 350px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 0 60px;
+
+    &_img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 100%;
+        width: auto;
+    }
+    &_heading {
+        font: 800 30px/1.3 'Work Sans', sans-serif;
+        text-transform: uppercase;
+        color: #fff;
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        margin: 0 0 48px;
+        @media all and (min-width: 860px){
+            font-size: 60px;
+        }
+    }
+    &_link {
+        font: 16px/1.3 muliregular;
+        display: inline-block;
+        background: #74bb00;
+        padding: 13px 14px 12px;
+        color: #fff !important;
+        text-transform: uppercase;
+    }
+    &_holder {
+        width: 100%;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+    }
+}
