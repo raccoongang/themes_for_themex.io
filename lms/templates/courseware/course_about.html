@@ -105,21 +105,32 @@ from openedx.core.lib.courses import course_image_url
 <%block name="pagetitle">${course.display_name_with_default}</%block>
 
 <section class="course-info">
-  <header class="intro-course">
-    <div class="intro-course_wrapper">
-    <h1 class="intro-course_heading">
+  <header class="promo-box promo-box__course">
+    <div class="promo-box_wrapper">
+    % if get_course_about_section(request, course, "video"):
+      <a href="#video-modal" class="media" rel="leanModal">
+        <div class="hero">
+          <img src="${course_image_url(course)}" alt="" />
+          <div class="play-intro"></div>
+        </div>
+      </a>
+      %else:
+        <img class="promo-box_img" src="${course_image_url(course)}" alt="course img" />
+      % endif
+    <div class="promo-box_helper"></div>
+    <div class="promo-box_holder">
+    <h1 class="promo-box_heading">
       ${course.display_name_with_default}
       % if not self.theme_enabled():
         <a href="#">${course.display_org_with_default | h}</a>
       % endif
     </h1>
-    <div class="intro-course_holder">
       %if user.is_authenticated() and registered:
         %if show_courseware_link:
-          <a class="intro-course_link" href="${course_target}">
+          <a class="promo-box_link" href="${course_target}">
         %endif
 
-        <span class="intro-course_link disabled">${_("You are enrolled in this course")}</span>
+        <span class="promo-box_link disabled">${_("You are enrolled in this course")}</span>
 
         %if show_courseware_link:
           <strong>${_("View Courseware")}</strong>
@@ -157,23 +168,12 @@ from openedx.core.lib.courses import course_image_url
         </a>
         <div id="register_error"></div>
       %else:
-        <a href="#" class="intro-course_link">
+        <a href="#" class="promo-box_link">
           ${_("Enroll in {course_name}").format(course_name=course.display_number_with_default) | h}
         </a>
         <div id="register_error"></div>
       %endif
     </div>
-
-    % if get_course_about_section(request, course, "video"):
-      <a href="#video-modal" class="media" rel="leanModal">
-        <div class="hero">
-          <img src="${course_image_url(course)}" alt="" />
-          <div class="play-intro"></div>
-        </div>
-      </a>
-      %else:
-        <img class="intro-course_img" src="${course_image_url(course)}" alt="course img" />
-      % endif
       </div>
   </header>
 
@@ -319,15 +319,11 @@ from openedx.core.lib.courses import course_image_url
                     )
                 ).replace(u" ", u"%20")
               %>
-              <a href="${tweet_action}" class="share">
-                <i class="icon fa fa-twitter"></i><span class="sr">${_("Tweet that you've enrolled in this course")}</span>
-              </a>
-              <a href="${facebook_link}" class="share">
-                <i class="icon fa fa-thumbs-up"></i><span class="sr">${_("Post a Facebook message to say you've enrolled in this course")}</span>
-              </a>
-              <a href="${email_subject}" class="share">
-                <i class="icon fa fa-envelope"></i><span class="sr">${_("Email someone to say you've enrolled in this course")}</span>
-              </a>
+              <ul class="social-list">
+                <li class="social-list_item"><a class="social-list_twitter" href="https://twitter.com/raccoongangcom"></a></li>
+                <li class="social-list_item"><a class="social-list_facebook" href="https://www.facebook.com/raccoongangco"></a></li>
+                <li class="social-list_item"><a class="social-list_linkedin" href="https://www.linkedin.com/company/raccoon-gang"></a></li>
+              </ul>
             % endif
           </div>
           % endif

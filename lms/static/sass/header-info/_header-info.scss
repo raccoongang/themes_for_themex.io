@@ -75,29 +75,4 @@
             margin: 0;
         }
     }
-    &_item {
-        padding-left: 16px;
-
-        &:first-child {
-            padding-left: 0;
-        }
-    }
-    &_twitter {
-        @include inline-block;
-        width: 18px;
-        height: 12px;
-        background: url('#{$theme-img-path}twitter.png');
-    }
-    &_facebook {
-        @include inline-block;
-        width: 7px;
-        height: 15px;
-        background: url('#{$theme-img-path}facebook.png');
-    }
-    &_linkedin {
-        @include inline-block;
-        width: 15px;
-        height: 14px;
-        background: url('#{$theme-img-path}linkedin.png');
-    }
 }

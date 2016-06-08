@@ -15,10 +15,10 @@ $theme-img-path: "/static/images/theme-main-nav/";
 $theme-img-path: "/static/images/theme-footer/";
 @import "theme-footer/theme-footer";
 @import "promo-box/promo-box";
-$theme-img-path: "/static/images/intro-course/";
-@import "intro-course/intro-course";
 @import "theme-content/theme-content";
 @import "theme-aside/theme-aside";
+$theme-img-path: "/static/images/social-list/";
+@import "social-list/social-list";
 
 // Import the original styles from edx-platform.
 @import 'lms/static/sass/lms-main';

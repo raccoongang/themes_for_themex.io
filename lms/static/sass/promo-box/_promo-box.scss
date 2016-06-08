@@ -2,18 +2,23 @@
     position: relative;
     margin: 0 auto 66px;
     max-width: 1600px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    min-height: 500px;
+    justify-content: center;
+
+    &__course {
+        min-height: 350px;
+    }
 
     &_img {
         width: 100%;
         height: auto;
-    }
-    &_holder {
         position: absolute;
-        width: 100%;
-        text-align: center;
-        left: 0;
         top: 50%;
-        transform: translateY(-50%);
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
     &_text {
         display: none;
@@ -42,5 +47,18 @@
         padding: 13px 14px 12px;
         color: #fff !important;
         text-transform: uppercase;
+    }
+    &_helper {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: #000;
+        opacity: .2;
+    }
+    &_holder {
+        position: relative;
+        text-align: center;
     }
 };
