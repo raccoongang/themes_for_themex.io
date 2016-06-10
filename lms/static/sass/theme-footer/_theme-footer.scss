@@ -1,6 +1,6 @@
 .theme-footer {
     background: #fff;
-    
+
     &_holder {
         padding-top: 53px;
 
@@ -14,26 +14,6 @@
         text-align: center;
         margin: 0 0 37px;
         text-transform: none;
-    }
-    &_list {
-        box-sizing: border-box;
-        list-style: none;
-        max-width: 1140px;
-        margin: 0 auto 48px;
-        padding: 0 15px;
-        @media all and (min-width: 400px){
-            column-count: 2;
-        }
-        @media all and (min-width: 720px){
-            column-count: 5;
-        }
-    }
-    &_list-item {
-        padding: 5px;
-    }
-    &_list-link {
-        font: 16px/1.3 muliregular;
-        color: #868686 !important;
     }
     &_section {
         border-top: 1px solid #ececec;

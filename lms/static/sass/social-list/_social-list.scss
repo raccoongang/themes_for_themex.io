@@ -1,13 +1,12 @@
 .social-list {
     display: flex;
     width: 100%;
-    padding-top: 14px;
+    padding: 0;
     margin: 0;
     list-style: none;
+    justify-content: center;
     @media all and (min-width: 450px){
-        padding: 0;
         width: auto;
-        justify-content: center;
     }
 
     &_item {

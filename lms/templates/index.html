@@ -72,7 +72,7 @@ from microsite_configuration import microsite
 
       % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
         
-          <h1 class="theme-courses_heading">most Popular courses</h1>
+          <h1 class="theme-courses_heading">Our Courses</h1>
             <section class="theme-courses">
                 %for course in courses:
                   <%include file="course.html" args="course=course" />
