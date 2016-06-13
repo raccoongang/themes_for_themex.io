@@ -1,5 +1,5 @@
 .theme-main-nav {
-    background: #1f1d20;
+    background: #264fd6;
 
     &_holder {
         max-width: 1140px;
@@ -31,7 +31,6 @@
         &:hover {
             background: $theme-color-main;
             text-decoration: none;
-            color: #1f1d20 !important;
         }
     }
     &_item {
