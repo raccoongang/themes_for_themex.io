@@ -1,0 +1,21 @@
+.user-list {
+    display: flex;
+
+    &_item {
+        padding: 0 5px;
+
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+    &_link {
+        font: 14px/18px muliregular;
+        color: #515e66;
+        text-transform: uppercase;
+
+        &:hover {
+            text-decoration: underline;
+            color: #515e66;
+        }
+    }
+}

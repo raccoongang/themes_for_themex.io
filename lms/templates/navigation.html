@@ -79,27 +79,22 @@ site_status_msg = get_site_status_msg(course_id)
         %endif
       </%block>
     </ol>
-    <ol class="user">
-      <li class="primary">
-        <a href="${reverse('dashboard')}" class="user-link">
+    <ul class="user-list">
+      <li class="user-list_item">
+        <a class="user-list_link" href="${reverse('dashboard')}" class="user-link">
           <span class="sr">${_("Dashboard for:")}</span>
           <div>
           ${user.username}
           </div>
         </a>
       </li>
-      <li class="primary">
-        <button class="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr">${_("More options dropdown")}</span><span class="fa fa-sort-desc" aria-hidden="true"></span></button>
-        <ul class="dropdown-menu" aria-label="More Options" role="menu">
-          <%block name="navigation_dropdown_menu_links" >
-            <li><a href="${reverse('dashboard')}">${_("Dashboard")}</a></li>
-            <li><a href="${reverse('learner_profile', kwargs={'username': user.username})}">${_("Profile")}</a></li>
-            <li><a href="${reverse('account_settings')}">${_("Account")}</a></li>
-          </%block>
-          <li><a href="${reverse('logout')}" role="menuitem">${_("Sign Out")}</a></li>
-        </ul>
-      </li>
-    </ol>
+      <%block name="navigation_dropdown_menu_links" >
+        <li class="user-list_item"><a class="user-list_link" href="${reverse('dashboard')}">${_("Dashboard")}</a></li>
+        <li class="user-list_item"><a class="user-list_link" href="${reverse('learner_profile', kwargs={'username': user.username})}">${_("Profile")}</a></li>
+        <li class="user-list_item"><a class="user-list_link" href="${reverse('account_settings')}">${_("Account")}</a></li>
+      </%block>
+      <li><a class="user-list_link" href="${reverse('logout')}" role="menuitem">${_("Sign Out")}</a></li>
+    </ul>
       % if should_display_shopping_cart_func() and not (course and microsite.is_request_in_microsite()): # see shoppingcart.context_processor.user_has_cart_context_processor
         <ol class="user">
           <li class="primary">
