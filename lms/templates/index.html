@@ -29,52 +29,13 @@ from microsite_configuration import microsite
       </div>
     </div>
   </section>
-  <section class="box-new">
-    <div class="box-new_decoration">
-      <img class="box-new_img" src="/static/images/box-new/book.png" alt="book">
-      <div class="box-new_count">
-        <div class="box-new_wrapper">
-          <span class="box-new_numb">500+</span>
-          <span class="box-new_caption">COURSES</span>
-        </div>
-      </div>
-    </div>
-    <div class="box-new_line">
-      <div class="box-new_left">
-        <h2 class="box-new_heading">BOOKS & LIBRARY</h2>
-        <p class="box-new_text">Masterstudy is one of the world’s busiest public library systems, with over 10 million books, movies and other items to borrow.</p>
-      </div>
-      <div class="box-new_right">
-        <h2 class="box-new_heading">TRENDING COURSES</h2>
-        <p class="box-new_text">Your chance to be a trending expert in IT industries and make a successful career after completion of our courses.</p>
-      </div>
-    </div>
-    <div class="box-new_line box-new_line__color">
-      <div class="box-new_left">
-        <strong class="box-new_strong">What‘s Inside</strong>
-      </div>
-      <div class="box-new_right">
-        <a class="box-new_link" href="#">start the course now</a>
-      </div>
-    </div>
-    <div class="box-new_line">
-      <div class="box-new_left">
-        <h2 class="box-new_heading">CERTIFIED TEACHERS</h2>
-        <p class="box-new_text">Get professional education and reliable consultation by our team of certified teachers and instructors.</p>
-      </div>
-      <div class="box-new_right">
-        <h2 class="box-new_heading">CERTIFICATION</h2>
-        <p class="box-new_text">Upon successful completion receive a certificate showing your achievement for completing one of our rigorous classes.</p>
-      </div>
-    </div>
-  </section>
   <section class="theme-courses_wrapper">
 
       % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
         
           <h1 class="theme-courses_heading">Our Courses</h1>
             <section class="theme-courses">
-                %for course in courses:
+                %for course in courses[:settings.HOMEPAGE_COURSE_MAX]:
                   <%include file="course.html" args="course=course" />
                 %endfor
             </section>
