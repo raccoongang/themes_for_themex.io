@@ -127,10 +127,10 @@ from openedx.core.lib.courses import course_image_url
     </h1>
       %if user.is_authenticated() and registered:
         %if show_courseware_link:
-          <a class="promo-box_link" href="${course_target}">
+          <a class="theme-btn theme-btn__invert" href="${course_target}">
         %endif
 
-        <span class="promo-box_link disabled">${_("You are enrolled in this course")}</span>
+        <span class="theme-btn theme-btn__invert disabled">${_("You are enrolled in this course")}</span>
 
         %if show_courseware_link:
           <strong>${_("View Courseware")}</strong>
@@ -168,7 +168,7 @@ from openedx.core.lib.courses import course_image_url
         </a>
         <div id="register_error"></div>
       %else:
-        <a href="#" class="promo-box_link">
+        <a href="#" class="theme-btn theme-btn__invert">
           ${_("Enroll in {course_name}").format(course_name=course.display_number_with_default) | h}
         </a>
         <div id="register_error"></div>
@@ -205,7 +205,7 @@ from openedx.core.lib.courses import course_image_url
         <ol class="theme-aside_list">
           <li class="important-dates-item"><span class="important-dates-item-text course-number">${course.display_number_with_default | h}</span></li>
           % if not course.start_date_is_still_default:
-            <li class="important-dates-item"><span class="theme-courses_date">${course.start_datetime_text()}</span></li>
+            <li class="important-dates-item"><span class="theme-courses_date"> <span class="theme-courses_ico-holder"><i class="fa fa-clock-o" aria-hidden="true"></i></span>${course.start_datetime_text()}</span></li>
           % endif
             ## We plan to ditch end_date (which is not stored in course metadata),
             ## but for backwards compatibility, show about/end_date blob if it exists.
@@ -320,9 +320,9 @@ from openedx.core.lib.courses import course_image_url
                 ).replace(u" ", u"%20")
               %>
               <ul class="social-list">
-                <li class="social-list_item"><a class="social-list_twitter" href="https://twitter.com/raccoongangcom"></a></li>
-                <li class="social-list_item"><a class="social-list_facebook" href="https://www.facebook.com/raccoongangco"></a></li>
-                <li class="social-list_item"><a class="social-list_linkedin" href="https://www.linkedin.com/company/raccoon-gang"></a></li>
+                <li class="social-list_item"><a class="social-list_link" href="https://twitter.com/raccoongangcom"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li class="social-list_item"><a class="social-list_link" href="https://www.facebook.com/raccoongangco"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li class="social-list_item"><a class="social-list_link" href="https://www.linkedin.com/company/raccoon-gang"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
               </ul>
             % endif
           </div>

@@ -1,0 +1,31 @@
+.theme-btn {
+    @include inline-block;
+    font: 14px/1.3 muliregular;
+    color: $theme-color-main;
+    border: 2px solid $theme-color-main-hover;
+    padding: 7px 24px 6px;
+    box-shadow: none;
+    border-radius: 0;
+    background: none;
+    text-transform: uppercase;
+    transition: border-color color background 1s ease-out 0.5s;
+
+    &:hover {
+        color: #fff;
+        background: $theme-color-main;
+        border-color: $theme-color-main;
+        text-decoration: none;
+    }
+
+    &__invert {
+        color: #fff;
+        background: $theme-color-main;
+        border: 1px solid $theme-color-main;
+        
+        &:hover {
+            color: $theme-color-main;
+            background: #fff;
+            border: 1px solid $theme-color-main-hover;
+        }
+    }
+}

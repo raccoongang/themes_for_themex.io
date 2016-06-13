@@ -44,11 +44,16 @@ $theme-img-path: "/static/images/theme-courses/";
         text-align: left;
     }
     &_date {
-        background: url('#{$theme-img-path}date.png') no-repeat 0 50%;
         font: 16px/20px muliregular;
         color: #0a2d46;
-        padding: 2px 0 2px 31px;
+        padding: 2px 0;
         margin: 0 0 10px;
+        display: flex;
+        align-items: center;
+
+        .theme-aside_list & {
+            justify-content: center;
+        }
     }
     &_link {
         display: inline-block;
@@ -100,5 +105,10 @@ $theme-img-path: "/static/images/theme-courses/";
         @media all and (min-width: 1100px){
             height: 397px;
         }
+    }
+    &_ico-holder {
+        padding-right: 5px;
+        font-size: 28px;
+        color: $theme-color-main;
     }
 }

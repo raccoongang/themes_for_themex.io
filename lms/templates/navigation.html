@@ -47,9 +47,9 @@ site_status_msg = get_site_status_msg(course_id)
         <div class="theme-header-info_social">
             <span class="theme-header-info_text">Find us in social network</span>
             <ul class="social-list">
-                <li class="social-list_item"><a class="social-list_twitter" href="https://twitter.com/raccoongangcom"></a></li>
-                <li class="social-list_item"><a class="social-list_facebook" href="https://www.facebook.com/raccoongangco"></a></li>
-                <li class="social-list_item"><a class="social-list_linkedin" href="https://www.linkedin.com/company/raccoon-gang"></a></li>
+                <li class="social-list_item"><a class="social-list_link" href="https://twitter.com/raccoongangcom"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li class="social-list_item"><a class="social-list_link" href="https://www.facebook.com/raccoongangco"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li class="social-list_item"><a class="social-list_link" href="https://www.linkedin.com/company/raccoon-gang"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
             </ul>
         </div>
     </div>
@@ -124,7 +124,7 @@ site_status_msg = get_site_status_msg(course_id)
       % if not settings.FEATURES['DISABLE_LOGIN_BUTTON']:
           % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
           <li class="nav-global-05">
-            <a class="cta cta-discovery" href="/courses">${_("Find Courses")}</a>
+            <a class="cta cta-discovery" href="/courses"><i class="fa fa-search" aria-hidden="true"></i></a>
           </li>
           %endif
           % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
@@ -144,9 +144,9 @@ site_status_msg = get_site_status_msg(course_id)
     <li class="nav-courseware-01">
       % if not settings.FEATURES['DISABLE_LOGIN_BUTTON']:
           % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
-          <a class="cta cta-login" href="${reverse('course-specific-login', args=[course.id.to_deprecated_string()])}${login_query()}">${_("Sign in")}</a>
+          <a class="theme-btn" href="${reverse('course-specific-login', args=[course.id.to_deprecated_string()])}${login_query()}">${_("Sign in")}</a>
           % else:
-          <a class="cta cta-login" href="/login${login_query()}">${_("Sign in")}</a>
+          <a class="theme-btn" href="/login${login_query()}">${_("Sign in")}</a>
           % endif
       % endif
     </li>
