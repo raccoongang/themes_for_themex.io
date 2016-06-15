@@ -195,7 +195,9 @@ from openedx.core.lib.courses import course_image_url
       </nav>
 
       <div class="inner-wrapper">
-        ${get_course_about_section(request, course, "overview")}
+        <div class="ugc">
+          ${get_course_about_section(request, course, "overview")}
+        </div>
       </div>
     </section>
 
