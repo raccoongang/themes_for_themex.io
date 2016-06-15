@@ -54,10 +54,14 @@
             flex-wrap: nowrap;
             border: none;
             width: auto;
+            border: none;
         }
 
         &:first-child {
             border-top: 1px solid #2f343b;
+            @media all and (min-width: 860px){
+                border: none;
+            }
         }
     }
     &_opener {
