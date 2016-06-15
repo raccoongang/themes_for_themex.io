@@ -6,11 +6,29 @@
     font: 15px/24px 'Work Sans', sans-serif;
     color: #36424a;
     overflow: hidden;
+    padding: 0 15px;
+    flex-wrap: wrap;
+    @media all and (min-width: 860px){
+        flex-wrap: nowrap;
+    }
+    @media all and (min-width: 1140px){
+        padding: 0;
+    }
 
     &_wrapper {
-        width: 63%;
+        width: 100%;
+        @media all and (min-width: 860px){
+            width: 63%;
+        }
     }
     &_aside {
-        width: 30%;
+        width: 100%;
+        order: -1;
+        margin: 0 0 30px;
+        @media all and (min-width: 860px){
+            order: 2;
+            width: 30%;
+            margin: 0;
+        }
     }
 }
