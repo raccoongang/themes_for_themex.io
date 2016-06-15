@@ -10,12 +10,12 @@
     }
     &_link {
         font: 14px/18px muliregular;
-        color: #515e66;
+        color: #515e66 !important;
         text-transform: uppercase;
 
         &:hover {
             text-decoration: underline;
-            color: #515e66;
+            color: #515e66 !important;
         }
     }
 }

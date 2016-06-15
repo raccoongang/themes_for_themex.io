@@ -52,8 +52,13 @@
     }
     .container {
         min-width: auto;
+        
         * {
             font-family: muliregular !important;
+        }
+
+        .fa {
+            font-family: FontAwesome !important;
         }
     }
 }

@@ -82,10 +82,7 @@ site_status_msg = get_site_status_msg(course_id)
     <ul class="user-list">
       <li class="user-list_item">
         <a class="user-list_link" href="${reverse('dashboard')}" class="user-link">
-          <span class="sr">${_("Dashboard for:")}</span>
-          <div>
           ${user.username}
-          </div>
         </a>
       </li>
       <%block name="navigation_dropdown_menu_links" >
