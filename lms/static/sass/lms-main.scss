@@ -19,6 +19,8 @@ $theme-img-path: "/static/images/social-list/";
 @import "social-list/social-list";
 @import "user-list/user-list";
 @import "theme-btn/theme-btn";
+@import "nav-holder/nav-holder";
+@import "theme-header/theme-header";
 
 // Import the original styles from edx-platform.
 @import 'lms/static/sass/lms-main';

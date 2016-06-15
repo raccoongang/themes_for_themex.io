@@ -23,11 +23,15 @@
         align-items: center;
     }
     &_logo-holder {
-        display: block;
+        display: none;
         overflow: hidden;
         width: 54px;
-        @media all and (min-width: 600px){
+        @media all and (min-width: 860px){
             display: inline;
+        }
+
+        .theme-main-nav & {
+            display: block;
         }
     }
     .nav-global {

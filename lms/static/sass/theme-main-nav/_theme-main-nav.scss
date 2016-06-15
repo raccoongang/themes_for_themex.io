@@ -1,17 +1,30 @@
 .theme-main-nav {
     background: #1f1b4d;
+    width: 100%;
+    order: -1;
+    position: relative;
+    padding-top: 44px;
+    @media all and (min-width: 860px){
+        order: 2;
+        padding-top: 0;
+    }
 
     &_holder {
         max-width: 1140px;
         margin: 0 auto;
     }
     &_list {
-        display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        display: none;
         @media all and (min-width: 860px){
             flex-wrap: nowrap;
             justify-content: flex-start;
+            display: flex;
+        }
+
+        .theme-main-nav__open & {
+            display: flex;
         }
     }
     &_link {
@@ -44,6 +57,41 @@
 
         &:first-child {
             border: none;
+        }
+    }
+    &_opener {
+        position: absolute;
+        top: 8px;
+        right: 15px;
+        height: 30px;
+        width: 35px;
+        border-top: 4px solid #fff;
+        border-bottom: 4px solid #fff;
+        box-sizing: border-box;
+        @media all and (min-width: 860px){
+            display: none;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            height: 4px;
+            width: 100%;
+            background: #fff;
+            top: 50%;
+            margin: -2px 0 0;
+            left: 0;
+        }
+    }
+    &_logo {
+        position: absolute;
+        left: 15px;
+        top: 0;
+        height: 44px;
+        width: 44px;
+        overflow: hidden;
+        @media all and (min-width: 860px){
+            display: none;
         }
     }
 }

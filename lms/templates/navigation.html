@@ -36,8 +36,8 @@ site_status_msg = get_site_status_msg(course_id)
 </div>
 % endif
 </%block>
-
-  <header class="theme_header ${"slim" if course else ""}" >
+<div class="nav-holder">
+  <header class="theme-header ${"slim" if course else ""}" >
     <div class="theme-header-info">
         <div class="theme-header-info_contact">
             <span class="theme-header-info_text">Have any question?</span>
@@ -155,7 +155,14 @@ site_status_msg = get_site_status_msg(course_id)
     </div>
   </nav>
 </header>
+
 <div class="theme-main-nav">
+    <div class="theme-main-nav_opener"></div>
+    <div class="theme-main-nav_logo">
+      <span class="theme-nav-wrapper_logo-holder">
+          <img src="/static/images/header-info/logo-racoon.png" alt="racoon logo"/>
+      </span>
+    </div>
     <nav class="theme-main-nav_holder">
         <ul class="theme-main-nav_list">
             <li class="theme-main-nav_item"><a href="/about" class="theme-main-nav_link">About The University</a></li>
@@ -165,6 +172,16 @@ site_status_msg = get_site_status_msg(course_id)
         </ul>
     </nav>
 </div>
+</div>
+<script>
+  $(".theme-main-nav_opener").on("click", function open(){
+    if ($(this).parent().hasClass("theme-main-nav__open")){
+      $(this).parent().removeClass("theme-main-nav__open");
+    } else {
+      $(this).parent().addClass("theme-main-nav__open");
+    }
+  });
+</script>
 % if course:
 <!--[if lte IE 9]>
 <div class="ie-banner" aria-hidden="true">${_('<strong>Warning:</strong> Your browser is not fully supported. We strongly recommend using {chrome_link} or {ff_link}.').format(chrome_link='<a href="https://www.google.com/chrome" target="_blank">Chrome</a>', ff_link='<a href="http://www.mozilla.org/firefox" target="_blank">Firefox</a>')}</div>
