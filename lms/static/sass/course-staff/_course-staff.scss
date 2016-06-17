@@ -1,0 +1,51 @@
+.course-staff {
+    h3 {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+        margin: 0 0 13px;
+        padding: 0;
+    }
+    h3 + p {
+        color: #ababab;
+        font-size: 16px;
+        position: relative;
+        padding: 0 0 6px;
+        overflow: hidden;
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            width: 35px;
+            height: 6px;
+            background: #74bb00;
+        }
+    }
+}
+.teacher {
+    @include inline-block(top);
+    width: 100%;
+    @media all and (min-width: 600px){
+        width: 45%;
+        margin-right: 5px;
+    }
+}
+.teacher-image {
+    float: left;
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+
+    img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate (-50%, -50%);
+        width: 100%;
+        height: auto;
+    }
+}
