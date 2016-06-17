@@ -1,3 +1,6 @@
+// Import the original styles from edx-platform.
+@import 'lms/static/sass/lms-main';
+
 // Our overrides for settings we want to change.
 @import 'const';
 @import 'fonts';
@@ -23,6 +26,4 @@ $theme-img-path: "/static/images/social-list/";
 @import "theme-header/theme-header";
 @import "content-wrapper/content-wrapper";
 @import "ugc/ugc";
-
-// Import the original styles from edx-platform.
-@import 'lms/static/sass/lms-main';
+@import "course-staff/course-staff";
