@@ -32,7 +32,7 @@ from student.helpers import (
 
 <%namespace name='static' file='../static_content.html'/>
 
-<li class="course-item">
+<article class="theme-courses_course">
   % if settings.FEATURES.get('ENABLE_VERIFIED_CERTIFICATES'):
     <%
         course_verified_certs = enrollment_mode_display(
@@ -49,7 +49,6 @@ from student.helpers import (
   % else:
     <% mode_class = '' %>
   % endif
-<div class="course-container">
  % if course_program_info and course_program_info['category']=='xseries':
   <div class="label-xseries-association">
     <i class="xseries-icon"></i>
@@ -385,8 +384,7 @@ from student.helpers import (
     </ul>
   </footer>
 </article>
-</div>
-</li>
+</article>
 <script>
            $( document ).ready(function() {
 
