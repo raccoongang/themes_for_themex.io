@@ -1,18 +1,18 @@
 /*
 Syntax error: Undefined variable: "$theme-color-main".
-        on line 122 of /edx/app/edxapp/themes/lms/static/sass/theme-courses/theme-courses.scss
+        on line 126 of /edx/app/edxapp/themes/lms/static/sass/theme-courses/theme-courses.scss
 
-117:         }
-118:     }
-119:     &_ico-holder {
-120:         padding-right: 5px;
-121:         font-size: 28px;
-122:         color: $theme-color-main;
-123:     }
-124: }
+121:         }
+122:     }
+123:     &_ico-holder {
+124:         padding-right: 5px;
+125:         font-size: 28px;
+126:         color: $theme-color-main;
+127:     }
+128: }
 
 Backtrace:
-/edx/app/edxapp/themes/lms/static/sass/theme-courses/theme-courses.scss:122
+/edx/app/edxapp/themes/lms/static/sass/theme-courses/theme-courses.scss:126
 /edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/script/tree/variable.rb:49:in `_perform'
 /edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/script/tree/node.rb:50:in `perform'
 /edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:366:in `visit_prop'
@@ -76,4 +76,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined variable: \"$theme-color-main\".\A         on line 122 of /edx/app/edxapp/themes/lms/static/sass/theme-courses/theme-courses.scss\A \A 117:         }\A 118:     }\A 119:     &_ico-holder {\A 120:         padding-right: 5px;\A 121:         font-size: 28px;\A 122:         color: $theme-color-main;\A 123:     }\A 124: }"; }
+  content: "Syntax error: Undefined variable: \"$theme-color-main\".\A         on line 126 of /edx/app/edxapp/themes/lms/static/sass/theme-courses/theme-courses.scss\A \A 121:         }\A 122:     }\A 123:     &_ico-holder {\A 124:         padding-right: 5px;\A 125:         font-size: 28px;\A 126:         color: $theme-color-main;\A 127:     }\A 128: }"; }
