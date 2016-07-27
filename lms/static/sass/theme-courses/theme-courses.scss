@@ -41,12 +41,16 @@ $theme-img-path: "/static/images/theme-courses/";
             font-weight: 600 !important;
         }
     }
+    &_code {
+        padding-bottom: 10px;
+    }
     &_title {
         font: 24px/1 'Work Sans', sans-serif;
         font-weight: 700;
         color: #0b1d2b;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
         text-align: left;
+        text-transform: uppercase;
 
         .content-wrapper .course & {
             font: 24px/1 'Work Sans', sans-serif !important;
@@ -57,7 +61,7 @@ $theme-img-path: "/static/images/theme-courses/";
         font: 16px/20px muliregular;
         color: #0a2d46;
         padding: 2px 0;
-        margin: 0 0 10px;
+        margin: 0 0 26px;
         display: flex;
         align-items: center;
 
