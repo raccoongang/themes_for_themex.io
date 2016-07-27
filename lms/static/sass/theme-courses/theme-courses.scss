@@ -68,6 +68,9 @@ $theme-img-path: "/static/images/theme-courses/";
         .theme-aside_list & {
             justify-content: center;
         }
+        .theme-aside & {
+            margin-bottom: 0;
+        }
     }
     &_link {
         display: inline-block;
