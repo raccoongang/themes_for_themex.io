@@ -1,4 +1,4 @@
-$theme-img-path: "/static/images/theme-courses/";
+@import "../const";
 .theme-courses {
     &_wrapper {
         max-width: 1600px;
@@ -68,7 +68,7 @@ $theme-img-path: "/static/images/theme-courses/";
         .theme-aside_list & {
             justify-content: center;
         }
-        .theme-aside {
+        .theme-aside & {
             margin-bottom: 0;
         }
     }
@@ -127,5 +127,8 @@ $theme-img-path: "/static/images/theme-courses/";
         padding-right: 5px;
         font-size: 28px;
         color: $theme-color-main;
+    }
+    &_img-link {
+        display: inline-block;
     }
 }
