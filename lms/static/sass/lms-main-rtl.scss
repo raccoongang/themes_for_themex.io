@@ -2,9 +2,9 @@
 @import 'lms/static/sass/lms-main';
 
 // Our overrides for settings we want to change.
-@import 'const';
-@import 'fonts';
-@import 'mixins';
+@import "const";
+@import "fonts";
+@import "mixins";
 $theme-img-path: "/static/images/header-info/";
 @import "header-info/header-info";
 $theme-img-path: "/static/images/nav-wrapper/";
