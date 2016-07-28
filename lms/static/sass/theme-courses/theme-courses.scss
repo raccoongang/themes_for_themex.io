@@ -1,4 +1,4 @@
-$theme-img-path: "/static/images/theme-courses/";
+@import "../const";
 .theme-courses {
     &_wrapper {
         max-width: 1600px;
@@ -127,5 +127,8 @@ $theme-img-path: "/static/images/theme-courses/";
         padding-right: 5px;
         font-size: 28px;
         color: #2b8aff;
+    }
+    &_img-link {
+        display: inline-block;
     }
 }
