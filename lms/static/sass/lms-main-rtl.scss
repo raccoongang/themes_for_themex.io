@@ -28,6 +28,3 @@ $theme-img-path: "/static/images/social-list/";
 @import "ugc/ugc";
 @import "course-staff/course-staff";
 @import "dashboard/dashboard";
-
-// Import the original styles from edx-platform.
-@import 'lms/static/sass/lms-main';
