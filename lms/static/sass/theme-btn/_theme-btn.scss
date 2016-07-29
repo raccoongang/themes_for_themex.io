@@ -31,4 +31,15 @@
     &__right {
         float: right;
     }
+    &__disable {
+        color: $disable-text-color !important;
+        background: $disable-text-bg;
+        border-color: $disable-text-bg;
+        
+        &:hover {
+            color: $disable-text-color !important;
+            background: $disable-text-bg;
+            border-color: $disable-text-bg;
+        }
+    }
 }
