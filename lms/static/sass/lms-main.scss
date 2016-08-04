@@ -1,3 +1,5 @@
+// Import the original styles from edx-platform.
+@import "lms/static/sass/lms-main";
 
 // Our overrides for settings we want to change.
 @import "const";
@@ -27,6 +29,5 @@ $theme-img-path: "/static/images/social-list/";
 @import "course-staff/course-staff";
 @import "dashboard/dashboard";
 @import "login-register/login-register";
+@import "courses-container/courses-container";
 
-// Import the original styles from edx-platform.
-@import "lms/static/sass/lms-main";
