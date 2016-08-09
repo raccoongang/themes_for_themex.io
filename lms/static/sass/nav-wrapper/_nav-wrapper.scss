@@ -33,6 +33,12 @@
         .theme-main-nav & {
             display: block;
         }
+        img {
+            margin: -4px 0 0 -5px;
+            @media all and (min-width: 860px){
+                margin: 0;
+            }
+        }
     }
     .nav-global {
         margin: 0 10px 0 0;
