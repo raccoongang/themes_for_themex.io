@@ -1,0 +1,10 @@
+.container,
+section.outside-app, 
+.wrapper-account-settings, 
+.view-profile .profile-self .wrapper-profile-field-account-privacy .u-field-account_privacy, 
+.view-profile .wrapper-profile-sections {
+    min-width: 320px;
+    @media all and (min-width: 860px){
+        min-width: 760px;
+    }
+}

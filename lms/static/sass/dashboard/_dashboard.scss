@@ -1,10 +1,50 @@
-.dashboard .my-courses .course .details {
-    .wrapper-course-actions {
-        width: auto !important;
+.dashboard {
+    .my-courses {
+        width: 100%;
+        float: none;
+        @media all and (min-width: 860px){
+            width: 74.41059%;
+            float: left;
+        }
+
+        .course .details {
+            .wrapper-course-actions {
+                width: auto !important;
+            }
+            .course-actions .action {
+                height: 35px;
+                padding: 8px !important;
+                color: $theme-color-main !important;
+            }
+        }
+        .wrapper-header-courses {
+            padding: 0 10px;
+        } 
     }
-    .course-actions .action {
-        height: 35px;
-        padding: 8px !important;
-        color: $theme-color-main !important;
+    .profile-sidebar {
+        float: none;
+        width: auto;
+        margin-left: 0;
+        padding: 20px 10px;
+        @media all and (min-width: 860px){
+            float: right;
+            margin-left: 2.35765%;
+            width: 23.23176%;
+            margin-top: 40px;
+            padding: 20px 0;
+        }
     }
-} 
+    .dashboard-search-bar {
+        margin-left: 0;
+        width: auto;
+        float: none;
+        padding: 0 10px;
+        @media all and (min-width: 860px){
+            margin-left: 2.35765%;
+            width: 23.23176%;
+            float: right;
+            width: 23.23176%;
+            padding: 20px 0;
+        }
+    }
+}
