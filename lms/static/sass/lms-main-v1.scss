@@ -1,24 +1,24 @@
 // Import the original styles from edx-platform.
-@import "lms/static/sass/lms-main";
+@import "lms/static/sass/lms-main-v1";
 
 // Our overrides for settings we want to change.
 @import "const";
 @import "fonts";
 @import "mixins";
-$theme-img-path: "/static/images/header-info/";
+$theme-img-path: "../static/images/header-info/";
 @import "header-info/header-info";
-$theme-img-path: "/static/images/nav-wrapper/";
+$theme-img-path: "../static/images/nav-wrapper/";
 @import "nav-wrapper/nav-wrapper";
-$theme-img-path: "/static/images/theme-courses/";
+$theme-img-path: "../static/images/theme-courses/";
 @import "theme-courses/theme-courses";
-$theme-img-path: "/static/images/theme-main-nav/";
+$theme-img-path: "static/images/theme-main-nav/";
 @import "theme-main-nav/theme-main-nav";
-$theme-img-path: "/static/images/theme-footer/";
+$theme-img-path: "../static/images/theme-footer/";
 @import "theme-footer/theme-footer";
 @import "promo-box/promo-box";
 @import "theme-content/theme-content";
 @import "theme-aside/theme-aside";
-$theme-img-path: "/static/images/social-list/";
+$theme-img-path: "../static/images/social-list/";
 @import "social-list/social-list";
 @import "user-list/user-list";
 @import "theme-btn/theme-btn";

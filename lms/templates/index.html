@@ -1,65 +1,43 @@
+<%page expression_filter="h"/>
 <%inherit file="main.html" />
 <%namespace name='static' file='static_content.html'/>
 <%!
 from django.utils.translation import ugettext as _
 from django.core.urlresolvers import reverse
-from microsite_configuration import microsite
+
+from openedx.core.djangolib.markup import HTML, Text
 %>
 
-<%
-  homepage_overlay_html = microsite.get_value('homepage_overlay_html')
+<main id="main" aria-label="Content" tabindex="-1">
+    <section class="home">
+      <section class="promo-box">
+        <div class="promo-box_wrapper">
+          <img class="promo-box_img" src="${static.url("edx-theme/images/promo-box/promo-img.jpg")}" alt="promo img">
+          <div class="promo-box_helper"></div>
+          <div class="promo-box_holder">
+            <span class="promo-box_text">the best theme for education</span>
+            <h1 class="promo-box_heading">Welcome to University!</h1>
+            <a class="theme-btn theme-btn__invert" href="/courses">start learning now</a>
+          </div>
+        </div>
+      </section>
 
-  ## To display a welcome video, change False to True, and add a YouTube ID (11 chars, eg "123456789xX") in the following line
-  show_homepage_promo_video = microsite.get_value('show_homepage_promo_video', False)
-  homepage_promo_video_youtube_id = microsite.get_value('homepage_promo_video_youtube_id', "your-youtube-id")
+      <section class="theme-courses_wrapper">
+        <h1 class="theme-courses_heading">Our Courses</h1>
+          <section class="theme-courses">
+            <%include file="${courses_list}" />
+          </section>
+      </section>
+    </section>
+</main>
 
-  show_partners = microsite.get_value('show_partners', True)
-
-%>
-
-<section class="home">
-  <section class="promo-box">
-    <div class="promo-box_wrapper">
-      <img class="promo-box_img" src="/static/images/promo-box/promo-img.jpg" alt="promo img">
-      <div class="promo-box_helper"></div>
-      <div class="promo-box_holder">
-        <span class="promo-box_text">the best theme for education</span>
-        <h1 class="promo-box_heading">Welcome to University!</h1>
-        <a class="theme-btn theme-btn__invert" href="/courses">start learning now</a>
-      </div>
+% if show_homepage_promo_video:
+  <section id="video-modal" class="modal home-page-video-modal video-modal">
+    <div class="inner-wrapper">
+      <iframe title="YouTube Video" width="640" height="360" src="//www.youtube.com/embed/${homepage_promo_video_youtube_id}?showinfo=0" frameborder="0" allowfullscreen></iframe>
     </div>
   </section>
-  <section class="theme-courses_wrapper">
-
-      % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
-        
-          <h1 class="theme-courses_heading">Our Courses</h1>
-            <section class="theme-courses">
-                %for course in courses[:settings.HOMEPAGE_COURSE_MAX]:
-                  <%include file="course.html" args="course=course" />
-                %endfor
-            </section>
-        ## in case there are courses that are not shown on the homepage, a 'View all Courses' link should appear
-        % if settings.HOMEPAGE_COURSE_MAX and len(courses) > settings.HOMEPAGE_COURSE_MAX:
-          <div class="courses-more">
-            <a class="courses-more-cta" href="${marketing_link('COURSES')}" > ${_("View all Courses")} </a>
-          </div>
-        % endif
-      % endif
-
-  </section>
-</section>
-
-<section id="video-modal" class="modal home-page-video-modal video-modal">
-  <div class="inner-wrapper">
-    <%
-      youtube_video_id = homepage_promo_video_youtube_id
-      if self.stanford_theme_enabled():
-        youtube_video_id = "2gmreZObCY4"
-    %>
-    <iframe title="YouTube Video" width="640" height="360" src="//www.youtube.com/embed/${youtube_video_id}?showinfo=0" frameborder="0" allowfullscreen></iframe>
-  </div>
-</section>
+% endif
 
 <%block name="js_extra">
    <script type="text/javascript">

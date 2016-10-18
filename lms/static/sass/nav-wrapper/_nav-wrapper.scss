@@ -42,14 +42,10 @@
         }
     }
     .nav-global {
-        margin: 0 10px 0 0;
         font: 0/0 a;
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        @media all and (min-width: 600px){
-            margin-right: 21px;
-        }
 
         .cta-discovery {
             @include inline-block;
@@ -61,7 +57,14 @@
                 margin-right: 21px;
             }
         }
-        .cta-register {
+        .item {
+            margin: 0 10px 0 0;
+            @media all and (min-width: 600px){
+                margin-right: 21px;
+            }
+        }
+        .btn-neutral,
+        .btn {
             font: 14px/18px muliregular;
             color: #515e66;
             text-transform: uppercase;
