@@ -72,18 +72,6 @@ site_status_msg = get_site_status_msg(course_id)
         </%block>
       </a>
 
-    % if course:
-      <h2 class="course-header"><span class="provider">${course.display_org_with_default}:</span>
-        <span class="course-number">${course.display_number_with_default}</span>
-        <%
-        display_name = course.display_name_with_default
-        if settings.FEATURES.get('CUSTOM_COURSES_EDX', False):
-          ccx = get_current_ccx(course.id)
-          if ccx:
-            display_name = ccx.display_name
-        %>
-        <span class="course-name">${display_name}</span></h2>
-      % endif
       <div class="theme-nav-wrapper_holder">
       % if user.is_authenticated():
         <ol class="left nav-global list-inline authenticated">

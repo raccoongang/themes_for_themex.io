@@ -116,7 +116,7 @@ from openedx.core.lib.courses import course_image_url
       <section class="promo-box_holder">
         <h1 class="promo-box_heading">
           ${course.display_name_with_default_escaped}
-          <button type="button">${course.display_org_with_default | h}</button>
+          <a href="#">${course.display_org_with_default | h}</a>
         </h1>
 
         % if get_course_about_section(request, course, "video"):
@@ -126,12 +126,6 @@ from openedx.core.lib.courses import course_image_url
             <div class="play-intro"></div>
           </div>
         </a>
-        %else:
-        <div class="media">
-          <div class="hero">
-            <img src="${course_image_urls['large']}" alt="" />
-          </div>
-        </div>
         % endif
 
         %if user.is_authenticated() and registered:
@@ -139,7 +133,7 @@ from openedx.core.lib.courses import course_image_url
             <a class="theme-btn theme-btn__disable" href="${course_target}">
           %endif
 
-          <span class="register disabled">${_("You are enrolled in this course")}</span>
+          <span class="theme-btn theme-btn__disable">${_("You are enrolled in this course")}</span>
 
           %if show_courseware_link:
             <strong>${_("View Course")}</strong>
@@ -190,7 +184,7 @@ from openedx.core.lib.courses import course_image_url
             else:
               href_class = "register"
           %>
-          <a href="${reg_href}" class="${href_class}">
+          <a href="${reg_href}" class="theme-btn">
             ${_("Enroll in {course_name}").format(course_name=course.display_number_with_default) | h}
           </a>
           <div id="register_error"></div>
@@ -216,8 +210,6 @@ from openedx.core.lib.courses import course_image_url
 
     <div class="theme-content_aside">
       <div class="theme-aside">
-
-        <%include file="course_about_sidebar_header.html" />
 
         <ol class="theme-aside_list">
           <li class="important-dates-item"><span class="icon fa fa-info-circle" aria-hidden="true"></span><p class="important-dates-item-title">${_("Course Number")}</p><span class="important-dates-item-text course-number">${course.display_number_with_default | h}</span></li>
@@ -274,6 +266,7 @@ from openedx.core.lib.courses import course_image_url
             <li class="important-dates-item"><span class="icon fa fa-book" aria-hidden="true"></span><p class="important-dates-item-title">${_("Requirements")}</p><span class="important-dates-item-text prerequisites">${get_course_about_section(request, course, "prerequisites")}</span></li>
           % endif
         </ol>
+        <%include file="course_about_sidebar_header.html" />
     </div>
 
       ## CourseTalk widget
