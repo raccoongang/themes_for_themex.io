@@ -46,8 +46,8 @@ site_status_msg = get_site_status_msg(course_id)
 </div>
 % endif
 </%block>
-<div class="nav-holder">
-  <header id="global-navigation" class="theme-header ${"slim" if course else ""}" >
+<div class="nav-holder" aria-label="${_('Global')}">
+  <header id="global-navigation" class="theme-header header-global ${"slim" if course else ""}" >
     <div class="theme-header-info">
         <div class="theme-header-info_contact">
             <span class="theme-header-info_text">Have any question?</span>
@@ -63,7 +63,7 @@ site_status_msg = get_site_status_msg(course_id)
             </ul>
         </div>
     </div>
-    <nav class="theme-nav-wrapper" aria-label="${_('Global')}">
+    <div class="theme-nav-wrapper" aria-label="${_('Global')}">
       <a href="${marketing_link('ROOT')}">
         <%block name="navigation_logo">
             <span class="theme-nav-wrapper_logo-holder">
@@ -198,7 +198,7 @@ site_status_msg = get_site_status_msg(course_id)
       % endif
       % endif
       </div>
-    </nav>
+    </div>
 </header>
 
 <div class="theme-main-nav">
