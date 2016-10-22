@@ -21,6 +21,10 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
+        flex-wrap: wrap;
+        @media all and (min-width: 450px){
+            flex-wrap: nowrap;
+        }
     }
     &_logo-holder {
         display: none;
