@@ -1,5 +1,5 @@
 .theme-main-nav {
-    background: #264fd6;
+    background: #1f1d20;
     width: 100%;
     order: -1;
     position: relative;
@@ -44,19 +44,24 @@
         &:hover {
             background: $theme-color-main;
             text-decoration: none;
+            color: #1f1d20 !important;
         }
     }
     &_item {
         width: 100%;
-        border-top: 1px solid #2A358A;
+        border-bottom: 1px solid #2f343b;
         @media all and (min-width: 860px){
             flex-wrap: nowrap;
             border: none;
             width: auto;
+            border: none;
         }
 
         &:first-child {
-            border: none;
+            border-top: 1px solid #2f343b;
+            @media all and (min-width: 860px){
+                border: none;
+            }
         }
     }
     &_opener {
