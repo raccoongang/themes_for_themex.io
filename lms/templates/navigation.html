@@ -3,6 +3,7 @@
 <%namespace name='static' file='static_content.html'/>
 <%namespace file='main.html' import="login_query"/>
 <%!
+from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
 
@@ -67,7 +68,7 @@ site_status_msg = get_site_status_msg(course_id)
       <a href="${marketing_link('ROOT')}">
         <%block name="navigation_logo">
             <span class="theme-nav-wrapper_logo-holder">
-              <img src="${static.url("marvel-yellow-theme-eucalyptus/images/header-info/logo-racoon.png")}" alt="racoon logo"/>
+              <img src="/static/${settings.DEFAULT_SITE_THEME}/images/header-info/logo-racoon.png" alt="racoon logo"/>
             </span>
         </%block>
       </a>

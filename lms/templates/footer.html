@@ -3,6 +3,7 @@
 <%!
   from django.core.urlresolvers import reverse
   from django.utils.translation import ugettext as _
+  from django.conf import settings
   from branding.api import get_footer
 %>
 <% footer = get_footer(is_secure=is_secure) %>
@@ -35,7 +36,7 @@
       <div class="theme-footer_col">
         <h2 class="theme-footer_col-header">courses</h2>
         <div class="theme-footer_col-holder">
-          <a class="theme-footer_col-link" href="https://studio-sandbox.raccoongang.com/">Create Course Now</a>
+          <a class="theme-footer_col-link" href="https://${settings.CMS_BASE}">Create Course Now</a>
         </div>
       </div>
       <div class="theme-footer_col">
