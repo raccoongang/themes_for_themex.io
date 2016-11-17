@@ -1,0 +1,16 @@
+.account-settings-sections .section .account-settings-section-body .u-field {
+    .field {
+        width: 100%;
+        @media all and (min-width: 800px) {
+            width: 30%;
+        }
+    }
+    .u-field-message {
+        width: 100%;
+        padding-left: 0;
+        @media all and (min-width: 800px) {
+            width: 49%;
+            padding-left: 100px;
+        }
+    }
+}

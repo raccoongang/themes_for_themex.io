@@ -1,7 +1,35 @@
 .courses-container {
-    max-width: none;
+    max-width: 1170px;
 
     .find-courses & {
-        padding: 0;
+        padding: 40px;
+    }
+    .courses .course {
+        border-color: $theme-color-main;
+    }
+}
+.find-courses .courses {
+    padding-top: 0;
+}
+.find-courses {
+    .discovery-submit {
+        @include inline-block;
+        color: #fff !important;
+        background: $theme-color-main;
+        border: 1px solid $theme-color-main;
+        box-shadow: none;
+        border-radius: 0;
+        text-transform: uppercase;
+        transition: all .1s;
+
+        &:hover {
+            color: $theme-color-main !important;
+            background: #fff;
+            border: 1px solid $theme-color-main-hover;
+            text-decoration: none;
+        }
+    }
+    .discovery-input {
+        border-color: $theme-color-main;
     }
 }

@@ -1,0 +1,15 @@
+.dropdown-menu-container {
+    .menu-image {
+        border-radius: 50%;
+    }
+    .menu-title {
+        color: #fff;
+
+        &:hover {
+            color: $theme-color-main-hover;
+        }
+    }
+    .menu-button.default-icon:after {
+        border-top-color: #fff;
+    }
+} 

@@ -77,4 +77,12 @@
     .nav-courseware {
         margin: 0;
     }
+    .doc-link {
+        color: #fff;
+
+        &:hover {
+            color: $theme-color-main-hover;
+            text-decoration: none;
+        }
+    }
 }

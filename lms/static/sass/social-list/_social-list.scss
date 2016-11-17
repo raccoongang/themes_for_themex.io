@@ -16,13 +16,25 @@
             padding-left: 0;
         }
     }
-    &_link {
-        color: #ccccce;
-        font-size: 16px;
-        line-height: 1.3;
+    
+}
+a.social-list_link:focus,
+a.social-list_link:visited,
+a.social-list_link {
+    color: #ccccce !important;
+    font-size: 16px;
+    line-height: 1.3;
 
-        &:hover {
-            color: darken(#ccccce, 20%);
-        }
+    &:hover {
+        color: darken(#ccccce, 20%) !important;
     }
+}
+a.social-list_link.social-list_link__twitter:hover {
+    color: #4099FF !important;
+}
+a.social-list_link.social-list_link__facebook:hover {
+    color: #3b5998 !important;
+}
+a.social-list_link.social-list_link__linkedin:hover {
+    color: #0077B5 !important;
 }

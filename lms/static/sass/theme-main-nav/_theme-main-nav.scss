@@ -17,6 +17,7 @@
         flex-wrap: wrap;
         justify-content: center;
         display: none;
+        list-style: none;
         @media all and (min-width: 860px){
             flex-wrap: nowrap;
             justify-content: flex-start;

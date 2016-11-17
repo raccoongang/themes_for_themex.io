@@ -1,0 +1,9 @@
+.container.activation .message .valid{
+    color: $theme-color-main !important;
+    border: 2px solid $theme-color-main-hover;
+    padding: 7px 24px 6px;
+    box-shadow: none;
+    border-radius: 0;
+    background: none;
+    text-transform: uppercase;
+}
