@@ -1,0 +1,23 @@
+.main-header {
+    background: rgba(0, 0, 0, .3);
+    
+    &_holder {
+        display:flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .nav-global li a, 
+    .nav-global div a {
+        color: #fff;
+       
+        &:focus, 
+        &:hover {
+            color: #fff !important;
+        }
+    }
+    .animation-home-header-pop-up,
+    .home .outer-wrapper {
+        animation: none;
+    } 
+}
+

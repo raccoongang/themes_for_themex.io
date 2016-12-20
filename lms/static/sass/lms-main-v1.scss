@@ -1,0 +1,8 @@
+
+//import the original styles from edx-platform
+@import "lms/static/sass/lms-main-v1";
+
+//our overrides for settings we want to change
+@import "main-header/main-header";
+@import "theme-btn-1/theme-btn-1";
+@import "window-wrap/window-wrap";  

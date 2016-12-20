@@ -1,0 +1,14 @@
+a.theme-btn-1, 
+.theme-btn-1 {
+    font: 16px/1.3 "TitilliumWeb Bold";
+    color: #fff;
+    background: #dd4628;
+    border-radius: 3px;
+    padding: 8px 20px 9px;
+
+    &:focus,
+    &:hover {
+        color: #fff;
+    }
+}
+
