@@ -3,6 +3,8 @@
 @import "lms/static/sass/lms-main-v1";
 
 //our overrides for settings we want to change
+@import "font";
+@import "const";
 @import "main-header/main-header";
 @import "theme-btn-1/theme-btn-1";
 @import "window-wrap/window-wrap";  

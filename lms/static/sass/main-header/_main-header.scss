@@ -15,9 +15,8 @@
             color: #fff !important;
         }
     }
-    .animation-home-header-pop-up,
-    .home .outer-wrapper {
-        animation: none;
-    } 
+    .wrapper-header {
+       max-width: 1080px;
+    }
 }
 
