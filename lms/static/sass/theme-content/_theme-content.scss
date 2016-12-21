@@ -1,0 +1,53 @@
+.theme-content {
+    &_helper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, .3); 
+    }
+    .theme-content_header {
+        background: url("../images/promo-img.jpg");
+        background-size: cover;
+        position: relative;
+        top: -100px;
+        padding: 100px 0 0;
+        box-shadow: none;
+    }
+    .home {
+       .outer-wrapper {
+            max-width: 1080px;
+            padding: 0 40px;
+            box-sizing: border-box;
+
+            .title {
+                background: none;
+                box-shadow: none;
+             }
+             .heading-group {
+                h1,
+                p {
+                   color: #fff;
+                   text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
+                   text-align: center;
+                   font-style: normal; 
+                }
+                h1 {
+                   font-family: $font-bold;
+                }
+            }
+            .course-search {
+                .search-input {
+                    border-radius: 4px;
+                    border: 1px solid #fff;
+                    background: rgba(255, 255, 255, .3)
+                }
+                .search-button {
+                    border: none;
+                    background: none;
+                }
+            }
+        }
+    }
+}
