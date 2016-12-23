@@ -8,7 +8,7 @@
         display:flex;
         justify-content: flex-end;
         align-items: center;
-        padding-top: 3px;
+        padding-top: 1px;
     }
     .nav-global {
         margin-right: 36px;
@@ -22,7 +22,7 @@
        
         &:focus, 
         &:hover {
-            color: #fff !important;
+            color: lighten(#dd4628, 10%) !important;
         }
     }
     .wrapper-header {
@@ -31,5 +31,7 @@
        padding: 26px 40px 23px;
        height: auto;
     }
+    &__black {
+        background: #30363a;
+    }
 }
-

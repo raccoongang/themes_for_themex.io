@@ -9,6 +9,7 @@ a.theme-btn-1,
     &:focus,
     &:hover {
         color: #fff;
+        background-color: darken(#dd4628, 10%);
+        text-decoration: none;
     }
 }
-

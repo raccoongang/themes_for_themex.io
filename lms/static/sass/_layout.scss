@@ -3,3 +3,17 @@ body,
 h1, h2, .home>header .title>.heading-group p, section.outside-app h1, h3, h4, h5, h6 {
     font-family: $font-regular;
 }
+.content-wrapper {
+    background: #f4f4f4;
+}
+.courses-container .courses {
+    float: none;
+}
+.highlighted-courses .courses,
+.find-courses .courses {
+    padding: 32px 0 15px;
+}
+
+.home .highlighted-courses {
+    margin-bottom: 25px;
+}
