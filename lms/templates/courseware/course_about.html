@@ -24,6 +24,12 @@ from django.template.defaultfilters import truncatechars
   % endif
   <script type="text/javascript">
   (function() {
+    $(".theme-course-nav_list-link").click(function() {
+        var idThis = $(this).attr("href");
+        $('html, body').animate({
+            scrollTop: $(idThis).offset().top-280
+        }, 1000);
+    });
     $(".register").click(function(event) {
       $("#class_enroll_form").submit();
       event.preventDefault();
@@ -102,114 +108,133 @@ from django.template.defaultfilters import truncatechars
 
   })(this)
   </script>
+  <script>
+    var avatarElem = document.getElementById('header-holder');
 
+    var avatarSourceBottom = avatarElem.getBoundingClientRect().top + window.pageYOffset;
+
+    window.onscroll = function() {
+      if (avatarElem.classList.contains('theme-course-info_header-holder__fixed') && window.pageYOffset <= avatarSourceBottom) {
+        avatarElem.classList.remove('theme-course-info_header-holder__fixed');
+      } else if (window.pageYOffset > avatarSourceBottom) {
+        avatarElem.classList.add('theme-course-info_header-holder__fixed');
+      }
+    };
+  </script>
+  <script>
+    
+  </script>
   <script src="${static.url('js/course_info.js')}"></script>
 </%block>
 
 <%block name="pagetitle">${course.display_name_with_default_escaped}</%block>
 
 <section class="theme-course-info">
-
-  <header class="theme-course-info_header">
-    <div class="intro-inner-wrapper">
-      <div class="theme-about">
-        % if get_course_about_section(request, course, "video"):
-        <a href="#video-modal" class="theme-about_media-holder" rel="leanModal">
-          <div class="hero">
-            <img class="theme-about_img" src="${course_image_urls['large']}" alt="" />
-            <div class="theme-about_play"></div>
-          </div>
-        </a>
-        %else:
-        <div class="theme-about_media-holder">
-          <div class="hero">
-            <img class="theme-about_img" src="${course_image_urls['large']}" alt="" />
-          </div>
-        </div>
-        % endif
-        <section class="theme-about_intro">
-          <div class="theme-about_text">${course.display_org_with_default | h}</div>
-          <h2 class="theme-about_title">${course.display_name_with_default_escaped}</h2>
-          <p class="theme-about_description">${get_course_about_section(request, course, 'short_description')}</p>
-          
-          <div class="theme-about_btn-holder">
-          %if user.is_authenticated() and registered:
-            %if show_courseware_link:
-              <span class="register disabled">${_("You are enrolled in this course")}</span>
-              <a href="${course_target}" class="theme-btn-2">
-                ${_("View Course")}
+  <div class="theme-course-info_header-helper">
+    <div id="header-holder" class="theme-course-info_header-holder">
+      <div class="theme-course-info_header-wrapper">
+        <header class="theme-course-info_header">
+          <div class="intro-inner-wrapper">
+            <div class="theme-about">
+              % if get_course_about_section(request, course, "video"):
+              <a href="#video-modal" class="theme-about_media-holder" rel="leanModal">
+                <div class="hero">
+                  <img class="theme-about_img" src="${course_image_urls['large']}" alt="" />
+                  <div class="theme-about_play"></div>
+                </div>
               </a>
-            %endif
+              %else:
+              <div class="theme-about_media-holder">
+                <div class="hero">
+                  <img class="theme-about_img" src="${course_image_urls['large']}" alt="" />
+                </div>
+              </div>
+              % endif
+              <section class="theme-about_intro">
+                <div class="theme-about_text">${course.display_org_with_default | h}</div>
+                <h2 class="theme-about_title">${course.display_name_with_default_escaped}</h2>
+                <p class="theme-about_description">${get_course_about_section(request, course, 'short_description')}</p>
+                
+                <div class="theme-about_btn-holder">
+                %if user.is_authenticated() and registered:
+                  %if show_courseware_link:
+                    <span class="register disabled">${_("You are enrolled in this course")}</span>
+                    <a href="${course_target}" class="theme-btn-2">
+                      ${_("View Course")}
+                    </a>
+                  %endif
 
-          %elif in_cart:
-            <span class="add-to-cart">
-              ${_('This course is in your <a href="{cart_link}">cart</a>.').format(cart_link=cart_link)}
-            </span>
-          % elif is_course_full:
-            <span class="register disabled">
-              ${_("Course is full")}
-            </span>
-          % elif invitation_only and not can_enroll:
-            <span class="register disabled">${_("Enrollment in this course is by invitation only")}</span>
-          ## Shib courses need the enrollment button to be displayed even when can_enroll is False,
-          ## because AnonymousUsers cause can_enroll for shib courses to be False, but we need them to be able to click
-          ## so that they can register and become a real user that can enroll.
-          % elif not is_shib_course and not can_enroll:
-            <span class="register disabled">${_("Enrollment is Closed")}</span>
-          %elif can_add_course_to_cart:
-            <%
-            if user.is_authenticated():
-              reg_href = "#"
-              reg_element_id = "add_to_cart_post"
-            else:
-              reg_href = reg_then_add_to_cart_link
-              reg_element_id = "reg_then_add_to_cart"
-            %>
-            <% if ecommerce_checkout:
-                reg_href = ecommerce_checkout_link
-                reg_element_id = ""
-            %>
-            <a href="${reg_href}" class="add-to-cart" id="${reg_element_id}">
-              ${_("Add {course_name} to Cart <span>({price} USD)</span>")\
-                .format(course_name=course.display_number_with_default, price=course_price)}
-            </a>
-            <div id="register_error"></div>
-          %else:
-            <% 
-              if ecommerce_checkout:
-                reg_href = ecommerce_checkout_link
-              else:
-                reg_href="#"
-              if professional_mode:
-                href_class = "add-to-cart"
-              else:
-                href_class = "register"
-            %>
-            <a href="${reg_href}" class="${href_class} theme-btn-2">
-              ${_("Enroll in {course_name}").format(course_name=truncatechars(course.display_number_with_default, 20)) | h}
-            </a>
-            <div id="register_error"></div>
-          %endif
+                %elif in_cart:
+                  <span class="add-to-cart">
+                    ${_('This course is in your <a href="{cart_link}">cart</a>.').format(cart_link=cart_link)}
+                  </span>
+                % elif is_course_full:
+                  <span class="register disabled">
+                    ${_("Course is full")}
+                  </span>
+                % elif invitation_only and not can_enroll:
+                  <span class="register disabled">${_("Enrollment in this course is by invitation only")}</span>
+                ## Shib courses need the enrollment button to be displayed even when can_enroll is False,
+                ## because AnonymousUsers cause can_enroll for shib courses to be False, but we need them to be able to click
+                ## so that they can register and become a real user that can enroll.
+                % elif not is_shib_course and not can_enroll:
+                  <span class="register disabled">${_("Enrollment is Closed")}</span>
+                %elif can_add_course_to_cart:
+                  <%
+                  if user.is_authenticated():
+                    reg_href = "#"
+                    reg_element_id = "add_to_cart_post"
+                  else:
+                    reg_href = reg_then_add_to_cart_link
+                    reg_element_id = "reg_then_add_to_cart"
+                  %>
+                  <% if ecommerce_checkout:
+                      reg_href = ecommerce_checkout_link
+                      reg_element_id = ""
+                  %>
+                  <a href="${reg_href}" class="add-to-cart" id="${reg_element_id}">
+                    ${_("Add {course_name} to Cart <span>({price} USD)</span>")\
+                      .format(course_name=course.display_number_with_default, price=course_price)}
+                  </a>
+                  <div id="register_error"></div>
+                %else:
+                  <% 
+                    if ecommerce_checkout:
+                      reg_href = ecommerce_checkout_link
+                    else:
+                      reg_href="#"
+                    if professional_mode:
+                      href_class = "add-to-cart"
+                    else:
+                      href_class = "register"
+                  %>
+                  <a href="${reg_href}" class="${href_class} theme-btn-2">
+                    ${_("Enroll in {course_name}").format(course_name=truncatechars(course.display_number_with_default, 20)) | h}
+                  </a>
+                  <div id="register_error"></div>
+                %endif
+                </div>
+
+              </section>
+            </div>
           </div>
-
-        </section>
+          <nav class="theme-course-nav">
+            <ul class="theme-course-nav_list">
+              <li class="theme-course-nav_list-item"><a href="#about" class="theme-course-nav_list-link">ABOUT THIS COURSE</a></li>
+              <li class="theme-course-nav_list-item"><a href="#prerquisites" class="theme-course-nav_list-link">PREREQUISITES</a></li>
+              <li class="theme-course-nav_list-item"><a href="#staff" class="theme-course-nav_list-link">COURSE STAFF</a></li>
+              <li class="theme-course-nav_list-item"><a href="#faq" class="theme-course-nav_list-link">FAQ</a></li>
+            </ul>
+            <ul class="theme-course-nav_social">
+              <li class="theme-course-nav_social-item"><a href="#" class="theme-course-nav_social-link"><span class="icon fa fa-facebook" aria-hidden="true"></span></a></li>
+              <li class="theme-course-nav_social-item"><a href="#" class="theme-course-nav_social-link"><span class="icon fa fa-twitter" aria-hidden="true"></span></a></li>
+              <li class="theme-course-nav_social-item"><a href="#" class="theme-course-nav_social-link"><span class="icon fa fa-envelope" aria-hidden="true"></span></a></li>
+            </ul>
+          </nav>
+        </header>
       </div>
     </div>
-    <nav class="theme-course-nav">
-      <ul class="theme-course-nav_list">
-        <li class="theme-course-nav_list-item"><a href="#" class="theme-course-nav_list-link">ABOUT THIS COURSE</a></li>
-        <li class="theme-course-nav_list-item"><a href="#" class="theme-course-nav_list-link">PREREQUISITES</a></li>
-        <li class="theme-course-nav_list-item"><a href="#" class="theme-course-nav_list-link">COURSE STAFF</a></li>
-        <li class="theme-course-nav_list-item"><a href="#" class="theme-course-nav_list-link">FAQ</a></li>
-      </ul>
-      <ul class="theme-course-nav_social">
-        <li class="theme-course-nav_social-item"><a href="#" class="theme-course-nav_social-link"><span class="icon fa fa-facebook" aria-hidden="true"></span></a></li>
-        <li class="theme-course-nav_social-item"><a href="#" class="theme-course-nav_social-link"><span class="icon fa fa-twitter" aria-hidden="true"></span></a></li>
-        <li class="theme-course-nav_social-item"><a href="#" class="theme-course-nav_social-link"><span class="icon fa fa-envelope" aria-hidden="true"></span></a></li>
-      </ul>
-    </nav>
-  </header>
-
+  </div>
   <div class="container">
     <div class="ugc">
       % if staff_access and studio_url is not None:
@@ -219,7 +244,40 @@ from django.template.defaultfilters import truncatechars
       % endif
 
       <div class="inner-wrapper">
-        ${get_course_about_section(request, course, "overview")}
+        <!-- ${get_course_about_section(request, course, "overview")} -->
+        <h2 id="about">About this course</h2>
+        <p>There are many programming languages in use today. Choosing a language to program with can be decided based on many factors such as learning curve, job specific requirements, platform specifics, or a plethora of other criteria.</p>
+        <p>Mobile devices are beginning to dominate the landscape in consumer and enterprise areas. That means a demand for more applications on these devices. The major players in this market, Apple, Google, and Microsoft, all have mobile platforms. Google uses Android for the OS and Java as the programming language, Apple uses iOS and Objective-C or Swift as the programming language, while Microsoft uses Windows and .NET. </p>
+        <p>What is the one thing that ties all these platforms and C# together? You can write your application code in C# and deploy it on all three platforms. Microsoft and Xamarin provide a cross-platform development toolset that allow you to write your code once, in C#, and deploy it across all three device platforms, saving you coding time. That's why C# is such a great language to learn.</p>
+        <h2 id="prerquisites">Prerquisites</h2>
+        <p>Developers attending this course should already have gained some experience with another programming language or understand programming constructs such as:</p>
+        <ul>
+          <li>Looping</li>
+          <li>Program Flow</li>
+          <li>Database Concepts</li>
+        </ul>
+        <h2 id="staff">Course staff</h2>
+        <div class="staff-box">
+          <img src="/static/${settings.DEFAULT_SITE_THEME}/images/avatar.png" alt="staff avatar" class="staff-box_avatar">
+          <div class="staff-box_holder">
+            <h3>Gerry O'Brien</h3>
+            <p>Gerry O'Brien is a Senior Content Development Manager at Microsoft Learning with a focus on software development and database platforms. He has over 18 years of industry experience working in various roles and programming with various languages such as:</p>
+            <ul>
+              <li>Software Developer and Consultant</li>
+              <li>Book and courseware author</li>
+              <li>Microsoft Certified Trainer</li>
+              <li>C#</li>
+              <li>Visual Basic</li>
+              <li>Java</li>
+              <li>Objective-C</li>
+            </ul>
+          </div>
+        </div>
+        <h2 id="faq">Frequently asked questions</h2>
+        <h3>Do I need to buy a textbook?</h3>
+        <p>No. A textbook is not required for this course however, we recommend that you consider purchasing the Step-by-Step Visual C# book from Microsoft Press. The course will use the companion content from this book for the practice sessions throughout the course. If you do not own the book, you can still download the companion content from the site and use it as part of this course. If you enjoy the practice files, you may want to come back to the site to purchase the book as a means of continuing your self-study and skills development after the course.</p>
+        <h3>Do I have to complete this course in module order?</h3>
+        <p>No. Feel free to skip units that are familiar with. You may want to review the Self-Checks in these units however to ensure you understand the material in units you decide to skip.</p>
       </div>
   </div>
 ## CourseTalk widget

@@ -47,7 +47,9 @@ site_status_msg = get_site_status_msg(course_id)
 </div>
 % endif
 </%block>
-  <header id="global-navigation" class="main-header header-global ${"" if request.path == '/' else "main-header__black"} ${"slim" if course else ""}" >
+  <header id="global-navigation" class="main-header header-global ${"" if request.path == '/' else "main-header__black"}" >
+    <div class="main-header_wrapper ${"" if 'about' in request.path else "main-header_wrapper__fixed"}">
+      
     <nav class="wrapper-header" aria-label="${_('Global')}">
     <h1 class="logo">
       <a href="${marketing_link('ROOT')}">
@@ -208,6 +210,7 @@ site_status_msg = get_site_status_msg(course_id)
       % endif
     </div>
     </nav>
+    </div>
 </header>
 % if course:
 <!--[if lte IE 9]>

@@ -1,8 +1,8 @@
 .main-header {
-    background: rgba(0, 0, 0, .3);
     box-shadow: none;
     border: none;
-    height: auto;
+    height: 100px;
+    background: none;
     
     &_holder {
         display:flex;
@@ -33,6 +33,15 @@
     }
     &__black {
         background: #30363a;
+    }
+    &_wrapper {
+        width: 100%;
+        background: rgba(0, 0, 0, .3);
+
+        &__fixed {
+            position: fixed;
+            top: 0;
+        }
     }
 }
 
