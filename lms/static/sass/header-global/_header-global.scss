@@ -1,0 +1,16 @@
+.header-global {
+    .user > .primary > a {
+        color: #fff;
+        box-shadow: none;
+        text-shadow: none;
+            
+        &:focus,
+        &:hover {
+            color: #dd4628;
+            background: transparent;
+        }
+    }
+    .nav-global {
+        margin-top: 0;
+    }
+}
