@@ -1,0 +1,15 @@
+.category-breadcrumbs {
+    margin: 0 auto;
+    max-width: 1080px;
+    box-sizing: border-box;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center
+
+    li {
+        font-family: $font-regular;
+        text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
+        color: #fff;
+    }
+}
