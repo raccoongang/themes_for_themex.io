@@ -1,7 +1,7 @@
 a.theme-btn-1, 
 .theme-btn-1 {
     font: 16px/1.3 $font-bold;
-    color: #fff;
+    color: #fff !important;
     background: #dd4628;
     border-radius: 3px;
     padding: 6px 20px 7px;
@@ -9,7 +9,7 @@ a.theme-btn-1,
 
     &:focus,
     &:hover {
-        color: #fff;
+        color: #fff !important;
         background-color: darken(#dd4628, 10%);
         text-decoration: none;
     }
