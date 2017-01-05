@@ -40,8 +40,8 @@ site_status_msg = get_site_status_msg(course_id)
 </div>
 % endif
 </%block>
-  <header id="global-navigation" class="main-header header-global ${"" if request.path == '/' or "category" in request.path else "main-header__black"}" >
-    <div id="header-wrapper" class="main-header_wrapper ${"main-header_wrapper__fixed" if request.path == '/' or "category" in request.path else ""}">
+  <header id="global-navigation" class="main-header header-global ${"" if request.path == '/' or "category" in request.path or "programs" in request.path else "main-header__black"}" >
+    <div id="header-wrapper" class="main-header_wrapper ${"main-header_wrapper__fixed" if request.path == '/' or "category" in request.path or "programs" in request.path else ""}">
     <nav class="wrapper-header" aria-label="${_('Global')}">
     <h1 class="logo">
       <a href="${marketing_link('ROOT')}">
@@ -192,6 +192,7 @@ site_status_msg = get_site_status_msg(course_id)
     </div>
 </header>
 
+% if request.path == '/' or "category" in request.path or "programs" in request.path:
 <%block name="js_extra">
 <script>
       var avatarElem = document.getElementById('header-wrapper');
@@ -207,6 +208,7 @@ site_status_msg = get_site_status_msg(course_id)
       };
 </script>
 </%block>
+% endif
 % if course:
 <!--[if lte IE 9]>
 <div class="ie-banner" aria-hidden="true">${Text(_('{begin_strong}Warning:{end_strong} Your browser is not fully supported. We strongly recommend using {chrome_link} or {ff_link}.')).format(
