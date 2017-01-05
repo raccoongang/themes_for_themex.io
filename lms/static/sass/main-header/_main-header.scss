@@ -3,6 +3,8 @@
     border: none;
     height: 100px;
     background: none;
+    position: relative;
+    z-index: 1000;
     
     &_holder {
         display:flex;
@@ -41,6 +43,11 @@
         &__fixed {
             position: fixed;
             top: 0;
+        }
+        &__black {
+            background: #30363a;
+            position: relative;
+            z-index: 1;
         }
     }
 }
