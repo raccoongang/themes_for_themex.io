@@ -22,9 +22,11 @@
     }
 
     a {
-        color: #dd4628;
+        color: #dd4628 !important;
 
+        &:focus,
         &:hover {
+            color: #dd4628 !important;
             text-decoration: underline;
         }
     }
