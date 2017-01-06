@@ -193,28 +193,29 @@ site_status_msg = get_site_status_msg(course_id)
 </header>
 
 ## Add UI Toolkit components if using the Pattern Library
-% if uses_pattern_library:
-    <%block name="js_extra">
-    <%static:require_module module_name="js/header_factory" class_name="HeaderFactory">
-    HeaderFactory();
-    </%static:require_module>
-    % if request.path == '/' or "category" in request.path or "programs" in request.path:
-      <script>
-            var avatarElem = document.getElementById('header-wrapper');
+<%block name="js_extra">
+  % if uses_pattern_library:
+      <%static:require_module module_name="js/header_factory" class_name="HeaderFactory">
+      HeaderFactory();
+      </%static:require_module>
+  % endif
+  % if request.path == '/' or "category" in request.path or "programs" in request.path:
+        <script>
+              var avatarElem = document.getElementById('header-wrapper');
 
-            var avatarSourceBottom = avatarElem.getBoundingClientRect().top + window.pageYOffset;
+              var avatarSourceBottom = avatarElem.getBoundingClientRect().top + window.pageYOffset;
 
-            window.onscroll = function() {
-              if (avatarElem.classList.contains('main-header_wrapper__black') && window.pageYOffset <= avatarSourceBottom) {
-                avatarElem.classList.remove('main-header_wrapper__black');
-              } else if (window.pageYOffset > avatarSourceBottom) {
-                avatarElem.classList.add('main-header_wrapper__black');
-              }
-            };
-      </script>
-    % endif
-    </%block>
-% endif
+              window.onscroll = function() {
+                if (avatarElem.classList.contains('main-header_wrapper__black') && window.pageYOffset <= avatarSourceBottom) {
+                  avatarElem.classList.remove('main-header_wrapper__black');
+                } else if (window.pageYOffset > avatarSourceBottom) {
+                  avatarElem.classList.add('main-header_wrapper__black');
+                }
+              };
+        </script>
+  % endif
+</%block>
+
 % if course:
 <!--[if lte IE 9]>
 <div class="ie-banner" aria-hidden="true">${Text(_('{begin_strong}Warning:{end_strong} Your browser is not fully supported. We strongly recommend using {chrome_link} or {ff_link}.')).format(
