@@ -40,15 +40,22 @@ body{
     .menu-button {
         padding: 0 10px;
         borer-radius: 3px;
+        height: auto;
+        background: #fff;
     }
     .menu-image {
         borer-radius: 10%;
     }
     .menu-title {
         color: #fff !important;
+        font-weight: bold;
 
         &:hover {
             color: #e46c54 !important;
         }
     }
+}
+
+.icon-fallback-img .icon-angle-down {
+    display: none !important;
 }
