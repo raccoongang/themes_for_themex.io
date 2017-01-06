@@ -23,11 +23,13 @@
     }
     .wrapper-header .wrapper-user-menu {
         margin-top: 0;
+        -webkit-font-smoothing: auto;
     }
     .wrapper-header .list-inline.nav-global {
         font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
         font-weight: bold;
         margin-top: 0;
+        -webkit-font-smoothing: auto;
     }
     .wrapper-header .list-inline .item {
         margin-right: 21px;
