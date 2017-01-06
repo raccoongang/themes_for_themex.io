@@ -39,12 +39,17 @@ body{
 .dropdown-menu-container {
     .menu-button {
         padding: 0 10px;
-        borer-radius: 3px;
-        height: auto;
+        border-radius: 3px;
+        height: 16;
         background: #fff;
+        margin: 11px 0 0 8px;
+
+        &.default-icon:after {
+            top: 9px;
+        }
     }
     .menu-image {
-        borer-radius: 10%;
+        border-radius: 10%;
     }
     .menu-title {
         color: #fff !important;
