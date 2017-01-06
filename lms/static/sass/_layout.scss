@@ -35,3 +35,20 @@ body{
         color: #e46c54 !important;
     }
 }
+
+.dropdown-menu-container {
+    .menu-button {
+        padding: 0 10px;
+        borer-radius: 3px;
+    }
+    .menu-image {
+        borer-radius: 10%;
+    }
+    .menu-title {
+        color: #fff !important;
+
+        &:hover {
+            color: #e46c54 !important;
+        }
+    }
+}
