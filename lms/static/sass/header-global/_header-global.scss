@@ -21,6 +21,18 @@
     .wrapper-header .tab-nav-item .active {
         border: none;
     }
+    .wrapper-header .wrapper-user-menu {
+        margin-top: 0;
+    }
+    .wrapper-header .list-inline.nav-global {
+        font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-weight: bold;
+        margin-top: 0;
+    }
+    .wrapper-header .list-inline .item {
+        margin-right: 21px;
+        display: flex;
+    }
     .nav-global .tab-nav-item .tab-nav-link {
         color: #fff !important;
         text-transform: none;
