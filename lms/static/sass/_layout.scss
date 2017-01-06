@@ -23,3 +23,14 @@ body{
 .home .highlighted-courses {
     margin-bottom: 25px;
 }
+
+.item.nav-global-01.nav-global-01-xseries-style a {
+    color: #fff !important;
+    text-transform: none;
+    font-size: 16px;
+    line-height: 1.3;
+
+    &:hover {
+        color: #e46c54 !important;
+    }
+}
