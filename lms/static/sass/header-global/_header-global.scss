@@ -10,6 +10,9 @@
             background: transparent;
         }
     }
+    .header-global .user .user-link .label-username {
+        padding: 15px 5px 11px 15px;
+    }
     .nav-global {
         margin-top: 0;
     }
@@ -19,7 +22,8 @@
         font-size: 16px;
         line-height: 1.3;
         padding: 0;
-
+        
+        &:focus,
         &:hover {
             color: #e46c54 !important;
             border: none !important;
