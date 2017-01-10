@@ -46,4 +46,14 @@
             border: none !important;
         }
     }
+    .user .user-link .label-username {
+        margin: 15px 5px 11px 15px;
+    }
+    .user .dropdown {
+        margin-top: 14px;
+
+        .fa {
+            display: block;
+        }
+    }
 }
