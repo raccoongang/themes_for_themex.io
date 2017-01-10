@@ -68,7 +68,7 @@ site_status_msg = get_site_status_msg(course_id)
       % if user.is_authenticated():
         <ol class="left nav-global list-inline authenticated">
         <%block name="navigation_global_links_authenticated">
-          % if settings.FEATURES.get('COURSES_ARE_BROWSABLE_AND_SHOW_PROGRAM_LISTING_NAVIGATE') and context.get('threads') == None:
+          % if settings.FEATURES.get('COURSES_ARE_BROWSABLE_AND_SHOW_PROGRAM_LISTING_NAVIGATE'):
               <li class="item nav-global-01 nav-global-01-xseries-style">
                 <a class="btn" href="/category">Course catalog</a>
               </li>
@@ -78,7 +78,7 @@ site_status_msg = get_site_status_msg(course_id)
                 </a>
               </li>
           % else:
-            % if settings.FEATURES.get('COURSES_ARE_BROWSABLE') and not show_program_listing and context.get('threads') == None:
+            % if settings.FEATURES.get('COURSES_ARE_BROWSABLE') and not show_program_listing:
               <li class="item nav-global-01">
                 <a class="btn" href="/category">Course catalog</a>
               </li>
@@ -101,6 +101,7 @@ site_status_msg = get_site_status_msg(course_id)
       </ol>
 
       <%include file="user_dropdown.html"/>
+
       % if should_display_shopping_cart_func() and not (course and static.is_request_in_themed_site()): # see shoppingcart.context_processor.user_has_cart_context_processor
         <ol class="user">
           <li class="primary">
