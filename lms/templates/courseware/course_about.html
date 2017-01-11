@@ -7,6 +7,7 @@ from django.conf import settings
 from edxmako.shortcuts import marketing_link
 from openedx.core.lib.courses import course_image_url
 from django.template.defaultfilters import truncatechars
+from openedx.core.djangoapps.models.course_details import CourseDetails
 %>
 
 <%inherit file="../main.html" />
@@ -151,6 +152,17 @@ from django.template.defaultfilters import truncatechars
               </div>
               % endif
               <section class="theme-about_intro">
+                <%
+                  category = course.course_category
+                %>
+                % if category:
+                 <ol class="category-path">
+                  % for cat in category.get_ancestors():
+                   <li><a href="${reverse('course_category', kwargs={'slug': cat.slug})}">${cat.name}</a><span>/</span></li>
+                  % endfor
+                   <li><a href="${reverse('course_category', kwargs={'slug': category.slug})}">${category.name}</a></li>
+                 </ol>
+                % endif
                 <div class="theme-about_text">${course.display_org_with_default | h}</div>
                 <h2 class="theme-about_title">${course.display_name_with_default_escaped}</h2>
                 <p class="theme-about_description">${get_course_about_section(request, course, 'short_description')}</p>
