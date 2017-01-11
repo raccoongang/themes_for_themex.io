@@ -29,3 +29,24 @@
         }
     }
 }
+
+ol.category-path {
+    list-style: none;
+    display: flex;
+    position: relative;
+    margin: 0;
+    padding: 0 0 8px 0;
+    li {
+        color: #707070;
+        a {
+           color: #707070;
+           &:hover {
+               color: #707070;
+               text-decoration: underline;
+           }
+        }
+        span {
+           padding: 0 5px;
+        }
+    }
+}
