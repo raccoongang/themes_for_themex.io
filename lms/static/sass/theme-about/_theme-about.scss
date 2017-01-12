@@ -4,6 +4,7 @@
 
     &_media-holder {
         width: 310px;
+        min-width: 310px;
         position: relative;
         overflow: hidden;
     }
@@ -42,6 +43,7 @@
     &_intro {
         padding: 19px 20px 65px 29px;
         position: relative;
+        width: 100%;
     }
     &_text {
         font: 18px/1.3 $font-bold;
