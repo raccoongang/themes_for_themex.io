@@ -39,6 +39,11 @@
             font: 14px/1.3 $font-bold;
             color: #666;
             margin: 0 0 2px 0;
+
+            a {
+                color: #dd4628;
+                font-family: $font-bold;
+            }
         }
         .field-link {
             font: 14px/1.3 $font-regular;
