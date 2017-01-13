@@ -256,40 +256,7 @@ from openedx.core.djangoapps.models.course_details import CourseDetails
       % endif
 
       <div class="inner-wrapper">
-        <!-- ${get_course_about_section(request, course, "overview")} -->
-        <h2 id="about">About this course</h2>
-        <p>There are many programming languages in use today. Choosing a language to program with can be decided based on many factors such as learning curve, job specific requirements, platform specifics, or a plethora of other criteria.</p>
-        <p>Mobile devices are beginning to dominate the landscape in consumer and enterprise areas. That means a demand for more applications on these devices. The major players in this market, Apple, Google, and Microsoft, all have mobile platforms. Google uses Android for the OS and Java as the programming language, Apple uses iOS and Objective-C or Swift as the programming language, while Microsoft uses Windows and .NET. </p>
-        <p>What is the one thing that ties all these platforms and C# together? You can write your application code in C# and deploy it on all three platforms. Microsoft and Xamarin provide a cross-platform development toolset that allow you to write your code once, in C#, and deploy it across all three device platforms, saving you coding time. That's why C# is such a great language to learn.</p>
-        <h2 id="prerquisites">Prerquisites</h2>
-        <p>Developers attending this course should already have gained some experience with another programming language or understand programming constructs such as:</p>
-        <ul>
-          <li>Looping</li>
-          <li>Program Flow</li>
-          <li>Database Concepts</li>
-        </ul>
-        <h2 id="staff">Course staff</h2>
-        <div class="staff-box">
-          <img src="/static/${settings.DEFAULT_SITE_THEME}/images/avatar.png" alt="staff avatar" class="staff-box_avatar">
-          <div class="staff-box_holder">
-            <h3>Gerry O'Brien</h3>
-            <p>Gerry O'Brien is a Senior Content Development Manager at Microsoft Learning with a focus on software development and database platforms. He has over 18 years of industry experience working in various roles and programming with various languages such as:</p>
-            <ul>
-              <li>Software Developer and Consultant</li>
-              <li>Book and courseware author</li>
-              <li>Microsoft Certified Trainer</li>
-              <li>C#</li>
-              <li>Visual Basic</li>
-              <li>Java</li>
-              <li>Objective-C</li>
-            </ul>
-          </div>
-        </div>
-        <h2 id="faq">Frequently asked questions</h2>
-        <h3>Do I need to buy a textbook?</h3>
-        <p>No. A textbook is not required for this course however, we recommend that you consider purchasing the Step-by-Step Visual C# book from Microsoft Press. The course will use the companion content from this book for the practice sessions throughout the course. If you do not own the book, you can still download the companion content from the site and use it as part of this course. If you enjoy the practice files, you may want to come back to the site to purchase the book as a means of continuing your self-study and skills development after the course.</p>
-        <h3>Do I have to complete this course in module order?</h3>
-        <p>No. Feel free to skip units that are familiar with. You may want to review the Self-Checks in these units however to ensure you understand the material in units you decide to skip.</p>
+        ${get_course_about_section(request, course, "overview")}
       </div>
   </div>
 ## CourseTalk widget
