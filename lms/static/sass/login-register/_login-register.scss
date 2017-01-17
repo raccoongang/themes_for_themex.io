@@ -49,6 +49,16 @@
             font: 14px/1.3 $font-regular;
             color: #dd4628;
         }
+        a.forgot-password {
+            float: right;
+            margin-bottom: -21px;
+            height: 20px;
+        }
+    }
+    .checkbox-remember {
+        margin-top: -5px;
+        height: 20px;
+        width: 200px;
     }
     .form-wrapper {
         padding-top: 53px;
