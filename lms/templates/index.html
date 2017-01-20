@@ -49,6 +49,60 @@ from openedx.core.djangolib.markup import HTML, Text
         </div>
 
       </header>
+      <div class="carousel">
+        <div class="carousel-container">
+           <div class="customer-logos slider">
+              <div class="slide"><a href="http://edukacja.action.com.pl/en/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/action.svg"></a></div>
+              <div class="slide"><a href="http://www.algebra.hr/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/algebra.svg"></a></div>
+              <div class="slide"><a href="http://bilgeadam.com/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/bilgeadam.svg"></a></div>
+              <div class="slide"><a href="http://www.computrain.nl/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/computrain.svg"></a></div>
+              <div class="slide"><a href="https://www.digicomp.ch/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/digicomp.svg"></a></div>
+              <div class="slide"><a href="http://www.edugroupe.com/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/edugroupe.svg"></a></div>
+              <div class="slide"><a href="https://www.etc.at/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/etc.svg"></a></div>
+              <div class="slide"><a href="http://glasspaper.no/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/glasspaper.svg"></a></div>
+              <div class="slide"><a href="http://www.gopas.cz/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/gopas-cz.svg"></a></div>
+              <div class="slide"><a href="http://gopas.sk/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/gopas-sl.svg"></a></div>
+              <div class="slide"><a href="http://pipeline.it/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/pipeline.svg"></a></div>
+              <div class="slide"><a href="http://www.promennt.is/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/promennt.svg"></a></div>
+              <div class="slide"><a href="https://education.realdolmen.com/en" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/realdolmen.svg"></a></div>
+              <div class="slide"><a href="http://rumos.pt/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/rumos.svg"></a></div>
+              <div class="slide"><a href="http://www.teknologisk.dk/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/teknologisk.svg"></a></div>
+              <div class="slide"><a href="http://www.tuv.com/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/tuv.svg"></a></div>
+           </div>
+        </div>
+      </div>
+      <div class="homepage-boxes">
+        <div class="homepage-boxes-container">
+          <div class="homepage-boxes-item">
+            <img src="/static/${settings.DEFAULT_SITE_THEME}/images/llpa.svg">
+            <h1>Learn from Experts</h1>
+            <p>LLPA stands for Leading Learning Partner Association, a group of 29 well-known Training Centers – each of them a leading IT training company in their country.</p>
+            <a href="https://training.thellpa.com/about">Learn more</a>
+          </div>
+          
+          <div class="homepage-boxes-item">
+            <img src="/static/${settings.DEFAULT_SITE_THEME}/images/certificate.svg">
+            <h1>Earn a Valuable Certificate</h1>
+            <p>After the course completion receive an instructor signed certificate to verify your achievement and increase your job prospects.</p>
+            <a href="https://training.thellpa.com/faq">Learn more</a>
+          </div>
+
+          <div class="homepage-boxes-item">
+            <img src="/static/${settings.DEFAULT_SITE_THEME}/images/bulb.svg">
+            <h1>Upgrade your skills with vILT</h1>
+            <p>Only LLPA and its members offer you the best of breed: powerful, deep, hands-on, online training, developed by experts, combined with live virtual Instructor Led Training, led by Certified Trainers.</p>
+            <a href="https://training.thellpa.com/about">Learn more</a>
+          </div>
+
+          <div class="homepage-boxes-item">
+            <img src="/static/${settings.DEFAULT_SITE_THEME}/images/azure.svg">
+            <h1>Azure Skills Initiative</h1>
+            <p>Whether you’re new to Azure or already a cloud professional, training is one of the best investments you can make in your career.</p>
+            <a href="https://training.thellpa.com/category/azure">Learn more</a>
+          </div>
+        </div>
+      </div>
+
       <h1 class="theme-content_heading">Featured courses</h1>
       <%include file="${courses_list}" />
 
@@ -64,7 +118,9 @@ from openedx.core.djangolib.markup import HTML, Text
 % endif
 
 <%block name="js_extra">
-   <script type="text/javascript">
+  <script type="text/javascript" src="/static/${settings.DEFAULT_SITE_THEME}/js/slick.min.js"></script>
+  <script type="text/javascript" src="/static/${settings.DEFAULT_SITE_THEME}/js/carousel.js"></script>
+  <script type="text/javascript">
       $(window).load(function() {
          if(getParameterByName('next')) {
               $('#login').trigger("click");
