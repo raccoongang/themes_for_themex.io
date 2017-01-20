@@ -1,0 +1,28 @@
+<%page expression_filter="h"/>
+<%! from django.utils.translation import ugettext as _ %>
+<%inherit file="../main.html" />
+
+<%block name="pagetitle">${_("FAQ")}</%block>
+
+<main id="main" aria-label="Content" tabindex="-1">
+    <section class="container about">
+        <h1>${_("FAQ")}</h1>
+        <h2>How do I set up my account?</h2>
+		<p>To make an account, you need to:</p>
+		<ol>
+			<li>At the top of the page, click <a href="https://training.thellpa.com/register">Sign up</a></li>
+			<li>Provide all data</li>
+		</ol>
+		<p>Once you create your account, you receive an activation email to the email address you entered upon registration. You must click on the activation link to complete the process. Don't see the email? Check your spam folder and mark LLPA Training Platform emails as 'not spam'.</p>
+		<h2>How do I enroll in a course?</h2>
+		<p>To take a course, you need to enroll. To enroll in a course, you need to:</p>
+		<ol>
+			<li>Open the course information page</li>
+			<li>Click <strong>Enroll</strong></li>
+			<li>You will be able to start the course</li>
+		</ol>
+		<h2>How do I find the course?</h2>
+		<p>To find a course that fits your needs, you can use Course catalog or the search tool.</p>
+		<p>To learn more about the course click the title, there you can also enroll.</p>
+    </section>
+</main>

@@ -1,0 +1,18 @@
+<%page expression_filter="h"/>
+<%! from django.utils.translation import ugettext as _ %>
+<%inherit file="../main.html" />
+
+<%block name="pagetitle">${_("About")}</%block>
+
+<main id="main" aria-label="Content" tabindex="-1">
+    <section class="container about">
+        <h1>${_("About")}</h1>
+        <h2>About us</h2>
+        <p>We enable people to develop skills anytime and anywhere.</p>
+        <h2>Our mission</h2>
+        <p>We create and offer innovative and best of breed skill development services delivered worldwide. The unique solutions are based on the synergy of our members’ services and expertise, enriched by intense relationships with the major vendors.</p>
+        <h2>Who we are?</h2>
+        <p>LLPA stands for <a href="http://thellpa.com/">Leading Learning Partner Association</a>, a group of 29 well-known Training Centers – each of them a leading IT training company in their country. We train 423000 students per year. Our students come from all over the world, we have courses for everyone! Enroll today and learn more!</p>
+        <p id="edx-paragraph">The <a href="https://open.edx.org/">Open edX</a> is Learning management system platform. It is an open source system for creating, delivering and analyzing online courses.</p>
+    </section>
+</main>
