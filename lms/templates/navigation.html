@@ -63,7 +63,8 @@ site_status_msg = get_site_status_msg(course_id)
         %>
         <span class="course-name">${truncatechars(display_name,20)}</span></h2>
       % endif
-
+      <label for="show-menu" class="show-menu">MENU</label>
+      <input type="checkbox" id="show-menu" class="show-menu_checkbox" role="button">
       <div class="main-header_holder">
       % if user.is_authenticated():
         <ol class="left nav-global list-inline authenticated">

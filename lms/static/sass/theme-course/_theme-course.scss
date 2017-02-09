@@ -1,45 +1,69 @@
 .theme-course {
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.2);
+    display: block;
+
+    &:focus,
+    &:hover {
+        text-decoration: none;
+        transform: scale(1.02);
+        box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.45);
+    }
 
     &_holder {
         display: flex;
+        flex-wrap: wrap;
         border-radius: 4px;
         background-color: #fefefe;
-        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
         min-height: 206px;
     }
     &_image-holder {
         width: 309px;
-        border-right: 1px solid #d5d5d5;
         position: relative;
         overflow: hidden;
+        min-height: 180px;
     }
     &_image {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        max-width: 100%;
     }
     &_info {
         display: flex;
         width: 100%;
-        padding: 0 0 1px;
+        padding: 0 0 10px;
+        justify-content: center;
     }
     &_info-holder {
-        padding: 19px 20px 65px 29px;
+        padding: 20px;
         position: relative;
     }
     &_text {
-        font: 18px/1.3 $font-bold;
-        color: #a3a3a3;
         padding-right: 4px;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 14px;
+        color: #a3a3a3;
+        font-family: $font-regular;
     }
     &_title {
-        font: 34px/1.3 $font-light;
-        color: #666;
+        font: 20px/1.3 $font-regular;
+        color: #4a4a4a;
+        text-align: center;
+        text-transform: none;
+        margin: 0;
     }
     &_btn-holder {
         position: absolute;
         bottom: 29px;
         width: 100%;
+    }
+    &_description {
+        font-size: 12px;
+        line-height: 1.3;
+        font-family: $font-regular;
+        color: #999;
+        margin-top: 20px;
     }
 }

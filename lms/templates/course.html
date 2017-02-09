@@ -7,7 +7,7 @@ from openedx.core.djangoapps.models.course_details import CourseDetails
 from course_category.models import CourseCategory
 %>
 <%page args="course" expression_filter="h"/>
-<article class="theme-course" id="${course.id}" role="region" aria-label="${course.display_name_with_default}">
+<a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}" class="theme-course" id="${course.id}" role="region" aria-label="${course.display_name_with_default}">
   <div class="theme-course_holder">
     <header class="theme-course_image-holder">
         <img class="theme-course_image" src="${course.course_image_url}" alt="${course.display_name_with_default} ${course.display_number_with_default}" />
@@ -31,9 +31,7 @@ from course_category.models import CourseCategory
        % endif
       </strong>
       <h2 class="theme-course_title">${course.display_name_with_default}</h2>
-      <div class="theme-course_btn-holder">
-        <a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}" class="theme-btn-2">LEARN MORE</a>
-      </div>
+      <p class="theme-course_description"></p>
       <!-- <div class="course-date" aria-hidden="true">${_("Starts")}: ${course.start_datetime_text()}</div> -->
     </div>
     <!-- <div class="sr">
@@ -44,4 +42,4 @@ from course_category.models import CourseCategory
     </ul>
     </div> -->
   </div>
-</article>
+</a>

@@ -1,15 +1,26 @@
 .theme-footer {
     &_row {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         padding: 0 0 32px;
+        text-align: center;
+        @media all and (min-width: 800px) {
+            flex-wrap: nowrap;
+            text-align: left;
+        }
     }
     &_list {
         margin: 0;
         padding: 0;
         list-style: none;
-        columns: 180px;
-        column-gap: 20px;
+        width: 100%;
+        
+        @media all and (min-width: 800px) {
+            width: auto;
+            columns: 180px;
+            column-gap: 20px;
+        }
 
         a {
             font: 16px/1.3 font-regular;
@@ -24,6 +35,10 @@
 
         li {
             padding: 0 0 10px;
+            text-align: center;
+            @media all and (min-width: 800px) {
+                text-align: left;
+            }
         }
     }
     &_copyright {
@@ -31,6 +46,10 @@
         color: #a2d1eb;
         margin: 0;
         padding: 0;
+        width: 100%;
+        @media all and (min-width: 800px) {
+            width: auto;
+        }
     }
     &_platform-link {
         font-family: $font-bold !important;
@@ -45,6 +64,11 @@
         padding: 0;
         list-style: none;
         display: flex;
+        justify-content: center;
+        width: 100%;
+        @media all and (min-width: 800px) {
+            width: auto;
+        }
         
         &-item {
             margin-left: 15px;

@@ -1,0 +1,30 @@
+.show-menu {
+    text-decoration: none;
+    color: #fff;
+    font-family: $font-bold;
+    float: right;
+    font-style: normal;
+    line-height: 36px;
+    font-size: 20px;
+    text-align: right;
+    @media all and (min-width: 800px) {
+        display: none;
+    }
+
+    &_checkbox {
+        display: block;
+        position: absolute;
+        top: -300px;
+        @media all and (min-width: 800px) {
+            display: none;
+        }
+
+        &:checked ~ .main-header_holder{
+            display: block;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+        }
+    }
+}
