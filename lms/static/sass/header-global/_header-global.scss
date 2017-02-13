@@ -96,7 +96,7 @@
         }
     }
     .nav-courseware {
-        margin-top: 0;
+        margin-top: 0 !important;
         width: 100%;
         @media all and (min-width: 800px) {
             width: auto;
