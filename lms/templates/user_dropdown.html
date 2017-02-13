@@ -10,30 +10,32 @@ from openedx.core.djangoapps.user_api.accounts.image_helpers import get_profile_
 %>
 
 % if uses_pattern_library:
-    <div class="wrapper-user-menu dropdown-menu-container logged-in js-header-user-menu">
-        <a href="${reverse('dashboard')}" class="menu-title">
-            <span class="sr-only">${_("Dashboard for:")}</span>
-            <%
-            username = user.username
-            profile_image_url = get_profile_image_urls_for_user(user)['medium']
-            %>
-            <img class="menu-image" src="${profile_image_url}" alt="">
-            ${username}
-        </a>
-        <button type="button" class="menu-button button-more has-dropdown js-dropdown-button default-icon" aria-haspopup="true" aria-expanded="false" aria-controls="${_("Usermenu")}">
-            <span class="icon-fallback icon-fallback-img">
-              <span class="icon icon-angle-down" aria-hidden="true"></span>
-              <span class="text">${_("Usermenu dropdown")}</span>
-            </span>
-        </button>
-        <ul class="dropdown-menu list-divided is-hidden" id="${_("Usermenu")}" tabindex="-1">
-            <%block name="navigation_dropdown_menu_links" >
-                <li class="dropdown-item item has-block-link"><a href="${reverse('dashboard')}" class="action">${_("Dashboard")}</a></li>
-                <li class="dropdown-item item has-block-link"><a href="${reverse('learner_profile', kwargs={'username': user.username})}" class="action">${_("Profile")}</a></li>
-                <li class="dropdown-item item has-block-link"><a href="${reverse('account_settings')}" class="action">${_("Account")}</a></li>
-            </%block>
-            <li class="dropdown-item item has-block-link"><a href="${reverse('logout')}" role="menuitem" class="action">${_("Sign Out")}</a></li>
-        </ul>
+    <div class="dicussion-holder-drop">
+        <div class="wrapper-user-menu dropdown-menu-container logged-in js-header-user-menu">
+            <a href="${reverse('dashboard')}" class="menu-title">
+                <span class="sr-only">${_("Dashboard for:")}</span>
+                <%
+                username = user.username
+                profile_image_url = get_profile_image_urls_for_user(user)['medium']
+                %>
+                <img class="menu-image" src="${profile_image_url}" alt="">
+                ${username}
+            </a>
+            <button type="button" class="menu-button button-more has-dropdown js-dropdown-button default-icon" aria-haspopup="true" aria-expanded="false" aria-controls="${_("Usermenu")}">
+                <span class="icon-fallback icon-fallback-img">
+                  <span class="icon icon-angle-down" aria-hidden="true"></span>
+                  <span class="text">${_("Usermenu dropdown")}</span>
+                </span>
+            </button>
+            <ul class="dropdown-menu list-divided is-hidden" id="${_("Usermenu")}" tabindex="-1">
+                <%block name="navigation_dropdown_menu_links" >
+                    <li class="dropdown-item item has-block-link"><a href="${reverse('dashboard')}" class="action">${_("Dashboard")}</a></li>
+                    <li class="dropdown-item item has-block-link"><a href="${reverse('learner_profile', kwargs={'username': user.username})}" class="action">${_("Profile")}</a></li>
+                    <li class="dropdown-item item has-block-link"><a href="${reverse('account_settings')}" class="action">${_("Account")}</a></li>
+                </%block>
+                <li class="dropdown-item item has-block-link"><a href="${reverse('logout')}" role="menuitem" class="action">${_("Sign Out")}</a></li>
+            </ul>
+        </div>
     </div>
 % else:
     <ol class="user">

@@ -4,3 +4,36 @@
 .main-header_wrapper {
     background: #30363a;
 }
+.dicussion-holder-drop {
+    width: 100%;
+    background: #454a4e;
+    display: flex;
+    justify-content: center;
+    @media all and (min-width: 800px) {
+        display: block;
+        background: transparent;
+        width: auto;
+    }
+
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+.header-global .wrapper-header .wrapper-user-menu.dropdown-menu-container {
+    height: 61px;
+    padding: 10px;
+    box-sizing: border-box;
+
+    @media all and (min-width: 800px) {
+        height: 40px;
+        padding: 0;
+    }
+}
+.dropdown-menu-container .menu-button.default-icon:after {
+    border-top-color: #fff;
+}
+.dropdown-menu-container .menu-button {
+    background: transparent;
+}

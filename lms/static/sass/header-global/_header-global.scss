@@ -19,6 +19,10 @@
             display: flex;
             justify-content: center;
         }
+
+        .tab-nav-item {
+            float: none;
+        }
     }
     .wrapper-header .tab-nav-item .active {
         border: none;
@@ -33,6 +37,7 @@
         margin-top: 0;
         -webkit-font-smoothing: auto;
     }
+    .tab-nav-item,
     .wrapper-header .list-inline .item {
         display: block;
         text-decoration: none;
@@ -59,10 +64,17 @@
     .nav-global .tab-nav-item .tab-nav-link {
         color: #fff !important;
         text-transform: none;
-        font-size: 16px;
-        line-height: 1.3;
-        padding: 0;
+        line-height: 60px;
+        font-size: 18px;
         border: none !important;
+        font-family: $font-regular;
+        padding: 0;
+
+        @media all and (min-width: 800px) {
+            font-size: 16px;
+            line-height: 1.3;
+            padding: inherit;
+        }
         
         &:focus,
         &:hover {
