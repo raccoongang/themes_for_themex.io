@@ -4,10 +4,14 @@
     margin: 0 auto;
     box-sizing: border-box;
 }
+
 .viewall-top-btn a:hover {
     color: #ffffff !important;
     background: #ba360f;
     text-decoration: none;
+}
+.viewall-top-btn a {
+    display: none;
 }
 
 @media screen and (min-width : 1170px) {
