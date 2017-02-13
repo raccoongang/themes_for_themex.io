@@ -1,3 +1,9 @@
+.viewall-top-btn {
+    position: relative;
+    max-width: 1080px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
 .viewall-top-btn a:hover {
     color: #ffffff !important;
     background: #ba360f;
@@ -7,7 +13,7 @@
 @media screen and (min-width : 1170px) {
 .viewall-top-btn a {
     position: absolute;
-    right: 0;
+    right: 40px;
     top: 50px;
     color: #fff;
     background: #dd4628;
