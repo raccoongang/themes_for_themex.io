@@ -4,13 +4,13 @@
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     align-items: stretch;
 
     &_item {
         width: 100%;
         @media all and (min-width: 600px) {
             width: 48%;
+            margin-right: 2%;
         }
         @media all and (min-width: 1200px) {
             padding: 0 0 20px;
