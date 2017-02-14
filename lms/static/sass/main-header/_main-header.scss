@@ -4,6 +4,7 @@
     background: none;
     position: relative;
     z-index: 1000;
+    min-height: 100px;
     
     &_holder {
         justify-content: flex-end;
