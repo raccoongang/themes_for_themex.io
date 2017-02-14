@@ -19,6 +19,10 @@ body{
 .find-courses .courses {
     padding: 32px 0 15px;
 }
+.window-wrap .find-courses .courses-container .courses:not(.no-course-discovery) {
+    float: none;
+    width: 100%;
+}
 
 .home .highlighted-courses {
     margin-bottom: 25px;
