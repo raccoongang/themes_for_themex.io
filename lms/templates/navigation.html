@@ -40,7 +40,7 @@ site_status_msg = get_site_status_msg(course_id)
 </div>
 % endif
 </%block>
-  <header id="global-navigation" class="main-header header-global ${"" if request.path == '/' or "category" in request.path else "main-header__black"}" >
+  <header id="global-navigation" class="main-header header-global ${"" if request.path == '/' or "category" in request.path or "programs" in request.path else "main-header__black"}" >
     <div id="header-wrapper" class="main-header_wrapper ${"main-header_wrapper__fixed" if request.path == '/' or "category" in request.path or "programs" in request.path else ""}">
     <nav class="wrapper-header" aria-label="${_('Global')}">
     <h1 class="logo">
