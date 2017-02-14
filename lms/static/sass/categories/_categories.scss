@@ -1,5 +1,5 @@
 .categories {
-    width: 1080px;
+    max-width: 1080px;
     padding: 0 40px;
     box-sizing: border-box;
     margin: 0 auto;
@@ -16,14 +16,27 @@
         display: flex;
         justify-content: space-between;
         margin: 0 0 40px;
+        flex-wrap: wrap;
+        
+        @media all and (min-width: 1020px) {
+            flex-wrap: nowrap;
+        }
     }
     &_section {
-        width: 306px;
         background: #fff;
         border-radius: 2px;
         text-align: center;
         box-sizing: border-box;
         padding: 31px 20px;
+        width: 100%;
+        margin-bottom: 30px;
+
+        @media all and (min-width: 800px) {
+            width: 48%;
+        }
+        @media all and (min-width: 1020px) {
+            width: 30%;
+        }
     }
     &_main-link {
         font: 28px/1.3 $font-bold !important;
