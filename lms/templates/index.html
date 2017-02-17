@@ -106,9 +106,12 @@ from openedx.core.djangolib.markup import HTML, Text
       <h1 class="theme-content_heading">Featured courses</h1>
       <div class="viewall-top-btn"><a href="/courses/">View all courses</a></div>
       <%include file="${courses_list}" />
+      <div class="viewall-top-btn mobile"><a href="/courses/">View all courses</a></div>
       <h1 class="theme-content_heading">LLPA Learning Tracks</h1>
       <div class="viewall-top-btn"><a href="/xseries/">View all tracks</a></div>
       <%include file="${programs_list}" />
+      <div class="viewall-top-btn mobile"><a href="/xseries/">View all tracks</a></div>
+
 
     </section>
 </main>

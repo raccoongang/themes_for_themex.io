@@ -19,7 +19,7 @@
         min-height: 206px;
     }
     &_image-holder {
-        width: 309px;
+        width: 100%;
         position: relative;
         overflow: hidden;
         min-height: 180px;
@@ -29,7 +29,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        max-width: 100%;
+        width: 100%;
     }
     &_info {
         display: flex;
