@@ -20,10 +20,10 @@ from django.template.defaultfilters import truncatechars
           category = cc_queryset and cc_queryset[0] or None
        %>
        % if category:
-        % for cat in category.get_ancestors():
-         <span class="theme-course_text">${cat.name}</span>
-         <span class="theme-course_text">/</span>
-        % endfor
+##        % for cat in category.get_ancestors():
+##         <span class="theme-course_text">${cat.name}</span>
+##         <span class="theme-course_text">/</span>
+##        % endfor
          <span class="theme-course_text">${category.name}</span>
        % else:
         <span class="theme-course_text">${course.display_org_with_default}</span>
