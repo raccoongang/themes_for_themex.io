@@ -119,11 +119,11 @@
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
+    justify-content: space-between;
 }
 .homepage-course-boxes-item {
     display: inline-block;
     width: 49%;
-    margin-right: 2%;
 }
 }
 
