@@ -256,3 +256,18 @@
     -webkit-transform-origin: bottom left;
     transform-origin: bottom left;
 }
+.homepage-course-boxes-item_helper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: -1;
+}
+.program-description {
+    font-size: 12px;
+    line-height: 1.3;
+    font-family: titilliumweb-regular,sans-serif;
+    color: #999;
+    margin-top: 20px;
+    text-align: center;
+}
