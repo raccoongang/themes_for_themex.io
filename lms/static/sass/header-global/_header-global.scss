@@ -27,6 +27,9 @@
     }
     .wrapper-header .logo {
         margin-top: -2px;
+        img {
+            max-width: 150px;
+        }
     }
     .wrapper-header .tab-nav-item .active {
         border: none;
