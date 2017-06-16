@@ -5,6 +5,7 @@
         justify-content: space-between;
         padding: 0 0 32px;
         text-align: center;
+        width: 100%;
         @media all and (min-width: 800px) {
             flex-wrap: nowrap;
             text-align: left;
@@ -91,9 +92,9 @@
         }
     }
     &_social-list-facebook {
-        background-image: url("../images/ico-facebook.png");
+        background-image: url("#{$img-path}images/ico-facebook.png");
     }
     &_social-list-twitter {
-        background-image: url("../images/ico-twetter.png");
+        background-image: url("#{$img-path}images/ico-twetter.png");
     }
 }

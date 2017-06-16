@@ -8,4 +8,9 @@
         box-sizing: border-box;
         padding: 37px 40px 0;
     }
+    a:hover {
+        border: none !important;
+        border-color: transparent !important;
+        text-decoration: none !important;
+    }
 }

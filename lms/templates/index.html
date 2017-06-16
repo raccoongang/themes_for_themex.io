@@ -59,24 +59,29 @@ from openedx.core.djangolib.markup import HTML, Text
               <div class="slide"><a href="https://www.digicomp.ch/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/digicomp.svg"></a></div>
               <div class="slide"><a href="http://www.edugroupe.com/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/edugroupe.svg"></a></div>
               <div class="slide"><a href="https://www.etc.at/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/etc.svg"></a></div>
-              <div class="slide"><a href="http://glasspaper.no/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/glasspaper.svg"></a></div>
               <div class="slide"><a href="http://www.gopas.cz/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/gopas-cz.svg"></a></div>
-              <div class="slide"><a href="http://gopas.sk/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/gopas-sl.svg"></a></div>
               <div class="slide"><a href="http://pipeline.it/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/pipeline.svg"></a></div>
               <div class="slide"><a href="http://www.promennt.is/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/promennt.svg"></a></div>
               <div class="slide"><a href="https://education.realdolmen.com/en" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/realdolmen.svg"></a></div>
               <div class="slide"><a href="http://rumos.pt/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/rumos.svg"></a></div>
               <div class="slide"><a href="http://www.teknologisk.dk/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/teknologisk.svg"></a></div>
               <div class="slide"><a href="http://www.tuv.com/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/tuv.svg"></a></div>
+              <div class="slide"><a href="http://www.addskills.se/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/addskills_cornerstone.png"></a></div>
+              <div class="slide"><a href="https://www.bittnet.ro/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/bittnet.png"></a></div>
+              <div class="slide"><a href="http://glasspaper.no/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/glasspaper.png"></a></div>
+              <div class="slide"><a href="http://www.netmind.es/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/netmind.png"></a></div>
+              <div class="slide"><a href="http://sovelto.fi/etusivu" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/sovelto.png"></a></div>
+              <div class="slide"><a href="http://www.specialist.ru/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/specialist.png"></a></div>
+              <div class="slide"><a href="https://www.training360.com/" target="_blank"><img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/training360.png"></a></div>
            </div>
         </div>
       </div>
       <div class="homepage-boxes">
         <div class="homepage-boxes-container">
           <div class="homepage-boxes-item">
-            <img src="/static/${settings.DEFAULT_SITE_THEME}/images/bulb.svg">
+            <img src="/static/${settings.DEFAULT_SITE_THEME}/images/logo-etc.png" width="150">
             <h1>Learn from Experts</h1>
-            <p>LLPA stands for Leading Learning Partner Association, a group of 29 well-known Training Centers – each of them a leading IT training company in their country.</p>
+            <p>ETC Training Platform, a group of 29 well-known Training Centers – each of them a leading IT training company in their country.</p>
             <a href="https://training.thellpa.com/about">Learn more</a>
           </div>
           
@@ -90,7 +95,7 @@ from openedx.core.djangolib.markup import HTML, Text
           <div class="homepage-boxes-item">
             <img src="/static/${settings.DEFAULT_SITE_THEME}/images/bulb.svg">
             <h1>Upgrade your skills with vILT</h1>
-            <p>Only LLPA and its members offer you the best of breed: powerful, deep, hands-on, online training, developed by experts, combined with live virtual Instructor Led Training, led by Certified Trainers.</p>
+            <p>Only ETC and its members offer you the best of breed: powerful, deep, hands-on, online training, developed by experts, combined with live virtual Instructor Led Training, led by Certified Trainers.</p>
             <a href="https://training.thellpa.com/about">Learn more</a>
           </div>
 
@@ -105,11 +110,11 @@ from openedx.core.djangolib.markup import HTML, Text
 
       <h1 class="theme-content_heading">Featured courses</h1>
       <div class="viewall-top-btn"><a href="/courses/">View all courses</a></div>
-      <%include file="${courses_list}" />
+      <%include file="courses_list.html" />
       <div class="viewall-top-btn mobile"><a href="/courses/">View all courses</a></div>
-      <h1 class="theme-content_heading">LLPA Learning Tracks</h1>
+      <h1 class="theme-content_heading">ETC Learning Tracks</h1>
       <div class="viewall-top-btn"><a href="/xseries/">View all tracks</a></div>
-      <%include file="${programs_list}" />
+      <%include file="programs_list.html" />
       <div class="viewall-top-btn mobile"><a href="/xseries/">View all tracks</a></div>
 
 

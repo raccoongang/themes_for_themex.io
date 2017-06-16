@@ -1,9 +1,10 @@
 @import "../const";
+$img-path: "../../";
 
 //import the original styles from edx-platform
 @import "lms/static/sass/discussion/lms-discussion-main.scss";
 //our overrides for settings we want to change
-@import "../font";
+@import "font";
 @import "../layout";
 @import "../theme-btn-1/theme-btn-1";
 @import "../theme-btn-2/theme-btn-2";
@@ -14,7 +15,7 @@
 @import "../theme-courses-list/theme-courses-list";
 @import "../theme-course/theme-course";
 @import "../wrapper-footer/wrapper-footer";
-@import "theme-footer/theme-footer";
+@import "../theme-footer/theme-footer";
 @import "../theme-about/theme-about";
 @import "../theme-course-info/theme-course-info";
 @import "../theme-course-nav/theme-course-nav";
