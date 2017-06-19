@@ -1,0 +1,34 @@
+@import "const";
+
+//import the original styles from edx-platform
+@import "lms/static/sass/lms-course";
+
+//our overrides for settings we want to change
+@import "font";
+@import "layout";
+@import "theme-btn-1/theme-btn-1";
+@import "theme-btn-2/theme-btn-2";
+@import "theme-btn-3/theme-btn-3";
+@import "main-header/main-header";
+@import "window-wrap/window-wrap";
+@import "theme-content/theme-content";
+@import "theme-courses-list/theme-courses-list";
+@import "theme-course/theme-course";
+@import "wrapper-footer/wrapper-footer";
+@import "theme-footer/theme-footer";
+@import "theme-about/theme-about";
+@import "theme-course-info/theme-course-info";
+@import "theme-course-nav/theme-course-nav";
+@import "ugc/ugc";
+@import "header-global/header-global";
+@import "login-register/login-register";
+@import "hello-container/hello-container";
+@import "category-breadcrumbs/category-breadcrumbs";
+@import "categories/categories";
+@import "form-description/form-description";
+@import "programs-error/programs-error";
+@import "static-templates/static-templates";
+@import "carousel/carousel";
+@import "homepage-boxes/homepage-boxes";
+@import "show-menu/show-menu";
+@import "viewall-top-btn/viewall-top-btn";

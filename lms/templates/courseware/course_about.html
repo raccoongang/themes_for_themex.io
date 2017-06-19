@@ -26,9 +26,12 @@ from openedx.core.djangoapps.models.course_details import CourseDetails
   <script type="text/javascript">
   (function() {
     $(".theme-course-nav_list-link").click(function() {
+        var aboutWrapper = $('.theme-course-info_header-helper');
         var idThis = $(this).attr("href");
+        var height = $('#header-holder').outerHeight();
+        aboutWrapper.css( "min-height", height + "px" );
         $('html, body').animate({
-            scrollTop: $(idThis).offset().top-280
+            scrollTop: $(idThis).offset().top - height
         }, 1000);
     });
     $(".register").click(function(event) {
@@ -111,14 +114,15 @@ from openedx.core.djangoapps.models.course_details import CourseDetails
   </script>
   <script>
     var avatarElem = document.getElementById('header-holder');
-
+    var aboutWrapper = document.querySelector('.theme-course-info_header-helper');
     var avatarSourceBottom = avatarElem.getBoundingClientRect().top + window.pageYOffset;
-
     window.onscroll = function() {
+      var aboutHeight = avatarElem.offsetHeight;
       if (avatarElem.classList.contains('theme-course-info_header-holder__fixed') && window.pageYOffset <= avatarSourceBottom) {
         avatarElem.classList.remove('theme-course-info_header-holder__fixed');
       } else if (window.pageYOffset > avatarSourceBottom) {
         avatarElem.classList.add('theme-course-info_header-holder__fixed');
+        aboutWrapper.style.minHeight = aboutHeight + 'px';
       }
     };
   </script>

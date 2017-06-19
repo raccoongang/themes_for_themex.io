@@ -11,6 +11,9 @@
             background: transparent;
         }
     }
+    .user>.primary {
+        float: right;
+}
     .nav-global {
         margin-top: 0;
         display: block;
@@ -50,6 +53,7 @@
         text-decoration: none;
         font-family: $font-regular;
         height: 60px;
+        width: 100%;
         line-height: 60px;
         margin: 0;
         font-size: 18px;
@@ -62,6 +66,7 @@
             display: flex;
             border: none;
             height: auto;
+            width: auto;
             line-height: inherit;
             font-size: inherit;
             text-align: left;

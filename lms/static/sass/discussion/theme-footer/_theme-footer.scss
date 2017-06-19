@@ -48,13 +48,16 @@
         
         &-item {
             margin-left: 15px;
+            &:first-child {
+                margin-left: 0;
+            }
         }
     }
     &_social-list-facebook,
     &_social-list-twitter {
         width: 40px;
         height: 40px;
-        boder-radius: 2px;
+        border-radius: 2px;
         background-color: #307195;
         background-position: 50%;
         background-repeat: no-repeat;
