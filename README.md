@@ -1,9 +1,9 @@
 # If you want to use online sass compile You should follow the next steps (I can show my example by lms-main-v1.scss):
 ## 1. You copy the file lms-main-v1.scss from the platform to edx-themes. You always do it
-## 2. Complile this file
+## 2. Complile this file with paver devstack lms
 ## 3. You file will have this structure, you example can be different:
 
-//import the original styles from edx-platform
+//import the original styles from edx-platform<br>
 @import "lms/static/sass/lms-main-v1";  - this path to platform <br><br>
 
 //our overrides for settings we want to change<br>
