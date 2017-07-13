@@ -1,5 +1,13 @@
+//settings for header
+$header-nav-link-color: #888;
+$header-nav-link-color-hover: lighten($header-nav-link-color, 20%); 
+$header-color: #ccc;
 //settings for hamburger
 $hamburger-color: #333;
 $hamburger-width: 40px;
 $hamburger-height: 30px;
 $hamburger-height-line: 3px;
+//settings for footer
+$footer-nav-link-color: #888;
+$footer-nav-link-color-hover: lighten($header-nav-link-color, 20%); 
+$footer-color: #ccc;

@@ -1,0 +1,94 @@
+.header-global {
+    height: auto;
+    background: $header-color;
+
+    .wrapper-header {
+        height: auto;
+        padding: 18px 10px;
+    }
+    .nav-global {
+        li a {
+            color: $header-nav-link-color;
+
+            &:hover {
+                color: $header-nav-link-color-hover;
+            }
+        }
+        .tab-nav-item {
+            .active {
+                border: none !important;
+            }
+            .tab-nav-link {
+                color: $header-nav-link-color;
+                padding: 5px;
+
+                &:hover {
+                    color: $header-nav-link-color-hover;
+                    border: none;
+                }
+            }
+        }
+    }
+    .user {
+        .user-link .label-username {
+            text-shadow: none;
+            margin: 13px 5px 13px 15px;
+        }
+        .dropdown {
+            background: none;
+            margin: 4px 0 0;
+            width: 29px;
+            height: 25px;
+            box-sizing: border-box;
+        }
+    }
+    .primary>a {
+        box-shadow: none;
+
+        &:focus,
+        &:hover {
+            background: none;
+        }
+    }
+}
+.course-info header.course-profile {
+    height: auto;
+    margin-top: 0;
+    padding: 20px 0;
+}
+.doc-link {
+    color: $header-nav-link-color !important;
+    margin: 12px 15px;
+    line-height: 16px;
+
+    &:visited {
+        color: $header-nav-link-color !important;
+    }
+
+    &:focus,
+    &:hover {
+        color: $header-nav-link-color-hover !important;
+        text-decoration: none;
+    }
+}
+.wrapper-footer {
+    background: $footer-color;
+
+    footer#footer-openedx {
+        a:hover,
+        a:focus {
+            text-decoration: none !important;
+            border: none !important;
+        }
+        .colophon .nav-colophon li a {
+            color: $footer-nav-link-color;
+            
+            &:focus,
+            &:hover {
+                border: none !important;
+                text-decoration: none !important;
+                color: $footer-nav-link-color-hover !important;
+            }
+        }
+    }
+}
