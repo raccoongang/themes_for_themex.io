@@ -9,6 +9,9 @@
     padding: 0;
     border-radius: 0;
     box-shadow: none;
+    position: absolute;
+    top: 18px;
+    right: 10px;
     &:after,
     &:before {
         content: '';
@@ -32,7 +35,7 @@
         background: transparent !important; //platform has many selectors
     }
     @media screen and (min-width: 760px) {
-    display: none;
+        display: none;
     }
 }
 .menu-open .hamburger:after {

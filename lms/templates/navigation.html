@@ -76,7 +76,7 @@ site_status_msg = get_site_status_msg(course_id)
         %>
         <span class="course-name">${display_name}</span></h2>
       % endif
-
+        <div class="nav-holder">
       % if user.is_authenticated():
         <ol class="left nav-global list-inline authenticated">
         <%block name="navigation_global_links_authenticated">
@@ -217,6 +217,7 @@ site_status_msg = get_site_status_msg(course_id)
       </ol>
       % endif
       % endif
+      </div>
     </nav>
     <button class="hamburger" id="hamburger" type="button" aria-label="menu"></button>
 </header>

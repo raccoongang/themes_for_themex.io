@@ -1,19 +1,36 @@
 .header-global {
     height: auto;
     background: $header-color;
+    padding: 18px 10px;
+    position: relative;
+    box-sizing: border-box;
 
     .wrapper-header {
         height: auto;
-        padding: 18px 10px;
+        padding: 0;
     }
     .nav-global {
-        li a {
-            color: $header-nav-link-color;
-
-            &:hover {
-                color: $header-nav-link-color-hover;
-            }
+        width: 100%;
+        @media screen and (min-width:760px ) {
+            width: auto;
         }
+
+        li {
+            width: 100%;
+            text-align: center;
+            @media screen and (min-width:760px ) {
+                width: auto;
+                text-align: left;
+            }
+
+            a {
+                color: $header-nav-link-color;
+
+                &:hover {
+                    color: $header-nav-link-color-hover;
+                }
+            }
+        } 
         .tab-nav-item {
             .active {
                 border: none !important;
@@ -29,10 +46,54 @@
             }
         }
     }
+    .nav-courseware {
+        width: 100%;
+        @media screen and (min-width:760px ) {
+            width: auto;
+        }
+
+        li {
+            width: 100%;
+            text-align: center;
+            margin: 0 0 3px;
+            @media screen and (min-width:760px ) {
+                width: auto;
+                text-align: left;
+            }
+
+            a {
+                width: 100%;
+            }
+
+            .btn {
+                background: $theme-btn-bg;
+                box-shadow: 0 2px 1px 0 $theme-btn-shadow;
+                color: $theme-btn-text-color;
+
+                &:focus {
+                    background: $theme-btn-bg;
+                }
+                &:hover {
+                    background: $theme-btn-bg-hover;
+                }
+            }
+        }
+    }
     .user {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        @media screen and (min-width:760px ) {
+            display: block;
+            width: auto;
+        }
         .user-link .label-username {
             text-shadow: none;
             margin: 13px 5px 13px 15px;
+
+            &:hover {
+                color: $header-nav-link-color-hover;
+            }
         }
         .dropdown {
             background: none;
@@ -40,6 +101,18 @@
             width: 29px;
             height: 25px;
             box-sizing: border-box;
+        }
+        .dropdown-menu li>a {
+            color: $dropdown-menu-color;
+
+            &:focus {
+                color: $dropdown-menu-color;
+                text-decoration: none;
+            }
+            &:hover {
+                color: $dropdown-menu-color-hover;
+                text-decoration: none;
+            }
         }
     }
     .primary>a {
@@ -58,8 +131,16 @@
 }
 .doc-link {
     color: $header-nav-link-color !important;
-    margin: 12px 15px;
+    margin: 12px 0;
     line-height: 16px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    @media screen and (min-width:760px ) {
+        width: auto;
+        text-align: left;
+        margin: 12px 15px;
+    }
 
     &:visited {
         color: $header-nav-link-color !important;
@@ -91,4 +172,93 @@
             }
         }
     }
+}
+.login-register {
+    .action-primary {
+        background: $theme-btn-bg;
+        box-shadow: 0 2px 1px 0 $theme-btn-shadow;
+        color: $theme-btn-text-color;
+
+        &:focus {
+            background: $theme-btn-bg;
+        }
+        &:hover {
+            background: $theme-btn-bg-hover;
+        }
+    }
+    .nav-btn {
+        background: $theme-btn-white-bg;
+        color: $theme-btn-white-text-color;
+        border-color: $theme-btn-white-border;
+
+        &:focus {
+            background: $theme-btn-white-bg;
+        }
+        &:hover {
+            color: $theme-btn-white-text-color-hover;
+            background: $theme-btn-white-bg-hover;
+        }
+    }
+}
+.account-settings-sections .section .account-settings-section-body .u-field .field .u-field-link,
+body .discussion-module .btn,
+.courseware-bookmarks-button .bookmarks-list-button,
+.dashboard .my-courses .course .details .enter-course {
+    background: $theme-btn-white-bg;
+    color: $theme-btn-white-text-color;
+    border-color: $theme-btn-white-border;
+
+    &:focus {
+        background: $theme-btn-white-bg;
+    }
+    &:hover {
+        color: $theme-btn-white-text-color-hover;
+        background: $theme-btn-white-bg-hover !important;
+    }
+}
+body .instructor-dashboard-wrapper-2 section.idash-section#membership .member-lists-management .auth-list-container .member-list-widget input[type="button"].add,
+body .instructor-dashboard-content-2 input[type="button"],
+body .search-bar .search-button {
+    text-shadow: none;
+    box-shadow: none;
+    border: none;
+    background: $theme-btn-bg;
+    color: $theme-btn-text-color;
+
+    &:focus {
+        background: $theme-btn-bg;
+    }
+    &:hover {
+        background: $theme-btn-bg-hover !important;
+        box-shadow: none;
+    }
+}
+body .instructor-dashboard-wrapper-2 section.idash-section#membership .member-lists-management .auth-list-container .member-list-widget input[type="button"].add:hover:not(:disabled),
+body .instructor-dashboard-content-2 input[type="button"]:hover:not(:disabled) {
+    box-shadow: none;
+}
+input[type="submit"], input[type="button"], button, .button,
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register {
+    background: $theme-btn-bg;
+    box-shadow: 0 2px 1px 0 $theme-btn-shadow;
+    color: $theme-btn-text-color;
+
+    &:focus {
+        background: $theme-btn-bg;
+    }
+    &:hover {
+        background: $theme-btn-bg-hover;
+    }
+}
+input[type="submit"]:hover:not(:disabled), input[type="button"]:hover:not(:disabled), button:hover:not(:disabled), .button:hover:not(:disabled),
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register:hover:not(:disabled) {
+    background: $theme-btn-bg-hover;
+}
+.home>header {
+    background-image: url('../images/background.jpg');
+    height: 420px;
+    background-position: center;
+    position: relative;
+    background-color: #040404;
+    background-position: 0 0;
 }

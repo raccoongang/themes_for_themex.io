@@ -1,0 +1,20 @@
+.nav-holder {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    display: none;
+
+    .menu-open & {
+        display: block;
+    }
+    @media screen and (min-width:760px ) {
+        width: auto;
+        display: block;
+    }
+
+    &:after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+}
