@@ -179,6 +179,7 @@
         box-shadow: 0 2px 1px 0 $theme-btn-shadow;
         color: $theme-btn-text-color;
 
+        &:active,
         &:focus {
             background: $theme-btn-bg;
         }
@@ -191,6 +192,7 @@
         color: $theme-btn-white-text-color;
         border-color: $theme-btn-white-border;
 
+        &:active,
         &:focus {
             background: $theme-btn-white-bg;
         }
@@ -207,7 +209,8 @@ body .discussion-module .btn,
     background: $theme-btn-white-bg;
     color: $theme-btn-white-text-color;
     border-color: $theme-btn-white-border;
-
+    
+    &:active,
     &:focus {
         background: $theme-btn-white-bg;
     }
@@ -225,6 +228,7 @@ body .search-bar .search-button {
     background: $theme-btn-bg;
     color: $theme-btn-text-color;
 
+    &:active,
     &:focus {
         background: $theme-btn-bg;
     }
@@ -242,7 +246,8 @@ input[type="submit"], input[type="button"], button, .button,
     background: $theme-btn-bg;
     box-shadow: 0 2px 1px 0 $theme-btn-shadow;
     color: $theme-btn-text-color;
-
+    
+    &:active,
     &:focus {
         background: $theme-btn-bg;
     }
