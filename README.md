@@ -28,4 +28,4 @@
 ## 7. Delete our time file time-lms-main-v1.css
 :+1:
 
-sass --watch sass/lms-main-v1.scss:css/lms-main-v1.css sass/discussion/lms-discussion-main.scss:css/discussion/lms-discussion-main.css
+sass --watch sass/lms-main-v1.scss:css/lms-main-v1.css sass/discussion/lms-discussion-main.scss:css/discussion/lms-discussion-main.css sass/lms-main-v1-rtl.scss:css/lms-main-v1-rtl.css sass/discussion/lms-discussion-main-rtl.scss:css/discussion/lms-discussion-main-rtl.css

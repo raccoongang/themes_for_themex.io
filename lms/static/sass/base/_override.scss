@@ -64,11 +64,13 @@
             a {
                 width: 100%;
             }
-
+            
+            // login and register btns on the header nav
             .btn {
                 background: $theme-btn-bg;
-                box-shadow: 0 2px 1px 0 $theme-btn-shadow;
+                box-shadow: none;
                 color: $theme-btn-text-color;
+                text-transform: uppercase;
 
                 &:focus {
                     background: $theme-btn-bg;
@@ -173,10 +175,11 @@
         }
     }
 }
+// btns on register and login forms
 .login-register {
     .action-primary {
         background: $theme-btn-bg;
-        box-shadow: 0 2px 1px 0 $theme-btn-shadow;
+        box-shadow: none;
         color: $theme-btn-text-color;
 
         &:active,
@@ -185,12 +188,14 @@
         }
         &:hover {
             background: $theme-btn-bg-hover;
+            box-shadow: none;
         }
     }
     .nav-btn {
         background: $theme-btn-white-bg;
         color: $theme-btn-white-text-color;
         border-color: $theme-btn-white-border;
+        box-shadow: none;
 
         &:active,
         &:focus {
@@ -199,6 +204,7 @@
         &:hover {
             color: $theme-btn-white-text-color-hover;
             background: $theme-btn-white-bg-hover;
+            box-shadow: none;
         }
     }
 }
@@ -217,6 +223,7 @@ body .discussion-module .btn,
     &:hover {
         color: $theme-btn-white-text-color-hover;
         background: $theme-btn-white-bg-hover !important;
+        border-color: $theme-btn-white-border;
     }
 }
 body .instructor-dashboard-wrapper-2 section.idash-section#membership .member-lists-management .auth-list-container .member-list-widget input[type="button"].add,
@@ -244,8 +251,11 @@ body .instructor-dashboard-content-2 input[type="button"]:hover:not(:disabled) {
 input[type="submit"], input[type="button"], button, .button,
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register {
     background: $theme-btn-bg;
-    box-shadow: 0 2px 1px 0 $theme-btn-shadow;
+    box-shadow: none;
     color: $theme-btn-text-color;
+    border: none;
+    text-shadow: none;
+    border-radius: 2px;
     
     &:active,
     &:focus {
@@ -260,10 +270,105 @@ input[type="submit"]:hover:not(:disabled), input[type="button"]:hover:not(:disab
     background: $theme-btn-bg-hover;
 }
 .home>header {
-    background-image: url('../images/background.jpg');
+    background-image: url('#{$img-path}/background.jpg');
     height: 420px;
     background-position: center;
     position: relative;
     background-color: #040404;
     background-position: 0 0;
+}
+.courses-container .courses .course {
+    border-bottom: 3px solid #fc6a15;
+
+    .course-image .cover-image .learn-more {
+        background-color: transparent;
+        border: 3px solid #fff;
+        line-height: 45px;
+    }
+}
+.home>header {
+    .outer-wrapper {
+        animation: none;
+    }
+    .title {
+        background: transparent;
+        box-shadow: none;
+
+        >.heading-group {
+            text-align: center;
+
+            h1 {
+                font-size: 52px;
+                line-height: 1.2;
+                color: #fff;
+                text-align: center;
+                font-weight: bold;
+                text-shadow: 0px 2px 0px rgba(77, 77, 77, 0.34);
+                margin-bottom: 50px;
+            }
+            span {
+                display: block;
+                text-align: center;
+                font-size: 34px;
+                line-height: 1.3;
+                text-shadow: 0px 2px 0px rgba(77, 77, 77, 0.4);
+                color: #fff;
+                margin-bottom: 40px;
+            }
+            .link {
+                background: transparent;
+                border: 3px solid #fff;
+                text-shadow: none;
+                box-shadow: none;
+                color: #fff;
+                border-radius: 2px;
+                padding: 10px 20px;
+                display: inline-block;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+.wrapper-footer {
+    position: relative;
+    padding: 65px 10px 30px 10px;
+
+    footer#footer-openedx .colophon {
+        width: 100%;
+
+        .nav-colophon {
+            ol {
+                width: 100%;
+                text-align: center;
+            }
+            li {
+                float: none;
+                display: inline-block;
+                margin: 0 15px;
+            }
+        }
+    }
+}
+.footer-logo-holder {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    margin-left: -35px;
+}
+.logo-ar {
+    display: none;
+
+    .lang_ar & {
+        display: inline;
+    }
+}
+.logo-en {
+    display: inline;
+
+    .lang_ar & {
+        display: none;
+    }
 }

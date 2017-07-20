@@ -2,7 +2,7 @@
     display: block;
     position: relative;
     width: $hamburger-width;
-    height: $hamburger-height;
+    height: $hamburger-height + 6;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -18,7 +18,7 @@
         position: absolute;
         height: $hamburger-height-line;
         width: 100%;
-        top: $hamburger-height / 2;
+        top: ($hamburger-height / 2);
         left: 0;
         background-color: $hamburger-color;
         transition: all 0.3s;  
