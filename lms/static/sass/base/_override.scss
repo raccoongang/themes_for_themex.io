@@ -1,3 +1,6 @@
+body {
+    background: #eee;
+}
 .header-global {
     height: auto;
     background: $header-color;
@@ -371,4 +374,10 @@ input[type="submit"]:hover:not(:disabled), input[type="button"]:hover:not(:disab
     .lang_ar & {
         display: none;
     }
+}
+.highlighted-courses .courses {
+    padding-bottom: 77px;
+}
+.content-wrapper {
+    background: #eee;
 }
