@@ -97,7 +97,7 @@ body {
             margin: 13px 5px 13px 15px;
 
             &:hover {
-                color: $header-nav-link-color-hover;
+                color: #3c3c3c;
             }
         }
         .dropdown {
@@ -211,6 +211,8 @@ body {
         }
     }
 }
+.login-register .login-provider,
+body .dashboard .my-courses .course .details .enter-course.archived,
 .account-settings-sections .section .account-settings-section-body .u-field .field .u-field-link,
 body .discussion-module .btn,
 .courseware-bookmarks-button .bookmarks-list-button,
@@ -229,6 +231,20 @@ body .discussion-module .btn,
         border-color: $theme-btn-white-border;
     }
 }
+.empty-dashboard-message a,
+body .instructor-dashboard-wrapper-2 .customBrowseBtn .file-browse .browse,
+body .btn-blue,
+body .instructor-dashboard-wrapper-2 .btn-blue,
+body .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .file-upload-form .action-submit,
+body .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .form-submit,
+body .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .cohort-management-nav .action-create,
+body .wrapper-msg.wrapper-auto-cert .auto-cert-message .has-actions .msg-actions .btn,
+body .dashboard .my-courses .course .wrapper-messages-primary .message.message-status.course-status-certavailable .actions-primary .action-certificate .btn,
+body section.wiki .btn.btn-primary,
+.forum-new-post-form .post-type-input:checked+.post-type-label,
+body .btn-brand,
+body .home .page-header-secondary,
+body .course-info header.course-profile .intro-inner-wrapper .intro .main-cta strong,
 body .instructor-dashboard-wrapper-2 section.idash-section#membership .member-lists-management .auth-list-container .member-list-widget input[type="button"].add,
 body .instructor-dashboard-content-2 input[type="button"],
 body .search-bar .search-button {
@@ -237,14 +253,20 @@ body .search-bar .search-button {
     border: none;
     background: $theme-btn-bg;
     color: $theme-btn-text-color;
-
+    
+    &:focus:not(:disabled),
     &:active,
     &:focus {
         background: $theme-btn-bg;
+        border: none;
+        box-shadow: none;
     }
+    &:hover:not(:disabled),
     &:hover {
         background: $theme-btn-bg-hover !important;
         box-shadow: none;
+        cursor: pointer;
+        color: $theme-btn-text-color;
     }
 }
 body .instructor-dashboard-wrapper-2 section.idash-section#membership .member-lists-management .auth-list-container .member-list-widget input[type="button"].add:hover:not(:disabled),
@@ -280,6 +302,7 @@ input[type="submit"]:hover:not(:disabled), input[type="button"]:hover:not(:disab
     background-color: #040404;
     background-position: 0 0;
 }
+<<<<<<< HEAD
 .courses-container .courses .course {
     border-bottom: 3px solid #fc6a15;
 
@@ -380,4 +403,12 @@ input[type="submit"]:hover:not(:disabled), input[type="button"]:hover:not(:disab
 }
 .content-wrapper {
     background: #eee;
+}
+.login-register .login-provider {
+    .icon {
+        background: $theme-btn-bg;
+    }
+    span {
+        color: $theme-btn-white-text-color;
+    }
 }
