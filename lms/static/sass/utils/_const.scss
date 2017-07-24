@@ -24,3 +24,6 @@ $theme-btn-white-border: #777;
 $theme-btn-white-text-color: #777;
 $theme-btn-white-text-color-hover: #fff;
 $theme-btn-white-bg-hover: $theme-btn-bg-hover;
+// link color
+$theme-link: green;
+$theme-link-hover: lighten($theme-link, 20%);
