@@ -24,6 +24,10 @@ $theme-btn-white-border: #fc6a15;
 $theme-btn-white-text-color: #fc6a15;
 $theme-btn-white-text-color-hover: #fff;
 $theme-btn-white-bg-hover: #fc6a15;
+// link color
+$theme-link: #842a97;
+$theme-link-hover: lighten($theme-link, 20%);
 //our overrides for settings we want to change
 $img-path: "../images" !default;
 $font-path: "../fonts" !default;
+$theme-btn-white-bg-hover: $theme-btn-bg-hover;

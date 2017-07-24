@@ -199,7 +199,46 @@
         }
     }
 }
-// btns on register and login forms
+// links
+body a.progress-link,
+body .sections a,
+body .xmodule_display.xmodule_HtmlModule a:link,
+body .xmodule_display.xmodule_HtmlModule a,
+body .course-index .accordion .course-navigation .button-chapter,
+body .btn-link,
+div.info-wrapper section.updates div a,
+body div.info-wrapper section.handouts a,
+body div.info-wrapper section.updates div article .toggle-visibility-button,
+.dashboard .my-courses .course .details .course-title a,
+.supplemental-link a,
+.login-register .form-field .field-link,
+body a {
+    color: $theme-link;
+
+    &:hover {
+        color: $theme-link-hover;
+        text-decoration: none !important;
+    }
+}
+body .course-index .accordion .course-navigation .chapter-content-container .chapter-menu .menu-item.graded .menu-icon,
+.courses-container .courses .course .course-info .course-title {
+    color: $theme-link;
+}
+body .wrapper-course-material .course-tabs li a {
+    color: $theme-link !important;
+    
+    &:focus,
+    &:hover,
+    &.active {
+        color: $theme-link !important;
+        border-color: $theme-link !important;
+    }
+}
+body .wrapper-account-settings .wrapper-header .account-nav button:hover {
+    border-color: $theme-link !important;
+}
+// end links
+// btns
 .login-register {
     .action-primary {
         background: $theme-btn-bg;
@@ -324,6 +363,7 @@ input[type="submit"]:hover:not(:disabled), input[type="button"]:hover:not(:disab
         line-height: 45px;
     }
 }
+// end btns
 .home>header {
     background-image: url('#{$img-path}/background.jpg');
     height: 420px;
