@@ -76,50 +76,60 @@
         }
     }
 }
-.dropdown-menu-container .dropdown-menu {
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.3);
-    border: 1px solid #c8c8c8;
-    padding: 5px 10px;
-    min-width: 140px;
-    width: auto;
-    z-index: 3;
+.dropdown-menu-container {
+    .menu-button {
+        color: #000;
+        box-shadow: none;
 
-    .dropdown-item {
-        padding-bottom: 0;
-        margin-bottom: 0;
-        border: none;
-        border-top: 1px dotted #c8c8c8;
-
-        &:first-child {
-            border: none;
-            box-shadow: none;
+        &:hover {
+            background: none;
         }
-        a {
-            border: 1px solid transparent;
-            border-radius: 3px;
-            box-sizing: border-box;
-            cursor: pointer;
-            display: block;
-            margin: 5px 0px;
-            overflow: hidden;
-            padding: 3px 5px 4px;
-            text-overflow: ellipsis;
-            transition: padding 0.15s linear 0s;
-            white-space: nowrap;
-            width: 100%;
-            color: $dropdown-menu-color;
+    }
+    .dropdown-menu {
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.3);
+        border: 1px solid #c8c8c8;
+        padding: 5px 10px;
+        min-width: 140px;
+        width: auto;
+        z-index: 3;
 
-            &:focus {
-                color: $dropdown-menu-color;
-                text-decoration: none;
+        .dropdown-item {
+            padding-bottom: 0;
+            margin-bottom: 0;
+            border: none;
+            border-top: 1px dotted #c8c8c8;
+
+            &:first-child {
+                border: none;
+                box-shadow: none;
             }
-            &:hover {
-                color: $dropdown-menu-color-hover;
-                text-decoration: none;
+            a {
+                border: 1px solid transparent;
+                border-radius: 3px;
+                box-sizing: border-box;
+                cursor: pointer;
+                display: block;
+                margin: 5px 0px;
+                overflow: hidden;
+                padding: 3px 5px 4px;
+                text-overflow: ellipsis;
+                transition: padding 0.15s linear 0s;
+                white-space: nowrap;
+                width: 100%;
+                color: $dropdown-menu-color;
+
+                &:focus {
+                    color: $dropdown-menu-color;
+                    text-decoration: none;
+                }
+                &:hover {
+                    color: $dropdown-menu-color-hover;
+                    text-decoration: none;
+                }
             }
         }
     }
-}
+}  
 .btn,
 .content-wrapper .page-header.has-secondary .page-header-secondary .form-actions>button {
     background: $theme-btn-white-bg;
