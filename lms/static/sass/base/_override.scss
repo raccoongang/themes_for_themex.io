@@ -453,12 +453,17 @@ input[type="submit"]:hover:not(:disabled), input[type="button"]:hover:not(:disab
 .highlighted-courses .courses {
     padding-bottom: 77px;
 }
-.login-register .login-provider {
-    .icon {
-        background: $theme-btn-bg;
+.login-register {
+    .form-type {
+        margin-bottom: 40px;
     }
-    span {
-        color: $theme-btn-white-text-color;
+    .login-provider {
+        .icon {
+            background: $theme-btn-bg;
+        }
+        span {
+            color: $theme-btn-white-text-color;
+        }
     }
 }
 .home {
