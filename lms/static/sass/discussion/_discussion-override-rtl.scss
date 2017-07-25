@@ -1,14 +1,36 @@
-.header-global .wrapper-header .logo {
-    float: right;
-    margin: -2px 0 0 39px;
-}
-.dropdown-menu-container .menu-title {
-    float: right;
-
-    .label-username {
+.header-global .wrapper-header {
+    .wrapper-user-menu {
         float: left;
+    }
+    .logo {
+        float: right;
+        margin: -2px 0 0 39px;
+    }
+    .list-inline.nav-global {
+        float: right;
+    }
+}
+.dropdown-menu-container {
+    .menu-title {
+        float: right;
+
+        .label-username {
+            float: left;
+        }
+    }
+    .dropdown-menu {
+        right: auto;
+        left: 0;
+        
+        &:before {
+            right: auto;
+            left: 7px;
+        }
     }
 }
 .tabs .tab {
     float: right;
+}
+.doc-link {
+    float: left;
 }
