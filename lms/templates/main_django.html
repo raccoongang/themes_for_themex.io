@@ -12,18 +12,19 @@
     <script type="text/javascript" src="{% static i18njs_path %}"></script>
   {% endwith %}
 
-  {% stylesheet 'style-vendor' %}
-  {% if LANGUAGE_BIDI %}
-  {% stylesheet 'style-main-v1-rtl' %}
-  {% else %}
-  {% stylesheet 'style-main-v1' %}
-  {% endif %}
-
   {% block main_vendor_js %}
   {% javascript 'main_vendor' %}
   {% endblock %}
   {% block headextra %}{% endblock %}
   {% render_block "css" %}
+
+  {% stylesheet 'style-vendor' %}
+  {% if LANGUAGE_BIDI %}
+  {% stylesheet 'style-main-v1-rtl' %}
+  {% stylesheet 'style-course-rtl' %}
+  {% else %}
+  {% stylesheet 'style-main-v1' %}
+  {% endif %}
 
   {% optional_include "head-extra.html"|microsite_template_path %}
 
