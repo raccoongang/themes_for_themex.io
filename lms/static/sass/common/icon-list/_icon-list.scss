@@ -16,22 +16,21 @@
         font-size: 0;
         line-height: 0;
         text-indent: -9999px;
-        background: url('#{$img-path}/footer-icon.png');
 
         &__facebook {
-            background-position: 0 0;
+            background: url('#{$img-path}/ico-facebook.svg');
         }
         &__instagramm {
-            background-position: -45px 0;
+            background: url('#{$img-path}/ico-instagram.svg');
         }
         &__twitter {
-            background-position: -90px 0;
+            background: url('#{$img-path}/ico-twitter.svg');
         }
         &__linkedin {
-            background-position: -135px 0;
+            background: url('#{$img-path}/ico-linkedIn.svg');
         }
         &__youtube {
-            background-position: -180px 0;
+            background: url('#{$img-path}/ico-youtube.svg');
         }
     }
 }

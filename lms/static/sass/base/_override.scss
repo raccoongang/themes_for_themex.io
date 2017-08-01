@@ -27,6 +27,10 @@
             a {
                 color: $header-nav-link-color;
 
+                &:active,
+                &:focus {
+                    color: $header-nav-link-color;
+                }
                 &:hover {
                     color: $header-nav-link-color-hover;
                 }
@@ -219,6 +223,11 @@ body div.info-wrapper section.updates div article .toggle-visibility-button,
 body a {
     color: $theme-link;
 
+    &:focus {
+        color: $theme-link;
+        text-decoration: none !important;
+    }
+
     &:hover {
         color: $theme-link-hover;
         text-decoration: none !important;
@@ -228,6 +237,9 @@ body .course-index .accordion .course-navigation .chapter-content-container .cha
 .courses-container .courses .course .course-info .course-title {
     color: $theme-link;
 }
+.instructor-dashboard-wrapper-2 section.idash-section#cohort_management .toggle-cohort-management-secondary,
+.instructor-dashboard-wrapper-2 section.idash-section#cohort_management .cohort-management-settings .form-cancel,
+body .link-to-group-settings,
 body .wrapper-course-material .course-tabs li a {
     color: $theme-link !important;
     
@@ -241,9 +253,27 @@ body .wrapper-course-material .course-tabs li a {
 body .wrapper-account-settings .wrapper-header .account-nav button:hover {
     border-color: $theme-link !important;
 }
+section.wiki .table.table-striped a,
+body section.wiki .article-functions .see-children a,
+body .updates a {
+    color: $theme-link;
+
+    &:hover {
+        color: $theme-link-hover;
+        text-decoration: none !important;
+    }
+}
+body .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .wrapper-tabs .tab .toggle-button
+body .forum-nav-thread.never-read .forum-nav-thread-link,
+body .discussion .post-label.post-label-following {
+    color: $theme-link;
+}
+.courses-container .courses .course .course-image .cover-image:before {
+    background: $theme-link;
+}
 // end links
 // btns
-.login-register {
+body .login-register {
     .action-primary {
         background: $theme-btn-bg;
         box-shadow: none;
@@ -267,6 +297,8 @@ body .wrapper-account-settings .wrapper-header .account-nav button:hover {
         &:active,
         &:focus {
             background: $theme-btn-white-bg;
+            color: $theme-btn-white-text-color;
+            box-shadow: none;
         }
         &:hover {
             color: $theme-btn-white-text-color-hover;
@@ -278,9 +310,24 @@ body .wrapper-account-settings .wrapper-header .account-nav button:hover {
 .login-register .login-provider,
 body .dashboard .my-courses .course .details .enter-course.archived,
 .account-settings-sections .section .account-settings-section-body .u-field .field .u-field-link,
-body .discussion-module .btn,
-.courseware-bookmarks-button .bookmarks-list-button,
 .dashboard .my-courses .course .details .enter-course {
+    background: $theme-btn-white-bg;
+    color: $theme-btn-white-text-color;
+    border-color: $theme-btn-white-border;
+    
+    &:active,
+    &:focus {
+        border-color: $theme-btn-white-border;
+        background: $theme-btn-white-bg;
+        color: $theme-btn-white-text-color;
+    }
+    &:hover {
+        color: $theme-btn-white-text-color-hover;
+        background: $theme-btn-white-bg-hover !important;
+        border-color: $theme-btn-white-border;
+    }
+}
+body .discussion-module .btn {
     background: $theme-btn-white-bg;
     color: $theme-btn-white-text-color;
     border-color: $theme-btn-white-border;
@@ -291,6 +338,24 @@ body .discussion-module .btn,
     }
     &:hover {
         color: $theme-btn-white-text-color-hover;
+        background: $theme-btn-white-bg-hover !important;
+        border-color: $theme-btn-white-border !important;
+    }
+}
+body .courseware-bookmarks-button .bookmarks-list-button,
+body .courseware-bookmarks-button .bookmarks-list-button.is-active {
+    background: $theme-btn-white-bg;
+    color: $theme-btn-white-text-color;
+    border-color: $theme-btn-white-border;
+    
+    &:active,
+    &:focus {
+        background: $theme-btn-white-bg;
+        color: $theme-btn-white-text-color !important;
+        border-color: $theme-btn-white-border;
+    }
+    &:hover {
+        color: $theme-btn-white-text-color-hover !important;
         background: $theme-btn-white-bg-hover !important;
         border-color: $theme-btn-white-border;
     }
@@ -306,6 +371,7 @@ body .wrapper-msg.wrapper-auto-cert .auto-cert-message .has-actions .msg-actions
 body .dashboard .my-courses .course .wrapper-messages-primary .message.message-status.course-status-certavailable .actions-primary .action-certificate .btn,
 body section.wiki .btn.btn-primary,
 .forum-new-post-form .post-type-input:checked+.post-type-label,
+body .discussion-module .btn-brand,
 body .btn-brand,
 body .home .page-header-secondary,
 body .course-info header.course-profile .intro-inner-wrapper .intro .main-cta strong,
@@ -367,6 +433,25 @@ input[type="submit"]:hover:not(:disabled), input[type="button"]:hover:not(:disab
         line-height: 45px;
     }
 }
+body .xmodule_display.xmodule_SequenceModule .sequence-nav-button:hover,
+body .xmodule_display.xmodule_SequenceModule .sequence-nav-button:active,
+body .xmodule_display.xmodule_SequenceModule .sequence-nav-button.active,
+body .xmodule_display.xmodule_SequenceModule .sequence-nav button:hover,
+body .xmodule_display.xmodule_SequenceModule .sequence-nav button:active,
+body .xmodule_display.xmodule_SequenceModule .sequence-nav button.active {
+    border-bottom-color: $theme-btn-bg;
+}
+body .discussion.inline-discussion .new-post-article .add-post-cancel {
+    color: $theme-btn-bg;
+}
+.discussion-module .btn-brand,
+.forum-new-post-form .post-type-input:checked+.post-type-label,
+.edit-post-form .post-type-input:checked+.post-type-label {
+    background-color: $theme-btn-bg;
+}
+.date-summary-container .date-summary-todays-date {
+    border-left-color: $theme-btn-bg;
+}
 // end btns
 .home>header {
     background-image: url('#{$img-path}/background.jpg');
@@ -392,9 +477,11 @@ input[type="submit"]:hover:not(:disabled), input[type="button"]:hover:not(:disab
 
         &:last-child {
             margin-right: auto;
+            margin-left: auto;
         }
         >.heading-group {
             text-align: center;
+            width: 100%;
 
             h1 {
                 font-size: 32px;
@@ -456,6 +543,10 @@ input[type="submit"]:hover:not(:disabled), input[type="button"]:hover:not(:disab
 }
 .highlighted-courses .courses {
     padding-bottom: 77px;
+
+    .course a {
+        background: #fff;
+    }
 }
 .login-register {
     .form-type {
