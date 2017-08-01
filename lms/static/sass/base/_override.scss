@@ -174,6 +174,9 @@
             width: 100%;
 
             .nav-colophon {
+                .lang_ar & {
+                    direction: rtl;
+                }
                 ol {
                     width: 100%;
                     text-align: center;
@@ -204,6 +207,9 @@
     }
 }
 // links
+.action-type-container a,
+body .xmodule_display.xmodule_VideoModule .video .subtitles .subtitles-menu li span,
+body .xmodule_display.xmodule_CapaModule div.problem .action .problem-action-btn,
 body section.wiki .nav-tabs li.active a,
 body section.wiki .breadcrumb li a,
 body section.wiki .nav-tabs a,
@@ -237,6 +243,7 @@ body .course-index .accordion .course-navigation .chapter-content-container .cha
 .courses-container .courses .course .course-info .course-title {
     color: $theme-link;
 }
+.instructor-dashboard-wrapper-2 section.idash-section#cohort_management .toggle-cohort-management-discussionsб
 .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .toggle-cohort-management-secondary,
 .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .cohort-management-settings .form-cancel,
 body .link-to-group-settings,
@@ -320,6 +327,7 @@ body .dashboard .my-courses .course .details .enter-course.archived,
         border-color: $theme-btn-white-border;
         background: $theme-btn-white-bg;
         color: $theme-btn-white-text-color;
+        box-shadow: none;
     }
     &:hover {
         color: $theme-btn-white-text-color-hover;
@@ -334,10 +342,12 @@ body .discussion-module .btn {
     
     &:active,
     &:focus {
-        background: $theme-btn-white-bg;
+        background: $theme-btn-white-bg !important;
+        color: $theme-btn-white-text-color !important;
+        border-color: $theme-btn-white-border !important;
     }
     &:hover {
-        color: $theme-btn-white-text-color-hover;
+        color: $theme-btn-white-text-color-hover !important;
         background: $theme-btn-white-bg-hover !important;
         border-color: $theme-btn-white-border !important;
     }
@@ -415,6 +425,7 @@ input[type="submit"], input[type="button"], button, .button,
     &:active,
     &:focus {
         background: $theme-btn-bg;
+        box-shadow: none;
     }
     &:hover {
         background: $theme-btn-bg-hover;
@@ -451,6 +462,9 @@ body .discussion.inline-discussion .new-post-article .add-post-cancel {
 }
 .date-summary-container .date-summary-todays-date {
     border-left-color: $theme-btn-bg;
+}
+.has-breadcrumbs .breadcrumbs .all-topics:focus {
+    background: none;
 }
 // end btns
 .home>header {
@@ -563,4 +577,42 @@ body .discussion.inline-discussion .new-post-article .add-post-cancel {
 }
 .home {
     background: #eee;
+}
+section.wiki .main-article {
+    .lang_ar & {
+        float: right;
+        margin: 40px;
+    }
+}
+section.wiki .breadcrumb {
+    .lang_ar & {
+        float: right;
+    }
+}
+section.wiki .global-functions {
+    .lang_ar & {
+        float: left;
+    }
+}
+.email-targets-secondary li label {
+    .lang_ar & {
+        float: left;
+    }
+}
+.course-index .accordion .course-navigation .button-chapter .group-heading {
+    .lang_ar & {
+        padding: 15px 40px 15px 10px;
+    }
+}
+.content-wrapper {
+    padding-bottom: 80px;
+}
+.main-article {
+    h1 {
+        text-align: left;
+
+        .lang_ar & {
+            text-align: right;
+        }
+    }
 }
