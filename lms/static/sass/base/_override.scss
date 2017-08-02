@@ -207,7 +207,12 @@
     }
 }
 // links
-.action-type-container a,
+body .xmodule_display.xmodule_VideoModule .video .subtitles a,
+.u-field-message-notification a,
+body div.book-wrapper section.book-sidebar #booknav li a,
+body .discussion .post-label.post-label-by-staff,
+body .forum-nav-thread.never-read .forum-nav-thread-link,
+.empty-dashboard-message a,
 body .xmodule_display.xmodule_VideoModule .video .subtitles .subtitles-menu li span,
 body .xmodule_display.xmodule_CapaModule div.problem .action .problem-action-btn,
 body section.wiki .nav-tabs li.active a,
@@ -243,6 +248,7 @@ body .course-index .accordion .course-navigation .chapter-content-container .cha
 .courses-container .courses .course .course-info .course-title {
     color: $theme-link;
 }
+.action-type-container a,
 .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .toggle-cohort-management-discussionsб
 .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .toggle-cohort-management-secondary,
 .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .cohort-management-settings .form-cancel,
@@ -277,6 +283,12 @@ body .discussion .post-label.post-label-following {
 }
 .courses-container .courses .course .course-image .cover-image:before {
     background: $theme-link;
+}
+body .xmodule_display.xmodule_CapaModule div.problem .action .problem-action-btn {
+    &:hover,
+    &:focus {
+        border: none !important;
+    }
 }
 // end links
 // btns
@@ -370,7 +382,7 @@ body .courseware-bookmarks-button .bookmarks-list-button.is-active {
         border-color: $theme-btn-white-border;
     }
 }
-.empty-dashboard-message a,
+body .empty-dashboard-message a,
 body .instructor-dashboard-wrapper-2 .customBrowseBtn .file-browse .browse,
 body .btn-blue,
 body .instructor-dashboard-wrapper-2 .btn-blue,
@@ -398,8 +410,9 @@ body .search-bar .search-button {
     &:active,
     &:focus {
         background: $theme-btn-bg;
+        color: $theme-btn-text-color;
         border: none;
-        box-shadow: none;
+        box-shadow: none !important;
     }
     &:hover:not(:disabled),
     &:hover {
@@ -467,6 +480,28 @@ body .discussion.inline-discussion .new-post-article .add-post-cancel {
     background: none;
 }
 // end btns
+.u-field.mode-placeholder:hover {
+    border-color: $theme-btn-bg;
+
+    span {
+        color: $theme-btn-bg;
+    }
+}
+.view-profile .profile-section-two-fields .u-field.mode-placeholder:hover {
+    border-color: $theme-btn-bg;
+
+    .u-field-title {
+        color: $theme-btn-bg;
+    }
+}
+.view-profile .profile-image-field .image-wrapper .u-field-upload-button {
+    color: $theme-link;
+
+    &:hover {
+        border-color: $theme-link;
+        background: rgba($theme-link-hover, 0.8);
+    }
+}
 .home>header {
     background-image: url('#{$img-path}/background.jpg');
     height: 420px;
@@ -581,7 +616,7 @@ body .discussion.inline-discussion .new-post-article .add-post-cancel {
 section.wiki .main-article {
     .lang_ar & {
         float: right;
-        margin: 40px;
+        padding: 40px;
     }
 }
 section.wiki .breadcrumb {
@@ -597,6 +632,7 @@ section.wiki .global-functions {
 .email-targets-secondary li label {
     .lang_ar & {
         float: left;
+        margin-right: 10px;
     }
 }
 .course-index .accordion .course-navigation .button-chapter .group-heading {
@@ -606,6 +642,7 @@ section.wiki .global-functions {
 }
 .content-wrapper {
     padding-bottom: 80px;
+    background: #eee;
 }
 .main-article {
     h1 {

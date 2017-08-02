@@ -141,7 +141,9 @@
     box-shadow: none;
 
     &:focus {
-        background: $theme-btn-white-bg;
+        background: $theme-btn-white-bg !important;
+        color: $theme-btn-white-text-color !important;
+        border-color: $theme-btn-white-border !important;
     }
     &:hover {
         color: $theme-btn-white-text-color-hover;
