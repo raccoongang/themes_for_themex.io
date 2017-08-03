@@ -137,6 +137,10 @@
     margin-top: 0;
     padding: 20px 0;
 }
+body .container.activation h1.valid {
+    background: $theme-link;
+    border: 1px solid $theme-link;
+}
 .doc-link {
     color: $header-nav-link-color !important;
     margin: 12px 0;
@@ -283,9 +287,11 @@ body .wrapper-account-settings .wrapper-header .account-nav button:hover {
 }
 section.wiki .table.table-striped a,
 body section.wiki .article-functions .see-children a,
-body .updates a {
+body .updates a,
+body .message a{
     color: $theme-link;
-
+    
+    &:focus,
     &:hover {
         color: $theme-link-hover;
         text-decoration: none !important;
@@ -500,6 +506,51 @@ body .discussion.inline-discussion .new-post-article .add-post-cancel {
     input[type="submit"], input[type="button"], button, .button {
         border: none;
     }
+}
+.xmodule_display.xmodule_SequenceModule .sequence-nav-button.disabled {
+    span {
+        color: lighten(#222, .5);
+    }
+}
+.xmodule_display.xmodule_SequenceModule .sequence-nav-button.button-next,
+.xmodule_display.xmodule_SequenceModule .sequence-nav-button.button-previous {
+    span {
+        color: #222;
+    }
+}
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register {
+    border: none;
+}
+.light-button:hover:not(:disabled),
+div.history-controls input[type="submit"]:hover:not(:disabled),
+a.light-button:hover:not(:disabled), 
+div.info-wrapper section.handouts ol li div.hitarea:hover+h4.light-button:not(:disabled), 
+div.info-wrapper section.handouts ol li div.hitarea:focus+h4.light-button:not(:disabled), 
+.gray-button:hover:not(:disabled),
+input[type="reset"]:hover:not(:disabled), 
+input[type="submit"]:hover:not(:disabled),
+input[type="button"]:hover:not(:disabled),
+button:hover:not(:disabled),
+.button:hover:not(:disabled),
+.xmodule_display.xmodule_LTIModule div.lti .wrapper-lti-link .lti-link .link_lti_new_window:hover:not(:disabled) {
+    &:hover {
+        box-shadow: none;
+    }
+}
+body .discussion-module .btn:hover,
+body .wmd-prompt-dialog .btn:hover,
+body .discussion-module .btn-brand:hover,
+body .wmd-prompt-dialog .btn-brand:hover,
+body .discussion-module .btn:active,
+body .wmd-prompt-dialog .btn:active,
+body .discussion-module .btn-brand:active,
+body .wmd-prompt-dialog .btn-brand:active,
+body .discussion-module .btn:focus,
+body .wmd-prompt-dialog .btn:focus,
+body .discussion-module .btn-brand:focus,
+body .wmd-prompt-dialog .btn-brand:focus {
+    border-color: $theme-btn-bg !important;
+    background-color: $theme-btn-bg !important;
 }
 // end btns
 .u-field.mode-placeholder:hover {
