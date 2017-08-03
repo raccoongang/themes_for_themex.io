@@ -77,6 +77,7 @@
                 color: $theme-btn-text-color;
                 text-transform: uppercase;
 
+                &:active,
                 &:focus {
                     background: $theme-btn-bg;
                 }
@@ -186,6 +187,9 @@
                     display: block;
                     text-align: center;
                     margin: 0 15px 10px;
+                    &:last-child {
+                        margin-right: 15px;
+                    }
                     @media screen and (min-width:760px ) {
                         display: inline-block;
                         margin: 0 15px;
@@ -204,6 +208,13 @@
                 }
             }
         }
+    }
+}
+.bookmarks-results-list .bookmarks-results-list-item:hover {
+    border-color: $theme-link;
+
+    .list-item-breadcrumbtrail {
+        color: $theme-link;
     }
 }
 // links
@@ -244,12 +255,16 @@ body a {
         text-decoration: none !important;
     }
 }
+body .xmodule_display.xmodule_VideoModule .video .subtitles .subtitles-menu li:hover,
+body .xmodule_display.xmodule_VideoModule .video .subtitles .subtitles-menu li:focus {
+    text-decoration: none !important;
+}
 body .course-index .accordion .course-navigation .chapter-content-container .chapter-menu .menu-item.graded .menu-icon,
 .courses-container .courses .course .course-info .course-title {
     color: $theme-link;
 }
 .action-type-container a,
-.instructor-dashboard-wrapper-2 section.idash-section#cohort_management .toggle-cohort-management-discussionsб
+.instructor-dashboard-wrapper-2 section.idash-section#cohort_management .toggle-cohort-management-discussions,
 .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .toggle-cohort-management-secondary,
 .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .cohort-management-settings .form-cancel,
 body .link-to-group-settings,
@@ -392,7 +407,7 @@ body .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .co
 body .wrapper-msg.wrapper-auto-cert .auto-cert-message .has-actions .msg-actions .btn,
 body .dashboard .my-courses .course .wrapper-messages-primary .message.message-status.course-status-certavailable .actions-primary .action-certificate .btn,
 body section.wiki .btn.btn-primary,
-.forum-new-post-form .post-type-input:checked+.post-type-label,
+body .forum-new-post-form .post-type-input:checked+.post-type-label,
 body .discussion-module .btn-brand,
 body .btn-brand,
 body .home .page-header-secondary,
@@ -405,7 +420,6 @@ body .search-bar .search-button {
     border: none;
     background: $theme-btn-bg;
     color: $theme-btn-text-color;
-    
     &:focus:not(:disabled),
     &:active,
     &:focus {
@@ -423,15 +437,18 @@ body .search-bar .search-button {
     }
 }
 body .instructor-dashboard-wrapper-2 section.idash-section#membership .member-lists-management .auth-list-container .member-list-widget input[type="button"].add:hover:not(:disabled),
-body .instructor-dashboard-content-2 input[type="button"]:hover:not(:disabled) {
+body .instructor-dashboard-content-2 input[type="button"]:hover:not(:disabled),
+body .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register:focus:not(:disabled),
+body button:focus:not(:disabled),
+body input[type="submit"]:focus:not(:disabled) {
     box-shadow: none;
+    border-color: $theme-btn-bg;
 }
 input[type="submit"], input[type="button"], button, .button,
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register {
     background: $theme-btn-bg;
     box-shadow: none;
     color: $theme-btn-text-color;
-    border: none;
     text-shadow: none;
     border-radius: 2px;
     
@@ -496,7 +513,8 @@ body .discussion.inline-discussion .new-post-article .add-post-cancel {
 }
 .view-profile .profile-image-field .image-wrapper .u-field-upload-button {
     color: $theme-link;
-
+    
+    &:focus,
     &:hover {
         border-color: $theme-link;
         background: rgba($theme-link-hover, 0.8);
@@ -611,7 +629,7 @@ body .discussion.inline-discussion .new-post-article .add-post-cancel {
     }
 }
 .home {
-    background: #eee;
+    background: $theme-content-bg;
 }
 section.wiki .main-article {
     .lang_ar & {
@@ -642,7 +660,7 @@ section.wiki .global-functions {
 }
 .content-wrapper {
     padding-bottom: 80px;
-    background: #eee;
+    background: $theme-content-bg;
 }
 .main-article {
     h1 {
@@ -652,4 +670,14 @@ section.wiki .global-functions {
             text-align: right;
         }
     }
+}
+.wrapper-account-settings,
+.view-profile .content-wrapper {
+    background: $theme-content-bg;
+}
+.account-settings-sections .section {
+    padding: 10px;
+}
+.has-breadcrumbs .breadcrumbs .all-topics .fa {
+    margin-left: 10px;
 }

@@ -1,7 +1,8 @@
 # How to compile sass:
 ## 1. Do some installation
-## 1.1 sudo apt-get install rubygems
-## 1.2 sudo su -c "gem install sass"
+## 1.1 sudo apt-get update
+## 1.2 sudo apt-get install rubygems
+## 1.3 sudo apt install ruby-sass
 
 ## 2. Compile scss in platform 
 
