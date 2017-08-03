@@ -222,6 +222,7 @@ body .container.activation h1.valid {
     }
 }
 // links
+body .setup-value a,
 body .xmodule_display.xmodule_VideoModule .video .subtitles a,
 .u-field-message-notification a,
 body div.book-wrapper section.book-sidebar #booknav li a,
@@ -297,7 +298,7 @@ body .message a{
         text-decoration: none !important;
     }
 }
-body .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .wrapper-tabs .tab .toggle-button
+body .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .wrapper-tabs .tab .toggle-button,
 body .forum-nav-thread.never-read .forum-nav-thread-link,
 body .discussion .post-label.post-label-following {
     color: $theme-link;
@@ -551,6 +552,7 @@ body .discussion-module .btn-brand:focus,
 body .wmd-prompt-dialog .btn-brand:focus {
     border-color: $theme-btn-bg !important;
     background-color: $theme-btn-bg !important;
+    color: $theme-btn-text-color !important;
 }
 // end btns
 .u-field.mode-placeholder:hover {

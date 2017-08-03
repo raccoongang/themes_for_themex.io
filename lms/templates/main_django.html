@@ -31,7 +31,7 @@
   <meta name="path_prefix" content="{{EDX_ROOT_URL}}">
 </head>
 
-<body class="{% block bodyclass %}{% endblock %} lang_{{LANGUAGE_CODE}}">
+<body class="{% block bodyclass %}{% endblock %} lang_{{LANGUAGE_CODE}}" dir="${static.dir_rtl()}">
   <div class="window-wrap" dir="{{LANGUAGE_BIDI|yesno:'rtl,ltr'}}">
     <a class="nav-skip" href="#main">{% trans "Skip to main content" %}</a>
     {% with course=request.course %}
