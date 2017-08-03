@@ -496,6 +496,11 @@ body .discussion.inline-discussion .new-post-article .add-post-cancel {
 .has-breadcrumbs .breadcrumbs .all-topics:focus {
     background: none;
 }
+.course-info header.course-profile .intro-inner-wrapper .intro>.heading-group {
+    input[type="submit"], input[type="button"], button, .button {
+        border: none;
+    }
+}
 // end btns
 .u-field.mode-placeholder:hover {
     border-color: $theme-btn-bg;
@@ -623,8 +628,10 @@ body .discussion.inline-discussion .new-post-article .add-post-cancel {
         .icon {
             background: $theme-btn-bg;
         }
-        span {
-            color: $theme-btn-white-text-color;
+        &:hover {
+            span {
+                color: $theme-btn-white-text-color-hover;
+            }
         }
     }
 }
@@ -671,6 +678,10 @@ section.wiki .global-functions {
         }
     }
 }
+.window-wrap,
+body.view-in-course,
+.find-courses,
+.university-profile,
 .wrapper-account-settings,
 .view-profile .content-wrapper {
     background: $theme-content-bg;
@@ -680,4 +691,31 @@ section.wiki .global-functions {
 }
 .has-breadcrumbs .breadcrumbs .all-topics .fa {
     margin-left: 10px;
+}
+body.view-in-course .window-wrap {
+    min-width: auto;
+}
+body .bookmarks-results-list .bookmarks-results-list-item:before,
+body .xmodule_display.xmodule_SequenceModule .sequence-nav ol li button .fa-bookmark {
+    color: $theme-btn-bg;
+}
+.u-field.editable-toggle.mode-display {
+    border: 2px dashed transparent;
+    
+    .u-field-icon,
+    .u-field-value-readonly {
+        color: #767676;
+    }
+    
+    &:hover {
+        background-color: transparent;
+        border: 2px dashed $theme-btn-bg;
+        
+        .u-field-icon,
+        .message-can-edit,
+        .u-field-value-readonly,
+        .view-profile .profile-section-one-fields .u-field-icon {
+            color: $theme-btn-bg;
+        }
+    }
 }

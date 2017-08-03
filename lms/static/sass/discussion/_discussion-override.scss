@@ -159,3 +159,15 @@
         background: none;
     }
 }
+.discussion .action-button .action-label {
+    padding-bottom: 1px;
+}
+.window-wrap {
+    background: $theme-content-bg;
+}
+.discussion .action-button.action-follow:hover,
+.discussion .action-button.action-follow:focus,
+.discussion .action-button.action-vote:hover,
+.discussion .action-button.action-vote:focus {
+    background: transparent;
+}

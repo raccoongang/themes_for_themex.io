@@ -40,3 +40,21 @@ body .forum-nav-thread-wrapper-2 {
 body .forum-nav-browse-title {
     text-align: right;
 }
+.discussion-post .post-header-actions {
+    float: left;
+}
+.discussion .action-button .action-label,
+.discussion .action-list-item .action-label {
+    float: right;
+    line-height: 16px;
+}
+.discussion .action-button:hover .action-icon,
+.discussion .action-button:focus .action-icon {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 0px;
+}
+.discussion .post-actions-list .actions-item {
+    text-align: left;
+}
