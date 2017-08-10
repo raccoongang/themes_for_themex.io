@@ -222,6 +222,7 @@ body .container.activation h1.valid {
     }
 }
 // links
+body .wiki-wrapper section.wiki .breadcrumb li a,
 body .setup-value a,
 body .xmodule_display.xmodule_VideoModule .video .subtitles a,
 .u-field-message-notification a,
@@ -404,6 +405,9 @@ body .courseware-bookmarks-button .bookmarks-list-button.is-active {
         border-color: $theme-btn-white-border;
     }
 }
+body .modal .inner-wrapper form .submit input[type="submit"],
+body .wiki-wrapper section.wiki .btn.btn-primary,
+body .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .cohort-management .message .action-create,
 body .empty-dashboard-message a,
 body .instructor-dashboard-wrapper-2 .customBrowseBtn .file-browse .browse,
 body .btn-blue,
@@ -445,13 +449,11 @@ body .search-bar .search-button {
 }
 body .instructor-dashboard-wrapper-2 section.idash-section#membership .member-lists-management .auth-list-container .member-list-widget input[type="button"].add:hover:not(:disabled),
 body .instructor-dashboard-content-2 input[type="button"]:hover:not(:disabled),
-body .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register:focus:not(:disabled),
-body button:focus:not(:disabled),
-body input[type="submit"]:focus:not(:disabled) {
+body .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register:focus:not(:disabled) {
     box-shadow: none;
     border-color: $theme-btn-bg;
 }
-input[type="submit"], input[type="button"], button, .button,
+.button,
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register {
     background: $theme-btn-bg;
     box-shadow: none;
@@ -468,7 +470,7 @@ input[type="submit"], input[type="button"], button, .button,
         background: $theme-btn-bg-hover;
     }
 }
-input[type="submit"]:hover:not(:disabled), input[type="button"]:hover:not(:disabled), button:hover:not(:disabled), .button:hover:not(:disabled),
+.button:hover:not(:disabled),
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register:hover:not(:disabled) {
     background: $theme-btn-bg-hover;
 }
@@ -481,9 +483,6 @@ input[type="submit"]:hover:not(:disabled), input[type="button"]:hover:not(:disab
         line-height: 45px;
     }
 }
-body .xmodule_display.xmodule_SequenceModule .sequence-nav-button:hover,
-body .xmodule_display.xmodule_SequenceModule .sequence-nav-button:active,
-body .xmodule_display.xmodule_SequenceModule .sequence-nav-button.active,
 body .xmodule_display.xmodule_SequenceModule .sequence-nav button:hover,
 body .xmodule_display.xmodule_SequenceModule .sequence-nav button:active,
 body .xmodule_display.xmodule_SequenceModule .sequence-nav button.active {
@@ -504,7 +503,7 @@ body .discussion.inline-discussion .new-post-article .add-post-cancel {
     background: none;
 }
 .course-info header.course-profile .intro-inner-wrapper .intro>.heading-group {
-    input[type="submit"], input[type="button"], button, .button {
+    .button {
         border: none;
     }
 }
@@ -528,10 +527,6 @@ a.light-button:hover:not(:disabled),
 div.info-wrapper section.handouts ol li div.hitarea:hover+h4.light-button:not(:disabled), 
 div.info-wrapper section.handouts ol li div.hitarea:focus+h4.light-button:not(:disabled), 
 .gray-button:hover:not(:disabled),
-input[type="reset"]:hover:not(:disabled), 
-input[type="submit"]:hover:not(:disabled),
-input[type="button"]:hover:not(:disabled),
-button:hover:not(:disabled),
 .button:hover:not(:disabled),
 .xmodule_display.xmodule_LTIModule div.lti .wrapper-lti-link .lti-link .link_lti_new_window:hover:not(:disabled) {
     &:hover {
@@ -771,4 +766,17 @@ body .xmodule_display.xmodule_SequenceModule .sequence-nav ol li button .fa-book
             color: $theme-btn-bg;
         }
     }
+}
+section#wiki-content.wiki .delete {
+    padding: 20px;
+}
+.forum-nav-thread-wrapper-1 {
+    width: 100%;
+}
+.btn:focus:hover,
+.content-wrapper .page-header.has-secondary .page-header-secondary .form-actions>button:focus:hover {
+    background: #fff !important;
+}
+body .account-settings-sections .section .account-settings-section-body .u-field .field select ~ .icon-caret-down:after {
+    border-top: 7px solid $theme-input-icon;
 }
