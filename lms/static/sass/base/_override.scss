@@ -325,14 +325,17 @@ body .login-register {
         background: $theme-btn-bg;
         box-shadow: none;
         color: $theme-btn-text-color;
+        text-shadow: none;
 
         &:active,
         &:focus {
             background: $theme-btn-bg;
+            text-shadow: none;
         }
         &:hover {
             background: $theme-btn-bg-hover;
             box-shadow: none;
+            text-shadow: none;
         }
     }
     .nav-btn {
@@ -410,6 +413,7 @@ body .courseware-bookmarks-button .bookmarks-list-button.is-active {
         border-color: $theme-btn-white-border;
     }
 }
+body .find-courses .discovery-submit,
 body .modal .inner-wrapper form .submit input[type="submit"],
 body .wiki-wrapper section.wiki .btn.btn-primary,
 body .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .cohort-management .message .action-create,
@@ -815,4 +819,20 @@ body .courses-container .courses .course .course-info {
 }
 html {
     background: #eee;
+}
+body .find-courses .search-facets .facet-option:hover, 
+body .find-courses .search-facets .facet-option:focus {
+    background: $theme-link;
+}
+body .find-courses .loading-spinner {
+    background: $theme-btn-bg;
+}
+body .find-courses .filters .clear-filters {
+    color: $theme-link;
+}
+body section.wiki #hint_id_content {
+    position: relative;
+}
+body .CodeMirror-scroll {
+    margin-right: 0;
 }
