@@ -81,6 +81,9 @@
                 &:focus {
                     background: $theme-btn-bg;
                 }
+                &:focus:hover {
+                    background: $theme-btn-bg-hover!important;
+                }
                 &:hover {
                     background: $theme-btn-bg-hover;
                 }
@@ -129,6 +132,7 @@
         &:focus,
         &:hover {
             background: none;
+            color: #003655;
         }
     }
 }
@@ -222,6 +226,7 @@ body .container.activation h1.valid {
     }
 }
 // links
+.article-wrapper strong a,
 body .wiki-wrapper section.wiki .breadcrumb li a,
 body .setup-value a,
 body .xmodule_display.xmodule_VideoModule .video .subtitles a,
@@ -454,6 +459,7 @@ body .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.
     border-color: $theme-btn-bg;
 }
 .button,
+.heading-group button,
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register {
     background: $theme-btn-bg;
     box-shadow: none;
@@ -469,6 +475,17 @@ body .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.
     &:hover {
         background: $theme-btn-bg-hover;
     }
+}
+.heading-group button {
+    border-color: $theme-btn-bg;
+    &:hover {
+         border-color: $theme-btn-bg-hover;
+    }
+    &:active,
+    &:focus {
+        border-color: $theme-btn-bg;
+    }
+    
 }
 .button:hover:not(:disabled),
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register:hover:not(:disabled) {
@@ -779,4 +796,23 @@ section#wiki-content.wiki .delete {
 }
 body .account-settings-sections .section .account-settings-section-body .u-field .field select ~ .icon-caret-down:after {
     border-top: 7px solid $theme-input-icon;
+}
+body .instructor-dashboard-wrapper-2 section.idash-section#send_email .list-fields .field .email-targets-secondary {
+    columns: 1;
+    vertical-align: top;
+}
+body .instructor-dashboard-wrapper-2 section.idash-section#send_email .list-fields .field .email-targets-primary {
+    vertical-align: top;
+}
+.wiki-wrapper .delete {
+    padding: 20px;
+}
+body.view-profile .profile-image-field .image-wrapper .u-field-remove-button {
+    color: #767676;
+}
+body .courses-container .courses .course .course-info {
+    background: #fff;
+}
+html {
+    background: #eee;
 }
