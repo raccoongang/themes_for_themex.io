@@ -1,0 +1,131 @@
+@import "../const";
+
+div.window-wrap .btn:active, 
+div.window-wrap .is-pressed.btn, 
+div.window-wrap .is-active.btn,
+div.window-wrap .btn:hover, 
+div.window-wrap .is-hovered.btn, 
+div.window-wrap .btn:focus, 
+div.window-wrap .is-focused.btn {
+    border-color: $theme-color-main-hover;
+    background: $theme-color-main-hover;
+    color: #fff;
+}
+
+div.window-wrap .theme-main-nav_list {
+    margin-left: 0;
+}
+
+div.window-wrap ul li {
+    margin-bottom: 0;
+    list-style: none;
+}
+
+div.window-wrap .btn-link {
+    color: $theme-color-main;
+    cursor: pointer;
+}
+.edit-post-form .post-type-input:checked+.post-type-label,
+.forum-new-post-form .post-type-label {
+    cursor: pointer;
+    vertical-align: middle;
+}
+div.window-wrap .dropdown-menu-container {
+    display: flex;
+    align-items: center;
+}
+div.window-wrap .dropdown-menu-container .menu-image {
+    max-width: 35px;
+    border-radius: 50%;
+    color: #fff;
+    margin-right: 0;
+    width: 35px;
+    height: 35px;
+}
+div.window-wrap .dropdown-menu-container .menu-button {
+    min-height: 25px;
+    background: #fff;
+    font-size: 0.875em;
+    padding: 0 10px;
+    color: #3c3c3c;
+    border: none;
+    background: #fff;
+    box-shadow: none;
+    text-shadow: none;
+    width: auto;
+    height: auto;
+    border-radius: 3px;
+    margin-top: 0;
+}
+div.window-wrap .dropdown-menu-container .dropdown-menu {
+    border: none;
+    padding: 5px 10px;
+    min-width: 120px;
+    border-radius: 4px;
+    width: auto;
+}
+div.window-wrap .dropdown-menu-container .menu-title {
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+.label-username {
+    text-transform: none;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0;
+    margin: 0 10px 0 10px;
+    &:hover {
+        text-decoration: none;
+        color: $theme-color-main-hover;
+    }
+}
+div.window-wrap .btn {
+    color: $theme-color-main;
+    border-color: $theme-color-main;
+}
+div.window-wrap .course-card .cta-secondary {
+    border-color: $theme-color-main;
+    color: #fff;
+    background: $theme-color-main;
+    &:hover,
+    &:focus,
+    &:active {
+        color: $theme-color-main;
+        background: transparent;
+        border-color: $theme-color-main;
+    }
+}
+div.window-wrap .blue-icon .certificate-body {
+    fill: $theme-color-main;
+    border-color: $theme-color-main;
+}
+div.window-wrap .dropdown-menu-container .dropdown-menu .dropdown-item a {
+    color: $theme-color-main;
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+        color: #3c3c3c;
+    }
+}
+.course-title a,
+.program-header .crumb-link {
+    color: $theme-color-main;
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+        color: $theme-color-main-hover;
+    }
+}
+[class^='wrapper']::after {
+    display: none;
+}
+[class^='wrapper'] {
+    width: auto;
+}
+div.window-wrap .list-divided .item {
+    border-bottom: 0.0625rem dotted;
+}
