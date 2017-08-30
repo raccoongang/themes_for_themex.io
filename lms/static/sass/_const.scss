@@ -1,6 +1,6 @@
 // colors
 $theme-color-blue-hover: #3393bf;
-$theme-footer-bg: #363636;
+$theme-footer-bg: #33383f;
 $theme-footer-link: #767676;
 $profile-bg-hover: rgba(150,193,246,0.6);
 $res_450:   450px;
@@ -14,13 +14,16 @@ $res_1440:  1440px;
 
 // colors
 $theme-color-grey: #a3a3a6;
-$theme-color-main: #2b8aff;
-$theme-color-main-hover: #2b8aff;
+$theme-color-main: #74bb00;
+$theme-color-main-hover: #74bb00;
+$theme-header-bg: #fff;
+$theme-footer-bg: #33383f;
 $link-hover: lighten($theme-color-main, 20%);
-$theme-main-nav: #264fd6;
+$theme-main-nav: #1f1b4d;
+$theme-main-nav-link-hover: #413a8d;
 $disable-text-color: #3b3b3b;
 $disable-text-bg: #e8e8e8;
 $mobile-indent: 15px;
-$icon-color: #0075b4;
+$icon-color: #74bb00;
 $my-font-path: "../fonts" !default;
 $img-path: "../images" !default;
