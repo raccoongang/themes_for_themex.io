@@ -226,6 +226,8 @@ body .container.activation h1.valid {
     }
 }
 // links
+body .message-copy a,
+body .openassessment span,
 .article-wrapper strong a,
 body .wiki-wrapper section.wiki .breadcrumb li a,
 body .setup-value a,
@@ -517,8 +519,29 @@ body .discussion.inline-discussion .new-post-article .add-post-cancel {
 .edit-post-form .post-type-input:checked+.post-type-label {
     background-color: $theme-btn-bg;
 }
+body .wrapper-msg.wrapper-auto-cert .auto-cert-message,
+.rtl .wrapper-msg.wrapper-auto-cert .auto-cert-message,
 .date-summary-container .date-summary-todays-date {
     border-left-color: $theme-btn-bg;
+}
+.rtl .date-summary-container .date-summary-todays-date {
+    border-right-color: $theme-btn-bg;
+}
+.rtl section.wiki .table.table-striped th {
+    width: 100%;
+}
+.rtl.discussion .comments .comment-form .wmd-input {
+    min-height: 50px;
+}
+.rtl.discussion .response-actions-list {
+    text-align: left;
+}
+.rtl .discussion-response .response-header-actions {
+    right: initial;
+    left: 10px;
+}
+.rtl .instructor-dashboard-wrapper-2 section.idash-section#membership .enroll-option .has-hint:hover>.hint {
+    right: 270px;
 }
 .has-breadcrumbs .breadcrumbs .all-topics:focus {
     background: none;
@@ -824,6 +847,7 @@ body .find-courses .search-facets .facet-option:hover,
 body .find-courses .search-facets .facet-option:focus {
     background: $theme-link;
 }
+body .openassessment .openassessment__steps__step.is--in-progress .step__status__value,
 body .find-courses .loading-spinner {
     background: $theme-btn-bg;
 }
@@ -835,4 +859,7 @@ body section.wiki #hint_id_content {
 }
 body .CodeMirror-scroll {
     margin-right: 0;
+}
+body .openassessment .is--in-progress.openassessment__steps__step {
+    border-top-color: $theme-btn-bg;
 }
