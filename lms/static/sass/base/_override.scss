@@ -91,13 +91,9 @@
         }
     }
     .user {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        @media screen and (min-width:760px ) {
-            display: block;
-            width: auto;
-        }
+        display: block;
+        width: auto;
+
         .user-link .label-username {
             text-shadow: none;
             margin: 13px 5px 13px 15px;
@@ -226,6 +222,7 @@ body .container.activation h1.valid {
     }
 }
 // links
+body .discussion.inline-discussion .inline-thread .forum-nav-bar .all-posts-btn,
 body .message-copy a,
 body .openassessment span,
 .article-wrapper strong a,
@@ -267,6 +264,9 @@ body a {
         color: $theme-link-hover;
         text-decoration: none !important;
     }
+}
+body .discussion .user-label-staff {
+    background: $theme-link;
 }
 body .xmodule_display.xmodule_VideoModule .video .subtitles .subtitles-menu li:hover,
 body .xmodule_display.xmodule_VideoModule .video .subtitles .subtitles-menu li:focus {
@@ -516,7 +516,7 @@ body .discussion.inline-discussion .new-post-article .add-post-cancel {
 }
 .discussion-module .btn-brand,
 .forum-new-post-form .post-type-input:checked+.post-type-label,
-.edit-post-form .post-type-input:checked+.post-type-label {
+body .edit-post-form .post-type-input:checked+.post-type-label {
     background-color: $theme-btn-bg;
 }
 body .wrapper-msg.wrapper-auto-cert .auto-cert-message,
@@ -828,6 +828,9 @@ body .instructor-dashboard-wrapper-2 section.idash-section#send_email .list-fiel
     columns: 1;
     vertical-align: top;
 }
+body.rtl .instructor-dashboard-wrapper-2 section.idash-section#send_email .list-fields .field .email-targets-secondary {
+    display: flex;
+}
 body .instructor-dashboard-wrapper-2 section.idash-section#send_email .list-fields .field .email-targets-primary {
     vertical-align: top;
 }
@@ -862,4 +865,60 @@ body .CodeMirror-scroll {
 }
 body .openassessment .is--in-progress.openassessment__steps__step {
     border-top-color: $theme-btn-bg;
+}
+.rtl .course-info .details .inner-wrapper .course-staff .teacher .teacher-image {
+    margin-right: 0;
+    margin-left: 15px;
+}
+.rtl .dashboard .my-courses .course .details .course-actions .action {
+    float: right;
+    text-align: right;
+}
+.rtl .lang_ar .email-targets-secondary li label {
+    float: right;
+}
+.rtl .instructor-dashboard-wrapper-2 section.idash-section#send_email .list-fields .field ul {
+    float: right;
+}
+.rtl .edit-post-form .post-update {
+    float: right;
+}
+.rtl .edit-post-form .post-cancel {
+    float: right;
+    margin: 10px 15px 0 0;
+}
+.window-wrap[dir="rtl"] .accordion-heading .accordion-toggle {
+    float: right!important;
+}
+.rtl .discussion-comment .comment-actions-list {
+    right: auto;
+    left: 10px;
+}
+.flex {
+    display: block; 
+    .doc-link {
+        width: auto;
+    }
+}
+body .instructor-dashboard-wrapper-2 section.idash-section#send_email .list-fields .field .email-targets-secondary:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+.sticky:before,
+.sticky:after {
+    content: '';
+    display: table;
+}
+body.view-profile .profile-image-field .image-wrapper .u-field-remove-button {
+    box-shadow: none;
+}
+body div.info-wrapper section.updates div article .date {
+    padding-right: 0;
+    padding-left: 20px;
 }

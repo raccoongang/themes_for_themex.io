@@ -154,6 +154,14 @@ from pipeline_mako import render_require_js_path_overrides
   <script type="text/javascript" src="${static.url('js/vendor/noreferrer.js')}" charset="utf-8"></script>
   <script type="text/javascript" src="${static.url('js/utils/navigation.js')}" charset="utf-8"></script>
   <%static:optional_include_mako file="body-extra.html" is_theming_enabled="True" />
+  <script src="/static/${settings.DEFAULT_SITE_THEME}/polyfill/stickyfill.min.js"></script>
+  <script>
+    var stickyElements = document.getElementsByClassName('sticky');
+    
+    for (var i = stickyElements.length - 1; i >= 0; i--) {
+      Stickyfill.add(stickyElements[i]);
+    }
+  </script>
 </body>
 </html>
 

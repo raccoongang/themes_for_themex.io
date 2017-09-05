@@ -122,13 +122,13 @@ site_status_msg = get_site_status_msg(course_id)
           %endif
         </%block>
       </ol>
+      <div class="flex">
+        <%include file="user_dropdown.html"/>
 
-      <%include file="user_dropdown.html"/>
-
-      <a href="${get_online_help_info(online_help_token)['doc_url']}" 
-         target="_blank"
-         class="doc-link">${_("Help")}</a>
-
+        <a href="${get_online_help_info(online_help_token)['doc_url']}" 
+          target="_blank"
+          class="doc-link">${_("Help")}</a>
+      </div>
       % if should_display_shopping_cart_func() and not (course and static.is_request_in_themed_site()): # see shoppingcart.context_processor.user_has_cart_context_processor
         <ol class="user">
           <li class="primary">

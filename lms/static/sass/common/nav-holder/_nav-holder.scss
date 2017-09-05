@@ -5,9 +5,10 @@
     display: none;
 
     .menu-open & {
-        display: block;
+        display: flex;
+        justify-content: center;
     }
-    @media screen and (min-width:760px ) {
+    @media (min-width: 760px) {
         width: auto;
         display: block;
     }

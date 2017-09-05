@@ -58,3 +58,11 @@ body .forum-nav-browse-title {
 .discussion .post-actions-list .actions-item {
     text-align: left;
 }
+.rtl .discussion .comments .comment-form .discussion-submit-comment,
+.rtl .edit-post-form .post-update {
+    float: right;
+}
+.rtl .edit-post-form .post-cancel {
+    float: right;
+    margin: 10px 15px 0 0;
+}
