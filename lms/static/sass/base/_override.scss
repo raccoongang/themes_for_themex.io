@@ -830,6 +830,7 @@ body .instructor-dashboard-wrapper-2 section.idash-section#send_email .list-fiel
 }
 body.rtl .instructor-dashboard-wrapper-2 section.idash-section#send_email .list-fields .field .email-targets-secondary {
     display: flex;
+    flex-direction: column;
 }
 body .instructor-dashboard-wrapper-2 section.idash-section#send_email .list-fields .field .email-targets-primary {
     vertical-align: top;
@@ -898,6 +899,7 @@ body .openassessment .is--in-progress.openassessment__steps__step {
     display: block; 
     .doc-link {
         width: auto;
+        margin: 12px 10px;
     }
 }
 body .instructor-dashboard-wrapper-2 section.idash-section#send_email .list-fields .field .email-targets-secondary:after {
