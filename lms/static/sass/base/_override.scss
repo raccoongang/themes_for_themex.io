@@ -924,3 +924,14 @@ body div.info-wrapper section.updates div article .date {
     padding-right: 0;
     padding-left: 20px;
 }
+.discussion-article .posted-details .username:visited {
+    color: $theme-link;
+}
+body .xmodule_display.xmodule_SequenceModule .sequence-nav-button:hover, 
+body .xmodule_display.xmodule_SequenceModule .sequence-nav-button:active, 
+body .xmodule_display.xmodule_SequenceModule .sequence-nav-button.active, 
+body .xmodule_display.xmodule_SequenceModule .sequence-nav button:hover, 
+body .xmodule_display.xmodule_SequenceModule .sequence-nav button:active, 
+body .xmodule_display.xmodule_SequenceModule .sequence-nav button.active {
+        border-bottom: 3px solid $theme-btn-bg;
+}
