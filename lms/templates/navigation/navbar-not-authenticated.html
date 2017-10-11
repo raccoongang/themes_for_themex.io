@@ -8,7 +8,7 @@
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
 %>
-
+<div class="theme-nav-wrapper_holder">
 <ol class="left list-inline nav-global">
   <%block name="navigation_global_links">
     % if static.get_value('ENABLE_MKTG_SITE', settings.FEATURES.get('ENABLE_MKTG_SITE', False)):
@@ -51,11 +51,12 @@ from django.utils.translation import ugettext as _
     <li class="item nav-courseware-01">
       % if not settings.FEATURES['DISABLE_LOGIN_BUTTON']:
         % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
-          <a class="btn btn-login" href="${reverse('course-specific-login', args=[course.id.to_deprecated_string()])}${login_query()}">${_("Sign in")}</a>
+          <a class="theme-btn" href="${reverse('course-specific-login', args=[course.id.to_deprecated_string()])}${login_query()}">${_("Sign in")}</a>
         % else:
-          <a class="btn btn-login" href="/login${login_query()}">${_("Sign in")}</a>
+          <a class="theme-btn" href="/login${login_query()}">${_("Sign in")}</a>
         % endif
       % endif
     </li>
   </%block>
 </ol>
+</div>

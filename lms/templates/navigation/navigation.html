@@ -49,6 +49,7 @@ site_status_msg = get_site_status_msg(course_id)
 % endif
 </%block>
 
+<div class="nav-holder">
 % if uses_bootstrap:
   <header class="navigation-container header-global">
     <nav class="navbar navbar-toggleable-md navbar-light">
@@ -64,32 +65,7 @@ site_status_msg = get_site_status_msg(course_id)
     </nav>
   </header>
 % else:
-  <header id="global-navigation" class="theme-header" >
-    <div class="theme-main-nav_opener"></div>
-    <div class="theme-main-nav_logo">
-      <a href="${marketing_link('ROOT')}">
-        <span class="theme-nav-wrapper_logo-holder theme-nav-wrapper_logo-holder_small">
-            <img src="/static/${settings.FEATURES.get('MARVEL_BLUE_DEFAULT_SITE_THEME', settings.DEFAULT_SITE_THEME)}/images/header-info/logo-racoon.png" alt="logo" />
-        </span>
-      </a>
-    </div>
-    <div class="theme-header-info theme-header-info_mobile">
-        <div class="theme-header-info_contact">
-            <span class="theme-header-info_text">Have any question?</span>
-            <span class="theme-header-info_phone">+1 857 4533328</span>
-            <a class="theme-header-info_mail" href="mailto:&#105;&#110;&#102;&#111;&#064;&#114;&#097;&#099;&#099;&#111;&#111;&#110;&#103;&#097;&#110;&#103;&#046;&#099;&#111;&#109;"><i class="fa fa-envelope" aria-hidden="true"></i>info@raccoongang.com</a>
-        </div>
-        <div class="theme-header-info_social">
-            <span class="theme-header-info_text">Find us in social network</span>
-            <ul class="social-list">
-                <li class="social-list_item social-list_item__first"><a class="social-list_link theme-header-info_mail" href="mailto:&#105;&#110;&#102;&#111;&#064;&#114;&#097;&#099;&#099;&#111;&#111;&#110;&#103;&#097;&#110;&#103;&#046;&#099;&#111;&#109;"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-                <li class="social-list_item"><a class="social-list_link" href="https://twitter.com/raccoongangcom" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li class="social-list_item"><a class="social-list_link" href="https://www.facebook.com/raccoongangco" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li class="social-list_item"><a class="social-list_link" href="https://www.linkedin.com/company/raccoon-gang" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-            </ul>
-            <span class="theme-header-info_phone">+1 857 4533328</span>
-        </div>
-    </div>
+  <header id="global-navigation" class="theme-header header-global" >
     <div class="theme-header-info">
       <div class="theme-header-info_contact">
           <span class="theme-header-info_text">Have any question?</span>
@@ -106,7 +82,7 @@ site_status_msg = get_site_status_msg(course_id)
           </ul>
         </div>
     </div>
-    <nav class="theme-main-nav_holder" aria-label="${_('Global')}">
+    <div class="theme-nav-wrapper">
       <%include file="navbar-logo-header.html" args="online_help_token=online_help_token"/>
       % if user.is_authenticated():
         <%include file="navbar-authenticated.html" args="online_help_token=online_help_token"/>
@@ -141,8 +117,17 @@ site_status_msg = get_site_status_msg(course_id)
           </ol>
         % endif
       % endif
-    </nav>
+    </div>
+  </header>
     <div class="theme-main-nav">
+      <div class="theme-main-nav_opener"></div>
+      <div class="theme-main-nav_logo">
+        <a href="${marketing_link('ROOT')}">
+          <span class="theme-nav-wrapper_logo-holder theme-nav-wrapper_logo-holder_small">
+              <img src="/static/${settings.FEATURES.get('MARVEL_BLUE_DEFAULT_SITE_THEME', settings.DEFAULT_SITE_THEME)}/images/header-info/logo-racoon.png" alt="logo" />
+          </span>
+        </a>
+      </div>
       <nav class="theme-main-nav_holder">
         <ul class="theme-main-nav_list">
             <li class="theme-main-nav_item"><a href="/about" class="theme-main-nav_link">${_('About The University')}</a></li>
@@ -187,8 +172,17 @@ site_status_msg = get_site_status_msg(course_id)
             %endif
         </ul>
     </nav>
-    </div>
-  </header>
+  </div>
+</div>
+<script>
+  $(".theme-main-nav_opener").on("click", function open(){
+    if ($(this).parent().hasClass("theme-main-nav__open")){
+      $(this).parent().removeClass("theme-main-nav__open");
+    } else {
+      $(this).parent().addClass("theme-main-nav__open");
+    }
+  });
+</script>
 % endif
 % if course:
 <!--[if lte IE 9]>

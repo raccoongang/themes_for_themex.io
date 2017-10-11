@@ -9,6 +9,7 @@ from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
 %>
 
+<div class="theme-nav-wrapper_holder">
 <ol class="left nav-global list-inline authenticated">
   <%block name="navigation_global_links_authenticated">
     % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
@@ -52,3 +53,4 @@ from django.utils.translation import ugettext as _
     </li>
   </ol>
 % endif
+</div>
