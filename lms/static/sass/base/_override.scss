@@ -359,6 +359,26 @@ body .login-register {
         }
     }
 }
+body .view-login .form-actions button[type="submit"],
+body .login .form-actions button[type="submit"] {
+    background: $theme-btn-white-bg;
+    color: $theme-btn-white-text-color;
+    box-shadow: none !important;
+    border: 2px solid $theme-btn-white-border !important;
+    
+    &:active,
+    &:focus {
+        border-color: $theme-btn-white-border;
+        background: $theme-btn-white-bg;
+        color: $theme-btn-white-text-color;
+        box-shadow: none;
+    }
+    &:hover {
+        color: $theme-btn-white-text-color-hover;
+        background: $theme-btn-white-bg-hover !important;
+        border-color: $theme-btn-white-border;
+    }
+}
 .login-register .login-provider,
 body .dashboard .my-courses .course .details .enter-course.archived,
 .account-settings-sections .section .account-settings-section-body .u-field .field .u-field-link,
@@ -934,4 +954,261 @@ body .xmodule_display.xmodule_SequenceModule .sequence-nav button:hover,
 body .xmodule_display.xmodule_SequenceModule .sequence-nav button:active, 
 body .xmodule_display.xmodule_SequenceModule .sequence-nav button.active {
         border-bottom: 3px solid $theme-btn-bg;
+}
+.login {
+    aside {
+        display: none;
+    }
+    .content {
+        margin: 0 auto;
+        float: none;
+    }
+    .deco-divider {
+        display: none;
+    }
+}
+.view-login .introduction {
+    display: none;
+}
+body .login form .field.is-focused .tip,
+body .login form .field.is-focused label {
+    color: $theme-link;
+}
+body.view-login .header-global nav {
+    max-width: 960px;
+    width: auto;
+}
+body .login .content {
+    max-width: 600px;
+    width: auto;
+}
+body.view-login .container {
+    max-width: 960px;
+    width: auto;
+}
+body .login.container {
+    min-width: auto;
+    width: auto;
+}
+body.view-login .wrapper-footer footer {
+    width: auto;
+    max-width: 960px;
+}
+body.view-in-course {
+    .window-wrap {
+        min-width: 320px !important;
+    }
+    .container {
+         .info-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            @media screen and (min-width: 1000px) {
+                display: table;
+                table-layout: fixed;
+            }
+        }
+        section.handouts {
+            border-top: 1px solid #c8c8c8;
+            width: 100%;
+            @media screen and (min-width: 1000px) {
+                border-top: none;
+                width: 28%;
+            }
+        }
+        .course-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            @media screen and (min-width: 1000px) {
+                display: table;
+                table-layout: fixed;
+            }
+
+            .course-content {
+                width: 100%;
+                @media screen and (min-width: 1000px) {
+                    width: 76%;
+                }
+            }
+        }
+        .course-index {
+            width: 100%;
+            @media screen and (min-width: 1000px) {
+                width: auto;
+                display: block !important;
+            }
+        }
+    }
+    .show-course-index {
+        display: inline-block;
+        margin: 50px auto 10px;
+        padding: 10px 15px;
+        border-radius: 20px;
+        background: #ccc;
+        max-width: 80%;
+        text-align: center;
+        @media screen and (min-width: 1000px) {
+            display: none;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+.xmodule_display.xmodule_SequenceModule .sequence-nav .sequence-nav-button {
+    min-width: 60px;
+    @media screen and (min-width: 1000px) {
+        min-width: 120px;
+    }
+    span {
+        display: none;
+        @media screen and (min-width: 1000px) {
+            display: inline;
+        }
+    }
+    span.icon {
+        display: inline;
+    }
+}
+.wiki-wrapper .article-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    @media screen and (min-width: 1000px) {
+        display: block;
+        width: auto;
+    }
+
+    .main-article {
+        order: 2;
+    }
+    .article-functions {
+        order: 1;
+    }
+}
+section.wiki .wiki-wrapper .article-functions {
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid #c8c8c8;
+    flex-wrap: wrap;
+    @media screen and (min-width: 1000px) {
+        border: none;
+        width: 23%;
+        display: block;
+    }
+    
+    .see-children,
+    .timestamp {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
+        margin-left: 30px;
+        @media screen and (min-width: 1000px) {
+            margin-left: 0;
+            margin-top: 15px;
+            padding: 15px 0 0;
+            border-top: 1px solid #ddd;
+        }
+    }
+    .timestamp {
+        margin-left: 0;
+        padding-left: 0;
+        @media screen and (min-width: 1000px) {
+            margin-top: 15px;
+            padding: 15px 0 0;
+        }
+    }
+}
+body .container>div {
+    max-width: 1180px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    @media screen and (min-width: 1000px) {
+        display: block;
+   }
+}
+body .home .page-header-secondary {
+    margin-left: auto;
+    white-space: nowrap;
+}
+section.wiki .wiki-wrapper .nav-tabs {
+    display: flex;
+    width: 100%;
+    @media screen and (min-width: 1000px) {
+        display: block;
+        width: auto;
+    }
+    li {
+        margin-left: 20px;
+        margin-bottom: 40px;
+        @media screen and (min-width: 1000px) {
+            margin: 0;
+        }
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}
+.container .profile-wrapper .course-info>.chapters>section {
+    display: flex;
+    flex-wrap: wrap;
+    @media screen and (min-width: 1000px) {
+        display: table;
+    }
+
+    .hd {
+        width: 100%;
+        margin-bottom: 40px;
+        border: none;
+        @media screen and (min-width: 1000px) {
+            width: 20.45455%;
+            border-right: 1px dashed #ddd;
+            margin-bottom: 0;
+        }
+    }
+    .sections {
+        width: 100%;
+        padding-left: 0;
+        @media screen and (min-width: 1000px) {
+            padding-left: 2.27273%;
+            width: 77.27273%;
+        }
+    }
+}
+body.view-in-course .content-wrapper .wrapper-course-material {
+    padding: 0 2%;
+    @media screen and (min-width: 1230px) {
+        padding: 0;
+    }
+}
+body .xmodule_display.xmodule_VideoModule .video {
+    .tc-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        @media screen and (min-width: 1000px) {
+            display: block;
+        }
+    }
+    .video-wrapper {
+        width: 100%;
+        margin-right: 0;
+        @media screen and (min-width: 1000px) {
+            margin-right: 2.27273%;
+            width: 65.90909%;
+        }
+    }
+    .subtitles {
+        width: 100%;
+        @media screen and (min-width: 1000px) {
+            width: 31.81818%;
+        }
+    }
+}
+body .home .page-header-main {
+    padding-right: 15px;
+}
+body section.wiki .wiki-wrapper>header {
+    width: 100%;
 }
