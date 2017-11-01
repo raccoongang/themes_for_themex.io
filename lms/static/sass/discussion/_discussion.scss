@@ -1,0 +1,148 @@
+div.window-wrap .edit-post-form .post-type-input:checked+.post-type-label,
+div.window-wrap .forum-new-post-form .post-type-input:checked+.post-type-label,
+div.window-wrap .btn-brand {
+    border-color: $theme-color-main-hover;
+    background: $theme-color-main-hover;
+    color: #fff;
+    &:hover,
+    &:focus {
+        color: $theme-color-main;
+        border-color: $theme-color-main;
+        background: transparent;
+    }
+}
+div.window-wrap .edit-post-form .post-type-input:checked+.post-type-label,
+div.window-wrap .forum-new-post-form .post-type-input:checked+.post-type-label {
+    border: 1px solid $theme-color-main;
+    cursor: pointer;
+    box-shadow: none!important;
+}
+div.window-wrap .btn {
+    color: $theme-color-main;
+    border-color: $theme-color-main;
+    background: transparent;
+}
+
+div.window-wrap .discussion .post-label.post-label-following,
+div.window-wrap .discussion .action-button.action-follow .action-label,
+div.window-wrap .discussion-response .response-header-content .username,
+div.window-wrap .discussion-article .posted-details .username,
+.tabs.course-tabs a {
+    color: $theme-color-main;
+}
+
+div.window-wrap .btn:active, 
+div.window-wrap .is-pressed.btn, 
+div.window-wrap .is-active.btn,
+div.window-wrap .btn:hover, 
+div.window-wrap .is-hovered.btn, 
+div.window-wrap .btn:focus, 
+div.window-wrap .is-focused.btn {
+    border-color: $theme-color-main-hover;
+    background: $theme-color-main-hover;
+    color: #fff;
+}
+
+div.window-wrap .theme-main-nav_list {
+    margin-left: 0;
+}
+
+div.window-wrap ul li {
+    margin-bottom: 0;
+    list-style: none;
+}
+
+div.window-wrap .btn-link {
+    color: $theme-color-main;
+    cursor: pointer;
+}
+.edit-post-form .post-type-input:checked+.post-type-label,
+.forum-new-post-form .post-type-label {
+    cursor: pointer;
+    vertical-align: middle;
+}
+div.window-wrap .dropdown-menu-container {
+    display: flex;
+    align-items: center;
+}
+div.window-wrap .dropdown-menu-container .menu-image {
+    max-width: 35px;
+    border-radius: 50%;
+    color: #fff;
+    margin-right: 0;
+    width: 35px;
+    height: 35px;
+}
+div.window-wrap .dropdown-menu-container .menu-button {
+    min-height: 25px;
+    background: #fff;
+    font-size: 0.875em;
+    padding: 0 10px;
+    color: #3c3c3c;
+    border: none;
+    background: #fff;
+    box-shadow: none;
+    text-shadow: none;
+    width: auto;
+    height: auto;
+    border-radius: 3px;
+    margin-top: 0;
+}
+div.window-wrap .dropdown-menu-container .dropdown-menu {
+    border: none;
+    padding: 5px 10px;
+    min-width: 120px;
+    border-radius: 4px;
+    width: auto;
+}
+div.window-wrap .dropdown-menu-container .menu-title {
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+.label-username {
+    text-transform: none;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0;
+    margin: 0 10px 0 10px;
+    &:hover {
+        text-decoration: none;
+        color: $theme-color-main-hover;
+    }
+}
+div.window-wrap .dropdown-menu-container .dropdown-menu .dropdown-item a {
+    color: $theme-color-main;
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+        color: #3c3c3c;
+    }
+}
+div.window-wrap .discussion .action-button.action-follow:hover, 
+div.window-wrap .discussion .action-button.action-follow:focus {
+    border-color: $theme-color-main;
+}
+div.window-wrap .discussion .action-button.action-follow.is-checked .action-icon, 
+div.window-wrap .discussion .action-button.action-follow:hover .action-icon, 
+div.window-wrap .discussion .action-button.action-follow:focus .action-icon {
+    background-color: $theme-color-main;
+    border: 1px solid $theme-color-main;
+}
+body.discussion .window-wrap .content-wrapper{
+    min-width: 720px;
+}
+.discussion.inline-discussion .inline-thread .forum-nav-bar .all-posts-btn,
+.page-header .user-name a {
+    color: $theme-color-main;
+    &:hover,
+    &:focus,
+    &:active {
+        color: $theme-color-main-hover;
+    }
+}
+div.window-wrap .list-divided .item {
+    border-bottom: 0.0625rem dotted;
+}

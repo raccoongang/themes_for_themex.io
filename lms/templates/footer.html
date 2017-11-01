@@ -1,4 +1,5 @@
 ## mako
+<%page expression_filter="h"/>
 <%!
   from django.core.urlresolvers import reverse
   from django.utils.translation import ugettext as _
@@ -11,7 +12,7 @@
   <div class="theme-footer_holder">
     <div class="theme-footer_section">
       <span class="theme-footer_text">If you have some questions please contact us</span>
-      <a class="theme-btn" href="https://edx-marvel.raccoongang.com/contact">Contact us</a>
+      <a class="theme-btn theme-btn__contact" href="/contact">Contact us</a>
     </div>
   </div>
   <div class="theme-footer_holder theme-footer_holder__color">
@@ -19,31 +20,31 @@
       <div class="theme-footer_col">
         <h2 class="theme-footer_col-header">About the university</h2>
         <div class="theme-footer_col-holder">
-          <a class="theme-footer_col-link" href="https://raccoongang.com/en/raccoon-university/">Raccoon Gang University</a>  
+          <a class="theme-footer_col-link" href="https://raccoongang.com/en/raccoon-university/" target="_blank">Raccoon Gang University</a>  
         </div>
         <div class="theme-footer_col-holder">
-          <a class="theme-footer_col-link" href="https://raccoongang.com/en/about-us/">About Us</a>
+          <a class="theme-footer_col-link" href="https://raccoongang.com/en/about-us/" target="_blank">About Us</a>
         </div>
         <div class="theme-footer_col-holder">
-          <a class="theme-footer_col-link" href="https://raccoongang.com/en/open-edx-services/">eDX Services</a>
+          <a class="theme-footer_col-link" href="https://raccoongang.com/#our_services" target="_blank">eDX Services</a>
         </div>
         <div class="theme-footer_col-holder">
-          <a class="theme-footer_col-link" href="https://raccoongang.com/en/blog/">Blog</a>
+          <a class="theme-footer_col-link" href="https://raccoongang.com/en/blog/" target="_blank">Blog</a>
         </div>
       </div>
       <div class="theme-footer_col">
         <h2 class="theme-footer_col-header">courses</h2>
         <div class="theme-footer_col-holder">
-          <a class="theme-footer_col-link" href="https://studio-sandbox.raccoongang.com/">Create Course Now</a>
+          <a class="theme-footer_col-link" href="https://studio-marvel-ficus.raccoongang.com/" target="_blank">Create Course Now</a>
         </div>
       </div>
       <div class="theme-footer_col">
         <h2 class="theme-footer_col-header">Contact us</h2>
         <div class="theme-footer_col-holder">
-          <a class="theme-footer_col-link" href="https://edx-marvel.raccoongang.com/contact">Contact Us</a>
+          <a class="theme-footer_col-link" href="/contact">Contact Us</a>
         </div>
         <div class="theme-footer_col-holder">
-          <a class="theme-footer_col-link" href="https://raccoongang.com/en/contact-us/">Help</a>
+          <a class="theme-footer_col-link" href="https://raccoongang.com/en/contact-us/" target="_blank">Help</a>
         </div>
       </div>
     </div>

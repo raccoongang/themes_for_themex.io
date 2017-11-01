@@ -1,9 +1,10 @@
+<%def name="online_help_token()"><% return "course" %></%def>
 <%namespace name='static' file='static_content.html'/>
 <%!
 from django.utils.translation import ugettext as _
 from django.core.urlresolvers import reverse
 %>
-<%page args="course" />
+<%page args="course" expression_filter="h"/>
 <article class="theme-courses_course" id="${course.id}" role="region" aria-label="${course.display_name_with_default}">
     <div class="theme-courses_img-holder">
         <a class="theme-courses_img-link" href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">
@@ -14,14 +15,6 @@ from django.core.urlresolvers import reverse
         <span class="theme-courses_org">${course.display_org_with_default}</span>
         <span class="theme-courses_code">${course.display_number_with_default}</span>
         <h1 class="theme-courses_title">${course.display_name_with_default}</h1>
-        <div class="theme-courses_date" aria-hidden="true"><span class="theme-courses_ico-holder"><i class="fa fa-clock-o" aria-hidden="true"></i></span>${_("Starts")}: ${course.start_datetime_text()}</div>
-        <div class="sr">
-            <ul>
-                <li>${course.display_org_with_default}</li>
-                <li>${course.display_number_with_default}</li>
-                <li>${_("Starts")}: <time itemprop="startDate" datetime="${course.start_datetime_text()}">${course.start_datetime_text()}</time></li>
-            </ul>
-        </div>
         <a class="theme-btn" href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">view more</a>
     </div>
 </article>

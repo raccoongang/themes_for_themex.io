@@ -1,0 +1,25 @@
+.nav-holder {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    display: none;
+
+    .menu-open & {
+        @media (max-width: 759px) {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    @media screen and (min-width:760px ) {
+        width: auto;
+        display: block;
+    }
+
+    &:after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+}

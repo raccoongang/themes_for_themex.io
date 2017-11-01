@@ -1,0 +1,7 @@
+// Import the original styles from edx-platform.
+// Import the original styles from edx-platform.
+@import "lms/static/sass/discussion/lms-discussion-main";
+$img-path: "../../images" !default;
+$my-font-path: "../../fonts" !default;
+@import "../main";
+@import "discussion";

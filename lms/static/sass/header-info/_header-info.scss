@@ -15,26 +15,46 @@
         padding-left: 0;
         padding-right: 0;
     }
-
+    @media all and (max-width: 859px) {
+        // display: none;
+        flex-direction: column;
+        padding: 15px 0;
+        margin: 0;
+        align-items: center;
+    }
+    // &_mobile {
+    //     display: none;
+    //     @media all and (max-width: 859px) {
+    //         .theme-main-nav__open & {
+    //             display: flex;
+    //             justify-content: center;
+    //             flex-direction: row;
+    //             flex-wrap: wrap;
+    //             padding: 20px 15px 20px 15px;
+    //         }
+    //     }
+    // }
     &_contact {
         display: flex;
         align-items: center;
         width: 100%;
         justify-content: center;
+
         @media all and (min-width: 450px){
             width: auto;
             justify-content: flex-start;
         }
+        @media all and (max-width: 859px) {
+            padding-bottom: 30px;
+        }
     }
     &_social {
         display: flex;
-        width: 100%;
-        justify-content: center;
-        padding-top: 14px;
-        @media all and (min-width: 450px){
-            padding: 0;
-            width: auto;
-            justify-content: flex-start;
+        width: auto;
+        justify-content: flex-start;
+        padding-top: 0;
+        @media (max-width: 859px) {
+            flex-direction: column;
         }
     }
     &_text {
@@ -52,18 +72,37 @@
         line-height: 15px;
         color: $theme-color-grey;
         padding-left: 18px;
-        background: url('#{$theme-img-path}phone.png') no-repeat 0 50%;
+        background: url('#{$img-path}/header-info/phone.png') no-repeat 0 50%;
         @media all and (min-width: 860px){
             margin-left: 24px;
+        }
+        @media all and (max-width: 859px) {
+            margin-top: 10px;
+            color: #fff;
         }
     }
     &_mail {
         font-size: 12px;
         line-height: 15px;
         color: $theme-color-grey;
-        background: url('#{$theme-img-path}mail.png') no-repeat 0 50%;
-        padding-left: 18px;
-        margin-left: 18px;
+        padding-left: 15px;
+        &:hover,
+        &:focus {
+            color: $theme-color-main;
+            text-decoration: none;
+        }
+        i.fa.fa-envelope {
+            margin-right: 12px;
+        }
+        @media all and (max-width: 450px) {
+            margin-left: 0;
+        }
+        @media all and (max-width: 859px) {
+            display: none;
+            .theme-main-nav__open & {
+                display: block;
+            }
+        }
     }
     &_social-list {
         margin: 0;
@@ -75,5 +114,17 @@
         @media all and (min-width: 860px){
             margin: 0;
         }
+    }
+}
+.theme-header {
+    background: #1f1d20;
+}
+.social-list_link.theme-header-info_mail {
+    display: none;
+    @media all and (max-width: 859px){
+        display: block;
+        width: 12px;
+        margin-left: 0;
+        padding: 0;
     }
 }
