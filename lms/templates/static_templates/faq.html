@@ -1,0 +1,19 @@
+<%page expression_filter="h"/>
+<%! from django.utils.translation import ugettext as _ %>
+<%inherit file="../main.html" />
+
+<%block name="pagetitle">${_("FAQ")}</%block>
+
+<main id="main" aria-label="Content" tabindex="-1">
+    <section class="container about line-height">
+        <h1>${_("FAQ")}</h1>
+        <h2>${_("How to register to lear.mehackit.org?")}</h2>
+        <p>${_("Go to")}
+            <a href="/register">${_("register")}</a> ${_("and create an account")}.</p>
+        <h2>${_("Who can join Mehackit courses?")}</h2>
+        <p>${_("Our material is free to use for all curious minds.")}
+            ${_("Our material is built for classes with a Mehackit instructor, but you are free to use these materials also outside the class room, with or without an instructor.")}
+            ${_("If you are a teacher and wish to organize a Mehackit course, please contact us at hello at")} <a href="http://mehackit.org/" target="_blank">mehackit.org</a>.
+        </p>
+    </section>
+</main>

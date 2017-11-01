@@ -1,28 +1,28 @@
 @font-face {
     font-family: 'muliitalic';
-    src: url('/static/fonts/muli-italic-webfont.woff2') format('woff2'),
-         url('/static/fonts/muli-italic-webfont.woff') format('woff');
+    src: url(#{$my-font-path}/muli-italic-webfont.woff2) format('woff2'),
+         url(#{$my-font-path}/muli-italic-webfont.woff) format('woff');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'mulilight';
-    src: url('/static/fonts/muli-light-webfont.woff2') format('woff2'),
-         url('/static/fonts/muli-light-webfont.woff') format('woff');
+    src: url(#{$my-font-path}/muli-light-webfont.woff2) format('woff2'),
+         url(#{$my-font-path}/muli-light-webfont.woff) format('woff');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'mulilight_italic';
-    src: url('/static/fonts/muli-lightitalic-webfont.woff2') format('woff2'),
-         url('/static/fonts/muli-lightitalic-webfont.woff') format('woff');
+    src: url(#{$my-font-path}/muli-lightitalic-webfont.woff2) format('woff2'),
+         url(#{$my-font-path}/muli-lightitalic-webfont.woff) format('woff');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'muliregular';
-    src: url('/static/fonts/muli-regular-webfont.woff2') format('woff2'),
-         url('/static/fonts/muli-regular-webfont.woff') format('woff');
+    src: url(#{$my-font-path}/muli-regular-webfont.woff2) format('woff2'),
+         url(#{$my-font-path}/muli-regular-webfont.woff) format('woff');
     font-weight: normal;
     font-style: normal;
 }

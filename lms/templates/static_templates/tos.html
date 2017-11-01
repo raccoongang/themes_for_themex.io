@@ -1,0 +1,59 @@
+<%page expression_filter="h"/>
+<%! from django.utils.translation import ugettext as _ %>
+<%inherit file="../main.html" />
+
+<%block name="pagetitle">${_("Terms of Service")}</%block>
+
+<main id="main" aria-label="Content" tabindex="-1">
+    <section class="container about line-height">
+        <h1>${_("Terms of Service")}</h1>
+        <p>${_("Welcome to Mehackit Courses. We offer technology courses for schools and use learn.mehackit.org as a learning environment.")}
+            ${_("Our material is built for classes with a Mehackit instructor,")}
+            ${_("but you are free to use these materials also outside the class room, with or without an instructor.")}
+        </p>
+        <p>${_("Our aim is to have as open terms of service and privacy policy as possible.")}
+            ${_("This page explains what you can and can't do with this material and what data we collect from users.")}
+            ${_("We reserve the right to modify these terms later without advance notice.")}
+        </p>
+        <h2>${_("License")}</h2>
+        <p>${_("All our content is licenced with CC BY-SA 4.0 license unless otherwise stated.")}</p>
+        <p>${_("Electronic component illustrations are courtesy of Fritzing and are licensed with a CC BY-SA 3.0 license.")}</p>
+        <p>${_("The platform is built on Open EdX. You can find more info on Open EdX licensing at ")} <a href="https://open.edx.org/open-edx-licensing" target="_blank">https://open.edx.org/open-edx-licensing</a>.
+            ${_("Theme is based on")} <a href="https://github.com/IONISx/edx-theme/" target="_blank">https://github.com/IONISx/edx-theme</a>, ${_("which is licensed with a Affero General Public License.")}
+            ${_("Our fork can be found form")} <a href="https://github.com/ohss/mehackit-edX-theme" target="_blank">https://github.com/ohss/mehackit-edX-theme</a>.
+        </p>
+        <h2>${_("User Accounts And Authority")}</h2>
+        <p>${_("In order to participate fully in Site activities, you must provide your name, an email address and a user password in order to create a user account ('User Account').")}
+            ${_("We care about the confidentiality and security of your personal information.")}
+            ${_("Please see our Privacy Policy for more information about what information is collected and how it's used.")}</p>
+        <h1>${_("Privacy Policy")}</h1>
+        <p>${_("We care about the confidentiality and security of your personal information.")}
+            ${_("We will use commercially reasonable efforts to keep your Personal Information secure in compliance with this Privacy Policy.")}
+        </p>
+        <h2>${_("Usernames And Postings")}</h2>
+        <p>${_("Comments or other information posted by you to our forums,")}
+            ${_("wikis or other areas of the Site designed for public communications or communications among registered class members may be viewed and downloaded by others who visit the Site.")}
+            ${_("For this reason, we encourage you to use discretion when deciding whether to post any information that can be used to identify you to those forums (or other public or classwide areas).")}
+        </p>
+        <h2>${_("Personal Information")}</h2>
+        <p>${_("As used in this Privacy Policy, 'Personal Information' means any information about yourself that you may provide to us when using the Site,")}
+            ${_("such as when you sign up for a user account or enter into a transaction through the Site, which may include (but is not limited to) your name,")}
+            ${_("contact information, gender, date of birth, occupation.")}
+        </p>
+        <h2>${_("Information We Collect And How We Use It")}</h2>
+        <p>${_("We collect information, including Personal Information (described above), when you sign up for a user account,")}
+            ${_("participate in courses, send us email messages and/or participate in our public forums.")}
+            ${_("We also collect certain usage information about student performance and patterns of learning.")}
+            ${_("In addition, we track information indicating, among other things, which pages of our Site were visited, the order in which they were visited,")}
+            ${_("when they were visited and which hyperlinks and other user interface controls were used.")}
+        </p>
+        <p>${_("We may log the IP address, operating system, and browser software used by each user of the Site,")}
+            ${_("and we may be able to determine from an IP address a user's Internet Service Provider and the geographic location of his or her point of connectivity.")}
+            ${_("Various web analytics tools are used to collect this information.")}
+            ${_("Some of the information is collected through cookies (small text files placed on your computer that store information about you, which can be accessed by the Site).")}
+            ${_("You should be able to control how and whether cookies will be accepted by your web browser.")}
+            ${_("Most browsers offer instructions on how to reset the browser to reject cookies in the 'Help' section of the toolbar.")}
+            ${_("If you reject our cookies, many functions and conveniences of this Site may not work properly.")}
+        </p>
+    </section>
+</main>
