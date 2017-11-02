@@ -1,0 +1,231 @@
+.find-courses .wrapper-search-context,
+.find-courses .courses-container {
+    max-width: 1600px;
+    padding: 0 20px;
+}
+.find-courses .courses-container .courses:not(.no-course-discovery) .courses-listing .courses-listing-item {
+    max-width: 1600px;
+    width: 100%;
+    float: none;
+    margin-top: 0;
+    max-height: none;
+}
+.courses-container .courses .course {
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    &:hover {
+        border: none;
+        box-shadow: none;
+        background: transparent; 
+    }
+    a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media (max-width: 960px) {
+            flex-direction: column;
+        }
+    }
+}
+.courses-container .courses .course .course-image .cover-image .learn-more {
+    position: absolute;
+    opacity: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background: rgba(0,0,0, 0.5);
+    font-size: 14px;
+    border: 2px solid #fff;
+}
+.courses-container .courses .course:hover .cover-image:before, .courses-container .courses .course:focus .cover-image:before {
+    transition: none;
+    opacity: 1;
+}
+.courses-container .courses .course .course-image .cover-image:before {
+    display: none;
+}
+.courses-container .courses .course .course-image .cover-image {
+    position: relative;
+    height: auto;
+    overflow: visible;
+}
+.courses-container .courses .course .course-info .course-code,
+.courses-container .courses .course .course-info .course-organization {
+    display: block;
+    font-size: 20px;
+    line-height: 26px;
+    font: 20px/26px Arial, sans-serif;
+    font-weight: 600;
+    color: #0b1d2b;
+    padding: 0;
+}
+.courses-container .courses .course .course-info .course-title {
+    font: 24px/1 Arial, sans-serif;
+    font-weight: 700;
+    color: #0b1d2b;
+    margin-bottom: 5px;
+    text-align: left;
+    text-transform: uppercase;
+    padding: 0;
+    height: auto;
+}
+.courses-container .courses .course .course-info .course-date {
+    font: 16px/20px Arial, sans-serif;
+    color: #0a2d46;
+    padding: 2px 0;
+    margin: 0;
+    position: relative;
+    padding-left: 20px;
+    &:after {
+        content: "\f017";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $theme-color-main;
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+.courses-listing-item {
+    .sr {
+        display: none;
+    }
+    .course-image {
+        width: 70%;
+        @media (max-width: 960px) {
+            width: 100%;
+        }
+    }
+}
+.find-courses .courses-container .courses:not(.no-course-discovery) .courses-listing .courses-listing-item:nth-child(even) a{
+    flex-direction: row-reverse;
+        @media (max-width: 960px) {
+            flex-direction: column;
+        }
+}
+.courses-container .courses .course .course-info {
+    width: 30%;
+    height: auto;
+    padding: 0 58px;
+    @media (max-width: 960px) {
+        width: 100%;
+        padding: 0;
+    }
+}
+.courses-container .courses .course .course-image .cover-image img {
+    min-height: 220px;
+    min-width: 320px;
+    @media (max-width: 960px) {
+        margin-bottom: 20px;
+    }
+}
+.find-courses .search-facets .facet-option:hover, .find-courses .search-facets .facet-option:focus {
+    background: $theme-color-main;
+}
+
+.find-courses .filters .clear-filters {
+    color: $theme-color-main;
+}
+.dashboard .my-courses .course .details .wrapper-course-actions {
+    float: none;
+}
+.wrapper-course-actions .course-actions {
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+.dashboard .my-courses .course .details .course-actions .wrapper-action-more {
+    float: left;
+}
+.wrapper-course-actions .theme-btn__right {
+    float: left;
+    margin-right: 10px;
+}
+.my-courses .course-container {
+    .theme-courses_content {
+        width: 50%;
+    }
+}
+div.window-wrap section.wiki .btn.btn-primary,
+div.window-wrap .modal .inner-wrapper form .submit input[type="submit"] {
+    border-color: $theme-color-main;
+    background: $theme-color-main;
+    box-shadow: none;
+    text-shadow: none;
+}
+div.window-wrap .modal .inner-wrapper form .submit input[type="submit"]:hover:not(:disabled) {
+    background: $theme-color-main-hover;
+}
+div.window-wrap .modal .inner-wrapper form .submit input[type="submit"]:active:not(:disabled),
+div.window-wrap .modal .inner-wrapper form .submit input[type="submit"]:focus:not(:disabled) {
+    box-shadow: none;
+}
+.header-global .user {
+    display: flex;
+    align-items: center;
+}
+.header-global .user .dropdown {
+    margin: 0;
+    line-height: 1.6rem;
+}
+section.wiki #cheatsheetLink,
+.wiki-wrapper a.accordion-toggle,
+div.window-wrap section.wiki .nav-tabs li.active a,
+div.window-wrap section.wiki .article-functions .see-children a,
+div.window-wrap section.wiki .nav-tabs a,
+div.window-wrap section.wiki .breadcrumb li a,
+div.window-wrap .header-global .user .dropdown-menu li>a {
+    color: $theme-color-main;
+}
+.dropdown-menu-container .dropdown-menu .dropdown-item a:hover, 
+.dropdown-menu-container .dropdown-menu .dropdown-item a:active, 
+.dropdown-menu-container .dropdown-menu .dropdown-item a:focus {
+    text-decoration: none;
+    color: #3c3c3c;
+}
+.dropdown-menu-container .menu-title {
+    &:hover {
+        text-decoration: none;
+    }
+}
+div.window-wrap section.wiki .btn.btn-primary:hover:not(:disabled),
+div.window-wrap section.wiki .btn.btn-primary:active:not(:disabled), 
+div.window-wrap section.wiki .btn.btn-primary:focus:not(:disabled) {
+    box-shadow: none;
+    color: $theme-color-main;
+    border-color: $theme-color-main;
+    background: transparent;
+}
+div.window-wrap .account-settings-sections .section .account-settings-section-body .u-field .field select ~ .icon-caret-down:after {
+    border-top-color: $theme-color-main;
+}
+div.window-wrap .account-settings-sections .section .account-settings-section-body .u-field .field .u-field-link {
+    color: $theme-color-main;
+    border-color: $theme-color-main;
+    &:focus,
+    &:hover {
+        color: #fff;
+        background-color: $theme-color-main;
+    }
+}
+div.window-wrap .wrapper-account-settings .wrapper-header .account-nav button:hover, 
+div.window-wrap .wrapper-account-settings .wrapper-header .account-nav button:focus {
+    border-bottom: 4px solid $theme-color-main !important;
+}
+body .xmodule_display.xmodule_HtmlModule a,
+body .xmodule_display.xmodule_HtmlModule a:link {
+    color: $theme-color-main;
+    &:hover,
+    &:focus,
+    &:active {
+        color: $theme-color-main-hover;
+    }
+}

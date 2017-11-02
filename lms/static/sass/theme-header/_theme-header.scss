@@ -1,3 +1,21 @@
 .theme-header {
     width: 100%;
+    height: auto;
+    border: none;
+    box-shadow: none;
+    @media all and (max-width: 859px) {
+        // display: none;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        box-sizing: border-box;
+        padding: 15px;
+        .theme-main-nav__open & {
+            display: flex;
+            justify-content: center;
+        }
+    }
+    @media all and (max-width: 450px) {
+        flex-direction: column;
+    }
 }

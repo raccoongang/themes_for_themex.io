@@ -1,0 +1,5 @@
+// Import the original styles from edx-platform.
+@import "lms/static/sass/lms-main-v1-rtl";
+
+// Our overrides for settings we want to change.
+@import "main";

@@ -5,7 +5,7 @@
         padding-top: 53px;
 
         &__color {
-            background: #33383f;
+            background: #1f1d20;
         }
     }
     &_header {
@@ -23,7 +23,10 @@
         max-width: 1140px;
         margin: 0 auto;
         padding: 28px 15px;
-
+        
+        @media (max-width: 450px) {
+            flex-direction: column;
+        }
         .theme-footer_holder__color & {
             border-color: #2f343b;
         }
@@ -67,6 +70,12 @@
         font: 17px/1.3 muliregular;
         color: #5a666e;
         margin-right: 50px;
+
+        @media (max-width: 450px) {
+            margin-right: 0;
+            margin-bottom: 20px;
+            text-align: center;
+        } 
     }
     &_copyright {
         font: 13px/1.3 muliregular;

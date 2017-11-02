@@ -1,4 +1,4 @@
-.social-list {
+body .social-list {
     display: flex;
     width: 100%;
     padding: 0;
@@ -14,15 +14,31 @@
 
         &:first-child {
             padding-left: 0;
+            @media all and (max-width: 859px) {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
         }
     }
     &_link {
-        color: #ccccce;
         font-size: 16px;
         line-height: 1.3;
-
-        &:hover {
-            color: darken(#ccccce, 20%);
-        }
+        color: $icon-color;
+    }
+}
+div.window-wrap a.social-list_link {
+    color: $theme-color-main;
+    &:hover,
+    &:focus {
+        color: $link-hover;
+        text-decoration: none;
+    }
+    @media (max-width: 859px) {
+        color: #fff;
+            &:hover,
+            &:focus {
+                color: darken(#fff, 20%);
+            }
     }
 }
