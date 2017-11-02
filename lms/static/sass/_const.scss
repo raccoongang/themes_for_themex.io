@@ -1,12 +1,7 @@
 // colors
-$theme-color-grey: #a3a3a6;
-$theme-color-main: #74bb00;
-$theme-color-main-hover: #85d600;
-$disable-text-color: #3b3b3b;
-$disable-text-bg: #e8e8e8;
-$mobile-indent: 15px;
-
-
+$theme-footer-bg: #363636;
+$theme-footer-link: #767676;
+$profile-bg-hover: rgba(235,190,32,0.6);
 $res_450:   450px;
 $res_600:   600px;
 $res_720:   720px;
@@ -14,3 +9,17 @@ $res_860:   860px;
 $res_1100:  1100px;
 $res_1220:  1220px;
 $res_1440:  1440px;
+
+
+// colors
+$theme-color-grey: #a3a3a6;
+$theme-color-main: #ebbe20;
+$theme-color-main-hover: #ebbe20;
+$link-hover: lighten($theme-color-main, 20%);
+$theme-main-nav: #1f1d20;
+$disable-text-color: #3b3b3b;
+$disable-text-bg: #e8e8e8;
+$mobile-indent: 15px;
+$icon-color: #ebbe20;
+$my-font-path: "../fonts" !default;
+$img-path: "../images" !default;

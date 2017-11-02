@@ -8,3 +8,543 @@ section.outside-app,
         min-width: 760px;
     }
 }
+.find-courses {
+    padding-top: 20px;
+}
+html body.view-in-course,
+body .discussion,
+.discussion .window-wrap,
+div.window-wrap .courseware-bookmarks-button .bookmarks-list-button.is-active {
+    background: transparent;
+}
+body div.book-wrapper section.book-sidebar,
+html body {
+    background-color: #fff;
+}
+div.window-wrap .register form .field.is-focused label,
+div.window-wrap .passwordreset form .field.is-focused label, 
+div.window-wrap #forgot-password-modal #password-reset form .field.is-focused label,
+div.window-wrap .register a:link,
+.view-login div.window-wrap #forgot-password-modal #password-reset header h2,
+div.window-wrap .login a,
+div.window-wrap .login a:link,
+div.window-wrap .post-context a,
+div.window-wrap .xmodule_display.xmodule_VideoModule .video .subtitles .subtitles-menu li,
+div.window-wrap .xmodule_display.xmodule_VideoModule .video .subtitles a,
+div.window-wrap .profile-wrapper .course-info>.chapters>section .sections a,
+div.window-wrap .view-discussion-home .helpgrid-row-participation .fa-star,
+div.window-wrap .discussion .action-button.action-follow .action-label,
+div.window-wrap .discussion.inline-discussion .inline-thread .forum-nav-bar .all-posts-btn,
+div.window-wrap .discussion .post-label.post-label-following,
+div.window-wrap .discussion.inline-discussion .new-post-article .add-post-cancel,
+div.window-wrap .course-index .accordion .course-navigation .button-chapter,
+div.window-wrap .xmodule_display.xmodule_CapaModule div.problem .hints div header a,
+div.window-wrap .incontext-help.action-secondary.action-help,
+div.window-wrap .form-cancel.action-secondary.action-cancel,
+div.window-wrap .action-type-container a,
+div.window-wrap .progress-link-wrapper a.progress-link,
+div.window-wrap .promo-box_heading a,
+div.window-wrap .u-field-message-notification a,
+div.window-wrap .supplemental-link a,
+div.window-wrap .bookmarks-results-list .bookmarks-results-list-item:hover .list-item-breadcrumbtrail,
+div.window-wrap .bookmarks-results-list .list-item-right-section,
+div.window-wrap .bookmarks-results-list .bookmarks-results-list-item:before,
+div.window-wrap .course-index .accordion .course-navigation .chapter-content-container .chapter-menu .menu-item.graded .menu-icon,
+div.window-wrap .login-register .form-field .field-link, 
+div.window-wrap .financial-assistance-wrapper .financial-assistance-form .form-field .field-link,
+div.window-wrap p a, 
+div.window-wrap p a:visited,
+div.window-wrap .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .toggle-cohort-management-secondary,
+div.window-wrap .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .toggle-cohort-management-discussions,
+div.window-wrap .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .wrapper-tabs .tab .toggle-button,
+div.window-wrap .instructor-dashboard-wrapper-2 .file-download-link a,
+div.window-wrap .instructor-dashboard-content-2 a,
+div.window-wrap .btn-link,
+div.window-wrap .updates a,
+div.window-wrap div.info-wrapper section.handouts ol li a,
+div.window-wrap .dashboard a {
+    color: $theme-color-main;
+    &:visited,
+    &:hover,
+    &:focus,
+    &:active {
+        color: $theme-color-main-hover;
+    }
+}
+.login-register .status .message-copy a,
+body div.book-wrapper section.book-sidebar #booknav li a,
+div.window-wrap .login form .field.is-focused .tip, 
+div.window-wrap .register form .field.is-focused .tip, 
+div.window-wrap .passwordreset form .field.is-focused .tip,
+div.window-wrap #forgot-password-modal #password-reset form .field.is-focused .tip,
+.view-register div.window-wrap .introduction header .title .title-super, 
+.view-login div.window-wrap .introduction header .title .title-super, 
+.view-passwordreset div.window-wrap .introduction header .title .title-super,
+div.window-wrap .login form .field.is-focused label,
+.table a {
+    color: $theme-color-main;
+    &:visited,
+    &:hover,
+    &:focus,
+    &:active {
+        color: $theme-color-main-hover;
+    }
+}
+.register form .field.required label a:visited{
+    color: $theme-color-main-hover;
+}
+div.window-wrap .register a,
+div.window-wrap .login a:link {
+    border-bottom: none;
+    &:visited,
+    &:hover,
+    &:focus,
+    &:active {
+        border-bottom: none;
+    }
+}
+div.window-wrap .find-courses .loading-spinner,
+div.window-wrap .search-bar .search-button {
+    background: $theme-color-main;
+    &:hover,
+    &:focus,
+    &:active {
+        background: $theme-color-main-hover;
+    }
+}
+div.window-wrap .search-bar .search-button:hover:hover {
+    background: $theme-color-main-hover;
+}
+body.view-in-course header.header-global {
+    width: 100%;
+}
+.help-link {
+    color: #fff;
+    margin: 0 0 0 15px;
+    &:hover,
+    &:active,
+    &:focus {
+        color: $theme-color-main-hover;
+        text-decoration: none;
+    }
+    @media all and (max-width: 850px) {
+        margin-right: 0;
+    }
+}
+div.window-wrap .wrapper-course-material .course-tabs li a:hover,
+div.window-wrap .wrapper-course-material .course-tabs li a:focus,
+div.window-wrap .wrapper-course-material .course-tabs li a.active {
+    color: $theme-color-main;
+    border-bottom-color: $theme-color-main;
+}
+.courseware-bookmarks-button .bookmarks-list-button.is-active,
+div.window-wrap .courseware-bookmarks-button .bookmarks-list-button {
+    color: $theme-color-main;
+    border-color: $theme-color-main;
+    &:focus,
+    &:hover {
+        background: $theme-color-main-hover;
+        color: #fff;
+    }
+}
+div.window-wrap .find-courses .discovery-submit {
+    border-color: $theme-color-main;
+    background: $theme-color-main;
+    &:hover,
+    &:active,
+    &:focus {
+        border-color: $theme-color-main;
+    }
+}
+div.window-wrap .bookmarks-results-list .bookmarks-results-list-item:hover,
+div.window-wrap .xmodule_display.xmodule_CapaModule div.problem .choicegroup label:hover, 
+div.window-wrap .xmodule_display.xmodule_CapaModule div.problem .choicetextgroup label:hover, 
+div.window-wrap .xmodule_display.xmodule_ConditionalModule div.problem .xmodule_display.xmodule_CapaModule .choicegroup label:hover, 
+div.window-wrap .xmodule_display.xmodule_ConditionalModule div.problem .xmodule_display.xmodule_CapaModule .choicetextgroup label:hover,
+div.window-wrap .find-courses .discovery-input:focus {
+    border-color: $theme-color-main-hover;
+}
+div.window-wrap .find-courses button:focus:not(:disabled),
+div.window-wrap .find-courses button:active:not(:disabled) {
+    box-shadow: none;
+}
+body.view-in-course div.window-wrap {
+    min-width: 320px;
+}
+body.view-in-course .window-wrap .content-wrapper{
+    min-width: 720px;
+}
+div.window-wrap .wrap-instructor-info .instructor-info-action {
+    color: $theme-color-main;
+    &:hover,
+    &:focus,
+    &:active {
+        color: #fff;
+        background: $theme-color-main-hover;
+    }
+}
+.xmodule_display.xmodule_SequenceModule .sequence-nav ol li button .fa-bookmark,
+.enrollment-wrapper strong {
+    color: $theme-color-main !important;
+}
+div.window-wrap .btn-brand,
+div.window-wrap .xmodule_display.xmodule_CapaModule div.problem button.btn-brand,
+div.window-wrap .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .cohort-management-nav .action-create,
+div.window-wrap .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .file-upload-form .action-submit,
+div.window-wrap .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .form-submit,
+div.window-wrap .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .cohort-management .message .action-create,
+div.window-wrap .instructor-dashboard-wrapper-2 section.idash-section#membership .member-lists-management .auth-list-container .member-list-widget input[type="button"].add {
+    color: #fff;
+    background: $theme-color-main;
+    box-shadow: none;
+    text-shadow: none;
+    border-color: $theme-color-main;
+    &:focus,
+    &:active,
+    &:hover {
+        border-color: $theme-color-main-hover;
+        background: transparent;
+        color: $theme-color-main-hover;
+        box-shadow: none;
+        text-shadow: none;
+    }
+}
+div.window-wrap .xmodule_display.xmodule_SequenceModule .sequence-nav-button:hover, 
+div.window-wrap .xmodule_display.xmodule_SequenceModule .sequence-nav-button:active, 
+div.window-wrap .xmodule_display.xmodule_SequenceModule .sequence-nav-button.active, 
+div.window-wrap .xmodule_display.xmodule_SequenceModule .sequence-nav button:hover, 
+div.window-wrap .xmodule_display.xmodule_SequenceModule .sequence-nav button:active, 
+div.window-wrap .xmodule_display.xmodule_SequenceModule .sequence-nav button.active {
+    border-bottom: 3px solid $theme-color-main;
+}
+div.window-wrap .btn-default {
+    color: $theme-color-main;
+    &:hover,
+    &:focus,
+    &:active {
+    border-color: $theme-color-main-hover;
+    background-color: transparent;
+    color: $theme-color-main-hover;
+    }
+}
+div.window-wrap .courseware-bookmarks-button .bookmarks-list-button.is-active:focus, 
+div.window-wrap .courseware-bookmarks-button .bookmarks-list-button.is-active:hover{
+    background: $theme-color-main;
+    color: #fff;
+}
+.window-wrap .find-courses .wrapper-search-context {
+    padding: 0;
+}
+div.window-wrap .discussion-module .btn {
+    border: 1px solid $theme-color-main;
+    color: $theme-color-main !important;
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: $theme-color-main !important;
+        background-color: $theme-color-main !important;
+        background-image: none !important;
+        box-shadow: none !important;
+        color: #fff !important;
+        text-decoration: none !important;
+    }
+}
+div.window-wrap .discussion-module .btn-brand, 
+div.window-wrap .wmd-prompt-dialog .btn {
+    &:hover,
+    &:focus,
+    &:active {
+    border-color: $theme-color-main !important;
+    background-color: $theme-color-main !important;
+    }
+}
+div.window-wrap .forum-new-post-form .post-type-input:checked + .post-type-label, 
+div.window-wrap .edit-post-form .post-type-input:checked + .post-type-label {
+    background-color: $theme-color-main;
+}
+div.window-wrap .forum-nav-thread.never-read .forum-nav-thread-link {
+    border-left: 3px solid $theme-color-main;
+    color: $theme-color-main;
+}
+div.window-wrap .discussion .action-button.action-follow.is-checked .action-icon, 
+div.window-wrap .discussion .action-button.action-follow:hover .action-icon, 
+div.window-wrap .discussion .action-button.action-follow:focus .action-icon {
+    background-color: $theme-color-main;
+    border: 1px solid $theme-color-main;
+}
+div.window-wrap .discussion .action-button.action-follow:hover, 
+div.window-wrap .discussion .action-button.action-follow:focus {
+    border-color: $theme-color-main;
+}
+div.window-wrap .empty-dashboard-message a{
+    background-color: $theme-color-main;
+    border: 1px solid $theme-color-main;
+    color: #fff;
+    box-shadow: none;
+    &:hover,
+    &:focus,
+    &:active {
+        color: $theme-color-main;
+        border: 1px solid $theme-color-main;
+        background: transparent;
+    }
+}
+div.window-wrap .register .form-actions button[type="submit"],
+div.window-wrap #forgot-password-modal #password-reset .form-actions button[type="submit"],
+div.window-wrap .login .form-actions button[type="submit"] {
+    box-shadow: none;
+    background: $theme-color-main;
+    border: 1px solid $theme-color-main;
+    &:hover,
+    &:focus,
+    &:active {
+        box-shadow: none;
+        background: transparent;
+        border: 1px solid $theme-color-main;
+        color: $theme-color-main;
+    }
+}
+div.window-wrap .register .btn-brand.btn-login {
+    background: transparent;
+    @media (max-width: 450px) {
+        margin-bottom: 15px;
+    }
+}
+div.window-wrap .register aside .btn-login .btn-login-action {
+    color: $theme-color-main;
+    border: 1px solid $theme-color-main;
+    &:focus,
+    &:hover,
+    &:active {
+        background: $theme-color-main;
+        border: 1px solid $theme-color-main;
+        color: #fff;
+    }
+}
+div.window-wrap .search-bar .search-button, 
+div.window-wrap .search-bar .cancel-button, 
+div.window-wrap .search-bar .search-button:hover, 
+div.window-wrap .search-bar .cancel-button:hover,
+div.window-wrap .search-bar .search-button:hover, 
+div.window-wrap .search-bar .search-button:focus, 
+div.window-wrap .search-bar .search-button:active, 
+div.window-wrap .search-bar .cancel-button:hover, 
+div.window-wrap .search-bar .cancel-button:focus, 
+div.window-wrap .search-bar .cancel-button:active, 
+div.window-wrap .search-bar .search-button:hover:hover, 
+div.window-wrap .search-bar .search-button:hover:focus, 
+div.window-wrap .search-bar .search-button:hover:active, 
+div.window-wrap .search-bar .cancel-button:hover:hover, 
+div.window-wrap .search-bar .cancel-button:hover:focus, 
+div.window-wrap .search-bar .cancel-button:hover:active {
+    background: $theme-color-main;
+}
+.student-table a,
+body .xmodule_display.xmodule_HtmlModule a,
+body .xmodule_display.xmodule_HtmlModule a:link,
+body div.info-wrapper section.updates div article .toggle-visibility-button,
+body div.info-wrapper section.handouts a {
+    color: $theme-color-main;
+    &:hover,
+    &:focus,
+    &:active {
+        color: $theme-color-main-hover;
+    }
+}
+.view-register .introduction,
+.view-register .container,
+.view-login .introduction,
+.view-login .container {
+    min-width: 320px;
+    width: auto;
+    max-width: 1180px;
+}
+.register .content,
+.login .content {
+    max-width: 600px;
+    width: 100%;
+    min-width: 280px;
+}
+.view-register .introduction header .title .title-sub, .view-login .introduction header .title .title-sub, .view-passwordreset .introduction header .title .title-sub {
+    @media (max-width: 450px) {
+        margin-left: 0;
+    }
+}
+.view-register .introduction header {
+    height: auto;
+    min-height: 120px;
+}
+.view-register .introduction header .title, .view-login .introduction header .title, .view-passwordreset .introduction header .title {
+    position: relative;
+    left: 0;
+    padding: 0 30px;
+}
+body .wrapper-msg.wrapper-auto-cert .auto-cert-message .has-actions .msg-actions .btn,
+body .dashboard .my-courses .course .wrapper-messages-primary .message.message-status.course-status-certavailable .actions-primary .action-certificate .btn {
+    color: #fff;
+    background: $theme-color-main;
+    border-color: $theme-color-main;
+    box-shadow: none;
+    &:hover,
+    &:focus,
+    &:active {
+        color: $theme-color-main;
+        background: transparent;
+        border-color: $theme-color-main;
+    }
+}
+body .wrapper-msg.wrapper-auto-cert .auto-cert-message .has-actions .msg-actions .btn {
+    border-width: 1px;
+    border-style: solid;
+    &:hover,
+    &:focus,
+    &:active {
+        border-width: 1px;
+        border-style: solid;
+    } 
+}
+body .home .page-header-secondary {
+    background: $theme-color-main;
+}
+body .wrapper-msg.wrapper-auto-cert .auto-cert-message,
+body .date-summary-container .date-summary-todays-date {
+    border-left: 3px solid $theme-color-main;
+}
+body .find-courses, 
+body .university-profile {
+    background: #fff;
+}
+.inner-wrapper .ugc > a {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    background: $theme-color-main !important;
+    border: 1px solid $theme-color-main !important;
+    &:hover,
+    &:focus,
+    &:active {
+        box-shadow: none !important;
+        text-shadow: none !important;
+        color: $theme-color-main !important;
+        background: transparent !important;
+        border-color: $theme-color-main !important;
+    }
+}
+body .find-courses .courses-container .courses.no-course-discovery .courses-listing .courses-listing-item {
+    float: none;
+    margin-right: 0;
+    width: auto;
+}
+@media (min-width: 600px) {
+    .theme-courses_course:nth-child(even) {
+        justify-content: flex-end;
+    }
+    .find-courses .courses-container .courses.no-course-discovery .courses-listing .courses-listing-item:nth-child(even) .theme-courses_content{
+        order: -1;
+    }
+}
+@media (max-width: 599px) {
+    .find-courses .courses-container .courses .courses-listing .courses-listing-item {
+        min-height: 360px;
+        max-height: none;
+    }
+}
+body div.window-wrap .doc-link {
+    color: #fff;
+    &:hover {
+        color: $theme-color-main;
+    }
+}
+.theme-courses_content_title {
+    display: flex;
+}
+body .container.activation h1.valid {
+    background: none;
+    border: none;
+    color: #000;
+    font-weight: bold;
+}
+body .u-field.mode-placeholder,
+body.view-profile .profile-section-two-fields .u-field.mode-placeholder,
+body .u-field.editable-toggle.mode-display,
+body .view-profile .profile-section-two-fields .u-field-textarea.editable-toggle {
+    &:hover,
+    &:focus {
+        background-color: $profile-bg-hover;
+        .message-can-edit {
+            color: #000;
+        }
+    }
+}
+body .u-field.mode-placeholder,
+body.view-profile .profile-section-two-fields .u-field.mode-placeholder {
+    &:hover,
+    &:focus {
+        border-color: $profile-bg-hover;
+    }
+}
+
+body.view-profile .profile-image-field .image-wrapper .u-field-upload-button {
+    color: #000;
+    background: $profile-bg-hover;
+    &:focus,
+    &:hover {
+        border-color: $theme-color-main;
+    }
+}
+body.view-profile .profile-section-two-fields .u-field.mode-placeholder:hover .u-field-title,
+body .u-field.mode-placeholder:hover span {
+    color: #000;
+}
+body div.info-wrapper {
+    background: #fff;
+}
+.content-wrapper {
+    padding-bottom: 40px;
+}
+.line-height p {
+    line-height: 1.2;
+}
+body.view-profile .profile-image-field .image-wrapper .upload-button-input {
+    opacity: 0;
+}
+body .instructor-dashboard-wrapper-2 section.idash-section#send_email .list-fields .field .email-targets-secondary {
+    columns: 1;
+}
+.instructor-dashboard-wrapper-2 .btn-blue#generate-example-certificates-submit,
+body button.register,
+body .instructor-dashboard-wrapper-2 .customBrowseBtn .file-browse .browse,
+body .instructor-dashboard-wrapper-2 button.btn-blue {
+    background: $theme-color-main;
+    box-shadow: none;
+    &:active:not(:disabled),
+    &:focus:not(:disabled),
+    &:hover:not(:disabled) {
+        background: $link-hover;
+        box-shadow: none;
+        border: none;
+    }
+}
+body button.register,
+body .instructor-dashboard-wrapper-2 .customBrowseBtn .file-browse .browse {
+    border-color: $theme-color-main;
+    text-shadow: none;
+    &:active:not(:disabled),
+    &:focus:not(:disabled),
+    &:hover:not(:disabled) {
+        border: 1px solid $link-hover;
+        text-shadow: none;
+    }
+}
+.banner-decor {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    opacity: .25;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    background: #ff6052;
+}

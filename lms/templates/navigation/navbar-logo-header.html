@@ -1,0 +1,20 @@
+## mako
+
+<%page expression_filter="h" args="online_help_token"/>
+
+<%namespace name='static' file='../static_content.html'/>
+<%!
+from django.utils.translation import ugettext as _
+from lms.djangoapps.ccx.overrides import get_current_ccx
+
+# App that handles subdomain specific branding
+from branding import api as branding_api
+%>
+
+<a href="${marketing_link('ROOT')}">
+      <%block name="navigation_logo">
+      <span class="theme-nav-wrapper_logo-holder">
+      <img src="/static/${settings.FEATURES.get('MARVEL_BLUE_DEFAULT_SITE_THEME', settings.DEFAULT_SITE_THEME)}/images/header-info/logo-racoon.png" alt="racoon logo" >
+    </span>
+    </%block>
+</a>

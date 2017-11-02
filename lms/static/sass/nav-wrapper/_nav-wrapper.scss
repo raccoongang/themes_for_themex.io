@@ -13,7 +13,14 @@
         padding-left: 0;
         padding-right: 0;
     }
-
+    @media all and (max-width: 859px) {
+        padding-bottom: 0;
+        padding-right: 0;
+        margin: 0;
+    }
+    @media all and (max-width: 450px) {
+        padding: 0 0 25px 0;
+    }
     &:after {
         display: none;
     }
@@ -21,36 +28,34 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
+        @media all and (max-width: 450px){
+            justify-content: center;
+        }
     }
     &_logo-holder {
         display: none;
         overflow: hidden;
-        width: 54px;
         @media all and (min-width: 860px){
-            display: inline;
+            display: flex;
         }
-
-        .theme-main-nav & {
-            display: block;
+        &_small {
+            .theme-main-nav & {
+                display: block;
+            }
         }
         img {
-            margin: -4px 0 0 -5px;
+            margin: 0;
             max-width: none;
-            @media all and (min-width: 860px){
-                margin: 0;
-            }
         }
     }
     .nav-global {
-        margin: 0 10px 0 0;
         font: 0/0 a;
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        @media all and (min-width: 600px){
-            margin-right: 21px;
+        @media all and (max-width: 45px){
+            flex-direction: column;
         }
-
         .cta-discovery {
             @include inline-block;
             font-size: 26px;
@@ -61,13 +66,31 @@
                 margin-right: 21px;
             }
         }
-        .cta-register {
+        .item {
+            margin: 0 10px 0 0;
+            @media all and (min-width: 600px){
+                margin-right: 21px;
+            }
+            @media all and (max-width: 600px){
+                margin-right: 0;
+            }
+        }
+        .btn-neutral,
+        .btn {
             font: 14px/18px muliregular;
-            color: #515e66;
+            color: #a3a3a6;
             text-transform: uppercase;
+            &:hover {
+                text-decoration: underline;
+                color: #a3a3a6;
+            }
+        }
+        .btn-neutral:focus {
+            color: #a3a3a6 !important;
         }
     }
     .nav-courseware {
         margin: 0;
+        padding: 0;
     }
 }
