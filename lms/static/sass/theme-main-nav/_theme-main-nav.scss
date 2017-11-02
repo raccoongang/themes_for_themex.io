@@ -1,17 +1,21 @@
 .theme-main-nav {
-    background: #1f1b4d;
+    background: $theme-main-nav;
     width: 100%;
     order: -1;
     position: relative;
-    padding-top: 44px;
+    padding-top: 60px;
     @media all and (min-width: 860px){
         order: 2;
         padding-top: 0;
+        display: flex;
+        flex-direction: column; 
     }
 
     &_holder {
-        max-width: 1140px;
+        max-width: 1170px;
+        width: 100%;
         margin: 0 auto;
+        order: 2;
     }
     &_list {
         flex-wrap: wrap;
@@ -29,45 +33,47 @@
     }
     &_link {
         font: 15px/1.3 muliregular;
-        padding: 12px 30px 13px;
+        padding: 12px 15px 13px;
         text-align: center;
         display: block;
         color: #fff !important;
-        @media all and (min-width: 450px){
-            text-align: left;
-        }
         @media all and (min-width: 860px){
             @include inline-block;
             text-align: center;
         }
 
         &:hover {
-            background: #413a8d;
+            background: $theme-color-main-hover;
             text-decoration: none;
         }
     }
     &_item {
         width: 100%;
-        border-top: 1px solid #2A358A;
+        border-bottom: 1px solid #2f343b;
         @media all and (min-width: 860px){
             flex-wrap: nowrap;
             border: none;
             width: auto;
+            border: none;
         }
 
         &:first-child {
-            border: none;
+            border-top: 1px solid #2f343b;
+            @media all and (min-width: 860px){
+                border: none;
+            }
         }
     }
     &_opener {
         position: absolute;
-        top: 8px;
+        top: 15px;
         right: 15px;
         height: 30px;
         width: 35px;
         border-top: 4px solid #fff;
         border-bottom: 4px solid #fff;
         box-sizing: border-box;
+        cursor: pointer;
         @media all and (min-width: 860px){
             display: none;
         }
@@ -87,9 +93,10 @@
         position: absolute;
         left: 15px;
         top: 0;
-        height: 44px;
-        width: 44px;
+        height: 60px;
+        width: 55px;
         overflow: hidden;
+        display: block;
         @media all and (min-width: 860px){
             display: none;
         }
