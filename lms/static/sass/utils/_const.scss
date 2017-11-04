@@ -31,6 +31,9 @@ $theme-link-hover: lighten($theme-link, 20%);
 $theme-content-bg: #eee;
 //settings for input icons
 $theme-input-icon: #fc6a15;
+//user link color 
+$theme-user-link: #3c3c3c;
+$theme-user-link-hover: lighten($theme-user-link, 20%);
 //our overrides for settings we want to change
 $img-path: "../images" !default;
 $font-path: "../fonts" !default;

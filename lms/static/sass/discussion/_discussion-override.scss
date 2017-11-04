@@ -80,13 +80,31 @@
     .menu-button {
         color: #000;
         box-shadow: none;
+        float: left;
+        width: 29px;
+        height: 25px;
 
         &:hover {
             background: none;
         }
     }
-    .menu-title:hover {
-        text-decoration: none;
+    .menu-title {
+        float: left;
+
+        &:focus,
+        &:hover {
+            text-decoration: none;
+        }
+        .menu-image {
+            border-radius: 10%;
+            margin: 0;
+        }
+        .label-username {
+            float: right;
+            margin: 11px 5px 11px 15px;
+            font-size: 14px;
+            line-height: 1.3;
+        }
     }
     .dropdown-menu {
         box-shadow: 0 2px 2px 0 rgba(0,0,0,0.3);
@@ -132,7 +150,13 @@
             }
         }
     }
-}  
+}
+.dropdown-menu-container .menu-title .menu-image {
+    margin-right: 5px;
+}
+.header-global .wrapper-header .dropdown-menu {
+    top: 100%;
+}
 .btn,
 .content-wrapper .page-header.has-secondary .page-header-secondary .form-actions>button {
     background: $theme-btn-white-bg;
@@ -173,4 +197,19 @@
 }
 body .header-global .wrapper-header .wrapper-user-menu {
     width: auto;
+}
+.dropdown-menu-container .menu-title .label-username,
+.header-global .user .user-link .label-username {
+    color: $theme-user-link;
+
+    &:hover {
+        color: $theme-user-link-hover;
+    }
+}
+.header-global .nav-global .tab-nav-item .tab-nav-link {
+    padding: 0;
+    font-size: 14px;
+}
+.header-global .wrapper-header .list-inline .item {
+    float: left;
 }

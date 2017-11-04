@@ -43,7 +43,8 @@
             .tab-nav-link {
                 color: $header-nav-link-color;
                 padding: 5px;
-
+                
+                &:focus,
                 &:hover {
                     color: $header-nav-link-color-hover;
                     border: none;
@@ -74,7 +75,7 @@
             .btn {
                 background: $theme-btn-bg;
                 box-shadow: none;
-                color: $theme-btn-text-color;
+                color: $theme-btn-text-color !important;
                 text-transform: uppercase;
 
                 &:active,
@@ -97,9 +98,14 @@
         .user-link .label-username {
             text-shadow: none;
             margin: 13px 5px 13px 15px;
+            color: $theme-user-link;
 
             &:hover {
-                color: #3c3c3c;
+                color: $theme-user-link-hover;
+            }
+
+            .fa {
+                color: $theme-user-link;
             }
         }
         .dropdown {
@@ -222,6 +228,7 @@ body .container.activation h1.valid {
     }
 }
 // links
+.register form .field.required label a,
 body .discussion.inline-discussion .inline-thread .forum-nav-bar .all-posts-btn,
 body .message-copy a,
 body .openassessment span,
@@ -254,6 +261,20 @@ body div.info-wrapper section.updates div article .toggle-visibility-button,
 .login-register .form-field .field-link,
 body a {
     color: $theme-link;
+
+    &:focus {
+        color: $theme-link;
+        text-decoration: none !important;
+    }
+
+    &:hover {
+        color: $theme-link-hover;
+        text-decoration: none !important;
+    }
+}
+body .login a {
+    color: $theme-link !important;
+    border: none !important;
 
     &:focus {
         color: $theme-link;
@@ -322,6 +343,27 @@ body .xmodule_display.xmodule_CapaModule div.problem .action .problem-action-btn
 }
 // end links
 // btns
+body.view-register .form-actions button[type="submit"],
+body.view-login .form-actions button[type="submit"],
+body .login .form-actions button[type="submit"] {
+    background: $theme-btn-white-bg;
+    color: $theme-btn-white-text-color;
+    box-shadow: none !important;
+    border: 2px solid $theme-btn-white-border !important;
+    
+    &:active,
+    &:focus {
+        border-color: $theme-btn-white-border;
+        background: $theme-btn-white-bg;
+        color: $theme-btn-white-text-color;
+        box-shadow: none;
+    }
+    &:hover {
+        color: $theme-btn-white-text-color-hover;
+        background: $theme-btn-white-bg-hover !important;
+        border-color: $theme-btn-white-border;
+    }
+}
 body .login-register {
     .action-primary {
         background: $theme-btn-bg;
@@ -435,6 +477,7 @@ body .courseware-bookmarks-button .bookmarks-list-button.is-active {
         border-color: $theme-btn-white-border;
     }
 }
+body #forgot-password-modal #password-reset .form-actions button[type="submit"],
 body .find-courses .discovery-submit,
 body .modal .inner-wrapper form .submit input[type="submit"],
 body .wiki-wrapper section.wiki .btn.btn-primary,
@@ -1211,4 +1254,84 @@ body .home .page-header-main {
 }
 body section.wiki .wiki-wrapper>header {
     width: 100%;
+}
+.register,
+.login {
+    aside {
+        display: none;
+    }
+    .content {
+        margin: 0 auto;
+        float: none;
+    }
+    .deco-divider {
+        display: none;
+    }
+}
+.view-login .introduction {
+    display: none;
+}
+body .login form .field.is-focused .tip,
+body .login form .field.is-focused label {
+    color: $theme-link;
+}
+body.view-register .header-global nav,
+body.view-login .header-global nav {
+    max-width: 960px;
+    width: auto;
+}
+body .register .content,
+body .login .content {
+    max-width: 600px;
+    width: auto;
+}
+body.view-register .container,
+body.view-login .container {
+    max-width: 960px;
+    width: auto;
+}
+body .register.container,
+body .login.container {
+    min-width: auto;
+    width: auto;
+    background: transparent;
+}
+body.view-register .wrapper-footer footer,
+body.view-login .wrapper-footer footer {
+    width: auto;
+    max-width: 960px;
+}
+body.view-login .header-global .nav-courseware .btn-login {
+    display: block;
+},
+body.view-register .container {
+    background: transparent;
+}
+body.view-register .introduction {
+    display: none;
+}
+body.view-login #forgot-password-modal #password-reset header h2 {
+    color: $theme-link;
+}
+.container.about {
+    line-height: 1.3;
+
+    a {
+        color: $theme-link;
+
+        &:hover {
+            color: $theme-link-hover;
+        }
+    }
+}
+.course-info .course-sidebar .important-dates,
+.dashboard .my-courses .course .wrapper-messages-primary .messages-list {
+    list-style: none;
+
+    .tip a {
+        color: $theme-link;
+    }
+}
+.course-info .course-sidebar .important-dates a {
+    color: $theme-link;
 }
