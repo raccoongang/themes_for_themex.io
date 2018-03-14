@@ -1,6 +1,7 @@
 @media (max-width: 1199px) {}
 @media (max-width: 991px) {}
 @media (max-width: 767px) {}
+@media (max-width: 576px) {}
 @media (max-width: 479px) {}
 
 html {
@@ -29,6 +30,57 @@ html {
         @media (max-width: 991px) {
             float: none;
             width: 100%;
+        }
+        .course {
+            .details {
+                .wrapper-course-image {
+                    @media (max-width: 767px) {
+                        width: 40%;
+                    }
+                    @media (max-width: 576px) {
+                        float: none;
+                        width: 100%;
+                        margin: 0 0 10px;
+                    }
+                    .cover {
+                        @media (max-width: 767px) {
+                            max-height: 156px;
+                        }
+                        @media (max-width: 576px) {
+                            float: none;
+                            display: block;
+                            max-height: initial;
+                        }
+                    }
+                }
+                .wrapper-course-details {
+                    @media (max-width: 767px) {
+                        width: 57%;
+                    }
+                    @media (max-width: 576px) {
+                        width: 100%;
+                    }
+                }
+                .course-title {
+                    a {
+                        @media (max-width: 767px) {
+                            font-size: 1.4em;
+                            line-height: 1.6em;
+                        }
+                    }
+                }
+                .course-info {
+                    @media (max-width: 767px) {
+                        width: 100%;
+                        margin-top: 0;
+                    }
+                }
+                .wrapper-course-actions {
+                    @media (max-width: 767px)
+                        width: 100%;
+                    }
+                }
+            }
         }
     }
     .dashboard-search-bar {

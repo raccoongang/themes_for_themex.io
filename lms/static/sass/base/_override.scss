@@ -21,3 +21,16 @@ body {
         }
     }
 }
+
+/*-----Course about-----*/
+
+.course-info {
+    header{
+        &.course-profile {
+            .intro-inner-wrapper {
+                min-width: 320px;
+                max-width: 1150px;
+            }
+        }
+    }
+}
