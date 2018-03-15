@@ -3,6 +3,73 @@ body {
     line-height: 1.4rem;
 }
 
+/*-----Home promo block-----*/  
+.home {
+    >header {
+        background-image: url('#{$img-path}/background.jpg');
+        height: 420px;
+        background-position: center;
+        position: relative;
+        background-color: #040404;
+        background-position: 0 0;
+        .outer-wrapper {
+            animation: none;
+            padding: 0;
+            @media screen and (min-width:760px ) {
+                padding: 30px;
+            }
+        }
+        .title {
+            background: transparent;
+            box-shadow: none;
+            max-width: 1000px;
+            margin: 0 auto;
+            float: none;
+            &:last-child {
+                margin-right: auto;
+                margin-left: auto;
+            }
+            >.heading-group {
+                text-align: center;
+                width: 100%;
+                h1 {
+                    font-size: 32px;
+                    line-height: 1.2;
+                    color: #fff;
+                    text-align: center;
+                    font-weight: bold;
+                    text-shadow: 0px 2px 0px rgba(77, 77, 77, 0.34);
+                    margin-bottom: 50px;
+                    @media screen and (min-width:760px ) { 
+                        font-size: 52px;
+                    }
+                }
+                p {
+                    text-align: center;
+                    font-size: 34px;
+                    line-height: 1.3;
+                    text-shadow: 0px 2px 0px rgba(77, 77, 77, 0.4);
+                    color: #fff;
+                    margin-bottom: 40px;
+                }
+                .link {
+                    background: transparent;
+                    border: 3px solid #fff;
+                    text-shadow: none;
+                    box-shadow: none;
+                    color: #fff;
+                    border-radius: 2px;
+                    padding: 10px 20px;
+                    display: inline-block;
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
 /*-----Containers-----*/
 
 .container {
@@ -27,10 +94,27 @@ body {
 .course-info {
     header{
         &.course-profile {
+            box-sizing: border-box;
+            padding-right: 15px;
+            padding-left: 15px;
             .intro-inner-wrapper {
-                min-width: 320px;
+                min-width: 290px;
                 max-width: 1150px;
             }
         }
+    }
+}
+
+/*-----Courses-----*/
+.courses-container {
+    min-width: 320px;
+    box-sizing: border-box;
+}
+
+.find-courses,
+.university-profile {
+    .courses-container {
+        padding-right: 15px;
+        padding-left: 15px;
     }
 }
