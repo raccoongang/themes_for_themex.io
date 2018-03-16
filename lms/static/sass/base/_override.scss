@@ -5,15 +5,6 @@
 // @media (max-width: 540px) {}
 // @media (max-width: 479px) {}
 
-html {
-    @media (max-width: 991px) {
-        font-size: 90%;
-    }
-    @media (max-width: 767px) {
-        font-size: 85%;
-    }
-}
-
 html,
 body {
     line-height: 1.4rem;
@@ -105,7 +96,6 @@ body {
 }
 
 /*-----Containers-----*/
-
 .container {
     min-width: 320px;
     max-width: 1200px;
@@ -287,7 +277,6 @@ body {
     }
 }
 
-
 /*----------Login and register-----*/
 .login-register-content {
     min-width: 320px;
@@ -381,7 +370,6 @@ body {
 }
 
 /*-----Profile-----*/
-
 .view-profile {
     .profile-self {
         .wrapper-profile-field-account-privacy {
@@ -425,6 +413,36 @@ body {
 
 /*-----Account Settings-----*/
 .wrapper-account-settings {
+    .wrapper-header {
+        height: auto;
+        border: none;
+        .header-title {
+            margin-bottom: 20px;
+            @media (max-width: 576px) {
+                margin-bottom: 10px;
+            }
+        }
+        .account-nav {
+            float: none;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+            border-bottom: 4px solid #f5f5f5;
+            .account-nav-link {
+                float: none;
+                margin-bottom: -4px;
+                border-bottom: 4px solid #f5f5f5;
+                @media (max-width: 991px) {
+                    margin-top: 10px;
+                    padding: 14px 20px;
+                }
+                @media (max-width: 576px) {
+                    padding: 12px 14px;
+                }
+            }
+        }
+    }
     .account-settings-container {
         max-width: 1200px;
         min-width: 320px;
@@ -449,7 +467,7 @@ body {
                     }
                 }
                 .u-field-message {
-                     @media (max-width: 991px) {
+                    @media (max-width: 991px) {
                         width: 62%;
                         padding-left: 40px;
                         box-sizing: border-box;
@@ -464,13 +482,60 @@ body {
         .accountsTabSections-section-body {
             display: -webkit-flex;
             display: flex;
+            -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
             justify-content: space-between;
-            .u-field-social {
-                margin: 0;
-            }
             .u-field {
+                &:last-child {
+                    margin: 0;
+                }
                 .social-field-unlinked {
                     margin: 0;
+                    .u-field-link {
+                        @media (max-width: 767px) {
+                            width: auto;
+                        }
+                    }
+                }
+            }  
+            .u-field-social {
+                margin: 0;
+                @media (max-width: 767px) {
+                    width: 100%;
+                }
+                .u-field-social-help {
+                    @media (max-width: 767px) {
+                        display: block;
+                    }
+                }
+            }
+        }
+        .ordersTabSections-section-body {
+            .u-field {
+                .u-field-order,
+                .u-field-order-lines {
+                    @media (max-width: 991px) {
+                        font-size: 0.8em;
+                    }
+                    @media (max-width: 576px) {
+                        font-size: 0.7em;
+                    }
+                    span {
+                        @media (max-width: 991px) {
+                            padding: 10px;
+                        }
+                        @media (max-width: 576px) {
+                            padding: 5px;
+                        }
+                    }
+                    .u-field-order-date {
+                        @media (max-width: 991px) {
+                            padding-left: 10px;
+                        }
+                        @media (max-width: 576px) {
+                            padding-left: 5px;
+                        }
+                    }
                 }
             }
         }
