@@ -36,7 +36,7 @@ if [ $1 == start ]
     sass --watch sass/lms-main-v1.scss:css/lms-main-v1.css sass/lms-main-v1-rtl.scss:css/lms-main-v1-rtl.css sass/lms-main-v2.scss:css/lms-main-v2.css sass/lms-main-v2-rtl.scss:css/lms-main-v2-rtl.css sass/lms-course.scss:css/lms-course.css sass/lms-course-rtl.scss:css/lms-course-rtl.css sass/discussion/lms-discussion-main-rtl.scss:css/discussion/lms-discussion-main-rtl.css sass/discussion/lms-discussion-main.scss:css/discussion/lms-discussion-main.css
 fi
 
-if [ $1 == end ]
+if [ $1 == stop ]
   then
     #change files -- remove coment for prod
     recomment lms/static/sass/discussion/lms-discussion-main-rtl.scss
