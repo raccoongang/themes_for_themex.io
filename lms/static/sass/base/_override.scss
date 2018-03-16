@@ -135,7 +135,7 @@ body {
             box-sizing: border-box;
             .intro-inner-wrapper {
                 min-width: 290px;
-                max-width: 1150px;
+                max-width: 1170px;
                 &>div.table {
                     @media (max-width: 767px) {
                         displat: block;
@@ -541,3 +541,199 @@ body {
         }
     }
 }
+
+/*-----Course inner pages-----*/
+
+
+/*-----Course inner pages Home-----*/
+.wrapper-course-material {
+    .course-material {
+        padding: 0;
+    }
+}
+
+body {
+    &.view-in-course {
+        .container {
+            min-width: 320px;
+            max-width: 1200px;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+        .wrapper-course-material {
+            .course-material {
+                max-width: 1200px;
+                min-width: 320px;
+                padding: 10px 15px 0;
+                box-sizing: border-box;
+            }
+        }
+        .wrapper-preview-menu {
+            padding: 15px 0;
+            .preview-menu {
+                padding: 0 15px;
+            }
+        }
+    }
+}
+
+.wrapper-preview-menu {
+    padding: 15px 0;
+    .preview-menu {
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+}
+
+.home {
+    max-width: 100%;
+    .page-header-main {
+        @media (max-width: 991px) {
+            width: 100%;
+        }
+    }
+}
+
+div {
+    &.info-wrapper {
+        section {
+            &.updates {
+                @media (max-width: 991px) {
+                    padding: 20px;
+                }
+                &>ol{
+                    &>li {
+                        @media (max-width: 576px) {
+                            margin-bottom: 22px;
+                            padding: 0;
+                            font-size: 0.8em;
+                        }
+                    }
+                }
+            }
+            &.handouts {
+                @media (max-width: 991px) {
+                    display: block;
+                    width: 100%;
+                    padding: 20px;
+                    border-top: 1px solid #c8c8c8;
+                }
+            }
+        }
+    }
+}
+
+.wrap-instructor-info {
+    .instructor-info-action {
+        @media (max-width: 576px) {
+            float: none;
+            display: inline-block;
+            margin: 0 0 16px;
+        }
+    }
+}
+
+.hd-3,
+.hd-2 {
+    @media (max-width: 576px) {
+        font-size: 1.2em;
+    }
+}
+
+/*-----Course inner pages Course-----*/
+
+.content-wrapper {
+    max-width: 1200px;
+    .course-view {
+        min-width: initial;
+        margin: 0 15px;
+        padding: 0;
+    }
+}
+
+.content-wrapper {
+    .page-header {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        &.has-secondary {
+            .page-header-main {
+                -webkit-flex: 1 1 auto;
+                -ms-flex: 1 1 auto;
+                flex: 1 1 auto;
+            }
+            .page-header-secondary {
+                text-align: left;
+                @media (max-width: 479px) {
+                    width: 100%;
+                }
+                .page-header-search {
+                    margin: 0 10px 10px 0;
+                    @media (max-width: 479px) {
+                        display: block;
+                        margin-right: 0;
+                    }
+                    .search-form {
+                        @media (max-width: 479px) {
+                            display: -webkit-flex;
+                            display: flex;
+                        }
+                    }
+                    .search-input {
+                        @media (max-width: 479px) {
+                            width: auto;
+                            min-width: 0;
+                        }
+                    }
+                    .search-button {
+                        @media (max-width: 479px) {
+                            flex: none;
+                        }
+                    }
+                }
+                .form-actions {
+                    margin: 0 0 10px;
+                }
+            }
+        }
+    }
+    .course-view {
+        .page-header {
+            padding-bottom: 10px;
+        }
+    }
+}
+
+.courseware {
+    padding: 0 15px;
+    .course-material {
+        min-width: initial;
+    }
+}
+
+.course-sidebar {
+    @media (max-width: 767px) {
+        padding-left: 0;
+    }
+}
+
+/*-----Instructor-----*/
+.instructor-dashboard-content-2 {
+    @media (max-width: 767px) {
+        padding: 20px;
+    }
+    .instructor-nav {
+        .nav-item {
+            @media (max-width: 479px) {
+                display: block;
+            }
+            .btn-link {
+                display: block;
+                width: 100%;
+                text-align: left;
+            }
+        }
+    }
+}
+
