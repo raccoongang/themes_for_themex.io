@@ -10,6 +10,12 @@ body {
     line-height: 1.4rem;
 }
 
+h1 {
+    @media (max-width: 767px) {
+        font-size: 1.5em;
+    }
+}
+
 /*-----Home promo block-----*/  
 .home {
     >header {
@@ -545,7 +551,7 @@ body {
 /*-----Course inner pages-----*/
 
 
-/*-----Course inner pages Home-----*/
+/*-----Home-----*/
 .wrapper-course-material {
     .course-material {
         padding: 0;
@@ -640,9 +646,22 @@ div {
     }
 }
 
-/*-----Course inner pages Course-----*/
+.hd-4 {
+    @media (max-width: 576px) {
+        font-size: 1.1em;
+    }
+}
+
+.hd-4 {
+    @media (max-width: 576px) {
+        font-size: 1em;
+    }
+}
+
+/*-----Course-----*/
 
 .content-wrapper {
+    min-width: 320px;
     max-width: 1200px;
     .course-view {
         min-width: initial;
@@ -706,7 +725,9 @@ div {
 }
 
 .courseware {
-    padding: 0 15px;
+    .wrapper-course-material {
+        padding: 0 15px;
+    }
     .course-material {
         min-width: initial;
     }
@@ -735,5 +756,454 @@ div {
             }
         }
     }
+    input[type="button"] {
+        white-space: normal;
+    }
+    ul,
+    ol {
+        @media (max-width: 576px) {
+            padding-left: 24px;
+        }
+    }
 }
 
+.instructor-dashboard-wrapper-2 {
+    section {
+        &.idash-section {
+            &#membership {
+                .member-lists-management {
+                    .auth-list-container {
+                        .member-list-widget {
+                            .member-list {
+                                th,
+                                td {
+                                    @media (max-width: 576px) {
+                                        padding: 5px;
+                                        font-weight: normal;
+                                        font-size: 12px;
+                                        line-height: 1.5em;
+                                    }
+                                }
+                            }
+                            .bottom-bar {
+                                .add-field {
+                                    @media (max-width: 576px) {
+                                        display: block;
+                                    } 
+                                }
+                            }
+                            input[type="button"] {
+                                &.add {
+                                    @media (max-width: 576px) {
+                                        position: static;
+                                        margin: 10px 0 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &#discussions_management {
+                .division-scheme-container {
+                    .two-column-layout {
+                        @media (max-width: 767px) {
+                            max-width: 100%;
+                        }
+                    }
+                    .division-scheme-item {
+                        @media (max-width: 767px) {
+                            padding: 0 0 16px;
+                        }
+                    }
+                }
+            }
+            &#student_admin {
+                input[type="text"] {
+                    max-width: 100%;
+                }
+                .location-example {
+                    word-wrap: break-word;
+                }
+            }
+        }
+    }
+}
+
+.enrollment-wrapper {
+    @media (max-width: 576px) {
+        margin-bottom: 30px;
+    }
+}
+
+/*-----Discussion-----*/
+.discussion {
+    &.wrapper-course-material {
+        padding: 0 15px;
+    }
+    .container {
+        min-width: 290px;
+        padding: 0;
+        margin: 0 15px;
+    }
+}
+
+.view-discussion-home {
+    @media (max-width: 991px) {
+        padding-left: 0;
+    }
+    .home-helpgrid {
+        width: 100%;
+    }
+    .helpgrid-row {
+        @media (max-width: 767px) {
+            display: block;
+        }
+        .row-title {
+            @media (max-width: 991px) {
+                width: 18%;
+                padding: 20px 10px;
+            }
+            @media (max-width: 767px) {
+                display: block;
+                width: 100%;
+            }
+        }
+        .row-item,
+        .row-item-full {
+            @media (max-width: 991px) {
+                padding: 10px 5px;
+                font-size: 0.7em;
+                line-height: 1.5em;
+            }
+            @media (max-width: 767px) {
+                padding: 10px;
+            }
+            @media (max-width: 479px) {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.content-wrapper {
+    .page-header {
+        @media (max-width: 479px) {
+            padding: 10px 20px 16px;
+        }
+        &.has-secondary {
+            .page-header-secondary {
+                .form-actions {
+                    margin: 0 20px 0 0;
+                    @media (max-width: 479px) {
+                        margin-bottom: 10px;
+                    }
+                }
+                .forum-search {
+                    margin: 0;
+                    @media (max-width: 479px) {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*-----Wiki-----*/
+.wiki-wrapper {
+    section {
+        &.wiki {
+            .breadcrumbs-header {
+                display: -webkit-flex;
+                display: flex;
+                -webkit-flex-wrap: wrap;
+                flex-wrap: wrap;
+                height: auto;
+                padding: 24px 30px 16px;
+                @media (max-width: 767px){
+                    padding: 12px 20px 14px;
+                }
+            }
+            .breadcrumb {
+                -webkit-flex: 1 1 auto;
+                -ms-flex: 1 1 auto;
+                flex: 1 1 auto;
+                margin: 0 0 10px;
+            }
+            .global-functions {
+                margin: 0 0 10px;
+                a {
+                    &.btn {
+                        margin: 0;
+                    }
+                }
+            }
+            .main-article {
+                @media (max-width: 991px) {
+                    width: 70%;
+                    padding: 20px 0 20px 20px;
+                }
+                @media (max-width: 767px) {
+                    width: 100%;
+                    padding: 20px;
+                }
+            }
+            .article-functions {
+                @media (max-width: 991px) {
+                    width: 30%;
+                    padding: 20px;
+                }
+                @media (max-width: 767px) {
+                    width: auto;
+                }
+            }
+            #hint_id_content {
+                @media (max-width: 767px) {
+                    position: static;
+                }
+            }
+            #hint_id_slug {
+                @media (max-width: 767px) {
+                    font-size: 0.75em;
+                }
+            }
+            #hint_id_summary {
+                @media (max-width: 767px) {
+                    display: block;
+                    margin: 5px 0 0;
+                    font-size: 0.75em;
+                    line-height: 1.2em;
+                }
+            }
+            .page-header {
+                @media (max-width: 767px) {
+                    margin-bottom: 20px;
+                    padding: 0 0 16px;
+                }
+            }
+            .alert {
+                margin-right: 20px;
+                margin-left: 20px;
+                padding-right: 30px;
+            }
+            .directory-toolbar {
+                margin: 0 0 20px;
+                padding: 5px 10px;
+                .well {
+                    display: -webkit-flex;
+                    display: flex;
+                    -webkit-flex-wrap: wrap;
+                    flex-wrap: wrap;
+                }
+                .btn-group {
+                    -webkit-flex: 1 1 auto;
+                    -ms-flex: 1 1 auto;
+                    flex: 1 1 auto;
+                    margin: 5px 0;
+                }
+                .input-prepend {
+                    margin: 5px 0;
+                }
+            }
+            .entry-title {
+                @media (max-width: 767px) {
+                    font-size: 1.4em;
+                    word-break: break-word;
+                }
+            }
+            #article_edit_form {
+                .btn-danger {
+                    float: left;
+                }
+                .btn {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+}
+
+/*-----Course - Lesson-----*/
+.xmodule_display {
+    &.xmodule_SequenceModule {
+        .sequence-nav {
+            @media (max-width: 767px) {
+                display: block;
+                margin-bottom: 70px;
+            }
+            ol {
+                @media (max-width: 767px) {
+                    border: 1px solid #c8c8c8;
+                    border-width: 0 1px;
+                }
+            }
+            .sequence-nav-button {
+                @media (max-width: 767px) {
+                    position: absolute;
+                    top: 100%;
+                    margin-top: 10px;
+                    left: 50%;
+                    z-index: 50;
+                }
+                &.button-previous {
+                    @media (max-width: 767px) {
+                        left: auto;
+                        right: 50%;
+                    }
+                }
+                &.button-next {
+                    @media (max-width: 767px) {
+                        left: 50%;
+                        margin-left: -1px;
+                    }
+                }
+            }
+        }
+        
+    }
+    &.xmodule_VideoModule {
+        .video {
+            .video-wrapper {
+                @media (max-width: 767px) {
+                    width: 100%;
+                    margin: 0 0 20px;
+                }
+            }
+            .subtitles {
+                @media (max-width: 767px) {
+                    width: 100%;
+                    margin: 0;
+                }
+                .subtitles-menu {
+                    li {
+                        &.spacing {
+                            @media (max-width: 767px) {
+                                height: auto !important;
+                            }
+                            &:last-of-type {
+                                .transcript-end {
+                                    @media (max-width: 767px) {
+                                        position: static;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.xmodule_CapaModule {
+        div {
+            &.problem {
+                .notification {
+                    .notification-btn-wrapper {
+                        @media (max-width: 767px) {
+                            float: none;
+                        }
+                    }
+                    .notification-message {
+                        @media (max-width: 767px) {
+                            display: initial;
+                            width: auto;
+                            font-size: 0.9em;
+                        }
+                    }
+                }
+            }
+            input {
+                &[type="email"],
+                &[type="number"],
+                &[type="password"],
+                &[type="search"],
+                &[type="tel"],
+                &[type="text"],
+                &[type="url"],
+                &[type="color"],
+                &[type="date"],
+                &[type="datetime"],
+                &[type="datetime-local"],
+                &[type="month"],
+                &[type="time"],
+                &[type="week"] {
+                    max-width: 100%;
+                }
+            }
+        }
+        .problem {
+            .capa_inputtype.textline,
+            .inputtype.formulaequationinput {
+                input {
+                    max-width: 100%;
+                }
+            }
+            .inputtype {
+                &.option-input {
+                    @media (max-width: 767px) {
+                        margin: 0 0 10px;
+                    }
+                }
+            }
+        }
+        .wrapper-problem-response {
+            @media (max-width: 767px) {
+                overflow: auto;
+            }
+        }
+    }
+}
+
+.view-in-course {
+    .xmodule_display {
+        &.xmodule_VideoModule {
+            .video {
+                .video-player {
+                    @media (max-width: 767px) {
+                        min-height: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.discussion-module {
+    .discussion-module-header {
+        @media (max-width: 767px) {
+            float: none;
+            width: 100%;
+        }
+    }
+    .discussion-show {
+        @media (max-width: 767px) {
+            float: none;
+            position: static;
+            margin-bottom: 12px;
+        }
+    }
+}
+
+#lean_overlay {
+    z-index: 1001;
+}
+
+.course-wrapper .course-content .xqa-modal,
+.course-wrapper .course-content .staff-modal,
+.course-wrapper .course-content .history-modal,
+.course-wrapper .courseware-results-wrapper .xqa-modal,
+.course-wrapper .courseware-results-wrapper .staff-modal,
+.course-wrapper .courseware-results-wrapper .history-modal {
+    width: 460px;
+    height: auto;
+    min-width: 320px;
+    max-width: 100%;
+    max-height: 80%;
+    margin-left: 0 !important;
+    left: 50% !important;
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    box-sizing: border-box;
+}
