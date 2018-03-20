@@ -1,0 +1,17 @@
+.theme-footer {
+    width: 100%;
+    background: $footer-color;
+}
+.theme-footer_wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+.theme-footer_holder {
+    display: flex;
+    position: relative;
+}
+.logo-footer {
+    position: absolute;
+    right: 0;
+}
