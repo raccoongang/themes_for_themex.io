@@ -111,7 +111,7 @@ h1 {
         box-sizing: border-box;
     }
     &.about {
-        parring-right: 15px;
+        padding-right: 15px;
         padding-left: 15px;
     }
 }
@@ -379,7 +379,7 @@ body {
 .view-profile {
     .profile-self {
         .wrapper-profile-field-account-privacy {
-            borser-width: 1px 0;
+            border-width: 1px 0;
             .u-field-account_privacy {
                 max-width: 1200px;
             }
