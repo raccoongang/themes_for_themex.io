@@ -1,9 +1,12 @@
 .icon-list {
     display: flex;
     align-items: center;
-    margin: 0 auto;
+    margin: 0 auto 15px;
     padding: 0;
     list-style: none;
+    @media screen and (min-width: 800px) {
+        margin-bottom: 0;
+    }
 }
 .icon-list_item {
     margin: 0 4px;

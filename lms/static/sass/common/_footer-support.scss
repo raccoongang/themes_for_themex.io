@@ -5,5 +5,15 @@
     margin: 0;
     display: flex;
     align-items: center;
-    position: absolute;
+    width: 100%;
+    justify-content: center;
+
+    @media screen and (min-width: 800px) {
+        width: auto;
+        position: absolute;
+        left: 20px;
+    }
+    @media screen and (min-width: 1200px) {
+        left: 0;
+    }
 }

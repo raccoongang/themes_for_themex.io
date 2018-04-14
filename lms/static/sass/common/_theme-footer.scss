@@ -10,8 +10,23 @@
 .theme-footer_holder {
     display: flex;
     position: relative;
+    flex-wrap: wrap;
+    @media screen and (min-width: 800px) {
+        flex-wrap: nowrap;
+    }
 }
 .logo-footer {
-    position: absolute;
-    right: 0;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 0 0 15px;
+    @media screen and (min-width: 800px) {
+        margin: 0;
+        width: auto;
+        position: absolute;
+        right: 20px;
+    }
+    @media screen and (min-width: 1200px) {
+        right: 0;
+    }
 }

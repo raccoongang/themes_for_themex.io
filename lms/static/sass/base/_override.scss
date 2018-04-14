@@ -2360,3 +2360,28 @@ body {
         }
     }
 }
+
+/*-----Show and hide logo for en and ar version-----*/
+.link-logo-ar,
+.logo-ar {
+    display: none;
+
+    .lang_ar & {
+        display: inline;
+    }
+}
+
+.logo-en,.logo-ar {
+    width: $logo-width;
+    min-width: $logo-width;
+    height: $logo-height;
+}
+
+.link-logo-en,
+.logo-en {
+    display: flex;
+
+    .lang_ar & {
+        display: none;
+    }
+}

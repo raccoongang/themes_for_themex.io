@@ -5,6 +5,9 @@
     padding: 0;
     list-style: none;
     justify-content: center;
+    @media screen and (max-width: 576px) {
+        flex-wrap: wrap;
+    }
 }
 .footer-list_link {
     font-size: 16px;
@@ -22,6 +25,11 @@
 }
 .footer-list_item {
     margin: 0 8px;
+    text-align: center;
+
+    @media screen and (max-width: 576px) {
+        width: 100%;
+    }
 }
 .svg-footer {
     width: 35px;
