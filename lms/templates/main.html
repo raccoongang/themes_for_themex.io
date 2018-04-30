@@ -1,0 +1,320 @@
+## coding=utf-8
+
+## This is the main Mako template that all page templates should include.
+## Note: there are a handful of pages that use Django Templates and which
+## instead include main_django.html. It is important that these two files
+## remain in sync, so changes made in one should be applied to the other.
+
+## Pages currently use v1 styling by default. Once the Pattern Library
+## rollout has been completed, this default can be switched to v2.
+<%! main_css = "style-main-v1" %>
+
+
+<%namespace name='static' file='static_content.html'/>
+<% online_help_token = self.online_help_token() if hasattr(self, 'online_help_token') else None %>
+<%!
+from branding import api as branding_api
+from django.core.urlresolvers import reverse
+from django.utils.http import urlquote_plus
+from django.utils.translation import ugettext as _
+from django.utils.translation import get_language_bidi
+from openedx.core.djangolib.js_utils import dump_js_escaped_json, js_escaped_string
+from pipeline_mako import render_require_js_path_overrides
+
+%>
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="ie ie9 lte9" lang="${LANGUAGE_CODE}"><![endif]-->
+<!--[if !IE]><!--><html lang="${LANGUAGE_CODE}"><!--<![endif]-->
+<head dir="${static.dir_rtl()}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+## Define a couple of helper functions to make life easier when
+## embedding theme conditionals into templates. All inheriting
+## templates have access to these functions, and we can import these
+## into non-inheriting templates via the %namespace tag.
+
+## this needs to be here to prevent the title from mysteriously appearing in the body, in one case
+<%def name="pagetitle()" />
+  <%block name="title">
+      <title>
+       ${static.get_page_title_breadcrumbs(self.pagetitle())}
+      </title>
+  </%block>
+
+  % if not allow_iframing:
+      <script type="text/javascript">
+        /* immediately break out of an iframe if coming from the marketing website */
+        (function(window) {
+          if (window.location !== window.top.location) {
+            window.top.location = window.location;
+          }
+        })(this);
+      </script>
+  % endif
+
+  <%
+    jsi18n_path = "js/i18n/{language}/djangojs.js".format(language=LANGUAGE_CODE)
+  %>
+
+  <script type="text/javascript" src="${static.url(jsi18n_path)}"></script>
+
+  <link rel="icon" type="image/x-icon" href="${static.url(static.get_value('favicon_path', settings.FAVICON_PATH))}" />
+
+  <%static:css group='style-vendor'/>
+  % if uses_bootstrap:
+    <link rel="stylesheet" href="${static.url(self.attr.main_css)}" type="text/css" media="all" />
+  % else:
+    <%static:css group='${self.attr.main_css}'/>
+  % endif
+
+  % if disable_courseware_js or uses_pattern_library:
+    <%static:js group='base_vendor'/>
+    <%static:js group='base_application'/>
+  % else:
+    <%static:js group='main_vendor'/>
+    <%static:js group='application'/>
+  % endif
+
+  % if uses_bootstrap:
+    <%static:js group='lms_bootstrap'/>
+  % endif
+
+  <script>
+    window.baseUrl = "${settings.STATIC_URL | n, js_escaped_string}";
+    (function (require) {
+      require.config({
+          baseUrl: window.baseUrl
+      });
+    }).call(this, require || RequireJS.require);
+  </script>
+  <script type="text/javascript" src="${static.url("lms/js/require-config.js")}"></script>
+  <%block name="js_overrides">
+    ${render_require_js_path_overrides(settings.REQUIRE_JS_PATH_OVERRIDES) | n, decode.utf8}
+  </%block>
+
+  % if not disable_courseware_js:
+    <%static:js group='module-js'/>
+  % endif
+
+  <%block name="headextra"/>
+  <%block name="head_extra"/>
+
+  <%include file="/courseware/experiments.html"/>
+  <%static:optional_include_mako file="head-extra.html" is_theming_enabled="True" />
+
+  <%include file="widgets/optimizely.html" />
+  <%include file="widgets/segment-io.html" />
+
+  <meta name="path_prefix" content="${EDX_ROOT_URL}">
+  <meta name="google-site-verification" content="_mipQ4AtZQDNmbtOkwehQDOgCxUUV2fb_C0b6wbiRHY" />
+
+<% ga_acct = static.get_value("GOOGLE_ANALYTICS_ACCOUNT", settings.GOOGLE_ANALYTICS_ACCOUNT) %>
+% if ga_acct:
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', '${ga_acct | n, js_escaped_string}']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+% endif
+
+</head>
+
+<body class="${static.dir_rtl()} <%block name='bodyclass'/> lang_${LANGUAGE_CODE}">
+  <svg style="display: none">
+    <symbol viewBox="0 0 35 35" id="ico-linkedin"> 
+        <title>linkedin</title>
+        <path d="M17.5 0C7.8 0 0 7.8 0 17.5S7.8 35 17.5 35 35 27.2 35 17.5C35 7.8 27.2 0 17.5 0zM13.1 26H8.8V10.7h4.4V26zM11.1 9.7c-1.1 0-2-0.9-2-2.1s0.9-2.1 2.1-2.1c1.1 0 2.1 0.9 2.1 2.1C13.1 8.8 12.2 9.7 11.1 9.7zM28.4 26h-4.4V16.5c0-1.1-0.3-1.9-1.7-1.9 -2.3 0-2.7 1.9-2.7 1.9v9.5h-4.4V10.7h4.4v1.5c0.6-0.5 2.2-1.5 4.4-1.5 1.4 0 4.4 0.8 4.4 6V26z" fill="#FFF"/>
+    </symbol>
+    <symbol viewBox="0 0 35 35" id="ico-behance">
+        <title>behance</title>
+        <style>.a{fill:#FFF;}</style><path d="M14.1 13.9c0-1.7-1.1-1.7-1.1-1.7h-0.6H8.3v3.5h4.3C13.4 15.8 14.1 15.5 14.1 13.9z" class="a"/><path d="M13 18.2H8.3v4.2h4.4c0.7 0 1.9-0.2 1.9-2.1C14.6 18.2 13 18.2 13 18.2z" class="a"/><path d="M24.8 15.8c-2.5 0-2.8 2.4-2.8 2.4h5.2C27.2 18.2 27.2 15.8 24.8 15.8z" class="a"/><path d="M17.5 0C7.8 0 0 7.8 0 17.5S7.8 35 17.5 35 35 27.2 35 17.5 27.2 0 17.5 0zM21.3 10.3h6.6v2h-6.5V10.3zM18 20.6c0 4.8-5 4.7-5 4.7H8.3 8.2 4.7V9.4h3.5 0.1 4.6c2.5 0 4.5 1.4 4.5 4.2s-2.4 3-2.4 3C18.2 16.6 18 20.6 18 20.6zM24.8 23.1c2.6 0 2.5-1.7 2.5-1.7h2.8c0 4.5-5.4 4.2-5.4 4.2 -6.5 0-6.1-6.1-6.1-6.1s0-6.1 6.1-6.1c6.4 0 5.5 6.9 5.5 6.9H22C22 23.3 24.8 23.1 24.8 23.1z" class="a"/>
+    </symbol>
+    <symbol viewBox="0 0 35 35" id="ico-facebook">
+        <title>facebook</title>
+        <path d="M17.5 0C7.8 0 0 7.8 0 17.5S7.8 35 17.5 35 35 27.2 35 17.5C35 7.8 27.2 0 17.5 0zM23.6 9.6h-2.2c-0.8 0-1.4 0.2-1.6 0.5 -0.3 0.3-0.4 0.9-0.4 1.5v2.7h4.2l-0.5 4.2h-3.6v10.8h-4.3V18.5h-3.6V14.3h3.6v-3.1c0-1.8 0.5-3.1 1.5-4.1 1-1 2.3-1.5 3.9-1.5 1.4 0 2.5 0.1 3.2 0.2C23.6 5.9 23.6 9.6 23.6 9.6z" fill="#FFF"/>
+    </symbol>
+    <symbol viewBox="0 0 35 35" id="ico-instagram">
+      <title>instagram</title>
+      <style>.a{fill:#FFF;}</style><path d="M17.5 21c1.9 0 3.5-1.6 3.5-3.5 0-0.8-0.2-1.5-0.7-2 -0.6-0.9-1.7-1.5-2.8-1.5s-2.2 0.6-2.8 1.5c-0.4 0.6-0.7 1.3-0.7 2C14 19.4 15.6 21 17.5 21z" class="a"/><polygon points="25.2 13.2 25.2 10.3 25.2 9.8 24.7 9.8 21.8 9.9 21.8 13.2 " class="a"/><path d="M17.5 0C7.9 0 0 7.9 0 17.5S7.9 35 17.5 35 35 27.1 35 17.5 27.2 0 17.5 0zM27.5 15.5v8.1c0 2.1-1.7 3.8-3.8 3.8H11.4c-2.1 0-3.8-1.7-3.8-3.8v-8.1 -4.1c0-2.1 1.7-3.8 3.8-3.8h12.2c2.1 0 3.8 1.7 3.8 3.8L27.5 15.5 27.5 15.5z" class="a"/><path d="M22.9 17.5c0 3-2.4 5.4-5.4 5.4s-5.4-2.4-5.4-5.4c0-0.7 0.1-1.4 0.4-2H9.5v8.1c0 1.1 0.9 1.9 1.9 1.9h12.2c1.1 0 1.9-0.9 1.9-1.9v-8.1h-3C22.8 16.1 22.9 16.8 22.9 17.5z" class="a"/>
+    </symbol>
+    <symbol viewBox="0 0 35 35" id="ico-odnoklassniki">
+      <title>odnoklassniki</title>
+      <style>.a{fill:#FFF;}</style><path d="M17.5 14.5c1.7 0 3-1.3 3-3s-1.3-3-3-3c-1.7 0-3 1.4-3 3C14.5 13.2 15.8 14.5 17.5 14.5z" class="a"/><path d="M17.5 0C7.8 0 0 7.8 0 17.5S7.8 35 17.5 35 35 27.2 35 17.5 27.2 0 17.5 0zM17.5 5.3c3.4 0 6.1 2.8 6.1 6.2 0 3.4-2.8 6.1-6.2 6.1 -3.4 0-6.1-2.8-6.1-6.2C11.4 8.1 14.1 5.3 17.5 5.3zM24.4 20.1c-0.8 0.8-1.7 1.3-2.7 1.7 -1 0.4-2 0.6-3 0.7 0.2 0.2 0.2 0.3 0.3 0.4 1.4 1.4 2.8 2.8 4.2 4.2 0.5 0.5 0.6 1.1 0.3 1.6 -0.3 0.6-0.9 1-1.6 1 -0.4 0-0.7-0.2-1-0.5 -1.1-1.1-2.1-2.1-3.2-3.2 -0.3-0.3-0.4-0.3-0.7 0 -1.1 1.1-2.1 2.2-3.2 3.2 -0.5 0.5-1.1 0.6-1.6 0.3 -0.6-0.3-1-0.9-1-1.5 0-0.4 0.2-0.7 0.5-1 1.4-1.4 2.8-2.8 4.2-4.2 0.1-0.1 0.2-0.2 0.3-0.3 -1.9-0.2-3.6-0.7-5-1.8 -0.2-0.1-0.4-0.3-0.5-0.4 -0.6-0.6-0.7-1.3-0.2-2 0.4-0.6 1.2-0.8 1.9-0.4 0.1 0.1 0.3 0.2 0.4 0.2 2.7 1.9 6.4 1.9 9.2 0.1 0.3-0.2 0.6-0.4 0.9-0.5 0.7-0.2 1.3 0.1 1.6 0.6C24.9 18.9 24.9 19.6 24.4 20.1z" class="a"/>
+    </symbol>
+    <symbol viewBox="0 0 35 35" id="ico-twitter">
+      <title>twitter</title>
+      <path d="M17.5 0C7.8 0 0 7.8 0 17.5S7.8 35 17.5 35 35 27.2 35 17.5C35 7.8 27.2 0 17.5 0zM26.2 13.6l0 0.6c0 5.7-4.3 12.3-12.3 12.3 -2.4 0-4.7-0.7-6.6-1.9 0.3 0 0.7 0.1 1 0.1 2 0 3.9-0.7 5.4-1.8 -1.9 0-3.5-1.3-4-3 0.3 0.1 0.5 0.1 0.8 0.1 0.4 0 0.8 0 1.1-0.1 -2-0.4-3.5-2.1-3.5-4.2v-0.1c0.6 0.3 1.2 0.5 2 0.5 -1.2-0.8-1.9-2.1-1.9-3.6 0-0.8 0.2-1.5 0.6-2.2 2.1 2.6 5.3 4.3 8.9 4.5 -0.1-0.3-0.1-0.6-0.1-1 0-2.4 1.9-4.3 4.3-4.3 1.2 0 2.4 0.5 3.1 1.4 1-0.2 1.9-0.6 2.7-1 -0.3 1-1 1.9-1.9 2.4 0.9-0.1 1.7-0.3 2.5-0.7C27.8 12.2 27 13 26.2 13.6z" fill="#FFF"/>
+    </symbol>
+    <symbol viewBox="0 0 35 35" id="ico-vimeo">
+      <title>vimeo</title>
+      <path d="M17.5 0C7.8 0 0 7.8 0 17.5S7.8 35 17.5 35 35 27.2 35 17.5 27.2 0 17.5 0zM29.9 11.7c-0.1 2.4-1.8 5.7-5.1 9.9 -3.4 4.4-6.2 6.6-8.5 6.6 -1.4 0-2.7-1.3-3.7-4 -0.7-2.4-1.3-4.9-2-7.3 -0.7-2.7-1.5-4-2.4-4 -0.2 0-0.8 0.4-1.9 1.2l-1.2-1.5c1.2-1.1 2.4-2.1 3.6-3.2 1.6-1.4 2.9-2.1 3.7-2.2 1.9-0.2 3.1 1.1 3.6 4 0.5 3 0.8 4.9 1 5.7 0.6 2.5 1.2 3.8 1.8 3.8 0.5 0 1.3-0.8 2.3-2.5 1-1.6 1.6-2.9 1.7-3.7 0.1-1.4-0.4-2.1-1.7-2.1 -0.6 0-1.2 0.1-1.8 0.4 1.2-4 3.5-5.9 7-5.8C28.8 6.9 30 8.5 29.9 11.7z" fill="#FFF"/>
+    </symbol>
+    <symbol viewBox="0 0 35 35" id="ico-vk">
+      <title>vk</title>
+      <path d="M17.5 0C7.8 0 0 7.8 0 17.5S7.8 35 17.5 35 35 27.2 35 17.5 27.2 0 17.5 0zM26.4 19.4c0.8 0.8 1.7 1.5 2.4 2.4 0.3 0.4 0.6 0.8 0.9 1.2 0.3 0.6 0 1.4-0.5 1.4l-3.6 0c-0.9 0.1-1.7-0.3-2.3-0.9 -0.5-0.5-1-1-1.4-1.6 -0.2-0.2-0.4-0.4-0.6-0.6 -0.5-0.3-0.9-0.2-1.2 0.3 -0.3 0.5-0.4 1.1-0.4 1.7 0 0.8-0.3 1.1-1.1 1.1 -1.8 0.1-3.5-0.2-5.1-1.1 -1.4-0.8-2.5-1.9-3.5-3.2 -1.9-2.5-3.3-5.3-4.5-8.1 -0.3-0.6-0.1-1 0.6-1 1.2 0 2.3 0 3.5 0 0.5 0 0.8 0.3 1 0.7 0.6 1.6 1.4 3 2.4 4.4 0.3 0.4 0.5 0.7 0.9 1 0.4 0.3 0.7 0.2 0.9-0.3 0.1-0.3 0.2-0.6 0.2-0.9 0.1-1.1 0.1-2.2-0.1-3.2 -0.1-0.7-0.5-1.1-1.2-1.2 -0.3-0.1-0.3-0.2-0.1-0.4 0.3-0.3 0.6-0.5 1.1-0.5l4.1 0c0.6 0.1 0.8 0.4 0.9 1.1l0 4.5c0 0.2 0.1 1 0.6 1.1 0.4 0.1 0.6-0.2 0.8-0.4 1-1 1.7-2.2 2.3-3.5 0.3-0.6 0.5-1.1 0.7-1.7 0.2-0.4 0.4-0.6 0.9-0.6l3.9 0c0.1 0 0.2 0 0.3 0 0.7 0.1 0.8 0.4 0.6 1 -0.3 1-0.9 1.8-1.5 2.7 -0.7 0.9-1.3 1.8-2 2.7C25.6 18.3 25.6 18.7 26.4 19.4z" fill="#FFF"/>
+    </symbol>
+    <symbol viewBox="0 0 35 35" id="ico-youtube">
+      <title>youtube</title>
+      <style>.a{fill:#FFF;}</style><path d="M15.2 24.5c0 0.3 0 0.5 0 0.6 0 0.2 0 0.2-0.1 0.3 0 0.2-0.2 0.3-0.4 0.4 -0.2 0.1-0.3 0-0.5-0.3 0 0 0-0.1 0-0.3 0-0.2 0-0.4 0-0.6l0-3.8h-1.4l0 3.8c0 0.3 0 0.5 0 0.7s0 0.4 0 0.5c0 0.2 0 0.3 0.1 0.5 0 0.2 0.1 0.3 0.3 0.5 0.2 0.1 0.4 0.2 0.6 0.2 0.2 0 0.4 0 0.7-0.1 0.2-0.1 0.4-0.2 0.6-0.3 0.2-0.1 0.3-0.3 0.4-0.4l0 0.8L16.7 26.8v-6.1h-1.4L15.2 24.5 15.2 24.5z" class="a"/><path d="M20.1 20.5c-0.3 0-0.7 0.2-1.2 0.5V18.6h-1.4v8.2l1.2 0 0.1-0.5c0.4 0.3 0.7 0.5 1 0.6 0.3 0.1 0.6 0 0.8-0.1 0.2-0.1 0.4-0.3 0.5-0.6 0.1-0.3 0.2-0.6 0.2-1v-3.2c0-0.6-0.2-1-0.6-1.3C20.5 20.5 20.3 20.5 20.1 20.5zM20.2 25.3c0 0.1-0.1 0.2-0.2 0.3 -0.1 0.1-0.3 0.1-0.4 0.1 -0.2 0-0.3 0-0.4-0.1 -0.1-0.1-0.2-0.2-0.2-0.3v-3.6c0-0.1 0.1-0.2 0.2-0.3 0.1-0.1 0.3-0.1 0.4-0.1 0.2 0 0.3 0 0.4 0.1 0.1 0.1 0.2 0.2 0.2 0.3V25.3z" class="a"/><polygon points="13.2 18.6 8.6 18.6 8.6 19.6 10.1 19.6 10.1 26.8 11.5 26.8 11.5 19.6 13.2 19.6 " class="a"/><path d="M17.5 0C7.8 0 0 7.8 0 17.5S7.8 35 17.5 35 35 27.2 35 17.5C35 7.8 27.2 0 17.5 0zM20 12.7V8.5h1.3v4.9c0 0.1 0 0.2 0.1 0.3 0.1 0.1 0.2 0.1 0.4 0.1 0.1 0 0.3 0 0.4-0.1 0.1-0.1 0.2-0.2 0.2-0.3V8.5h1.2v6.3h-1.6l0-0.5c-0.1 0.2-0.3 0.4-0.4 0.5 -0.2 0.1-0.3 0.2-0.5 0.2 -0.2 0-0.4-0.1-0.6-0.2 -0.1-0.1-0.3-0.2-0.4-0.4 0-0.1-0.1-0.2-0.1-0.3 0-0.1 0-0.2 0-0.3 0-0.1 0-0.2 0-0.4L20 12.7 20 12.7zM16.1 8.6c0.3-0.2 0.6-0.3 1.1-0.3 0.4 0 0.7 0.1 1 0.2 0.3 0.1 0.5 0.3 0.6 0.5 0.1 0.2 0.2 0.4 0.3 0.6 0.1 0.3 0.1 0.6 0.1 1v1.6c0 0.6 0 1-0.1 1.3 0 0.2-0.1 0.5-0.3 0.8 -0.2 0.3-0.4 0.4-0.6 0.5 -0.3 0.1-0.6 0.2-0.9 0.2 -0.3 0-0.7 0-0.9-0.2 -0.3-0.1-0.5-0.2-0.6-0.4 -0.1-0.2-0.2-0.4-0.3-0.7 -0.1-0.3-0.1-0.7-0.1-1.3 0 0 0-1.7 0-1.7 0-0.6 0.1-1 0.2-1.4C15.6 9 15.8 8.7 16.1 8.6zM11.9 6l0.9 3.1 0.9-3.1h1.7l-1.8 4.2v4.8H12.2v-4.8l-1.9-4.2H11.9zM27.8 26c0 0.4-0.1 0.8-0.3 1.2 -0.2 0.4-0.4 0.7-0.7 0.9 -0.3 0.3-0.7 0.5-1.1 0.6 -0.4 0.2-0.8 0.2-1.3 0.2H10.6c-0.5 0-0.9-0.1-1.3-0.2 -0.4-0.2-0.8-0.4-1.1-0.6 -0.3-0.3-0.6-0.6-0.7-0.9 -0.2-0.4-0.3-0.7-0.3-1.2v-6.8c0-0.4 0.1-0.8 0.3-1.2 0.2-0.4 0.4-0.7 0.7-0.9 0.3-0.3 0.7-0.5 1.1-0.6 0.4-0.2 0.8-0.2 1.3-0.2H24.4c0.5 0 0.9 0.1 1.3 0.2s0.8 0.4 1.1 0.6c0.3 0.3 0.6 0.6 0.7 0.9 0.2 0.4 0.3 0.7 0.3 1.2V26z" class="a"/><path d="M17.2 13.9c0.2 0 0.3-0.1 0.4-0.2 0.1-0.1 0.2-0.3 0.2-0.4V9.9c0-0.2-0.1-0.3-0.2-0.5 -0.1-0.1-0.3-0.2-0.4-0.2 -0.2 0-0.3 0.1-0.4 0.2 -0.1 0.1-0.2 0.3-0.2 0.5v3.4c0 0.2 0.1 0.3 0.2 0.4C16.9 13.9 17.1 13.9 17.2 13.9z" class="a"/><path d="M24.7 24.7v0.2 0.5c0 0.2-0.1 0.3-0.2 0.4 -0.1 0.1-0.3 0.1-0.4 0.1h-0.2c-0.2 0-0.3 0-0.4-0.1 -0.1-0.1-0.2-0.2-0.2-0.4v-0.1 -0.6 -0.8h2.5v-0.8c0-0.3 0-0.6 0-0.9 0-0.3 0-0.5-0.1-0.7 0-0.3-0.2-0.5-0.4-0.7 -0.2-0.2-0.5-0.3-0.7-0.3 -0.3-0.1-0.6-0.1-0.9 0 -0.3 0-0.5 0.1-0.8 0.3 -0.3 0.2-0.5 0.4-0.6 0.8 -0.1 0.3-0.2 0.8-0.2 1.3v1.9c0 0.8 0.2 1.4 0.6 1.7 0.4 0.3 0.8 0.5 1.2 0.5 0 0 0.1 0 0.1 0 0.5 0 0.9-0.2 1.3-0.6 0.3-0.3 0.4-0.6 0.4-1.1 0-0.1 0-0.3-0.1-0.5H24.7v0h0V24.7zM23.3 22.1c0-0.2 0.1-0.3 0.2-0.4 0.1-0.1 0.3-0.2 0.4-0.2h0.1c0.2 0 0.3 0.1 0.5 0.2 0.1 0.1 0.2 0.2 0.2 0.4l0 0.8h-1.4L23.3 22.1z" class="a"/>
+    </symbol>
+    <symbol viewBox="0 0 100 70" id="logo-edx">
+      <title>logo-edx</title>
+      <g>
+        <g>
+          <path fill="#FFFFFF" d="M19.25,44.898V30.376h3.838c0.895,0,1.579,0.043,2.051,0.129c0.662,0.11,1.217,0.32,1.665,0.63
+            c0.448,0.31,0.808,0.744,1.081,1.301c0.273,0.558,0.409,1.171,0.409,1.839c0,1.147-0.365,2.117-1.094,2.911
+            c-0.73,0.794-2.048,1.191-3.955,1.191h-2.21v6.521H19.25z M21.034,36.786h2.238c1.153,0,1.971-0.215,2.455-0.644
+            c0.484-0.429,0.727-1.033,0.727-1.812c0-0.564-0.143-1.047-0.428-1.448c-0.285-0.401-0.661-0.667-1.127-0.795
+            c-0.3-0.08-0.855-0.12-1.664-0.12h-2.201V36.786z"/>
+          <path fill="#FFFFFF" d="M30.446,44.898V30.376h9.125v1.591H32.23v4.545h7.043v1.582H32.23v5.213h7.653v1.591H30.446z"/>
+          <path fill="#FFFFFF" d="M42.078,44.898V30.376h1.83l8.121,11.625V30.376h1.711v14.522h-1.83l-8.121-11.634v11.634H42.078z"/>
+          <g>
+            <path fill="#FFFFFF" d="M15.034,32.17c1.454,1.485,2.181,3.277,2.181,5.374c0,2.098-0.727,3.889-2.181,5.374
+              c-1.454,1.485-3.208,2.228-5.263,2.228c-2.054,0-3.808-0.743-5.263-2.228c-1.454-1.485-2.181-3.277-2.181-5.374
+              c0-2.098,0.727-3.889,2.181-5.374c1.454-1.485,3.208-2.228,5.263-2.228C11.825,29.942,13.579,30.685,15.034,32.17z
+               M9.771,31.882c-1.533,0-2.84,0.552-3.922,1.657c-1.082,1.105-1.622,2.44-1.622,4.005c0,1.566,0.542,2.902,1.627,4.01
+              c1.085,1.108,2.39,1.661,3.918,1.661c1.533,0,2.84-0.554,3.922-1.661c1.082-1.108,1.622-2.444,1.622-4.01
+              c0-1.565-0.541-2.901-1.622-4.005C12.612,32.434,11.304,31.882,9.771,31.882z"/>
+          </g>
+        </g>
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#EDEDED" d="M78.941,25.841c0,0.994,0,2.983,0,2.983l1.585,0.023
+          c0,0,0.213,0.259,0.326,0.379c0,0.008,0-0.014,0-0.007c0,3.946,0,7.891,0,11.837c0,0.008,0,0.016,0,0.023
+          c-0.176,0.196-0.323,0.423-0.513,0.606c-0.492,0.018-0.914-0.034-1.398-0.023c0,1.025,0,2.051,0,3.076c-0.373,0-0.746,0-1.118,0
+          c0-0.427,0-0.854,0-1.282c-0.939,0.614-2.14,1.169-3.658,1.282c-0.311,0-0.621,0-0.932,0c-2.234-0.197-3.734-1.128-4.94-2.353
+          c0-0.008,0-0.016,0-0.023c0.545-0.589,0.985-1.283,1.305-2.097c-0.878,0-1.755,0-2.633,0c-0.008,0-0.015,0-0.023,0
+          c-0.197-0.509-0.379-1.035-0.466-1.654c0-0.008,0-0.016,0-0.023c0.996,0.037,2.046,0.02,3.076,0.023c0.008,0,0.016,0,0.023,0
+          c0.551,1.827,2.321,3.419,4.777,3.029c1.864-0.296,3.347-1.851,3.472-3.868c0.095-1.527-0.421-2.573-1.188-3.355
+          c-0.635-0.647-1.444-1.175-2.586-1.258c-2.185-0.159-3.382,0.979-4.148,2.26c-0.008,0-0.016,0-0.023,0
+          c-0.302-1.197-0.865-2.133-1.561-2.936c0-0.008,0-0.016,0-0.023c1.001-1.111,2.424-1.997,4.311-2.284
+          c2.091-0.318,3.925,0.313,5.196,1.212c0-0.839,0-1.678,0-2.517c-0.614-0.054-1.328-0.008-1.981-0.023c0-1.002,0-2.004,0-3.006
+          C76.875,25.841,77.908,25.841,78.941,25.841z"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#DDDDDD" d="M78.941,25.841c0.637,0,1.274,0,1.911,0
+          c0,1.118,0,2.267,0,3.385c-0.116-0.118-0.326-0.379-0.326-0.379l-1.585-0.023C78.941,28.824,78.941,26.836,78.941,25.841z"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M80.851,25.841c1.856,0,3.713,0,5.569,0
+          c0,0.994,0,1.988,0,2.983c-0.552,0.016-1.165-0.031-1.678,0.023c0.994,1.243,1.996,2.478,3.006,3.705
+          c0.996-1.225,1.992-2.45,2.983-3.682c0.023-0.001,0.018-0.029,0.023-0.047c-0.559,0-1.118,0-1.678,0c0-0.994,0-1.988,0-2.983
+          c2.486,0,4.971,0,7.456,0c0,0.994,0,1.988,0,2.983c-0.52,0.016-1.103-0.031-1.584,0.023c-1.729,2.062-3.401,4.18-5.103,6.268
+          c1.735,2.211,3.529,4.363,5.289,6.548c0.466,0,0.932,0,1.398,0c0,1.025,0,2.051,0,3.076c-2.486,0-4.971,0-7.456,0
+          c0-1.025,0-2.051,0-3.076c0.621,0,1.243,0,1.864,0c-0.997-1.294-2.138-2.647-3.192-3.961c-1.076,1.317-2.141,2.643-3.216,3.961
+          c0.629,0,1.258,0,1.887,0c0,1.025,0,2.051,0,3.076c-1.087,0-2.175,0-3.262,0c0-1.018,0-2.035,0-3.052
+          c-0.716-0.013-1.546-0.008-2.307-0.023c0-0.194,0-0.388,0-0.582c0-0.008,0-0.016,0-0.023c1.606-1.967,3.203-3.943,4.8-5.919
+          c-1.583-1.99-3.186-3.96-4.8-5.919c0-0.008,0-0.016,0-0.023C80.851,28.078,80.851,26.96,80.851,25.841z"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#C8C8C8" d="M84.743,28.847c0.513-0.054,1.126-0.008,1.678-0.023
+          C85.908,28.878,85.294,28.832,84.743,28.847z"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#C8C8C8" d="M89.077,28.824c0.559,0,1.118,0,1.678,0
+          c-0.005,0.018-0.001,0.046-0.023,0.047C90.234,28.801,89.574,28.894,89.077,28.824z"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#C8C8C8" d="M94.949,28.847c0.482-0.054,1.064-0.008,1.584-0.023
+          C96.052,28.878,95.469,28.832,94.949,28.847z"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#C8C8C8" d="M62.7,30.106c0.14-0.039,0.442-0.039,0.582,0
+          C63.088,30.106,62.894,30.106,62.7,30.106z"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#EDEDED" d="M58.039,32.016c1.175-1.015,2.571-1.809,4.66-1.911
+          c0.194,0,0.388,0,0.582,0c2.056,0.095,3.424,0.879,4.567,1.887c0.099,0.118,0.208,0.227,0.326,0.326
+          c0.037,0.056,0.083,0.103,0.14,0.14c0,0.008,0,0.016,0,0.023c-0.754,0.769-1.303,1.742-1.654,2.913c-0.008,0-0.016,0-0.023,0
+          c-0.671-1.232-1.69-2.116-3.472-2.237c-0.09-0.002-0.292-0.012-0.396,0c-1.199,0.044-1.985,0.5-2.656,1.072
+          c-0.126,0.107-0.243,0.223-0.349,0.35c-0.382,0.433-0.688,0.943-0.885,1.561c2.534,0.023,5.072,0.008,7.596,0.023
+          c-0.111,0.728-0.142,1.703,0,2.423c0,0.008,0,0.016,0,0.023c-2.532,0-5.064,0-7.596,0c0.456,1.466,1.424,2.513,2.936,2.913
+          c1.624,0.43,3.037-0.135,3.915-0.909c0.105-0.093,0.347-0.293,0.396-0.35c0.241-0.023,0.588,0,0.816,0c0.008,0,0.016,0,0.023,0
+          c0.321,0.821,0.804,1.48,1.328,2.097c0,0.008,0,0.016,0,0.023c-1.175,1.257-2.68,2.182-4.94,2.353c-0.241,0-0.481,0-0.722,0
+          c-2.091-0.165-3.679-1-4.823-2.144c-1.144-1.144-1.997-2.735-2.12-4.87c0-0.202,0-0.404,0-0.606
+          c0.101-2.089,0.896-3.485,1.911-4.66C57.754,32.321,57.901,32.174,58.039,32.016z"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#DDDDDD" d="M68.315,32.482c0.696,0.803,1.259,1.739,1.561,2.936
+          c-0.443,0.769-0.638,2.137-0.326,3.192c-1.03-0.003-2.079,0.013-3.076-0.023c-0.142-0.72-0.111-1.695,0-2.423
+          c0.155,0,0.311,0,0.466,0c-0.019-0.238-0.18-0.535-0.28-0.769C67.012,34.224,67.561,33.251,68.315,32.482z"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#C8C8C8" d="M66.638,35.395c0.008,0,0.016,0,0.023,0
+          c0.1,0.234,0.261,0.531,0.28,0.769c-0.155,0-0.311,0-0.466,0C66.522,35.901,66.593,35.661,66.638,35.395z"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#E2E2E2" d="M69.876,35.418c0.008,0,0.016,0,0.023,0
+          c0.218,0.916,0.357,2.174,0.14,3.192c-0.155,0-0.311,0-0.466,0c-0.008,0-0.016,0-0.023,0
+          C69.238,37.555,69.433,36.187,69.876,35.418z"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#DDDDDD" d="M66.964,40.265c0.878,0,1.755,0,2.633,0
+          c-0.32,0.814-0.76,1.508-1.305,2.097C67.768,41.745,67.284,41.086,66.964,40.265z"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#DDDDDD" d="M80.851,41.081c0,0.194,0,0.388,0,0.582
+          c0.774,0.007,1.599-0.003,2.307,0.023c0,1.017,0,2.035,0,3.052c-1.406,0-2.812,0-4.218,0c0-1.025,0-2.051,0-3.076
+          c0.484-0.01,0.906,0.041,1.398,0.023C80.529,41.504,80.675,41.277,80.851,41.081z"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#C8C8C8" d="M67.849,31.993c0.118,0.099,0.227,0.208,0.326,0.326
+          C68.057,32.22,67.948,32.111,67.849,31.993z"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#C8C8C8" d="M59.764,34.579c0.107-0.126,0.223-0.243,0.349-0.35
+          C60.006,34.356,59.89,34.473,59.764,34.579z"/>
+      </g>
+    </symbol>
+    <symbol viewBox="0 0 100 100" id="logo-raccoon">
+      <title>logo-raccoon</title>
+      <switch><foreignObject requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/" width="1" height="1"/><path d="M68.6 10.2v12.6L57.3 20.3h0L50 20.3v0l-7.2 0h0l-11.3 2.5V10.2L12.8 28.9 0.9 40.7l0 0 9.2 9.2 13.5 13.5 9.3 9.3L50 89.8v0l17.1-17.1 9.3-9.3 13.4-13.5 9.2-9.2 -11.8-11.9L68.6 10.2zM64.3 71.8l0 0L50 66.7v0l-14.3 5.2 0 0 -9.7-9.8 9.6-5.9L50 53v0l14.4 3.1 9.6 5.9L64.3 71.8zM95.3 40.7l-7.5 7.6h0l-9.5-7.5 -9.6-3.9 -7.9 3.9L50 46V45.9l-10.7-5.2 -7.9-3.9 -9.6 3.9 -9.5 7.5 0 0 -7.5-7.6 0 0 12.6-12.6 11.6-11.6 0 9.9 0.1 0 14.7-3.6 0 0H50v0h6.4l14.7 3.6 0.1 0 0-9.9L82.7 28.1l12.6 12.6V40.7z" fill="#FFF"/></switch>
+    </symbol>
+  </svg>
+<%static:optional_include_mako file="body-initial.html" is_theming_enabled="True" />
+<div id="page-prompt"></div>
+% if not disable_window_wrap:
+  <div class="window-wrap" dir="${static.dir_rtl()}">
+% endif
+    <a class="nav-skip sr-only sr-only-focusable" href="#main">${_("Skip to main content")}</a>
+
+    % if not disable_header:
+        <%include file="${static.get_template_path('header.html')}" args="online_help_token=online_help_token" />
+        <%include file="/preview_menu.html" />
+    % endif
+
+    <div class="content-wrapper ${"container-fluid" if uses_bootstrap else "" } main-container" id="content">
+      ${self.body()}
+      <%block name="bodyextra"/>
+    </div>
+
+    % if not disable_footer:
+        <%include file="${static.get_template_path('footer.html')}" />
+    % endif
+
+% if not disable_window_wrap:
+  </div>
+% endif
+
+  <%block name="footer_extra"/>
+  <%block name="js_extra"/>
+
+  <%include file="widgets/segment-io-footer.html" />
+  <script type="text/javascript" src="${static.url('js/vendor/noreferrer.js')}" charset="utf-8"></script>
+  <script type="text/javascript" src="${static.url('js/utils/navigation.js')}" charset="utf-8"></script>
+  <script src="${static.url('js/custom-input-type-file.js')}"></script>
+  <%static:optional_include_mako file="body-extra.html" is_theming_enabled="True" />
+</body>
+</html>
+
+<%def name="login_query()">${
+  u"?next={0}".format(urlquote_plus(login_redirect_url)) if login_redirect_url else ""
+}</%def>
+
+<!-- Performance beacon for onload times -->
+% if settings.FEATURES.get('ENABLE_ONLOAD_BEACON', False):
+<script>
+  (function () {
+    var sample_rate = ${settings.ONLOAD_BEACON_SAMPLE_RATE | n, dump_js_escaped_json};
+    var roll = Math.floor(Math.random() * 100)/100;
+    var onloadBeaconSent = false;
+
+    if(roll < sample_rate){
+      $(window).load(function() {
+        setTimeout(function(){
+          var t = window.performance.timing;
+
+          var data = {
+            event: "onload",
+            value: t.loadEventEnd - t.navigationStart,
+            page: window.location.href,
+          };
+
+          if (!onloadBeaconSent) {
+            $.ajax({method: "POST", url: "/performance", data: data});
+          }
+          onloadBeaconSent = true;
+        }, 0);
+      });
+    }
+  }());
+</script>
+% endif
