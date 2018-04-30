@@ -1,0 +1,163 @@
+## mako
+<%page expression_filter="h"/>
+<%!
+  from django.core.urlresolvers import reverse
+  from django.utils.translation import ugettext as _
+  from branding.api import get_footer
+  from openedx.core.djangoapps.lang_pref.api import footer_language_selector_is_enabled
+%>
+<% footer = get_footer(is_secure=is_secure) %>
+<%namespace name='static' file='static_content.html'/>
+
+% if uses_bootstrap:
+  <div class="container-fluid wrapper-footer">
+    <footer>
+      <div class="row">
+        <div class="col-md-9">
+          <nav class="navbar site-nav navbar-toggleable-sm navbar-light" aria-label="${_('About')}">
+            <ul class="navbar-nav">
+              % for item_num, link in enumerate(footer['navigation_links'], start=1):
+                <li class="nav-item">
+                  <a class="nav-link" href="${link['url']}">${link['title']}</a>
+                </li>
+              % endfor
+            </ul>
+          </nav>
+
+          ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
+          <p class="copyright">${footer['copyright']} ${u" | {icp}".format(icp=getattr(settings,'ICP_LICENSE')) if getattr(settings,'ICP_LICENSE',False) else ""}</p>
+
+          <nav class="navbar legal-nav navbar-toggleable-sm navbar-light" aria-label="${_('Legal')}">
+            <ul class="navbar-nav">
+              % for item_num, link in enumerate(footer['legal_links'], start=1):
+                <li class="nav-item">
+                  <a class="nav-link" href="${link['url']}">${link['title']}</a>
+                </li>
+              % endfor
+              <li class="nav-item">
+                <a class="nav-link" href="${footer['edx_org_link']['url']}">${footer['edx_org_link']['text']}</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="col-md-3">
+          ## Please leave this link and use one of the logos provided
+          ## The OpenEdX link may be hidden when this view is served
+          ## through an API to partner sites (such as marketing sites or blogs),
+          ## which are not technically powered by Open edX.
+          % if not hide_openedx_link:
+            <div class="footer-about-openedx">
+              <p>
+                <a href="${footer['openedx_link']['url']}" target="_blank">
+                  <img src="${footer['openedx_link']['image']}" alt="${footer['openedx_link']['title']}" width="140" />
+                </a>
+              </p>
+            </div>
+          % endif
+        </div>
+      </div>
+    </footer>
+  </div>
+% else:
+  <div class="theme-footer">
+    <footer id="footer-openedx" class="theme-footer_wrapper"
+      ## When rendering the footer through the branding API,
+      ## the direction may not be set on the parent element,
+      ## so we set it here.
+      % if bidi:
+        dir=${bidi}
+      % endif
+    >
+    <ul class="footer-list">
+      <li class="footer-list_item">
+        <a href="/about" class="footer-list_link">${_('About')}</a>
+      </li>
+      <li class="footer-list_item">
+        <a href="/privacy" class="footer-list_link">${_('Privacy Policy')}</a>
+      </li>
+      <li class="footer-list_item">
+        <a href="/tos" class="footer-list_link">${_('Terms of Service')}</a>
+      </li>
+    </ul>
+    <div class="theme-footer_holder">
+      <ul class="icon-list">
+        <li class="icon-list_item"><a href="#" class="icon-list_link">
+            <svg class="icon-list_icon" viewBox="0 0 35 35">
+              <use xlink:href="#ico-facebook" />
+            </svg>
+          </a></li>
+        <li class="icon-list_item"><a href="#" class="icon-list_link">
+            <svg class="icon-list_icon" viewBox="0 0 35 35">
+              <use xlink:href="#ico-twitter" />
+            </svg>
+          </a></li>
+        <!-- <li class="icon-list_item"><a href="#" class="icon-list_link">
+            <svg class="icon-list_icon">
+              <use xlink:href="#ico-youtube" />
+            </svg>
+          </a></li>
+        <li class="icon-list_item"><a href="#" class="icon-list_link">
+            <svg class="icon-list_icon" viewBox="0 0 35 35">
+              <use xlink:href="#ico-linkedin" />
+            </svg>
+          </a></li>
+        <li class="icon-list_item"><a href="#" class="icon-list_link">
+            <svg class="icon-list_icon" viewBox="0 0 35 35">
+              <use xlink:href="#ico-behance" />
+            </svg>
+          </a></li>
+        <li class="icon-list_item"><a href="#" class="icon-list_link">
+            <svg class="icon-list_icon" viewBox="0 0 35 35">
+              <use xlink:href="#ico-instagram" />
+            </svg>
+          </a></li>
+        <li class="icon-list_item"><a href="#" class="icon-list_link">
+            <svg class="icon-list_icon" viewBox="0 0 35 35">
+              <use xlink:href="#ico-odnoklassniki" />
+            </svg>
+          </a></li>
+        <li class="icon-list_item"><a href="#" class="icon-list_link">
+            <svg class="icon-list_icon" viewBox="0 0 35 35">
+              <use xlink:href="#ico-vimeo" />
+            </svg>
+          </a></li>
+        <li class="icon-list_item"><a href="#" class="icon-list_link">
+            <svg class="icon-list_icon" viewBox="0 0 35 35">
+              <use xlink:href="#ico-vk" />
+            </svg>
+          </a></li> -->
+      </ul>
+      <a class="logo-footer" href="/">
+        <img src="/static/${settings.FEATURES.get('BASE_SITE_THEME', settings.DEFAULT_SITE_THEME)}/images/footer-logo.png" alt="footer logo">
+      </a>
+      <p class="footer-support">Built on 
+        <a target="_blank" href="#">
+          <svg class="svg-edx"  viewBox="0 0 100 70">
+            <use xlink:href="#logo-edx" />
+          </svg>
+        </a>
+        by RACCOONGANG 
+        <a target="_blank" href="#">
+          <svg class="svg-raccoon"  viewBox="0 0 100 100">
+            <use xlink:href="#logo-raccoon" />
+          </svg>
+        </a>
+      </p>
+    </div>
+    </footer>
+  </div>
+% endif
+% if include_dependencies:
+  <%static:js group='base_vendor'/>
+  <%static:css group='style-vendor'/>
+  <%include file="widgets/segment-io.html" />
+  <%include file="widgets/segment-io-footer.html" />
+% endif
+% if footer_css_urls:
+  % for url in footer_css_urls:
+    <link rel="stylesheet" type="text/css" href="${url}"></link>
+  % endfor
+% endif
+% if settings.FEATURES.get('ENABLE_COOKIE_CONSENT', False):
+  <%include file="widgets/cookie-consent.html" />
+% endif
