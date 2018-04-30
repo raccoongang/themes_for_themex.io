@@ -37,11 +37,11 @@ from django.utils.translation import ugettext as _
   </%block>
 </ol>
 
-<%include file="../user_dropdown.html"/>
-
 <a href="${get_online_help_info(online_help_token)['doc_url']}"
          target="_blank"
          class="doc-link">${_("Help")}</a>
+         
+<%include file="../user_dropdown.html"/>
 
 % if should_display_shopping_cart_func() and not (course and static.is_request_in_themed_site()): # see shoppingcart.context_processor.user_has_cart_context_processor
   <ol class="user">
