@@ -16,6 +16,8 @@ $forum-color-primary: $base-color;
 $forum-color-hover: $btn-bg-hover;
 
 //----------theme variables----------//
+//body background
+$body-bg: #eee;
 //settings for header
 $header-nav-link-color: #009be0;
 $header-nav-link-color-hover: lighten($header-nav-link-color, 20%);
@@ -31,6 +33,14 @@ $hamburger-color: #842a97;
 $hamburger-width: 40px;
 $hamburger-height: 30px;
 $hamburger-height-line: 3px;
+//settings on promo box
+$promo-box-text-color: #fff;
+$promo-box-text-shadow: 0px 2px 0px rgba(77, 77, 77, 0.4);
+$find-btn-bg: transparent;
+$find-btn-bg-hover: rgba(0, 0, 0, .2);
+$find-btn-border: #fff;
+$find-btn-color: #fff;
+$find-btn-color-hover: $find-btn-color;
 //settings for footer
 $footer-nav-link-color: #fff;
 $footer-nav-link-color-hover: rgba(255,255,255, .8);
