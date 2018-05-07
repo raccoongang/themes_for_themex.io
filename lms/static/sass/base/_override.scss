@@ -2503,3 +2503,12 @@ body {
 .doc-link {
     margin-left: auto;
 }
+
+/*-----Register page-----*/
+
+.login-register .form-field.select-gender,
+.financial-assistance-wrapper .financial-assistance-form .form-field.select-gender,
+.login-register .form-field.select-year_of_birth,
+.financial-assistance-wrapper .financial-assistance-form .form-field.select-year_of_birth {
+    width: calc(50% - 11px);
+}
