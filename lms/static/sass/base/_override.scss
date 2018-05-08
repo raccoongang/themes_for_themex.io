@@ -2512,3 +2512,12 @@ body {
 .financial-assistance-wrapper .financial-assistance-form .form-field.select-year_of_birth {
     width: calc(50% - 11px);
 }
+
+/*-----Header > user dropdown -----*/
+
+.user-menu .user-dropdown {
+    font: 17px/20px "FontAwesome";
+    margin: -1px 0 0;
+    padding: 0 0 0 10px;
+    vertical-align: top;
+}
