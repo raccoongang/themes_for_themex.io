@@ -22,11 +22,22 @@ h1 {
     >header {
         position: relative;
         min-height: 420px;
-        background: #040404 url('#{$img-path}/background.jpg') no-repeat 50% 50%;
-        background-size: cover;
+        //background: #040404 url('#{$img-path}/background.jpg') no-repeat 50% 50%;
+        //background-size: cover;
         @media (max-width: 767px) {
             min-height: initial;
         }
+
+        .parallax-img {
+            position: absolute;
+            left: 0;
+            top: -100px;
+            width: 100%;
+            height: calc(100% + 200px); /* картинка паралакса всегда больше нашего баннера, при скролинге не появится пустутота под баннером */
+            background: #040404 url('#{$img-path}/background.jpg') no-repeat 50% 50%; /* высота картинки - желательно не меньше 600px по высоте */
+            background-size: cover;
+        }
+
         .outer-wrapper {
             min-width: 320px;
             padding: 30px 15px;
