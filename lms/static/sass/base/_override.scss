@@ -2532,3 +2532,17 @@ body {
     padding: 0 0 0 10px;
     vertical-align: top;
 }
+
+//sticky footer
+
+#content {
+    flex: 1;
+}
+.window-wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.wrapper-preview-menu {
+    width: 100%;
+}
