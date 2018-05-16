@@ -2536,13 +2536,17 @@ body {
 //sticky footer
 
 #content {
-    flex: 1;
+    flex: 1 0 auto;
 }
 .window-wrap {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    height: 100%;
 }
 .wrapper-preview-menu {
     width: 100%;
+}
+html, body {
+    height: 100%;
 }
