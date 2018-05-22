@@ -1,0 +1,10 @@
+<%page args="section_data" expression_filter="h"/>
+<%! from openedx.core.djangolib.markup import HTML %>
+
+<section class="open-response-assessment">
+    <div class="grade-detail-graph-wrapper-outer">
+        <div class="grade-detail-graph-wrapper">
+            ${HTML(section_data['fragment'].body_html())}
+        </div>
+    </div>
+</section>
