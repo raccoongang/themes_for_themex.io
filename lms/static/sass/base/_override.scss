@@ -1327,9 +1327,7 @@ div {
 }
 
 /*----------Theme colors----------*/
-$blue: #009be0;
-$base-color: $blue;
-$btn-bg-hover: $blue;
+
 
 %theme-btn {
     color: #ffe;
@@ -1882,8 +1880,8 @@ h6,
             .browse {
                 @extend %theme-btn;
                 position: absolute;
-                top: 0;
-                right: -2px;
+                top: 2px;
+                right: 2px;
                 width: 70px;
                 margin: 0;
                 padding: 6px 10px;
@@ -2684,15 +2682,11 @@ body .page-header-secondary btn {
 // forum responsive fixes
 
 .forum-nav.layout-col.layout-col-a {
-    @include sm {
-        height: 500px !important;
-    }
+    height: 500px !important;
 }
 .forum-nav-thread-list,
 .forum-nav-browse-menu {
-    @include sm {
-        height: 471px !important;
-    }
+    height: 471px !important;
 }
 // end of forum responsive fixes
 
@@ -2727,7 +2721,7 @@ body .profile-wrapper .course-info {
 body .wiki-wrapper main section.wiki .nav-tabs a {
     color: $theme-link;
 }
-body .wiki-wrapper section.wiki .btn {
+body .container .wiki-wrapper section.wiki .btn {
     border: none;
     box-shadow: none;
     background: $theme-link;
@@ -2773,6 +2767,14 @@ body .enroll-message a {
     body .instructor-dashboard-wrapper-2 section.idash-section#membership .batch-enrollment textarea {
         display: block;
     }
+    .theme-header__holder .theme-logo {
+        margin-bottom: 12px;
+    }
+    .section.section-handouts {
+        ol {
+            margin-left: 20px;
+        }
+    }
 }
 .instructor-dashboard-wrapper-2 .customBrowseBtn .file-browse .file_field {
     left: -100px;
@@ -2812,3 +2814,9 @@ body .enroll-message a {
 .forum-search .search-input {
     width: 55%;
 }
+
+//
+.view-profile .profile-image-field .image-wrapper .upload-button-input {
+    display: none;
+}
+

@@ -1,10 +1,10 @@
 //----------platform variables----------//
 $blue: #009be0;
 $base-color: $blue;
-$btn-bg-hover: $blue;
+$btn-bg-hover: lighten($base-color, 20%);
 
 $link-color: $base-color;
-$link-hover: $base-color;
+$link-hover: lighten($base-color, 20%);
 $shadow-color: $base-color;
 $button-color: $base-color;
 $action-primary-bg: $base-color;
@@ -14,6 +14,9 @@ $courseware-border-bottom-color: $base-color;
 
 $forum-color-primary: $base-color;
 $forum-color-hover: $btn-bg-hover;
+
+$staff-color: $base-color;
+$pink: red;
 
 //----------theme variables----------//
 //body background
@@ -60,8 +63,8 @@ $theme-btn-white-text-color: #fc6a15;
 $theme-btn-white-text-color-hover: #fff;
 $theme-btn-white-bg-hover: #fc6a15;
 // link color
-$theme-link: #842a97;
-$theme-link-hover: lighten($theme-link, 20%);
+$theme-link: $base-color;
+$theme-link-hover: lighten($base-color, 20%);
 //settings for bg content pages
 $theme-content-bg: #eee;
 //settings for input icons
