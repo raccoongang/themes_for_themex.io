@@ -103,24 +103,25 @@ h1 {
                  position: relative;
                  padding-bottom: 0;
                  .search-input {
-                     background: rgba(255,255,255,0.25);
-                     border: 2px solid #fff;
-                     color: #fff;
+                     background: $search-input-background;
+                     border: 2px solid $search-input-border;
+                     color: $search-input-color;
                      padding-left: 20px !important;
                      &:focus {
-                         border-color: #fff !important;
+                         border-color: $search-input-border !important;
                      }
                      &::placeholder {
-                         color: #fff;
+                         color: $search-input-color;
                          opacity: 1;
                      }
                      &:-ms-input-placeholder {
-                         color: #fff;
+                         color: $search-input-color;
                      }
                  }
                  .search-button {
+                     color: $search-button-color;
                      background: none !important;
-                     border-color: #fff !important;
+                     border-color: $search-input-border !important;
                      border-left: none !important;
                      right: 0;
                  }
