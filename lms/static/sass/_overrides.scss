@@ -44,6 +44,11 @@ $find-btn-bg-hover: rgba(0, 0, 0, .2);
 $find-btn-border: #fff;
 $find-btn-color: #fff;
 $find-btn-color-hover: $find-btn-color;
+//search input on promo box
+$search-input-background: rgba(255,255,255,0.25);
+$search-input-color: #fff;
+$search-input-border: #fff;
+$search-button-color: #fff;
 //settings for footer
 $footer-bg: #009289;
 $footer-nav-link-color: #fff;
@@ -69,7 +74,7 @@ $theme-link-hover: lighten($base-color, 20%);
 $theme-content-bg: #eee;
 //settings for input icons
 $theme-input-icon: #fc6a15;
-//user link color 
+//user link color
 $theme-user-link: #3c3c3c;
 $theme-user-link-hover: lighten($theme-user-link, 20%);
 //settings fo courses on main page and search
