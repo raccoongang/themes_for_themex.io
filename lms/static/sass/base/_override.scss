@@ -2542,6 +2542,9 @@ body {
     flex-direction: column;
     min-height: 100vh;
     height: 100%;
+    header.theme-header {
+        flex: 1 0 auto;
+    }
 }
 .wrapper-preview-menu {
     width: 100%;
