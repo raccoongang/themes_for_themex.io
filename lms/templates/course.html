@@ -33,11 +33,6 @@ from django.core.urlresolvers import reverse
           <div class="course-date localized_datetime" aria-hidden="true" data-format="shortDate">${_("Course starts: ")}${course_date_string_format}</div>
           <div style="display:none" class="course-date localized_datetime" aria-hidden="true" data-format="shortDate" data-datetime="${course_date_string}" data-string="${_("Starts: {date}")}"></div>
       % endif
-      % if course.end and int(course.end.strftime("%s")) < int(timezone.now().strftime("%s")):
-        <div class="course-complete">Course complete</div>
-      % else:
-        <div class="course-complete"></div>
-      % endif
     </div>
     <div class="sr">
       <ul>
