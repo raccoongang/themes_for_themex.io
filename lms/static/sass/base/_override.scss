@@ -2839,10 +2839,10 @@ body .enroll-message a {
         display: block;
         text-align: center;
         padding: 5px 0;
-        background: $theme-link;
+        background: $header-nav-link-color;
         color: #fff;
         &:hover,&:focus,&:active {
-            background: $theme-link-hover;
+            background: $header-nav-link-color-hover;
         }
     }
     .doc-link {
@@ -2851,13 +2851,34 @@ body .enroll-message a {
     .wrapper-course-material .course-tabs li a {
         display: inline-block;
     }
+    .view-teams .cards-list .card {
+        width: 100%;
+    }
 }
 body .doc-link {
     color: $theme-link;
+    &:hover,&:focus,&:active {
+        color: $header-nav-link-color-hover;
+    }
 }
 body .user-dropdown {
-    color: $theme-link;
+    color: $header-nav-link-color;
     &:hover,&:focus,&:active {
-        color: $theme-link-hover;
+        color: $header-nav-link-color-hover;
     }
+}
+main#main .container.dashboard {
+    display: flex;
+}
+body .dashboard .my-courses {
+    width: auto;
+    flex: 1 1 75%;
+}
+.dashboard-search-bar {
+    width: auto;
+    flex: 1 1 25%;
+}
+
+body .teams-content .teams-main .team-edit-fields .team-required-fields {
+    width: 100%;
 }
