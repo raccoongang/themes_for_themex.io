@@ -14,18 +14,8 @@
 .icon-list_icon {
     width: 35px;
     height: 35px;
-}
-
-#ico-vk,
-#ico-odnoklassniki,
-#ico-behance,
-#ico-vimeo,
-#ico-youtube,
-#ico-linkedin,
-#ico-twitter,
-#ico-instagramm,
-#ico-facebook {
-    path {
-        fill: $footer-social-link-bg;
+    fill: $footer-nav-link-color;
+    &:hover,&:focus,&:active {
+        fill: $footer-nav-link-color-hover;
     }
 }
