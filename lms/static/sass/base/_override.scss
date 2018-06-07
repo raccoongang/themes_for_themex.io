@@ -336,13 +336,10 @@ body {
 .dashboard {
     padding-right: 15px;
     padding-left: 15px;
+    display: flex;
+    flex-wrap: wrap;
     @media (max-width: 991px) {
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-wrap: wrap;
-        flex-wrap: wrap;
-        -webkit-flex-direction: column-reverse;
-        flex-direction: column-reverse;
+        flex-direction: column-reverse !important;
     }
     .my-courses {
         @media (max-width: 991px) {
@@ -2724,10 +2721,6 @@ body .page-header-secondary btn {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-body .dashboard .my-courses {
-    width: 100%;
-}
-
 .wrapper-msg.wrapper-auto-cert .auto-cert-message .has-actions .msg-actions {
     @include sm {
         width: 85%;
