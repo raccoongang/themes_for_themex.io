@@ -2545,22 +2545,19 @@ body {
 //sticky footer
 
 #content {
-    flex: 1 0 auto;
+    flex: 1 1 auto;
 }
 .window-wrap {
+    flex: 1 1 auto;
     display: flex;
-    flex-direction: column;
+    flex-flow: column nowrap;
     min-height: 100vh;
-    height: 100%;
-    header.theme-header {
-        flex: 1 0 auto;
-    }
 }
 .wrapper-preview-menu {
     width: 100%;
 }
-html, body {
-    height: 100%;
+body {
+    margin: 0;
 }
 
 
@@ -2833,4 +2830,45 @@ body .enroll-message a {
 
 .wmd-preview-container {
     word-break: break-all;
+}
+
+@media screen and (max-width: 760px) {
+    .menu-open .theme-header__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    .theme-header .list-inline {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-global li {
+        width: 100%;
+    }
+    .nav-global > li > a {
+        display: block;
+        text-align: center;
+        padding: 5px 0;
+        background: $theme-link;
+        color: #fff;
+        &:hover,&:focus,&:active {
+            background: $theme-link-hover;
+        }
+    }
+    .doc-link {
+        margin-left: 0;
+    }
+    .wrapper-course-material .course-tabs li a {
+        display: inline-block;
+    }
+}
+body .doc-link {
+    color: $theme-link;
+}
+body .user-dropdown {
+    color: $theme-link;
+    &:hover,&:focus,&:active {
+        color: $theme-link-hover;
+    }
 }
