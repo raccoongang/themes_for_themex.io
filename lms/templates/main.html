@@ -24,6 +24,7 @@ from pipeline_mako import render_require_js_path_overrides
 %>
 <!DOCTYPE html>
 <!--[if lte IE 9]><html class="ie ie9 lte9" lang="${LANGUAGE_CODE}"><![endif]-->
+<!--[if lte IE 11]><html class="ie ie11 lte11" lang="${LANGUAGE_CODE}"><![endif]-->
 <!--[if !IE]><!--><html lang="${LANGUAGE_CODE}"><!--<![endif]-->
 <head dir="${static.dir_rtl()}">
     <meta charset="UTF-8">
