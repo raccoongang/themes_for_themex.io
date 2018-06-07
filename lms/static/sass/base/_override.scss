@@ -2202,6 +2202,10 @@ div {
 }
 
 /*-----Discussion-----*/
+
+.discussion-post {
+    word-break: break-all;
+}
 .discussion {
     &.inline-discussion {
         .new-post-article {
@@ -2529,11 +2533,16 @@ body {
 
 /*-----Header > user dropdown -----*/
 
-.user-menu .user-dropdown {
+.user-menu {
+    .user-dropdown {
     font: 17px/20px "FontAwesome";
     margin: -1px 0 0;
     padding: 0 0 0 10px;
     vertical-align: top;
+    }
+    .user-dropdown-menu {
+        z-index: 200;
+    }
 }
 
 //sticky footer
@@ -2694,6 +2703,7 @@ body .page-header-secondary btn {
 }
 .forum-nav-thread-list,
 .forum-nav-browse-menu {
+    word-break: break-all;
     height: 471px !important;
 }
 // end of forum responsive fixes
