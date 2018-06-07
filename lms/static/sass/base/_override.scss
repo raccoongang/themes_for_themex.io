@@ -2883,13 +2883,18 @@ main#main .container.dashboard {
 }
 body .dashboard .my-courses {
     width: auto;
-    flex: 1 1 75%;
+    flex: 1 1 74%;
 }
 .dashboard-search-bar {
     width: auto;
-    flex: 1 1 25%;
+    flex: 1 1 24%;
 }
 
 body .teams-content .teams-main .team-edit-fields .team-required-fields {
     width: 100%;
 }
+
+body .wrapper-course-material .course-tabs li a {
+    color: #5e5e5e;
+}
+
