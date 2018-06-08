@@ -14,8 +14,8 @@
 .icon-list_icon {
     width: 35px;
     height: 35px;
-    fill: $footer-nav-link-color;
+    fill: $footer-social-link-bg;
     &:hover,&:focus,&:active {
-        fill: $footer-nav-link-color-hover;
+        fill: $footer-social-link-bg-hover;
     }
 }
