@@ -288,9 +288,17 @@ ${HTML(fragment.foot_html())}
         function toggleFullScreen() {
             let fullscreen = document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
             if (!fullscreen) {
-                main.webkitRequestFullscreen() || mozRequestFullScreen() || msRequestFullscreen();
+                fs.classList.remove('fa-arrows-alt');
+                fs.classList.add('fa-compress');
+                if (main.msRequestFullscreen) {main.msRequestFullscreen()};
+                if (main.webkitRequestFullscreen) {main.webkitRequestFullscreen()};
+                if (main.mozRequestFullScreen) {main.mozRequestFullScreen()};
             } else {
-                document.webkitExitFullscreen() || mozCancelFullScreen() || msExitFullscreen();
+                fs.classList.remove('fa-compress');
+                fs.classList.add('fa-arrows-alt');
+                if(document.msExitFullscreen) {document.msExitFullscreen()} ;
+                if(document.mozCancelFullScreen) {document.mozCancelFullScreen()};
+                if(document.webkitExitFullscreen) {document.webkitExitFullscreen()};
             }
         }
 
