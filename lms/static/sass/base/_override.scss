@@ -2839,12 +2839,10 @@ body .enroll-message a {
     }
     .theme-header .list-inline {
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
     .nav-global li {
         width: 100%;
+        margin: 0 0 12px;
     }
     .nav-global > li > a {
         display: block;
@@ -2865,6 +2863,9 @@ body .enroll-message a {
     }
     .view-teams .cards-list .card {
         width: 100%;
+    }
+    body.view-teams .card.list-card .card-actions {
+        width: auto;
     }
 }
 body .theme-header .list-inline {
@@ -2903,3 +2904,11 @@ body .wrapper-course-material .course-tabs li a {
     color: #5e5e5e;
 }
 
+body .theme-header .list-inline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    li {
+        margin: 0;
+    }
+}
