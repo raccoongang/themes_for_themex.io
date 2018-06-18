@@ -2912,3 +2912,35 @@ body .theme-header .list-inline {
         margin: 0;
     }
 }
+
+// footer on flex
+.theme-footer_holder {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    @media all and (max-width: 768px){
+        flex-direction: column;
+        align-items: center;
+    }
+    .logo-footer,
+    .icon-list,
+    .footer-support {
+        position: static;
+        flex: 0 0 33%;
+        margin: 0;
+        width: auto;
+    }
+    .icon-list {
+        justify-content: center;
+        order: 2;
+    }
+    .logo-footer {
+        justify-content: flex-end;
+        order: 3;
+    }
+    .footer-support {
+        justify-content: flex-start;
+        flex: 0 0 34%;
+    }
+}
+
