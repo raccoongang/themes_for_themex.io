@@ -2867,6 +2867,9 @@ body .enroll-message a {
     body.view-teams .card.list-card .card-actions {
         width: auto;
     }
+    .view-teams .team-profile .page-content-main {
+        width: 100%;
+    }
 }
 body .theme-header .list-inline {
     display: flex;
@@ -2912,6 +2915,13 @@ body .theme-header .list-inline {
         margin: 0;
     }
 }
+
+body .btn-secondary {
+    &:hover,&:focus,&:active {
+        color: $theme-link;
+    }
+}
+
 
 // footer on flex
 .theme-footer_holder {
