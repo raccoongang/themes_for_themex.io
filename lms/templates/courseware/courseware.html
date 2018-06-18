@@ -179,7 +179,11 @@ ${HTML(fragment.foot_html())}
                             % endif
                             <span class="nav-item nav-item-sequence">${sequence_title}</span>
                         </div>
-                        <i class="fa fa-arrows-alt" aria-hidden="true" id="fullscreen"></i>
+                        <i class="fullscreen-button fs-expand" aria-hidden="true" id="fullscreen">
+                            <svg>
+                                <use xlink:href="#ico-fs-expand" />
+                            </svg>
+                        </i>
                     </div>
                 </nav>
             </div>
@@ -255,56 +259,5 @@ ${HTML(fragment.foot_html())}
     </nav>
 % endif
 <%include file="../modal/accessible_confirm.html" />
-<style>
-    .has-breadcrumbs {
-        display: flex;
-        justify-content: space-between;
-    }
-    .course-content:-webkit-full-screen {
-        overflow: auto;
-        width: 100%;
-        display: block;
-    }
-    .course-content:-moz-full-screen {
-        overflow: auto;
-        width: 100%;
-        display: block;
-    }
-    .course-content:-ms-fullscreen {
-        overflow: auto;
-        width: 100% !important;
-        display: block !important;
-        background: #fff !important;
-    }
-    .course-content:fullscreen {
-        overflow: auto;
-        width: 100%;
-        display: block;
-    }
-</style>
-<script>
-    $(function () {
-        let fs = document.getElementById('fullscreen');
-        let main = document.getElementById('course-content');
-        function toggleFullScreen() {
-            let fullscreen = document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
-            if (!fullscreen) {
-                fs.classList.remove('fa-arrows-alt');
-                fs.classList.add('fa-compress');
-                if (main.msRequestFullscreen) {main.msRequestFullscreen()};
-                if (main.webkitRequestFullscreen) {main.webkitRequestFullscreen()};
-                if (main.mozRequestFullScreen) {main.mozRequestFullScreen()};
-            } else {
-                fs.classList.remove('fa-compress');
-                fs.classList.add('fa-arrows-alt');
-                if(document.msExitFullscreen) {document.msExitFullscreen()} ;
-                if(document.mozCancelFullScreen) {document.mozCancelFullScreen()};
-                if(document.webkitExitFullscreen) {document.webkitExitFullscreen()};
-            }
-        }
 
-        fs.addEventListener("click", function(e) {
-            toggleFullScreen();
-        }, false);
-    })
-</script>
+<script src="${static.url('js/fullscreenButton.js')}"></script>
