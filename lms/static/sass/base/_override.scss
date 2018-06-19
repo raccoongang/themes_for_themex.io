@@ -2916,12 +2916,33 @@ body .theme-header .list-inline {
     }
 }
 
+body .wiki-wrapper section.wiki #cheatsheetModal {
+    width: 95%;
+    max-width: 900px;
+    margin: 0 !important;
+    transform: translateX(-50%);
+    .left-column {
+        width: 48%;
+        float: left;
+    }
+    .right-column {
+        width: 48%;
+        float: right;
+    }
+    @media (max-width: 767px) {
+        .left-column,
+        .right-column {
+            float: none;
+            width: 100%;
+        }
+    }
+}
+
 body .btn-secondary {
     &:hover,&:focus,&:active {
         color: $theme-link;
     }
 }
-
 
 // footer on flex
 .theme-footer_holder {
@@ -2953,4 +2974,3 @@ body .btn-secondary {
         flex: 0 0 34%;
     }
 }
-
