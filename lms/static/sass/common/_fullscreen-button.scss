@@ -20,26 +20,34 @@
   justify-content: space-between;
   align-items: center;
 }
+
 .course-content {
   &:-webkit-full-screen {
     overflow: auto;
-    width: 100%;
-    display: block;
+    width: 100% !important;
+    display: block !important;
+    background: #fff !important;
+    margin: 0 !important;
   }
   &:-moz-full-screen {
     overflow: auto;
-    width: 100%;
-    display: block;
+    width: 100% !important;
+    display: block !important;
+    background: #fff !important;
+    margin: 0 !important;
   }
   &:-ms-fullscreen {
     overflow: auto;
     width: 100% !important;
     display: block !important;
     background: #fff !important;
+    margin: 0 !important;
   }
   &:fullscreen {
     overflow: auto;
-    width: 100%;
-    display: block;
+    width: 100% !important;
+    display: block !important;
+    background: #fff !important;
+    margin: 0 !important;
   }
 }
