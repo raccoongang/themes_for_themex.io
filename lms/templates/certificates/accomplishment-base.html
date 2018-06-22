@@ -14,10 +14,12 @@ course_mode_class = course_mode if course_mode else ''
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="${static.url(static.get_value('favicon_path', settings.FAVICON_PATH))}" />
+
     <title>${document_title}</title>
 
     <%static:css group='style-certificates'/>
+    <link rel="stylesheet" href="/static/${settings.FEATURES.get('BASE_SITE_THEME', settings.DEFAULT_SITE_THEME)}/css/certificate.css" type="text/css" media="all" />
+    <link rel="icon" type="image/x-icon" href="${static.url(static.get_value('favicon_path', settings.FAVICON_PATH))}" />
 </head>
 
 <body class="layout-accomplishment view-valid-accomplishment ${dir_rtl} certificate certificate-${course_mode_class}" data-view="valid-accomplishment">
@@ -40,31 +42,7 @@ course_mode_class = course_mode if course_mode else ''
         <%include file="_badges-modal.html" />
     %endif
     <style>
-        .rtl.layout-accomplishment .accomplishment-orgs .organization-logo {
-                position: relative;
-                top: 0;
-                right: 0;
-                transform: translate(0, 0);
-        }
-        .btn-link,
-        .copy-meta a {
-            color: #842a97;
-            border: none;
-        }
-        .btn-link:hover,
-        .btn-link:focus,
-        .copy-meta a:focus,
-        .copy-meta a:hover {
-            color: #bb57d0;
-            background: none;
-            text-decoration: none;
-            border: none;
-        }
-        @media screen and (max-width: 479px) {
-          .hd-1 {
-            font-siZe: 1.5rem;
-          }
-        }
+
     </style>
 </body>
 </html>

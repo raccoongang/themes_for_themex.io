@@ -1,14 +1,1 @@
 <%! from django.utils.translation import ugettext as _ %>
-
-<div class="wrapper-header">
-
-    <header class="header-app" role="banner">
-        <h1 class="header-app-title">
-            <a class="logo" href="${logo_url}">
-                <img class="logo-img" style="width: 100px;" src="/static/${settings.FEATURES.get('DEMO_KTHPLUS_SITE_THEME', settings.DEFAULT_SITE_THEME)}/images/logo.png" alt="${_('{platform_name} Home').format(platform_name=platform_name)}" />
-            </a>
-            <span class="sr-only">${logo_subtitle}</span>
-        </h1>
-    </header>
-
-</div>

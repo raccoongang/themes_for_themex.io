@@ -1,0 +1,246 @@
+@import "overrides";
+
+.rtl.layout-accomplishment .accomplishment-orgs .organization-logo {
+	position: relative;
+	top: 0;
+	right: 0;
+	transform: translate(0, 0);
+}
+.btn-link,
+.copy-meta a {
+	color: $base-color;
+	border: none;
+}
+.header-app .logo {
+	width: 230px;
+}
+.btn-link:hover,
+.btn-link:focus,
+.copy-meta a:focus,
+.copy-meta a:hover {
+	color: lighten($base-color, 20%);
+	background: none;
+	text-decoration: none;
+	border: none;
+}
+.wrapper-banner-user {
+	margin-top: 0;
+}
+.layout-accomplishment .wrapper-introduction {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+.wrapper-introduction h2 {
+	width: 100%;
+	margin: 0;
+}
+.layout-accomplishment .accomplishment-rendering {
+	top: 0;
+}
+@media print {
+	@page {
+		size: landscape;
+		margin: 0;
+		border: 0;
+	}
+	html, body {
+		height: auto;
+		margin: 0 !important;
+	}
+}
+.certificate-wrapper {
+	position: relative;
+	width: 29.7cm;
+	height: 21cm;
+	margin: 0 auto;
+}
+.main-bg {
+	display: block;
+	width: 29.7cm;
+	height: 21cm;
+}
+.certificate-body {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 29.7cm;
+	height: 21cm;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.certificate-logo {
+	display: inline-block;
+	margin-bottom: 26px;
+}
+.ribbon {
+	position: relative;
+	margin-bottom: 40px;
+}
+.ribbon-text {
+	display: block;
+	position: relative;
+	min-width: 400px;
+	padding: 0 30px;
+	height: 60px;
+	font-size: 1.5em;
+	font-weight: 800;
+	line-height: 55px;
+	color: #fff;
+	z-index: 1;
+	img {
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+	b {
+		z-index: 100;
+		position: relative;
+	}
+}
+.ribbon:before,
+.ribbon:after,
+.ribbon-text:before,
+.ribbon-text:after {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+}
+.ribbon:before {
+	width: 65px;
+	left: -50px;
+	top: 25px;
+	border-width: 30px 15px;
+	border-style: solid;
+	border-color: $ribbon-corners-color $ribbon-corners-color $ribbon-corners-color transparent;
+}
+.ribbon:after {
+	width: 65px;
+	right: -50px;
+	top: 25px;
+	border-width: 30px 15px;
+	border-style: solid;
+	border-color: $ribbon-corners-color transparent $ribbon-corners-color $ribbon-corners-color;
+}
+.ribbon-text:before {
+	left: 0;
+	top: 100%;
+	border-width: 0 45px 25px 0;
+	border-style: solid;
+	border-color: $ribbon-triangle-color $ribbon-triangle-color transparent transparent;
+}
+.ribbon-text:after {
+	right: 0;
+	top: 100%;
+	border-width: 25px 45px 0 0;
+	border-style: solid;
+	border-color: $ribbon-triangle-color transparent transparent transparent;
+}
+.general-text {
+	display: block;
+	text-align: center;
+	color: #636466;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.2px;
+	font-weight: normal;
+	margin: 13px auto 0;
+	max-width: 300px;
+}
+.inner {
+	max-width: 550px;
+}
+.user-name {
+	border-bottom: 2px solid $certificate-borders-color;
+	color: #3b3e42;
+	font-size: 36px;
+	line-height: 40px;
+	font-weight: 800;
+	display: block;
+	padding-bottom: 14px;
+	margin-bottom: 17px;
+}
+.course-name {
+	color: #3b3e42;
+	font-size: 25px;
+	line-height: 30px;
+	font-weight: 800;
+	display: block;
+	margin-bottom: 17px;
+}
+.certificate-text {
+	text-align: center;
+	color: #747e92;
+	font-size: 14px;
+	line-height:17px;
+}
+.certificate-bottom {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 40px;
+}
+.date {
+	text-align: center;
+	margin-top: 20px;
+	* {
+		display: block;
+	}
+	strong {
+		border-bottom: 2px solid $certificate-borders-color;
+		height: 25px;
+		line-height: 25px;
+		font-size: 14px;
+		color: #636466;
+		margin-bottom: 2px;
+	}
+	span {
+		color: #636466;
+		font-size: 10px;
+	}
+}
+.medal img {
+	display: inline-block;
+	vertical-align: top;
+	width: 70px;
+}
+.signature {
+	text-align: center;
+	margin-top: 20px;
+	* {
+		display: block;
+	}
+	strong {
+		position: relative;
+		border-bottom: 2px solid $certificate-borders-color;
+		height: 25px;
+		line-height: 25px;
+		margin-bottom: 2px;
+	}
+	img {
+		display: block;
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		transform: translateX(-50%);
+	}
+	span {
+		color: #636466;
+		font-size: 10px;
+		min-width: 80px;
+	}
+}
+.certificate-number {
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: 75px;
+	font-size: 13px;
+	width: 100%;
+	text-align: center;
+}
