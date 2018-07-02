@@ -40,15 +40,12 @@
 @media print {
 	@page {
 		size: auto;
-		margin: 0mm;
+		margin: 0;
 		border: 0;
 	}
-	html {
-		background-color: #FFFFFF;
-		margin: 0px;
-	}
-	body {
-		margin: 0px;
+	html, body {
+		height: auto;
+		margin: 0 !important;
 	}
 }
 .certificate-wrapper {
