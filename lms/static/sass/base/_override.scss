@@ -2401,6 +2401,11 @@ input[type="password"] {
             @media (max-width: 576px) {
                 margin-right: 10px;
             }
+            @include sm {
+                width: 100%;
+                text-align: center;
+                padding: 10px;
+            }
         }
     }
 }
