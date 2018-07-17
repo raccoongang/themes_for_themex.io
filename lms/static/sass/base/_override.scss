@@ -5,6 +5,17 @@
 // @media (max-width: 540px) {}
 // @media (max-width: 479px) {}
 
+@mixin sm {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+@mixin x-sm {
+    @media screen and (max-width: 450px) {
+        @content;
+    }
+}
+
 *:focus {
     outline-color: $base-color !important;
 }
@@ -2568,16 +2579,6 @@ body {
 
 //mobile responsive
 
-@mixin sm {
-    @media screen and (max-width: 768px) {
-        @content;
-    }
-}
-@mixin x-sm {
-    @media screen and (max-width: 450px) {
-        @content;
-    }
-}
 @include x-sm {
     .wiki-wrapper section.wiki .diff-container table {
         width: 300px;
