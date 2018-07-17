@@ -2929,10 +2929,6 @@ body .wrapper-course-material .course-tabs li a {
 body .theme-header .list-inline {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    li {
-        margin: 0;
-    }
 }
 
 body .wiki-wrapper section.wiki #cheatsheetModal {
@@ -2940,6 +2936,7 @@ body .wiki-wrapper section.wiki #cheatsheetModal {
     max-width: 900px;
     margin: 0 !important;
     transform: translateX(-50%);
+    left: 50% !important;
     .left-column {
         width: 48%;
         float: left;
@@ -2957,7 +2954,7 @@ body .wiki-wrapper section.wiki #cheatsheetModal {
     }
 }
 
-body .btn-secondary {
+body .teams-content .btn-secondary {
     &:hover,&:focus,&:active {
         color: $theme-link;
     }
@@ -3022,6 +3019,37 @@ body form.ccx-form button {
         background: $theme-link-hover;
     }
 }
+
+body footer {
+    .footer-support {
+        align-items: center;
+    }
+    .raccoon__logo {
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        color: $footer-nav-link-color;
+        margin-left: 8px;
+    }
+}
+.teams-main .create-team .action-cancel {
+    &:focus,&:active,&:hover {
+        background: none;
+    }
+}
+
+body .idash-section form button {
+    border: none;
+    box-shadow: none;
+    color: $white;
+    background: $theme-link;
+    text-decoration: none;
+    text-shadow: none;
+    &:hover,&:focus,&:active {
+        background: $theme-link-hover;
+    }
+}
+
 body form.ccx-form select {
     color: $theme-link;
 }
