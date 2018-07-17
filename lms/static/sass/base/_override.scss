@@ -5,6 +5,17 @@
 // @media (max-width: 540px) {}
 // @media (max-width: 479px) {}
 
+@mixin sm {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+@mixin x-sm {
+    @media screen and (max-width: 450px) {
+        @content;
+    }
+}
+
 *:focus {
     outline-color: $base-color !important;
 }
@@ -31,7 +42,7 @@ h1 {
     }
 }
 
-/*-----Home promo block-----*/  
+/*-----Home promo block-----*/
 .home {
     >header {
         position: relative;
@@ -79,7 +90,7 @@ h1 {
                     text-align: center;
                     font-weight: bold;
                     text-shadow: $promo-box-text-shadow;
-                    @media (max-width: 767px) { 
+                    @media (max-width: 767px) {
                         font-size: 32px;
                     }
                 }
@@ -548,7 +559,7 @@ body {
                         }
                     }
                 }
-            }  
+            }
             .u-field-social {
                 margin: 0;
                 @media (max-width: 767px) {
@@ -846,7 +857,7 @@ div {
                                 .add-field {
                                     @media (max-width: 576px) {
                                         display: block;
-                                    } 
+                                    }
                                 }
                             }
                             input[type="button"] {
@@ -1188,7 +1199,7 @@ div {
                 }
             }
         }
-        
+
     }
     &.xmodule_VideoModule {
         .video {
@@ -2313,7 +2324,7 @@ div {
                 display: -webkit-flex;
                 display: flex;
                 @media (max-width: 767px) {
-                   display: block; 
+                   display: block;
                 }
                 .msg-content {
                     -webkit-flex: 1 1 auto;
@@ -2414,6 +2425,11 @@ input[type="password"] {
             display: inline-block;
             @media (max-width: 576px) {
                 margin-right: 10px;
+            }
+            @include sm {
+                width: 100%;
+                text-align: center;
+                padding: 10px;
             }
         }
     }
@@ -2975,5 +2991,64 @@ body .btn-secondary {
     .footer-support {
         justify-content: flex-start;
         flex: 0 0 34%;
+        color: #fff;
+    }
+}
+body .slick-header-column.ui-state-default,
+body .slick-cell {
+    font-size: 10px;
+}
+body .slick-header-column.ui-state-default {
+    height: auto;
+}
+@media (max-width: 767px) {
+    .member-lists-management,
+    .batch-enrollment {
+        width: 100% !important;
+    }
+}
+body .instructor-dashboard-wrapper-2 section.idash-section#membership .member-lists-management .auth-list-container .revoke,
+.instructor-dashboard-wrapper-2 section.idash-section#membership .batch-enrollment .enrollment-button,
+.instructor-dashboard-wrapper-2 section.idash-section#membership .batch-beta-testers input,
+body form.ccx-form button {
+    border: none;
+    box-shadow: none;
+    color: $white;
+    background: $theme-link;
+    text-decoration: none;
+    text-shadow: none;
+    &:hover,&:focus,&:active {
+        background: $theme-link-hover;
+    }
+}
+body form.ccx-form select {
+    color: $theme-link;
+}
+
+body .ccx-schedule-container {
+    width: auto;
+}
+
+.wrapper-msg .msg {
+    min-width: 0;
+}
+.home > header .title .course-search .search-input::-webkit-input-placeholder {
+    color: $white;
+}
+button.ccx-button-link {
+    color: $theme-link
+}
+section.wiki #cheatsheetModal {
+    width: 100%;
+    left: 0 !important;
+}
+
+@media screen and (max-width: 760px) {
+    .instructor-nav {
+        display: flex;
+        flex-direction: column;
+        a {
+            margin-bottom: 10px;
+        }
     }
 }
