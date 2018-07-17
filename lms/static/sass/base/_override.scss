@@ -19,6 +19,16 @@
 *:focus {
     outline-color: $base-color !important;
 }
+@mixin sm {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+@mixin x-sm {
+    @media screen and (max-width: 450px) {
+        @content;
+    }
+}
 
 html,
 body {
@@ -1142,6 +1152,10 @@ div {
                     float: left;
                 }
                 .btn {
+                    @include sm {
+                        width: 100%;
+                        text-align: center;
+                    }
                     margin-bottom: 5px;
                 }
             }
@@ -2578,7 +2592,6 @@ body {
 
 
 //mobile responsive
-
 @include x-sm {
     .wiki-wrapper section.wiki .diff-container table {
         width: 300px;
