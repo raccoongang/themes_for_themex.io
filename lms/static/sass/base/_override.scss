@@ -2991,6 +2991,7 @@ body .btn-secondary {
     .footer-support {
         justify-content: flex-start;
         flex: 0 0 34%;
+        align-items: center;
         color: #fff;
     }
 }
@@ -3051,4 +3052,11 @@ section.wiki #cheatsheetModal {
             margin-bottom: 10px;
         }
     }
+}
+raccoon__logo {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    color: $footer-nav-link-color;
+    margin-left: 8px;
 }
