@@ -2658,10 +2658,18 @@ body {
     }
     .form-actions {
         display: flex;
+        flex-direction: column;
     }
     .hd.hd-2.progress-certificates-title {
         overflow: hidden;
         text-overflow: ellipsis;
+    }
+    .wiki-wrapper section.wiki #article_edit_form .btn {
+        box-sizing: border-box;
+    }
+    section.wiki .wiki-wrapper .article-functions .see-children {
+        width: 100%;
+        text-align: center;
     }
 }
 
@@ -3005,6 +3013,23 @@ body .slick-header-column.ui-state-default {
         width: 100% !important;
     }
 }
+.wiki-wrapper section.wiki .alert,
+.wiki-wrapper section.wiki.view .main-article h3,
+.view-profile .profile-section-two-fields .u-field-value {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+body .page-header-secondary .action-edit-team {
+    &:hover {
+        color: $white;
+        background: $theme-link;
+    }
+}
+
+.content-wrapper .course-wrapper .course-content {
+    width: 100%;
+}
+
 body .instructor-dashboard-wrapper-2 section.idash-section#membership .member-lists-management .auth-list-container .revoke,
 .instructor-dashboard-wrapper-2 section.idash-section#membership .batch-enrollment .enrollment-button,
 .instructor-dashboard-wrapper-2 section.idash-section#membership .batch-beta-testers input,
@@ -3081,10 +3106,11 @@ section.wiki #cheatsheetModal {
         }
     }
 }
-raccoon__logo {
+.raccoon__logo {
     font-size: 12px;
     display: flex;
     align-items: center;
     color: $footer-nav-link-color;
     margin-left: 8px;
 }
+

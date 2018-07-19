@@ -36,7 +36,15 @@ $(function () {
         document.querySelector('use').setAttributeNS('http://www.w3.org/1999/xlink', 'href', val);
     };
 
-    fs.addEventListener('click', function () {
-        toggleFullScreen();
-    });
+    if (fs) {
+        fs.addEventListener('click', function () {
+            toggleFullScreen();
+        });
+        $(document).keyup(function(e) {
+            var fullscreen = document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
+            if (fullscreen && e.keyCode == 27) {
+                toggleFullScreen();
+            }
+        });
+    }
 })
