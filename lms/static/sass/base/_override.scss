@@ -3128,3 +3128,12 @@ body .course-outline .block-tree .section ol.outline-item .subsection a.outline-
 .view-teams .window-wrap .page-header.has-secondary .page-header-secondary {
     width: 100%;
 }
+
+
+@media screen and (max-width: 768px) {
+    .view-teams .window-wrap .join-team.form-actions .action {
+        margin-right: 0;
+    }
+}
+
+
