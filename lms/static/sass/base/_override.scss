@@ -723,9 +723,9 @@ div {
         flex-wrap: wrap;
         &.has-secondary {
             .page-header-main {
-                -webkit-flex: 1 1 auto;
-                -ms-flex: 1 1 auto;
-                flex: 1 1 auto;
+                -webkit-flex: 1 1 100%;
+                -ms-flex: 1 1 100%;
+                flex: 1 1 100%;
             }
             .page-header-secondary {
                 text-align: left;
@@ -2659,6 +2659,9 @@ body {
     .form-actions {
         display: flex;
         flex-direction: column;
+        button {
+            margin: 0 0 10px;
+        }
     }
     .hd.hd-2.progress-certificates-title {
         overflow: hidden;
@@ -2670,6 +2673,10 @@ body {
     section.wiki .wiki-wrapper .article-functions .see-children {
         width: 100%;
         text-align: center;
+    }
+    .view-teams .page-header.has-secondary .page-header-secondary {
+        width: 100%;
+        float: none;
     }
 }
 
@@ -3114,3 +3121,7 @@ section.wiki #cheatsheetModal {
     margin-left: 8px;
 }
 
+body .course-outline .block-tree .section .section-name h3,
+body .course-outline .block-tree .section ol.outline-item .subsection a.outline-item .subsection-title {
+    word-break: break-all;
+}
