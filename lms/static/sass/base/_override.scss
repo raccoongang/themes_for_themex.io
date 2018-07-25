@@ -2656,7 +2656,7 @@ body {
     .account-settings-sections .section .account-settings-section-body .u-field .u-field-message {
         padding: 0;
     }
-    .form-actions {
+    body .form-actions {
         display: flex;
         flex-direction: column;
         button {
@@ -3029,7 +3029,7 @@ body .slick-header-column.ui-state-default {
 body .page-header-secondary .action-edit-team {
     &:hover {
         color: $white;
-        background: $theme-link;
+        background: $theme-link !important;
     }
 }
 
@@ -3124,4 +3124,7 @@ section.wiki #cheatsheetModal {
 body .course-outline .block-tree .section .section-name h3,
 body .course-outline .block-tree .section ol.outline-item .subsection a.outline-item .subsection-title {
     word-break: break-all;
+}
+.view-teams .window-wrap .page-header.has-secondary .page-header-secondary {
+    width: 100%;
 }
