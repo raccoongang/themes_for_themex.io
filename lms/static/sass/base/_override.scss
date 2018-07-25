@@ -3029,7 +3029,7 @@ body .slick-header-column.ui-state-default {
 body .page-header-secondary .action-edit-team {
     &:hover {
         color: $white;
-        background: $theme-link;
+        background: $theme-link !important;
     }
 }
 
