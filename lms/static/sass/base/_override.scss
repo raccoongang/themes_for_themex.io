@@ -2983,6 +2983,7 @@ body .teams-content .btn-secondary {
     @media all and (max-width: 768px){
         flex-direction: column;
         align-items: center;
+        height: 120px;
     }
     .logo-footer,
     .icon-list,
@@ -3121,6 +3122,23 @@ section.wiki #cheatsheetModal {
     margin-left: 8px;
 }
 
+.user-dropdown-menu .user-dropdown-menuitem, .user-dropdown-menu .dropdown-menuitem {
+    padding: 0;
+}
+.join-team.form-actions button {
+    box-shadow: none;
+}
+.profile-wrapper .course-info>.chapters>section .hd {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    width: 100%;
+}
+.profile-wrapper .course-info>.chapters>section {
+    display: block;
+    width: 100%;
+}
+
 body .course-outline .block-tree .section .section-name h3,
 body .course-outline .block-tree .section ol.outline-item .subsection a.outline-item .subsection-title {
     word-break: break-all;
@@ -3135,5 +3153,3 @@ body .course-outline .block-tree .section ol.outline-item .subsection a.outline-
         margin-right: 0;
     }
 }
-
-

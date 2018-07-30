@@ -44,6 +44,7 @@ $(function () {
             var fullscreen = document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
             if (fullscreen && e.keyCode == 27) {
                 toggleFullScreen();
+                cahngeXlink('#ico-fs-expand');
             }
         });
     }
