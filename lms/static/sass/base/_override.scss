@@ -3175,7 +3175,7 @@ body .course-outline .block-tree .section ol.outline-item .subsection a.outline-
     transition: all 0.2s ease;
     z-index: 100;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    &.active {
+    &_active {
         bottom: 30px;
     }
     &:hover {
@@ -3211,6 +3211,7 @@ body .courses-container .courses-more {
         font-weight: normal;
         &:hover {
             background: $theme-btn-bg-hover;
+            border: none !important;
         }
     }
     .fa-spinner {

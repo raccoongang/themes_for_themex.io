@@ -54,6 +54,8 @@ from openedx.core.djangolib.markup import HTML, Text
     </section>
 </main>
 
+<a class="arrow-up" onclick="$('html,body').animate({scrollTop:0},'slow');return false;"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+
 % if show_homepage_promo_video:
   <section id="video-modal" class="modal home-page-video-modal video-modal">
     <div class="inner-wrapper">
@@ -70,13 +72,36 @@ from openedx.core.djangolib.markup import HTML, Text
          }
       })
 
-      // js for parallax
       $(window).scroll(function () {
+        // js for parallax
         var scrollTop = $(window).scrollTop();
         var imgPos = scrollTop / 2 + 'px';
         $('.parallax-img').css('transform', 'translate3d(0, '  + imgPos + ', 0)');
+
+        // js for up button
+        if ($(window).scrollTop() > 100) {
+          $('.arrow-up').addClass('arrow-up_active');
+        } else if ($(window).scrollTop() <= 100) {
+          $('.arrow-up').removeClass('arrow-up_active');
+        }
       });
-      // js for parallax end
+
+      // js for show more btn
+      $('.show-more').click(function () {
+        $('.fa-spinner').css('visibility', 'visible');
+        setTimeout(function() {
+          $('.fa-spinner').css('visibility', 'hidden');
+          $('.courses-listing-item:visible:last').nextAll(':lt(8)').show().addClass('newElements');
+          if ($('.courses-listing-item').is(':hidden')) {
+            $('html, body').animate({ scrollTop: $('.newElements:first').offset().top - 20}, 1000);
+            $('.courses-listing-item').removeClass('newElements');
+          } else {
+            $('html, body').animate({ scrollTop: $('.newElements:first').offset().top - 20}, 1000);
+            $('.show-more').hide();
+          }
+        }, 300);
+      });
+      // js for show more btn end
    </script>
 </%block>
 
