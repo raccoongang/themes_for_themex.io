@@ -3153,3 +3153,76 @@ body .course-outline .block-tree .section ol.outline-item .subsection a.outline-
         margin-right: 0;
     }
 }
+
+// "show more" button
+
+.home .highlighted-courses {
+    margin-bottom: 100px;
+}
+
+.arrow-up {
+    cursor: pointer;
+    position: fixed;
+    right: 30px;
+    bottom: -100px;
+    border-radius: 50%;
+    background: $theme-btn-bg;
+    color: $theme-btn-text-color !important;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 36px;
+    transition: all 0.2s ease;
+    z-index: 100;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    &_active {
+        bottom: 30px;
+    }
+    &:hover {
+        background: $theme-btn-bg-hover;
+    }
+}
+
+.home .courses-container .courses .courses-listing .courses-listing-item {
+    display: none;
+}
+
+.home .courses-container .courses .courses-listing .courses-listing-item {
+    &:first-child, &:nth-child(2), &:nth-child(3), &:nth-child(4), &:nth-child(5), &:nth-child(6), &:nth-child(7), &:nth-child(8) {
+        display: block;
+    }
+}
+
+body .courses-container .courses-more {
+    clear: both;
+    text-align: center;
+    margin: 0;
+    position: relative;
+    .btn {
+        cursor: pointer;
+        margin: 5px 10px;
+        display: inline-block;
+        background: $theme-btn-bg;
+        color: $theme-btn-text-color !important;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 10px;
+        width: 180px;
+        font-weight: normal;
+        &:hover {
+            background: $theme-btn-bg-hover;
+            border: none !important;
+        }
+    }
+    .fa-spinner {
+        position: absolute;
+        left: 50%;
+        bottom: -50px;
+        margin-left: -14px;
+        font-size: 30px;
+        visibility: hidden;
+        color: #9a9a9a;
+    }
+}
+
+// "show more" button end
