@@ -3056,6 +3056,10 @@ body form.ccx-form button {
 body footer {
     .footer-support {
         align-items: center;
+        a:hover {
+            color: $footer-nav-link-color;
+            opacity: 0.8;
+        }
     }
     .raccoon__logo {
         font-size: 12px;
@@ -3113,13 +3117,6 @@ section.wiki #cheatsheetModal {
             margin-bottom: 10px;
         }
     }
-}
-.raccoon__logo {
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    color: $footer-nav-link-color;
-    margin-left: 8px;
 }
 
 .user-dropdown-menu .user-dropdown-menuitem, .user-dropdown-menu .dropdown-menuitem {
