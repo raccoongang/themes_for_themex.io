@@ -22,6 +22,9 @@
       ## in case there are courses that are not shown on the homepage, a 'View all Courses' link should appear
       % if settings.HOMEPAGE_COURSE_MAX and len(courses) > settings.HOMEPAGE_COURSE_MAX:
       <a class="btn courses-more-cta" href="${marketing_link('COURSES')}"> ${_("View all Courses")} </a>
+      % endif
+
+      % if len(courses) > 8:
       <a class="btn show-more">Show more courses</a>
       <i class="fa fa-spinner fa-spin"></i>
       % endif
