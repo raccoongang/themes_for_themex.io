@@ -3065,7 +3065,7 @@ body footer {
         font-size: 12px;
         display: flex;
         align-items: center;
-        color: $footer-nav-link-color;
+        color: $footer-nav-link-color !important;
         margin-left: 8px;
     }
 }
