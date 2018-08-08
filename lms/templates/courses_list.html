@@ -24,7 +24,7 @@
       <a class="btn courses-more-cta" href="${marketing_link('COURSES')}"> ${_("View all Courses")} </a>
       % endif
 
-      % if settings.HOMEPAGE_COURSE_MAX > 8:
+      % if len(courses) > 8:
       <a class="btn show-more">Show more courses</a>
       <i class="fa fa-spinner fa-spin"></i>
       % endif
