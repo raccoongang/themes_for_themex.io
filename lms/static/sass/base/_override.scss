@@ -2941,9 +2941,9 @@ body .wrapper-course-material .course-tabs li a {
     color: #5e5e5e;
 }
 
-body .theme-header .list-inline {
-    display: flex;
-    flex-direction: column;
+body .theme-header .list-inline li {
+    display: inline-block;
+    margin: 0 10px;
 }
 
 body .wiki-wrapper section.wiki #cheatsheetModal {
