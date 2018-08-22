@@ -49,6 +49,8 @@ h1 {
         min-height: 420px;
         //background: #040404 url('#{$img-path}/background.jpg') no-repeat 50% 50%;
         //background-size: cover;
+        display: flex;
+        align-items: center;
         @media (max-width: 767px) {
             min-height: initial;
         }
@@ -2975,39 +2977,6 @@ body .teams-content .btn-secondary {
     }
 }
 
-// footer on flex
-.theme-footer_holder {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-    @media all and (max-width: 768px){
-        flex-direction: column;
-        align-items: center;
-        height: 120px;
-    }
-    .logo-footer,
-    .icon-list,
-    .footer-support {
-        position: static;
-        flex: 0 0 33%;
-        margin: 0;
-        width: auto;
-    }
-    .icon-list {
-        justify-content: center;
-        order: 2;
-    }
-    .logo-footer {
-        justify-content: flex-end;
-        order: 3;
-    }
-    .footer-support {
-        justify-content: flex-start;
-        flex: 0 0 34%;
-        align-items: center;
-        color: #fff;
-    }
-}
 body .slick-header-column.ui-state-default,
 body .slick-cell {
     font-size: 10px;
@@ -3228,3 +3197,6 @@ body .container .wiki-wrapper section.wiki .btn {
     text-align: center;
 }
 
+.courses-container .courses .course .course-info .course-title {
+    color: $course-link-color;
+}
