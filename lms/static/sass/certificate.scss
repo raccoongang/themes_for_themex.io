@@ -74,6 +74,7 @@
 .certificate-logo {
 	display: inline-block;
 	margin-bottom: 26px;
+	height: 30px;
 }
 .ribbon {
 	position: relative;
@@ -182,8 +183,10 @@
 }
 .certificate-bottom {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	margin-top: 40px;
+	width: 100%;
+	padding: 0 100px;
 }
 .date {
 	text-align: center;
@@ -204,14 +207,23 @@
 		font-size: 10px;
 	}
 }
-.medal img {
-	display: inline-block;
-	vertical-align: top;
-	width: 70px;
+.medal {
+	text-align: center;
+	margin: 0 30px;
+	img {
+		display: inline-block;
+		vertical-align: top;
+		width: 70px;
+	}
 }
 .signature {
 	text-align: center;
 	margin-top: 20px;
+	&-item {
+		display: inline-block !important;
+		vertical-align: top;
+		padding: 0 20px;
+	}
 	* {
 		display: block;
 	}
@@ -228,6 +240,7 @@
 		left: 50%;
 		bottom: 0;
 		transform: translateX(-50%);
+		max-width: 120px;
 	}
 	span {
 		color: #636466;
