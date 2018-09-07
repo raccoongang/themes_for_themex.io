@@ -113,6 +113,10 @@ site_status_msg = get_site_status_msg(course_id)
          body.classList.toggle('menu-open');
       }
       btn.addEventListener('click', btnToggle);
+
+      window.onresize = function() {
+          window.innerWidth > 760 && document.getElementsByTagName("body")[0].className.match(/menu-open/) ? body.classList.remove('menu-open') : '';
+      };
   </script>
 % endif
 % if course:
