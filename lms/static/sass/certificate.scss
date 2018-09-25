@@ -238,7 +238,10 @@
 		left: 50%;
 		bottom: 0;
 		transform: translateX(-50%);
-		max-width: 120px;
+		height: auto;
+		width: auto;
+		max-width: 85px;
+		max-height: 85px;
 	}
 	span {
 		color: #636466;
