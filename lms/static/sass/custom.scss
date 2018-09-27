@@ -4,6 +4,11 @@
 @import "blocks/courses-index-page";
 @import "blocks/dashboard";
 @import "blocks/about";
+@import "blocks/wiki";
+
+html, body {
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
 body {
 	background: $body-bg !important;
@@ -11,7 +16,9 @@ body {
 	line-height: 1.2;
 }
 
-.holder {
+.holder,
+.content-wrapper.main-container,
+.wrapper-preview-menu .preview-menu {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 0 15px;

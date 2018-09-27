@@ -3,7 +3,10 @@
 	text-align: center;
 	background: $footer-bg;
 	color: #fff;
-	margin-top: 50px;
+	//margin-top: 50px;
+	@media screen and (max-width: 991px) {
+		padding: 30px 0 10px;
+	}
 	footer#footer-openedx {
 		width: 100%;
 		max-width: 1200px !important;
@@ -17,12 +20,20 @@
 			text-align: center;
 			.nav-colophon {
 				text-align: center;
+				margin: 0 0 30px;
 				ol {
+					margin: 0;
+					padding: 0;
 					li {
 						float: none;
 						display: inline-block;
 						vertical-align: top;
 						font-size: 16px;
+						margin: 0 10px;
+						@media screen and (max-width: 567px) {
+							display: block;
+							margin: 5px 0;
+						}
 						a {
 							color: $footer-nav-link-color;
 							&:focus,
@@ -38,19 +49,32 @@
 	}
 	.footer-flex {
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: center;
 		> * {
 			width: 33.3333%;
+			@media screen and (max-width: 991px) {
+				width: 100%;
+			}
 		}
 	}
 	.icon-list {
 		width: auto !important;
+		@media screen and (max-width: 991px) {
+			width: 100% !important;
+			order: 1;
+		}
 	}
 	.footer-support {
 		display: flex;
 		align-items: center;
 		font-size: 12px;
+		margin: 0 !important;
+		@media screen and (max-width: 991px) {
+			justify-content: center;
+			order: 3;
+		}
 		span {
 			margin: 0 5px
 		}
@@ -73,18 +97,30 @@
 			width: 20px;
 		}
 	}
-	.footer-logo-holder a {
-		float: right;
+	.footer-logo-holder {
+		@media screen and (max-width: 991px) {
+			order: 2;
+			margin-bottom: 10px;
+		}
+		a {
+			float: right;
+			@media screen and (max-width: 991px) {
+				float: none;
+				display: inline-block;
+			}
+		}
 	}
 	.icon-list {
-		display: flex;
-		width: 100%;
-		justify-content: center;
+		text-align: center;
 		margin: 0;
 		padding: 0;
 		list-style: none;
+		@media screen and (max-width: 991px) {
+			margin-bottom: 15px;
+		}
 		&_item {
 			margin: 0 5px;
+			display: inline-block;
 		}
 		&_link {
 			display: block;
