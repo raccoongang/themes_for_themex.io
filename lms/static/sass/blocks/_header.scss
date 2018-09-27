@@ -1,0 +1,152 @@
+.global-header {
+	box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.75);
+	padding: 0;
+	border-bottom: none;
+	position: relative;
+	overflow: visible;
+}
+
+.main-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 0;
+	.header-logo {
+		display: block;
+		margin: 0;
+		flex-grow: 0;
+		a {
+			margin: 0;
+			.logo {
+				display: block;
+			}
+		}
+		.course-header {
+			margin-top: 0;
+		}
+	}
+	.nav-links {
+		flex-grow: 1;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-size: 16px;
+		.main {
+			margin: 0 0 0 20px;
+			.nav-item {
+				margin-left: 30px;
+			}
+		}
+		.secondary {
+			margin: 0;
+			.nav-item {
+				padding: 0;
+				margin: 0 0 0 10px;
+			}
+			.nav-item-dropdown {
+				position: relative;
+			}
+			.username {
+				margin-left: 10px;
+			}
+		}
+	}
+}
+
+.global-header .nav-links .secondary .user-image-frame {
+	margin: 0 5px;
+}
+
+.global-header .nav-links .secondary .dropdown-user-menu {
+	right: 0;
+}
+
+.global-header .nav-links .main .nav-tab a {
+	padding: 0;
+}
+
+// header buttons
+
+.btn {
+	transition: all 0.2s ease;
+	display: inline-block;
+	background: $theme-btn-bg !important;
+	color: $theme-btn-text-color !important;
+	border: none !important;
+	text-transform: uppercase;
+	border-radius: 0 !important;
+	&:active,
+	&:focus {
+		background: $theme-btn-bg !important;
+	}
+	&:focus:hover {
+		background: $theme-btn-bg-hover !important;
+	}
+	&:hover {
+		background: $theme-btn-bg-hover !important;
+	}
+}
+
+// banner
+
+section.home {
+	> header {
+		min-height: 450px;
+		background: url('../images/background.jpg') no-repeat 50% 50%;
+		background-size: cover;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #fff;
+		.outer-wrapper {
+			width: 100%;
+			padding: 15px;
+			.title {
+				background: none;
+				box-shadow: none;
+				float: none;
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				transition: none;
+				.heading-group {
+					text-align: center;
+					h1 {
+						font-size: 32px;
+						line-height: 1.2;
+						color: $promo-box-text-color;
+						font-weight: bold;
+						text-shadow: $promo-box-text-shadow;
+						margin-bottom: 30px;
+						text-transform: uppercase;
+						@media screen and (min-width:760px ) {
+							font-size: 52px;
+						}
+					}
+					span {
+						display: block;
+						text-align: center;
+						font-size: 34px;
+						line-height: 1.3;
+						text-shadow: $promo-box-text-shadow;
+						color: $promo-box-text-color;
+						margin-bottom: 40px;
+					}
+					.link {
+						background: $find-btn-bg;
+						border: 3px solid $find-btn-border;
+						color: $find-btn-color;
+						padding: 10px 20px;
+						display: inline-block;
+						&:hover {
+							background: $find-btn-bg-hover;
+							color: $find-btn-color-hover;
+							text-decoration: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}

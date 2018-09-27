@@ -3,7 +3,7 @@
 <%namespace name='static' file='static_content.html'/>
 <%!
 from django.utils.translation import ugettext as _
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 
 from openedx.core.djangolib.markup import HTML, Text
 %>
@@ -11,17 +11,15 @@ from openedx.core.djangolib.markup import HTML, Text
 <main id="main" aria-label="Content" tabindex="-1">
     <section class="home">
       <header>
-        <div class="parallax-img"></div>
         <div class="outer-wrapper">
           <div class="title">
             <div class="heading-group">
               % if homepage_overlay_html:
                 ${homepage_overlay_html | n, decode.utf8}
               % else:
-                  ## Translators: 'Open edX' is a registered trademark, please keep this untranslated. See http://open.edx.org for more information.
-                  <h1>TIPS FOR BETTER TIME MANAGEMENT</h1>
-                  ## Translators: 'Open edX' is a registered trademark, please keep this untranslated. See http://open.edx.org for more information.
-                  <span>STUDENT SUCCESS</span>
+                <h1>${_("TIPS FOR BETTER TIME MANAGEMENT")}</h1>
+                <span>${_("STUDENT SUCCESS")}</span>
+                <a href="/courses" class="link">${_("FIND COURSES")}</a>
               % endif
             </div>
             % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
@@ -39,13 +37,7 @@ from openedx.core.djangolib.markup import HTML, Text
 
           </div>
 
-          % if show_homepage_promo_video:
-            <a href="#video-modal" class="media" rel="leanModal">
-              <div class="hero">
-                <div class="play-intro"></div>
-              </div>
-            </a>
-          % endif
+          <%include file="index_promo_video.html" />
         </div>
 
       </header>
@@ -53,8 +45,6 @@ from openedx.core.djangolib.markup import HTML, Text
 
     </section>
 </main>
-
-<a class="arrow-up" onclick="$('html,body').animate({scrollTop:0},'slow');return false;"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
 
 % if show_homepage_promo_video:
   <section id="video-modal" class="modal home-page-video-modal video-modal">
@@ -71,37 +61,6 @@ from openedx.core.djangolib.markup import HTML, Text
               $('#login').trigger("click");
          }
       })
-
-      $(window).scroll(function () {
-        // js for parallax
-        var scrollTop = $(window).scrollTop();
-        var imgPos = scrollTop / 2 + 'px';
-        $('.parallax-img').css('transform', 'translate3d(0, '  + imgPos + ', 0)');
-
-        // js for up button
-        if ($(window).scrollTop() > 100) {
-          $('.arrow-up').addClass('arrow-up_active');
-        } else if ($(window).scrollTop() <= 100) {
-          $('.arrow-up').removeClass('arrow-up_active');
-        }
-      });
-
-      // js for show more btn
-      $('.show-more').click(function () {
-        $('.fa-spinner').css('visibility', 'visible');
-        setTimeout(function() {
-          $('.fa-spinner').css('visibility', 'hidden');
-          $('.courses-listing-item:visible:last').nextAll(':lt(8)').show().addClass('newElements');
-          if ($('.courses-listing-item').is(':hidden')) {
-            $('html, body').animate({ scrollTop: $('.newElements:first').offset().top - 20}, 1000);
-            $('.courses-listing-item').removeClass('newElements');
-          } else {
-            $('html, body').animate({ scrollTop: $('.newElements:first').offset().top - 20}, 1000);
-            $('.show-more').hide();
-          }
-        }, 300);
-      });
-      // js for show more btn end
    </script>
 </%block>
 

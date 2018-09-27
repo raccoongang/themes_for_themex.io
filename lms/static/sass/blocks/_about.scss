@@ -1,0 +1,38 @@
+.course-info {
+	header.course-profile {
+		padding: 20px 0;
+		height: auto;
+	}
+	.details {
+		* {
+			font-family: "Open Sans";
+		}
+	}
+	.intro-inner-wrapper {
+		border-color: #ccc;
+	}
+}
+
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta > a.find-courses,
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register,
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.add-to-cart {
+	transition: all 0.2s ease;
+	display: inline-block;
+	background: $theme-btn-bg !important;
+	color: $theme-btn-text-color !important;
+	border: none !important;
+	text-transform: uppercase;
+	border-radius: 0 !important;
+	text-shadow: none;
+	box-shadow: none !important;
+	&:active,
+	&:focus {
+		background: $theme-btn-bg !important;
+	}
+	&:focus:hover {
+		background: $theme-btn-bg-hover !important;
+	}
+	&:hover {
+		background: $theme-btn-bg-hover !important;
+	}
+}

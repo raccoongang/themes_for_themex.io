@@ -1,0 +1,23 @@
+@import "const";
+@import "blocks/header";
+@import "blocks/footer";
+@import "blocks/courses-index-page";
+@import "blocks/dashboard";
+@import "blocks/about";
+
+body {
+	background: $body-bg !important;
+	font-size: 14px;
+	line-height: 1.2;
+}
+
+.holder {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.content-wrapper {
+	margin: 0 auto;
+	padding: 0;
+}
