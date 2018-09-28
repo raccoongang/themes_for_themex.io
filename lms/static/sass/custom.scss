@@ -1,10 +1,12 @@
 @import "const";
+@import "blocks/buttons";
 @import "blocks/header";
 @import "blocks/footer";
 @import "blocks/courses-index-page";
 @import "blocks/dashboard";
 @import "blocks/about";
 @import "blocks/wiki";
+@import "blocks/discussion";
 
 html, body {
 	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -12,16 +14,17 @@ html, body {
 
 body {
 	background: $body-bg !important;
-	font-size: 14px;
+	//font-size: 14px;
 	line-height: 1.2;
 }
 
 .holder,
-.content-wrapper.main-container,
+//.content-wrapper.main-container,
 .wrapper-preview-menu .preview-menu {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 0 15px;
+	width: 100%;
 }
 
 .content-wrapper {

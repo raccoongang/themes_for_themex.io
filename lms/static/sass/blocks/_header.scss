@@ -53,7 +53,7 @@
 			.main {
 				margin: 0 0 0 20px;
 				.nav-item {
-					margin-left: 30px;
+					margin-left: 10px;
 				}
 			}
 			.secondary {
@@ -72,29 +72,30 @@
 			}
 		}
 	}
-}
 
-// header buttons
+	// header buttons
 
-.btn {
-	transition: all 0.2s ease;
-	display: inline-block;
-	background: $theme-btn-bg !important;
-	color: $theme-btn-text-color !important;
-	border: none !important;
-	text-transform: uppercase;
-	border-radius: 0 !important;
-	&:active,
-	&:focus {
+	.btn {
+		transition: all 0.2s ease;
+		display: inline-block;
 		background: $theme-btn-bg !important;
-	}
-	&:focus:hover {
-		background: $theme-btn-bg-hover !important;
-	}
-	&:hover {
-		background: $theme-btn-bg-hover !important;
+		color: $theme-btn-text-color !important;
+		border: none !important;
+		text-transform: uppercase;
+		border-radius: 0 !important;
+		&:active,
+		&:focus {
+			background: $theme-btn-bg !important;
+		}
+		&:focus:hover {
+			background: $theme-btn-bg-hover !important;
+		}
+		&:hover {
+			background: $theme-btn-bg-hover !important;
+		}
 	}
 }
+
 
 // mobile menu
 
