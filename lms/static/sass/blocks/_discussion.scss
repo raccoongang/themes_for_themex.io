@@ -17,6 +17,7 @@
 	}
 	&:hover {
 		background: $theme-btn-bg-hover !important;
+		text-decoration: none;
 	}
 	@media screen and (max-width: 600px) {
 		margin-bottom: 20px;
@@ -38,6 +39,15 @@ section.discussion {
 	}
 	.page-content {
 		padding: 20px;
+	}
+	.search-button {
+		border: 1px solid $theme-btn-white-border;
+		color: $theme-btn-white-text-color;
+		cursor: pointer;
+		&:hover {
+			background: $theme-btn-white-bg-hover;
+			color: $theme-btn-white-text-color-hover;
+		}
 	}
 }
 
