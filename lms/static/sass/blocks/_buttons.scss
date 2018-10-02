@@ -1,5 +1,6 @@
-.register-button,
-.login-button {
+.register-button, /* register page */
+.login-button, /* login page */
+.wiki-wrapper section.wiki .settings-form .btn { /* wiki settings page */
 	transition: all 0.2s ease;
 	display: inline-block;
 	background: $theme-btn-bg !important;
@@ -7,6 +8,7 @@
 	border: none !important;
 	text-transform: uppercase;
 	border-radius: 0 !important;
+	text-shadow: none !important;
 	&:active,
 	&:focus {
 		background: $theme-btn-bg !important;
