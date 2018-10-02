@@ -4,6 +4,7 @@
 	border-bottom: none;
 	position: relative;
 	overflow: visible;
+	background: $header-bg;
 	.nav-links .secondary .user-image-frame {
 		margin: 0 5px;
 	}
@@ -14,6 +15,7 @@
 		padding: 0 !important;
 		border: none !important;
 		position: relative;
+		color: $header-nav-link-color !important;
 		&:before {
 			content: "";
 			width: 0;
@@ -21,7 +23,7 @@
 			position: absolute;
 			left: 0;
 			bottom: -5px;
-			background: $header-nav-link-color;
+			background: $base-color;
 			transition: all 0.2s ease;
 		}
 		&.active:before,
@@ -152,7 +154,7 @@ section.home {
 				margin: 0;
 				padding: 0;
 				width: 100%;
-				transition: none;
+				transition: none !important;
 				.heading-group {
 					text-align: center;
 					h1 {
@@ -188,6 +190,38 @@ section.home {
 							color: $find-btn-color-hover;
 							text-decoration: none;
 						}
+					}
+				}
+				.course-search {
+					max-width: 590px;
+					margin: 0 auto;
+					overflow: hidden;
+					position: relative;
+					padding: 15px 0;
+					.search-input {
+						background: $search-input-background;
+						border: 2px solid $search-input-border;
+						color: $search-input-color;
+						padding-left: 20px !important;
+						height: $search-height;
+						&:focus {
+							border-color: $search-input-border !important;
+						}
+						&::placeholder {
+							color: $search-input-color;
+							opacity: 1;
+						}
+						&:-ms-input-placeholder {
+							color: $search-input-color;
+						}
+					}
+					.search-button {
+						background: $search-button-background !important;
+						border-color: $search-button-border !important;
+						color: $search-button-color;
+						border-left: none !important;
+						right: 0;
+						height: $search-height;
 					}
 				}
 			}
