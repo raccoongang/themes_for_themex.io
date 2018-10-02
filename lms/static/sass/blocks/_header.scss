@@ -11,7 +11,23 @@
 		right: 0;
 	}
 	.main .nav-tab a {
-		padding: 0;
+		padding: 0 !important;
+		border: none !important;
+		position: relative;
+		&:before {
+			content: "";
+			width: 0;
+			height: 2px;
+			position: absolute;
+			left: 0;
+			bottom: -5px;
+			background: $header-nav-link-color;
+			transition: all 0.2s ease;
+		}
+		&.active:before,
+		&:hover:before {
+			width: 100%;
+		}
 	}
 	.hamburger-menu {
 		top: 28px;
@@ -53,7 +69,7 @@
 			.main {
 				margin: 0 0 0 20px;
 				.nav-item {
-					margin-left: 10px;
+					margin-left: 30px;
 				}
 			}
 			.secondary {
