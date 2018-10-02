@@ -17,7 +17,7 @@ html, body {
 
 body {
 	background: $body-bg !important;
-	//font-size: 14px;
+	position: relative;
 	line-height: 1.2;
 }
 
@@ -30,7 +30,26 @@ body {
 	box-sizing: border-box;
 }
 
+body.view-in-course .instructor-dashboard-wrapper-2 {
+	max-width: 1170px;
+	margin: 0 auto;
+	padding: 0 15px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
 .content-wrapper {
 	margin: 0 auto;
 	padding: 0;
+	background: #eeeeee;
+}
+
+.window-wrap {
+	background: none;
+	position: relative;
+	box-sizing: border-box;
+	@media screen and (min-width: 992px) {
+		min-height: 100vh;
+		padding-bottom: 250px;
+	}
 }

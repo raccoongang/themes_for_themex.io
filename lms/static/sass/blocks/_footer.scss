@@ -3,7 +3,13 @@
 	text-align: center;
 	background: $footer-bg;
 	color: #fff;
-	//margin-top: 50px;
+	margin: 0 !important;
+	@media screen and (min-width: 1200px) {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+	}
 	@media screen and (max-width: 991px) {
 		padding: 30px 0 10px;
 	}
@@ -91,10 +97,12 @@
 		}
 		.svg-edx {
 			width: 66px;
+			height: 50px;
 		}
 
 		.svg-raccoon {
 			width: 20px;
+			height: 20px;
 		}
 	}
 	.footer-logo-holder {

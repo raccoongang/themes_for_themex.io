@@ -60,14 +60,16 @@ if course is not None:
         </nav>
     % else:
         <nav class="${active_page} wrapper-course-material" aria-label="${_('Course Material')}">
-            <div class="course-material">
-                <%
-                tabs_tmpl = static.get_template_path('/courseware/tabs.html')
-                %>
-                <ol class="tabs course-tabs">
-                    <%include file="${tabs_tmpl}" args="tab_list=tab_list,active_page=active_page,default_tab=default_tab,tab_image=tab_image" />
-                    <%block name="extratabs" />
-                </ol>
+            <div class="holder">
+                <div class="course-material">
+                    <%
+                    tabs_tmpl = static.get_template_path('/courseware/tabs.html')
+                    %>
+                    <ol class="tabs course-tabs">
+                        <%include file="${tabs_tmpl}" args="tab_list=tab_list,active_page=active_page,default_tab=default_tab,tab_image=tab_image" />
+                        <%block name="extratabs" />
+                    </ol>
+                </div>
             </div>
         </nav>
     % endif

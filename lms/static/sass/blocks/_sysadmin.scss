@@ -35,3 +35,19 @@ table.stat_table {
 	width: 100%;
 	word-break: break-all;
 }
+
+.instructor-dashboard-wrapper-2 .bottom-bar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	label {
+		margin: 0;
+	}
+}
+
+.instructor-dashboard-wrapper-2 section#membership.idash-section .member-lists-management .auth-list-container .member-list-widget input.add[type="button"],
+.instructor-dashboard-wrapper-2 section#membership.idash-section .member-lists-management-ccx .auth-list-container .member-list-widget input.add[type="button"] {
+	position: relative;
+	margin: 0;
+	right: auto;
+}
