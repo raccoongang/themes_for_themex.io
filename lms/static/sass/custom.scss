@@ -9,6 +9,7 @@
 @import "blocks/wiki";
 @import "blocks/discussion";
 @import "blocks/instructor";
+@import "blocks/sysadmin";
 
 html, body {
 	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -21,15 +22,47 @@ body {
 }
 
 .holder,
-//.content-wrapper.main-container,
 .wrapper-preview-menu .preview-menu {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 0 15px;
 	width: 100%;
+	box-sizing: border-box;
 }
 
 .content-wrapper {
 	margin: 0 auto;
 	padding: 0;
+}
+
+// all selects
+
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	box-shadow: none;
+	border: 1px #c6c6c6 solid !important;
+	height: 32px;
+	font-size: 18px;
+	box-sizing: border-box;
+	padding: 0 10px;
+	color: #222;
+	background: #fff url(../images/select-arrow.png) no-repeat 100% 50%;
+	background-size: 27px 7px;
+}
+@supports (-ms-ime-align:auto) {
+	select {
+		background: #fff url(../images/down-up-arrow.svg) no-repeat 98% 50%;
+		background-size: 10px 7px;
+	}
+}
+.teams-main select {
+	min-width: 120px;
+}
+body .account-settings-sections .section .account-settings-section-body .u-field .field select ~ .icon-caret-down::after {
+	display: none;
+}
+.account-settings-sections .section .account-settings-section-body .u-field .field select {
+	padding: 0 10px !important;
 }
