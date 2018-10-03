@@ -5,35 +5,6 @@
 	position: relative;
 	overflow: visible;
 	background: $header-bg;
-	.nav-links .secondary .user-image-frame {
-		margin: 0 5px;
-	}
-	.nav-links .secondary .dropdown-user-menu {
-		right: 0;
-	}
-	.main .nav-tab a {
-		padding: 0 !important;
-		border: none !important;
-		position: relative;
-		color: $header-nav-link-color !important;
-		&:before {
-			content: "";
-			width: 0;
-			height: 2px;
-			position: absolute;
-			left: 0;
-			bottom: -5px;
-			background: $base-color;
-			transition: all 0.2s ease;
-		}
-		&.active:before,
-		&:hover:before {
-			width: 100%;
-		}
-	}
-	.hamburger-menu {
-		top: 28px;
-	}
 	.main-header {
 		display: flex;
 		justify-content: space-between;
@@ -72,6 +43,9 @@
 				margin: 0 0 0 20px;
 				.nav-item {
 					margin-left: 30px;
+					a {
+						color: $header-nav-link-color;
+					}
 				}
 			}
 			.secondary {
@@ -80,6 +54,12 @@
 					padding: 0;
 					margin: 0 0 0 10px;
 					font-size: 16px !important;
+					a {
+						color: $header-nav-link-color;
+					}
+					.fa {
+						color: $header-nav-link-color;
+					}
 				}
 				.nav-item-dropdown {
 					position: relative;
@@ -87,8 +67,43 @@
 				.username {
 					margin-left: 10px;
 				}
+				.user-image-frame {
+					margin: 0 5px;
+				}
+				.dropdown-user-menu {
+					right: 0;
+				}
 			}
 		}
+	}
+	.dropdown-user-menu a {
+		color: #28507d !important;
+	}
+	.main .nav-item a {
+		padding: 0 !important;
+		border: none !important;
+		position: relative;
+		color: $header-nav-link-color !important;
+		&:before {
+			content: "";
+			width: 0;
+			height: 2px;
+			position: absolute;
+			left: 0;
+			bottom: -5px;
+			background: $base-color;
+			transition: all 0.2s ease;
+		}
+		&.active:before,
+		&:hover:before {
+			width: 100%;
+			}
+		}
+	.help-link {
+		color: $header-nav-link-color !important;
+	}
+	.hamburger-menu {
+		top: 28px;
 	}
 
 	// header buttons

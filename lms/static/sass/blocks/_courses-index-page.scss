@@ -2,20 +2,13 @@
 	display: block;
 	border: 3px solid #fff !important;
 	background: none !important;
-	line-height: 45px;
-	//line-height: 45px;
-	//width: 200px;
-	//height: 50px;
-	//position: absolute;
-	//left: 50%;
-	//top: 50%;
-	//transform: translate(-50%, -50%);
-	//text-align: center;
-	//color: #fff;
-	//opacity: 0;
-	//transition: all 0.2s ease;
+	line-height: 45px !important;
+	box-sizing: border-box;
 }
 
+.highlighted-courses .courses .course {
+	border-bottom-color: $courses-border-color;
+}
 .highlighted-courses .courses .course:hover {
 	background: none;
 }
@@ -31,98 +24,3 @@
 	height: 96px;
 	overflow: hidden;
 }
-
-//.courses-listing {
-//	display: flex;
-//	flex-wrap: wrap;
-//	margin-left: -30px;
-//	list-style: none;
-//	li.courses-listing-item {
-//		width: calc(25% - 30px);
-//		margin: 0 0 30px 30px;
-//		article {
-//			box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.125), 0 0 0 1px rgba(255, 255, 255, 0.75) inset;
-//			border-bottom: 3px solid $courses-border-color;
-//			height: 100%;
-//		}
-//		a {
-//			display: block;
-//			text-decoration: none;
-//		}
-//		img {
-//			display: block;
-//			width: 100%;
-//			text-align: center;
-//			line-height: 50px;
-//		}
-//		.course-image {
-//			position: relative;
-//		}
-//		.cover-image {
-//			position: relative;
-//			height: 160px;
-//			overflow: hidden;
-//			&:before {
-//				content: "";
-//				width: 100%;
-//				height: 100%;
-//				position: absolute;
-//				left: 0;
-//				top: 0;
-//				background: $course-hover-bg;
-//				opacity: 0;
-//				transition: all 0.2s ease;
-//			}
-//		}
-//		.learn-more {
-//			display: block;
-//			border: 3px solid #fff;
-//			line-height: 45px;
-//			width: 200px;
-//			height: 50px;
-//			position: absolute;
-//			left: 50%;
-//			top: 50%;
-//			transform: translate(-50%, -50%);
-//			text-align: center;
-//			color: #fff;
-//			opacity: 0;
-//			transition: all 0.2s ease;
-//		}
-//		&:hover .cover-image:before,
-//		&:hover .learn-more {
-//			opacity: 1;
-//		}
-//		.course-info {
-//			padding: 15px;
-//		}
-//		.course-name {
-//			font-weight: normal;
-//			span {
-//				display: block;
-//				padding: 2px 0;
-//			}
-//			.course-organization,
-//			.course-code {
-//				font-size: 14px;
-//				color: #474747;
-//			}
-//			.course-title {
-//				color: $course-link-color;
-//				font-size: 18px;
-//				margin: 5px 0 10px;
-//				height: 90px;
-//				overflow: hidden;
-//			}
-//		}
-//		.course-date {
-//			color: #474747;
-//		}
-//		.sr {
-//			padding: 0 15px;
-//			ul {
-//				list-style: none;
-//			}
-//		}
-//	}
-//}
