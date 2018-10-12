@@ -30,7 +30,9 @@
 	li {
 		padding-bottom: 15px;
 		input {
-			width: 100% !important;
+			&:not([type="checkbox"]) {
+				width: 100% !important;
+			}
 		}
 	}
 }
