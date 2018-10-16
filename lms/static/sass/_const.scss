@@ -40,6 +40,10 @@ $theme-btn-bg: #009be0;
 $theme-btn-text-color: #ffe;
 $theme-btn-bg-hover: lighten($theme-btn-bg, 20%);
 $theme-btn-shadow: darken($theme-btn-bg, 20%);
+//btn-red
+$theme-btn-red-bg: #c2387d;
+$theme-btn-red-text-color: #ffe;
+$theme-btn-red-bg-hover: lighten($theme-btn-red-bg, 10%);
 //btn-white
 $theme-btn-white-bg: #fff;
 $theme-btn-white-border: #009be0;
