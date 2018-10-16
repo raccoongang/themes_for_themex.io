@@ -1,19 +1,92 @@
 .paragon__alert-warning {
 	border-bottom: 1px solid #c8c8c8;
 }
+
 .paragon__alert-dismissible .paragon__close {
 	background: none !important;
 	padding: 8px 15px;
 }
+
 .wiki-wrapper section.wiki {
-	.breadcrumbs-header {
+
+	.alert_stat_bar {
 		margin: 0 -15px;
 	}
+
+	.breadcrumbs-header {
+		margin: 0 -15px;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		height: auto;
+	}
+
 	.main-article {
 		padding: 20px;
+		@media screen and (max-width: 760px) {
+			width: 100%;
+		}
 	}
+
 	.article-functions {
 		padding: 20px;
+		@media screen and (max-width: 760px) {
+			width: 100%;
+		}
+		@media screen and (max-width: 760px) {
+			padding: 20px 20px 10px;
+		}
+	}
+
+	.btn.btn-primary,
+	.btn.btn-brand {
+		background: $theme-btn-bg;
+		border-color: $theme-btn-bg;
+		text-shadow: none;
+		transition: all 0.2s ease;
+
+		&:hover:not(:disabled) {
+			box-shadow: none;
+			background: $theme-btn-bg-hover;
+			border-color: $theme-btn-bg-hover;
+		}
+	}
+
+	.btn.btn-danger {
+		background: $theme-btn-red-bg;
+		border-color: $theme-btn-red-bg;
+		box-shadow: none;
+		transition: all 0.2s ease;
+
+		&:hover:not(:disabled) {
+			box-shadow: none;
+			background: $theme-btn-red-bg-hover;
+			border-color: $theme-btn-red-bg-hover;
+		}
+	}
+
+	#hint_id_content {
+		@media screen and (max-width: 600px) {
+			position: static;
+		}
+	}
+
+	.form-actions {
+		@media screen and (max-width: 480px) {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.btn {
+			@media screen and (max-width: 480px) {
+				margin-bottom: 10px;
+			}
+		}
+	}
+
+	.btn-group,
+	.input-prepend {
+		margin: 5px 0;
 	}
 }
 
@@ -21,41 +94,55 @@
 // settings tab
 
 .article-wrapper {
+	@media screen and (max-width: 760px) {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
 	.settings-form {
+
 		.page-header {
 			margin-bottom: 20px;
 			padding: 10px 0;
 		}
+
 		#div_id_group_read,
 		#div_id_group_write,
 		#div_id_other_read,
 		#div_id_other_write {
 			display: flex;
 			align-items: center;
+
 			.controls {
 				order: 1;
 				margin-right: 10px;
 				position: relative;
 				top: -1px;
 			}
+
 			label {
 				order: 2;
 				margin: 0;
 			}
 		}
+
 		#div_id_locked,
 		#div_id_recursive {
+
 			.controls {
 				display: flex;
 				align-items: center;
+
 				input {
 					margin-right: 10px;
 				}
 			}
+
 			label {
 				display: block;
 			}
 		}
+
 		#id_owner_username {
 			width: 100%;
 			margin-bottom: 10px;
