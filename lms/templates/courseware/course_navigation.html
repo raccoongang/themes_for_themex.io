@@ -36,6 +36,12 @@ if course is not None:
     % if uses_bootstrap:
         <nav class="navbar course-tabs pb-0 navbar-expand" aria-label="${_('Course')}">
             <div class="holder">
+                <div class="hamburger-menu" role="button" aria-label=${_("Options Menu")} aria-expanded="false" aria-controls="mobile-menu" tabindex="0">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
             <ul class="navbar-nav mr-auto">
                 % for tab in tab_list:
                     <%
@@ -61,6 +67,12 @@ if course is not None:
     % else:
         <nav class="${active_page} wrapper-course-material" aria-label="${_('Course Material')}">
             <div class="holder">
+                <div class="hamburger-menu" role="button" aria-label=${_("Options Menu")} aria-expanded="false" aria-controls="mobile-menu" tabindex="0">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
                 <div class="course-material">
                     <%
                     tabs_tmpl = static.get_template_path('/courseware/tabs.html')
@@ -74,3 +86,11 @@ if course is not None:
         </nav>
     % endif
 %endif
+
+<script>
+    $(function() {
+        $('.navbar-expand .hamburger-menu, .wrapper-course-material .hamburger-menu').on('click', function() {
+            $('.content-wrapper .course-tabs, .wrapper-course-material').toggleClass('course-nav-open');
+        });
+    });
+</script>
