@@ -4,23 +4,131 @@
 		height: 150px !important;
 		width: 100% !important;
 	}
+
 	.instructor-nav .nav-item .btn-link:hover {
 		text-decoration: none !important;
+	}
+
+	.customBrowseBtn {
+		@media screen and (max-width: 400px){
+			width: 248px;
+		}
+		.enhanced-input-file {
+			@media screen and (max-width: 400px){
+				width: 176px;
+			}
+		}
+		.file-browse {
+			.browse {
+				@media screen and (max-width: 400px){
+					margin-left: 181px;
+				}
+			}
+			.file_field {
+				width: 122%;
+				height: 100%;
+				@media screen and (max-width: 400px){
+					width: 410px;
+					top: 0;
+					left: -227px;
+				}
+			}
+		}
+	}
+
+	section.idash-section#certificates .student-username-or-email,
+	section.idash-section#student_admin input[type="text"] {
+		max-width: 100%;
+	}
+
+	.bottom-bar {
+		flex-wrap: wrap;
+
+		label,
+		.add {
+			@media screen and (max-width: 400px) {
+				margin: 5px 0;
+			}
+		}
+		
+		label {
+			@media screen and (max-width: 400px) {
+				width: 100%;
+			}
+			.add-field {
+				@media screen and (max-width: 400px) {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	.member-lists-selector {
+		background: #fff;
+	}
+
+	section.idash-section#discussions_management {
+		.division-scheme-container {
+			.two-column-layout {
+				@media screen and (max-width: 760px) {
+					max-width: 100%;
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+
+	section.idash-section#student_admin .location-example,
+	section.idash-section#data_download input {
+		overflow: hidden;
+		display: inline-block;
+		max-width: 100%;
+		word-wrap: break-word;
+		white-space: normal
+	}
+
+	section.idash-section#certificates {
+		.white-listed-students,
+		.invalidation-history,
+		.certificate-generation-history-content {
+			table {
+				@media screen and (max-width: 760px) {
+					max-width: 100%;
+					display: block;
+					overflow-x: auto;
+				}
+				thead,
+				tbody {
+					@media screen and (max-width: 760px) {
+						overflow: auto;
+					}
+				}
+			}
+		}
+	}
+
+	section.idash-section#open_response_assessment .open-response-assessment {
+		max-width: 100%;
+		overflow-x: auto;
 	}
 }
 
 .enrollment-wrapper {
 	table {
 		width: 100%;
+
 		caption {
 			padding: 10px;
 		}
+
 		th {
 			text-align: left;
 		}
+
 		td {
 			text-align: center;
 		}
+
 		th, td {
 			padding: 5px 10px;
 			border: 1px solid #ccc;
@@ -32,20 +140,25 @@
 .instructor-dashboard-content-2 {
 	padding: 20px;
 	line-height: 1.5;
+
 	button:not(.btn-link),
 	.btn-blue,
 	input[type=button] {
 		margin: 10px 0;
 	}
+
 	p input {
 		margin-top: 0 !important;
 	}
+
 	ul li {
 		margin-bottom: 5px;
 	}
+
 	textarea {
 		width: 100% !important;
 		clear: both;
+
 		&#notes,
 		&#certificate-invalidation-notes {
 			height: 100px;
@@ -56,6 +169,7 @@
 			display: block;
 			margin-bottom: 10px;
 		}
+
 		div {
 			margin-bottom: 10px;
 		}
