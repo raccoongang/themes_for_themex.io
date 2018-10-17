@@ -1,13 +1,165 @@
-.content-wrapper .course-tabs .nav-item .nav-link {
-	padding: 18px 15px 15px;
+.content-wrapper .course-tabs {
+	overflow-x: auto !important;
+
+	.navbar-nav {
+		@media screen and (max-width: 760px) {
+			display: none;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+	.nav-item,
+	.tab {
+		@media screen and (max-width: 760px) {
+			&:last-child {
+				margin-bottom: 10px;
+			}
+		}
+	}
+
+	.nav-item{
+		&.active,
+		&:hover {
+			.nav-link {
+				border-bottom-color: $base-color;
+				color: $base-color;
+			}
+		}
+
+		.nav-link{
+			padding: 18px 15px 15px;
+			@media screen and (max-width: 760px) {
+				padding: 15px 10px 5px;
+			}
+		}
+	}
+
+	.tab a,
+	.tab a:visited {
+		border-bottom-color: $base-color;
+		@media screen and (max-width: 760px) {
+			padding: 13px 10px 3px;
+		}
+		&:not(.active){
+			border-bottom-style: solid;
+			border-bottom-color: transparent;
+		}
+		&:hover {
+			border-bottom-color: inherit;
+		}
+	}
 }
+
+.course-material .course-tabs{
+	@media screen and (max-width: 760px) {
+		display: none;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+
 #course-container {
 	max-width: 1170px;
 	padding: 0 15px;
+
 	.page-header {
 		padding: 20px;
 	}
+
 	.page-content {
 		padding: 20px;
 	}
+}
+
+.navbar-expand,
+.wrapper-course-material {
+
+	.hamburger-menu {
+		position: static;
+		width: $hamburger-width;
+		height: $hamburger-height;
+		margin: 15px 5px;
+		padding: 5px;
+		transform: rotate(0deg);
+		transition: 0.5s ease-in-out;
+		cursor: pointer;
+		box-sizing: border-box;
+		@media screen and (min-width: 761px) {
+			display: none;
+		}
+
+		.line {
+			display: block;
+			position: absolute;
+			height: $hamburger-height-line;
+			width: 100%;
+			background: $hamburger-color;
+			opacity: 1;
+			left: 0;
+			transform: rotate(0deg);
+			transition: 0.25s ease-in-out;
+
+			&:nth-child(1) {
+				top: 0;
+			}
+
+			&:nth-child(2),
+			&:nth-child(3) {
+				top: $hamburger-height/2;
+			}
+
+			&:nth-child(4) {
+				top: $hamburger-height;
+			}
+		}
+	}
+
+	&.course-nav-open  {
+
+		.navbar-nav,
+		.course-material .course-tabs{
+			display: flex;
+		}
+
+		.hamburger-menu {
+			.line {
+
+				&:nth-child(1) {
+					top: ($hamburger-height/2)-2px;
+					width: 0;
+					left: 50%;
+				}
+
+				&:nth-child(2) {
+					transform: rotate(45deg);
+				}
+
+				&:nth-child(3) {
+					transform: rotate(-45deg);
+				}
+
+				&:nth-child(4) {
+					top: ($hamburger-height/2)-2px;;
+					width: 0;
+					left: 50%;
+				}
+			}
+		}
+	}
+}
+
+.wrapper-course-material .course-tabs .tab a:hover,
+.wrapper-course-material .course-tabs .tab div.info-wrapper section.handouts ol li div.hitarea:hover+h4,
+div.info-wrapper section.handouts ol li .wrapper-course-material .course-tabs .tab div.hitarea:hover+h4,
+.wrapper-course-material .course-tabs .tab div.info-wrapper section.handouts ol li div.hitarea:focus+h4,
+div.info-wrapper section.handouts ol li .wrapper-course-material .course-tabs .tab div.hitarea:focus+h4,
+.wrapper-course-material .course-tabs .tab a:focus, .wrapper-course-material .course-tabs .tab a.active,
+.wrapper-course-material .course-tabs .tab a:visited:hover,
+.wrapper-course-material .course-tabs .tab div.info-wrapper section.handouts ol li div.hitarea:hover+h4:visited,
+div.info-wrapper section.handouts ol li .wrapper-course-material .course-tabs .tab div.hitarea:hover+h4:visited,
+.wrapper-course-material .course-tabs .tab div.info-wrapper section.handouts ol li div.hitarea:focus+h4:visited,
+div.info-wrapper section.handouts ol li .wrapper-course-material .course-tabs .tab div.hitarea:focus+h4:visited,
+.wrapper-course-material .course-tabs .tab a:visited:focus,
+.wrapper-course-material .course-tabs .tab a:visited.active {
+	color: $base-color;
 }
