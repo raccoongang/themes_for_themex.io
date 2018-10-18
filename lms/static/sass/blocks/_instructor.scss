@@ -111,6 +111,12 @@
 		max-width: 100%;
 		overflow-x: auto;
 	}
+
+	section.idash-section#cohort_management {
+		.wrapper-tabs .tab.is-selected .toggle-button {
+			margin: 10px 10px 0 0;
+		}
+	}
 }
 
 .enrollment-wrapper {
