@@ -20,6 +20,9 @@
 		}
 		.file-browse {
 			.browse {
+				position: relative;
+				z-index: 10;
+				pointer-events: none;
 				@media screen and (max-width: 400px){
 					margin-left: 181px;
 				}
@@ -27,6 +30,23 @@
 			.file_field {
 				width: 122%;
 				height: 100%;
+				&::-ms-browse {
+					display: none;
+				}
+
+				// styles for IE10+
+				@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+					height: 40px;
+					margin-top: -6px;
+					display: inline-block;
+				}
+
+				// styles for Edge
+				@supports (-ms-ime-align:auto) {
+					height: 40px;
+					margin-top: -6px;
+				}
+
 				@media screen and (max-width: 400px){
 					width: 410px;
 					top: 0;
@@ -174,4 +194,8 @@
 			margin-bottom: 10px;
 		}
 	}
+}
+
+.slick-header-column.ui-state-default {
+	height: auto;
 }

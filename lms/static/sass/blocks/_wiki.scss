@@ -9,8 +9,12 @@
 
 .wiki-wrapper section.wiki {
 
-	.alert_stat_bar {
+	#alert_stat_bar {
 		margin: 0 -15px;
+	}
+	.paragon__close:not(:disabled):not(.paragon__disabled):focus {
+		box-shadow: none;
+		border: none;
 	}
 
 	.breadcrumbs-header {
@@ -45,7 +49,8 @@
 		text-shadow: none;
 		transition: all 0.2s ease;
 
-		&:hover:not(:disabled) {
+		&:hover:not(:disabled),
+		&:focus:not(:disabled) {
 			box-shadow: none;
 			background: $theme-btn-bg-hover;
 			border-color: $theme-btn-bg-hover;
@@ -58,7 +63,8 @@
 		box-shadow: none;
 		transition: all 0.2s ease;
 
-		&:hover:not(:disabled) {
+		&:hover:not(:disabled),
+		&:focus:not(:disabled) {
 			box-shadow: none;
 			background: $theme-btn-red-bg-hover;
 			border-color: $theme-btn-red-bg-hover;
