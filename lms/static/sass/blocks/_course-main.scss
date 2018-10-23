@@ -1,3 +1,16 @@
+body.view-in-course {
+	.course-wrapper,
+	.profile-wrapper,
+	.instructor-dashboard-wrapper-2,
+	.wiki-wrapper,
+	.teams-wrapper,
+	.static_tab_wrapper,
+	.course-license {
+		max-width: 1180px;
+		box-sizing: border-box;
+	}
+}
+
 .content-wrapper .course-tabs {
 	overflow-x: auto !important;
 
@@ -162,4 +175,146 @@ div.info-wrapper section.handouts ol li .wrapper-course-material .course-tabs .t
 .wrapper-course-material .course-tabs .tab a:visited:focus,
 .wrapper-course-material .course-tabs .tab a:visited.active {
 	color: $base-color;
+}
+
+.xmodule_display {
+
+	&.xmodule_CourseModule,
+	&.xmodule_SequenceModule,
+	&.xmodule_SectionModule {
+		.sequence-nav ol li button {
+			overflow: hidden;
+		}
+	}
+
+	&.xmodule_HtmlModule {
+		img {
+			max-width: 100%;
+
+			&:not([align="right"]) {
+				float: left;
+			}
+
+			&,
+			&:not([align="right"]){
+				@media screen and (max-width: 760px) {
+					display: block;
+					margin: 0 auto 10px;
+					float: none;
+				}
+			}
+		}
+
+		#periodic-table-wrapper {
+			max-width: 100%;
+			overflow-x: auto;
+		}
+	}
+
+	&.xmodule_VideoModule {
+		.video {
+			.video-wrapper {
+				@media screen and (max-width: 760px) {
+					margin: 0 auto 15px;
+					width: 100%;
+				}
+
+				.video-player {
+					@media screen and (max-width: 760px) {
+						min-height: 150px;
+					}
+				}
+
+				.video-player-pre,
+				.video-player-post {
+					@media screen and (max-width: 760px) {
+						display: none;
+					}
+				}
+			}
+
+			.subtitles {
+				@media screen and (max-width: 760px) {
+					margin: 0;
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	&.xmodule_CapaModule {
+		.problem {
+			.imageinput + div,
+			.wrapper-problem-response {
+				max-width: 100%;
+				overflow-x: auto;
+			}
+
+			input {
+				max-width: 100%;
+			}
+
+			.wrapper-problem-response center {
+				@media screen and (max-width: 760px) {
+					padding: 0;
+					margin: 0;
+					border: none;
+				}
+			}
+		}
+	}
+
+	&.xmodule_SequenceModule {
+		.sequence-bottom {
+			.sequence-nav-button {
+				&:hover {
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+
+section.tool-wrapper {
+	@media screen and (max-width: 760px) {
+		display: block;
+		max-width: 100%;
+		margin: 0;
+	}
+
+	div#controlls-container,
+	div#graph-container {
+		@media screen and (max-width: 760px) {
+			display: block;
+			width: 100%;
+		}
+	}
+}
+
+#headerDiv, #contentDiv {
+	max-width: 100%;
+
+	&:after{
+		content: '';
+		display: table;
+		clear: both;
+	}
+
+	a {
+		margin: 0 5px;
+		color: $theme-link;
+		position: relative;
+		top: -3px;
+
+		&:hover,
+		&:focus {
+			color: $theme-link-hover;
+		}
+	}
+}
+
+.openassessment .openassessment__steps__step .step__status {
+	@media screen and (max-width: 760px) {
+		display: inline-block;
+	}
 }

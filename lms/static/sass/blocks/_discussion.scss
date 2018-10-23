@@ -154,6 +154,18 @@ section.discussion {
 			padding-top: 10px;
 		}
 	}
+
+	.discussion-show {
+		@media screen and (max-width: 760px) {
+			margin-bottom: 10px;
+		}
+	}
+
+	.discussion-module-header {
+		@media screen and (max-width: 480px) {
+			width: 100%;
+		}
+	}
 }
 
 .btn-link.new-post-btn {
