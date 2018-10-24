@@ -7,3 +7,52 @@
 	width: 100%;
 	box-sizing: border-box;
 }
+
+.view-register .introduction,
+.view-login .introduction,
+.view-passwordreset .introduction,
+.view-passwordreset .login {
+	max-width: 100%;
+}
+
+.view-login,
+.view-register {
+	.login,
+	.register {
+		max-width: 100%;
+		@media screen and (max-width: 960px) {
+			.content,
+			.content + aside {
+				width: 100%;
+			}
+		}
+	}
+}
+
+.view-register {
+	.register {
+		.btn-login {
+			background: transparent;
+			border: none;
+			padding: 15px 0;
+
+			&:hover {
+				background: transparent;
+			}
+
+			.title {
+				font-weight: 700;
+			}
+		}
+
+		.content {
+			select {
+				height: 43px;
+				display: block;
+				margin: 0 0 5px;
+				padding: 0 10px;
+				width: 100%;
+			}
+		}
+	}
+}
