@@ -268,7 +268,9 @@ div.info-wrapper section.handouts ol li .wrapper-course-material .course-tabs .t
 		.sequence-bottom {
 			.sequence-nav-button {
 				&:hover {
-					color: #fff;
+					@media screen and (max-width: 575px) {
+						color: #fff;
+					}
 				}
 			}
 		}
