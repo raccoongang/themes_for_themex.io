@@ -6,7 +6,8 @@
 .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .cohort-management-nav .action-create,
 .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .form-submit,
 .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .action-cancel,
-.instructor-dashboard-wrapper-2 section.idash-section#cohort_management .wrapper-tabs .tab.is-selected .toggle-button {
+.instructor-dashboard-wrapper-2 section.idash-section#cohort_management .wrapper-tabs .tab.is-selected .toggle-button,
+.view-register .register .btn-login-action{
 	transition: all 0.2s ease;
 	display: inline-block;
 	background: $theme-btn-bg !important;
