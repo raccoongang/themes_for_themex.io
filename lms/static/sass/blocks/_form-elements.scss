@@ -6,9 +6,10 @@ select {
     border-radius: 0;
     border: 1px #c6c6c6 solid !important;
     height: 32px;
-    font-size: 18px;
+    font-size: 15px;
     box-sizing: border-box;
     color: #222;
-    background: #fff url(../images/select-arrow.png) no-repeat 100% 50%;
-    background-size: 27px 7px;
+    background: #fff url(../images/select-arrow.png) no-repeat 100% 50% !important;
+    background-size: 27px 7px !important;
+    padding: 0 30px 0 10px !important;
 }

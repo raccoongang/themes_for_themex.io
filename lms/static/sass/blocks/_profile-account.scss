@@ -1,0 +1,44 @@
+// profile page
+
+.view-profile .window-wrap,
+.view-profile .content-wrapper {
+	background: none;
+}
+.view-profile .profile-self .wrapper-profile-field-account-privacy {
+	padding: 0;
+	display: block;
+	.u-field {
+		padding: 15px;
+		max-width: 1200px;
+		margin: 0 auto;
+		display: block;
+	}
+	.u-field-title {
+		line-height: 30px;
+	}
+}
+
+.view-profile {
+	.profile-header {
+		padding: 15px;
+		max-width: 1200px;
+		margin: 0 auto;
+		display: block;
+		box-sizing: border-box;
+	}
+	.wrapper-profile-sections {
+		padding: 15px;
+		max-width: 1200px;
+		margin: 0 auto;
+		box-sizing: border-box;
+	}
+	.wrapper-profile-section-container-one .wrapper-profile-section-one {
+		border: 2px solid #0075b4;
+	}
+}
+
+// account page
+
+.account-settings-sections .section {
+	margin: 0;
+}
