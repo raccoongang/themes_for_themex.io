@@ -56,6 +56,12 @@
 		}
 	}
 
+	.customBrowseBtn + .upload-csv-button {
+		display: inline-block;
+		vertical-align: bottom;
+		margin-bottom: 0 !important;
+	}
+
 	section.idash-section#certificates .student-username-or-email,
 	section.idash-section#student_admin input[type="text"] {
 		max-width: 100%;
