@@ -1,0 +1,30 @@
+.profile-wrapper .course-info>.chapters>section {
+  @media screen and (max-width: 760px) {
+    display: block;
+  }
+
+  .hd,
+  .sections {
+    @media screen and (max-width: 760px) {
+      width: 100%;
+      padding-right: 0;
+      display: block;
+      border-right: none;
+    }
+  }
+
+  .sections>div .scores {
+    dt {
+      @media screen and (max-width: 760px) {
+        width: 100%;
+      }
+    }
+
+    dd {
+      @media screen and (max-width: 760px) {
+        margin-right: 10px;
+        padding-right: 10px;
+      }
+    }
+  }
+}
