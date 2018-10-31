@@ -7,7 +7,7 @@
 .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .form-submit,
 .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .action-cancel,
 .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .wrapper-tabs .tab.is-selected .toggle-button,
-.view-register .register .btn-login-action{
+.view-register .register .btn-login-action {
 	transition: all 0.2s ease;
 	display: inline-block;
 	background: $theme-btn-bg !important;
@@ -27,4 +27,21 @@
 	&:hover {
 		background: $theme-btn-bg-hover !important;
 	}
+}
+
+.instructor-dashboard-content-2 .btn-blue {
+	background-color: #eeeeee;
+	background-image: linear-gradient(#eeeeee, #d6cece);
+	border: 1px solid #cfc6c6;
+	border-radius: 3px;
+	box-shadow: 0 1px 0 0 #ffffff inset;
+	color: #333333;
+	display: inline-block;
+	font-size: 14px !important;
+	font-weight: bold;
+	line-height: 1.3em;
+	margin-bottom: 1em;
+	padding: 8px 17px;
+	text-decoration: none;
+	text-shadow: 0 1px 0 #f9f8f8;
 }
