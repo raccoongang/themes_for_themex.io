@@ -16,7 +16,13 @@
 	}
 }
 
+.dashboard .main-container .my-courses .listing-courses .course-item {
+	padding-bottom: 0;
+}
+
 .dashboard .main-container .my-courses .course .details {
+	padding: 20px;
+	background: #f5f5f5;
 	.enter-course {
 		transition: all 0.2s ease;
 		display: inline-block;
@@ -42,7 +48,7 @@
 
 		.course-info,
 		.wrapper-course-actions {
-
+			margin-right: 0;
 			.wrapper-action-more,
 			.entitlement-actions-wrapper{
 				@media screen and (max-width: 767px){
@@ -55,4 +61,8 @@
 
 .wrapper-action-more button.action-more {
 	border: 1px solid $theme-btn-white-border !important;
+	&:hover {
+		background: $theme-btn-white-bg-hover !important;
+		color: #fff !important;
+	}
 }

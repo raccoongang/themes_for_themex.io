@@ -1,5 +1,6 @@
 @import "const";
 @import "blocks/buttons";
+@import "blocks/form-elements";
 @import "blocks/header";
 @import "blocks/footer";
 @import "blocks/courses-index-page";
@@ -13,6 +14,7 @@
 @import "blocks/login-register";
 @import "blocks/fullscreen-button";
 @import "blocks/progress";
+@import "blocks/profile-account";
 
 html, body {
 	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -48,7 +50,8 @@ body.view-in-course .wiki-wrapper {
 	background: #eeeeee;
 }
 
-.window-wrap {
+.window-wrap,
+.view-profile .window-wrap {
 	background: none;
 	position: relative;
 	box-sizing: border-box;

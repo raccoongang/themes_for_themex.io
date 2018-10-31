@@ -10,6 +10,7 @@
 	}
 
 	.customBrowseBtn {
+		display: block;
 		@media screen and (max-width: 400px){
 			width: 248px;
 		}
@@ -23,6 +24,7 @@
 				position: relative;
 				z-index: 10;
 				pointer-events: none;
+				padding: 5px 10px;
 				@media screen and (max-width: 400px){
 					margin-left: 181px;
 				}
@@ -70,7 +72,7 @@
 				margin: 5px 0;
 			}
 		}
-		
+
 		label {
 			@media screen and (max-width: 400px) {
 				width: 100%;
@@ -204,4 +206,17 @@
 
 .slick-header-column.ui-state-default {
 	height: auto;
+}
+
+.instructor-dashboard-wrapper-2 section#certificates.idash-section .white-listed-students table,
+.instructor-dashboard-wrapper-2 section#certificates.idash-section .invalidation-history table {
+	table-layout: auto;
+	tr {
+		td, th {
+			border: 1px solid #e4e4e4;
+			button.delete-exception {
+				min-width: 160px;
+			}
+		}
+	}
 }
