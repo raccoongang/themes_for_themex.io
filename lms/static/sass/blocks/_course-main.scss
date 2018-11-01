@@ -320,3 +320,16 @@ section.tool-wrapper {
 		display: inline-block;
 	}
 }
+
+.find-courses .courses-container .courses:not(.no-course-discovery) {
+	@media screen and (max-width: 540px) {
+		width: 100%;
+		float: none;
+	}
+}
+
+.find-courses .search-facets:last-child {
+	@media screen and (max-width: 540px) and (min-width: 320px) {
+		margin: 15px 0;
+	}
+}
