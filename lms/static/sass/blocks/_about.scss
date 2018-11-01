@@ -2,6 +2,49 @@
 	header.course-profile {
 		padding: 20px 0;
 		height: auto;
+
+		.intro-inner-wrapper {
+			.intro {
+				@media screen and (max-width: 767px) {
+					width: auto;
+					order: 2;
+				}
+
+				.main-cta {
+					span.register,
+					span.add-to-cart {
+						padding: 12px 10px;
+
+						@media screen and (max-width: 767px) {
+							width: auto;
+							margin-bottom: 10px;
+						}
+					}
+
+					strong {
+						@media screen and (max-width: 767px) {
+							width: auto;
+							padding-left: 10px;
+							padding-right: 10px;
+						}
+					}
+				}
+			}
+
+			&>div.table {
+				@media screen and (max-width: 767px) {
+					display: flex;
+					flex-direction: column;
+				}
+			}
+
+			.media {
+				@media screen and (max-width: 767px) {
+					width: auto;
+					order: 1;
+				}
+			}
+		}
 	}
 	.details {
 		* {
@@ -34,5 +77,13 @@
 	}
 	&:hover {
 		background: $theme-btn-bg-hover !important;
+	}
+}
+
+.course-info {
+	.course-sidebar {
+		@media screen and (max-width: 767px) {
+			width: 100%;
+		}
 	}
 }
