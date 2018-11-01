@@ -1,3 +1,10 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	max-width: 100%;
+}
+
 .register-button, /* register page */
 .login-button, /* login page */
 .wiki-wrapper section.wiki .settings-form .btn, /* wiki settings page */
@@ -7,7 +14,8 @@
 .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .form-submit,
 .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .action-cancel,
 .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .wrapper-tabs .tab.is-selected .toggle-button,
-.view-register .register .btn-login-action {
+.view-register .register .btn-login-action,
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta strong{
 	transition: all 0.2s ease;
 	display: inline-block;
 	background: $theme-btn-bg !important;
