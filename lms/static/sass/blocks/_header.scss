@@ -72,12 +72,14 @@
 				}
 				.dropdown-user-menu {
 					right: 0;
+					z-index: 20;
 				}
 			}
 		}
 	}
 	.dropdown-user-menu a {
 		color: #28507d !important;
+		box-sizing: border-box;
 	}
 	.main .nav-item a {
 		padding: 0 !important;
