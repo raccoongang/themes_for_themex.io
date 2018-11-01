@@ -41,4 +41,8 @@
 
 .account-settings-sections .section {
 	margin: 0;
+
+	.account-settings-section-body .u-field .field select {
+		height: 48px;
+	}
 }
