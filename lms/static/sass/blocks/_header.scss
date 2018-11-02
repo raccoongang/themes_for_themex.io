@@ -152,8 +152,7 @@
 // banner
 
 section.home {
-	> header,
-	.slider {
+	> header {
 		min-height: 450px;
 		background: url('../images/background.jpg') no-repeat 50% 50%;
 		background-size: cover;
