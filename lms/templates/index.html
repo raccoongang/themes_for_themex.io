@@ -11,6 +11,7 @@ from openedx.core.djangolib.markup import HTML, Text
 <main id="main" aria-label="Content" tabindex="-1">
     <section class="home">
       <header>
+        <div class="parallax-img"></div>
         <div class="outer-wrapper">
           <div class="title">
             <div class="heading-group">
@@ -40,6 +41,7 @@ from openedx.core.djangolib.markup import HTML, Text
           <%include file="index_promo_video.html" />
         </div>
       </header>
+      <script src="${static.url('js/parallax.js')}"></script>
 
       <!--
       Slider modes:

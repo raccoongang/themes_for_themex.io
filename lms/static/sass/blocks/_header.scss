@@ -162,9 +162,32 @@ section.home {
 		align-items: center;
 		justify-content: center;
 		color: #fff;
+		position: relative;
+
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			display: block;
+		}
+
+		.parallax-img {
+			position: absolute;
+			left: 0;
+			top: -100px;
+			width: 100%;
+			height: calc(100% + 200px); /* картинка паралакса всегда больше нашего баннера, при скролинге не появится пустутота под баннером */
+			background: #040404 url('#{$img-path}/background.jpg') no-repeat 50% 50%; /* высота картинки - желательно не меньше 600px по высоте */
+			background-size: cover;
+		}
+
 		.outer-wrapper {
 			width: 100%;
 			padding: 15px;
+
+			@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+				display: table;
+				min-height: 450px;
+				box-sizing: border-box;
+			}
+
 			.title {
 				background: none;
 				box-shadow: none;
@@ -173,6 +196,12 @@ section.home {
 				padding: 0;
 				width: 100%;
 				transition: none !important;
+
+				@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+					display: table-cell;
+					vertical-align: middle;
+				}
+
 				.heading-group {
 					text-align: center;
 					h1 {
