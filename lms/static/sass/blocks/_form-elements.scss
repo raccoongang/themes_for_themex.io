@@ -1,4 +1,5 @@
-select {
+select:not(.forum-nav-filter-main-control):not(.forum-nav-sort-control),
+.forum-new-post-form .post-field .field-label .field-input select.post-topic {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
