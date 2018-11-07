@@ -101,8 +101,6 @@
 
 // Default Variables
 
-$slick-font-path: "../../fonts/slider-font/" !default;
-$slick-loader-path: "../../images/" !default;
 $slick-dot-background: #fff !default;
 $slick-dot-background-border-color: #000 !default;
 $slick-dot-color: black !default;
@@ -110,29 +108,11 @@ $slick-dot-color-active: $slick-dot-color !default;
 $slick-opacity-default: 0.75 !default;
 $slick-opacity-not-active: 0.25 !default;
 
-@function slick-image-url($url) {
-    @if function-exists(image-url) {
-        @return image-url($url);
-    }
-    @else {
-        @return url($slick-loader-path + $url);
-    }
-}
-
-@function slick-font-url($url) {
-    @if function-exists(font-url) {
-        @return font-url($url);
-    }
-    @else {
-        @return url($slick-font-path + $url);
-    }
-}
-
 // Slider
 
 .slick-list {
     .slick-loading & {
-        background: #fff slick-image-url("ajax-loader.gif") center center no-repeat;
+        background: #fff url('#{$img-path}/ajax-loader.gif') center center no-repeat;
     }
 }
 
@@ -148,7 +128,7 @@ $slick-opacity-not-active: 0.25 !default;
     line-height: 0;
     font-size: 0;
     cursor: pointer;
-    background: url('../images/slider-arrow.png') no-repeat center center !important;
+    background: url('#{$img-path}/slider-arrow.png') no-repeat center center !important;
     background-size: contain !important;
     color: transparent;
     top: 50%;
@@ -320,7 +300,7 @@ section.home > .slider {
 
     .outer-wrapper {
       min-height: 450px;
-      background: url('../images/background.jpg') no-repeat 50% 50%;
+      background: url('#{$img-path}/background.jpg') no-repeat 50% 50%;
       background-size: cover;
       align-items: center;
 
@@ -346,12 +326,12 @@ section.home > .slider {
       }
 
       &:first-child {
-        background: url('../images/background.jpg') no-repeat 50% 50%;
+        background: url('#{$img-path}/background.jpg') no-repeat 50% 50%;
         background-size: cover;
       }
 
       &:nth-child(2) {
-        background: url('../images/background2.jpg') no-repeat 50% 50%;
+        background: url('#{$img-path}/background2.jpg') no-repeat 50% 50%;
         background-size: cover;
       }
 
