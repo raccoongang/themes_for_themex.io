@@ -18,16 +18,16 @@ from openedx.core.djangolib.markup import HTML, Text
               % if homepage_overlay_html:
                 ${homepage_overlay_html | n, decode.utf8}
               % else:
-                <h1>${_("TIPS FOR BETTER TIME MANAGEMENT")}</h1>
-                <span>${_("STUDENT SUCCESS")}</span>
-                <a href="/courses" class="link">${_("FIND COURSES")}</a>
+                <span>${_("the best theme for education")}</span>
+                <h1>${_("Welcome to Raccoon University!")}</h1>
+                <a href="/courses" class="link">${_("start learning now")}</a>
               % endif
             </div>
             % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
               <div class="course-search">
                 <form method="get" action="/courses">
                   <label><span class="sr">${_("Search for a course")}</span>
-                    <input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
+                    <input class="search-input" name="search_query" type="text" placeholder="${_('Search for a course')}"></input>
                   </label>
                   <button class="search-button" type="submit">
                     <span class="icon fa fa-search" aria-hidden="true"></span><span class="sr">${_("Search")}</span>
@@ -42,74 +42,6 @@ from openedx.core.djangolib.markup import HTML, Text
         </div>
       </header>
       <script src="${static.url('js/parallax.js')}"></script>
-
-      <!--
-      Slider modes:
-        class = 'slider'                    - common background image
-        class = 'slider slider-separate'    - separate backgrounds for each slide
-      -->
-      <!--
-      <div class="slider slider-separate">
-        <div class="outer-wrapper">
-          <div class="title">
-            <div class="heading-group">
-              % if homepage_overlay_html:
-              ${homepage_overlay_html | n, decode.utf8}
-              % else:
-              <h1>${_("TIPS FOR BETTER TIME MANAGEMENT 1")}</h1>
-              <span>${_("STUDENT SUCCESS")}</span>
-              <a href="/courses" class="link">${_("FIND COURSES")}</a>
-              % endif
-            </div>
-            % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
-            <div class="course-search">
-              <form method="get" action="/courses">
-                <label><span class="sr">${_("Search for a course")}</span>
-                  <input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
-                </label>
-                <button class="search-button" type="submit">
-                  <span class="icon fa fa-search" aria-hidden="true"></span><span class="sr">${_("Search")}</span>
-                </button>
-              </form>
-            </div>
-            % endif
-
-          </div>
-
-          <%include file="index_promo_video.html" />
-        </div>
-        <div class="outer-wrapper">
-          <div class="title">
-            <div class="heading-group">
-              % if homepage_overlay_html:
-              ${homepage_overlay_html | n, decode.utf8}
-              % else:
-              <h1>${_("TIPS FOR BETTER TIME MANAGEMENT 2")}</h1>
-              <span>${_("STUDENT SUCCESS")}</span>
-              <a href="/courses" class="link">${_("FIND COURSES")}</a>
-              % endif
-            </div>
-            % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
-            <div class="course-search">
-              <form method="get" action="/courses">
-                <label><span class="sr">${_("Search for a course")}</span>
-                  <input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
-                </label>
-                <button class="search-button" type="submit">
-                  <span class="icon fa fa-search" aria-hidden="true"></span><span class="sr">${_("Search")}</span>
-                </button>
-              </form>
-            </div>
-            % endif
-
-          </div>
-
-          <%include file="index_promo_video.html" />
-        </div>
-      </div>
-      <script src="${static.url('js/slick.min.js')}"></script>
-      <script src="${static.url('js/slider.js')}"></script>
-      -->
 
       <%include file="${courses_list}" />
 

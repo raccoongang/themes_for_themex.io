@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "Muli";
+  src: url("#{$font-path}/Muli-Light/Muli-Light.eot");
+  src: url("#{$font-path}/Muli-Light/Muli-Light.eot#iefix") format("embedded-opentype"),
+  url("#{$font-path}/Muli-Light/Muli-Light.woff") format("woff"),
+  url("#{$font-path}/Muli-Light/Muli-Light.ttf") format("truetype"),
+  url("#{$font-path}/Muli-Light/Muli-Light.svg#Muli-Light") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Muli";
+  src: url("#{$font-path}/Muli-LightItalic/Muli-LightItalic.eot");
+  src: url("#{$font-path}/Muli-LightItalic/Muli-LightItalic.eot#iefix") format("embedded-opentype"),
+  url("#{$font-path}/Muli-LightItalic/Muli-LightItalic.woff") format("woff"),
+  url("#{$font-path}/Muli-LightItalic/Muli-LightItalic.ttf") format("truetype"),
+  url("#{$font-path}/Muli-LightItalic/Muli-LightItalic.svg#Muli-LightItalic") format("svg");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Muli";
+  src: url("#{$font-path}/Muli-Regular/Muli-Regular.eot");
+  src: url("#{$font-path}/Muli-Regular/Muli-Regular.eot#iefix") format("embedded-opentype"),
+  url("#{$font-path}/Muli-Regular/Muli-Regular.woff") format("woff"),
+  url("#{$font-path}/Muli-Regular/Muli-Regular.ttf") format("truetype"),
+  url("#{$font-path}/Muli-Regular/Muli-Regular.svg#Muli-Regular") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Muli";
+  src: url("#{$font-path}/Muli-Italic/Muli-Italic.eot");
+  src: url("#{$font-path}/Muli-Italic/Muli-Italic.eot#iefix") format("embedded-opentype"),
+  url("#{$font-path}/Muli-Italic/Muli-Italic.woff") format("woff"),
+  url("#{$font-path}/Muli-Italic/Muli-Italic.ttf") format("truetype"),
+  url("#{$font-path}/Muli-Italic/Muli-Italic.svg#Muli-Italic") format("svg");
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+@font-face {
+  font-family: "Work Sans";
+  src: url("#{$font-path}/WorkSans-Bold/WorkSans-Bold.eot");
+  src: url("#{$font-path}/WorkSans-Bold/WorkSans-Bold.eot#iefix") format("embedded-opentype"),
+  url("#{$font-path}/WorkSans-Bold/WorkSans-Bold.woff") format("woff"),
+  url("#{$font-path}/WorkSans-Bold/WorkSans-Bold.ttf") format("truetype"),
+  url("#{$font-path}/WorkSans-Bold/WorkSans-Bold.svg#WorkSans-Bold") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}

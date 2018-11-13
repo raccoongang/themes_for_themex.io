@@ -1,4 +1,6 @@
 @import "const";
+@import "blocks/links";
+@import "blocks/fonts";
 @import "blocks/buttons";
 @import "blocks/form-elements";
 @import "blocks/header";
@@ -46,9 +48,10 @@ body.view-in-course .wiki-wrapper {
 }
 
 .content-wrapper {
+	width: 100%;
 	margin: 0 auto;
-	padding: 0;
-	background: #eeeeee;
+	padding: 0 0 15px;
+	background: $body-bg;
 }
 
 .window-wrap,
@@ -56,8 +59,40 @@ body.view-in-course .wiki-wrapper {
 	background: none;
 	position: relative;
 	box-sizing: border-box;
-	@media screen and (min-width: 1200px) {
+}
+
+// fixed footer
+
+.window-wrap {
+	flex: 1 1 auto;
+	display: flex;
+	flex-flow: column nowrap;
+	min-height: 100vh;
+}
+
+#content {
+	flex: 1 1 auto;
+}
+
+// fixed footer [styles for IE10+]
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	body {
+		display: flex;
+	}
+
+	body,
+	.window-wrap {
+		flex: 1 1 auto;
+		display: flex;
+		flex-flow: column nowrap;
 		min-height: 100vh;
-		padding-bottom: 250px;
+	}
+
+	#content {
+		flex: 1 1 auto;
+	}
+
+	.wrapper-footer {
+		overflow: hidden;
 	}
 }

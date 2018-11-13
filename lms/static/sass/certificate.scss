@@ -102,6 +102,9 @@
 	b {
 		z-index: 100;
 		position: relative;
+		text-transform: lowercase;
+		letter-spacing: 6px;
+		font-variant-ligatures: none;
 	}
 }
 .ribbon:before,

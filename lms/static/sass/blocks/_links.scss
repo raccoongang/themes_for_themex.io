@@ -1,0 +1,43 @@
+// links
+a:not(.btn),
+a:visited:not(.btn),
+p a:not(.btn),
+p a:visited:not(.btn),
+.login a:link,
+.login a:visited,
+.login a:active,
+.register a:link,
+.register a:visited,
+.register a:active,
+.passwordreset a:link,
+.passwordreset a:visited,
+.passwordreset a:active,
+#forgot-password-modal #password-reset a:link,
+#forgot-password-modal #password-reset a:visited,
+#forgot-password-modal #password-reset a:active,
+.date-summary-container .date-summary .date-summary-link a,
+.breadcrumbs .nav-item a,
+.breadcrumbs .nav-item a:visited,
+.btn-link {
+
+    color: $links-color;
+
+    &:hover,
+    &:focus {
+        color: $links-color-hover;
+        text-decoration: none;
+        border-bottom: none;
+    }
+}
+
+.xmodule_display.xmodule_HtmlModule a:link,
+.xmodule_display.xmodule_HtmlModule a:visited,
+.xmodule_display.xmodule_HtmlModule a:hover,
+.xmodule_display.xmodule_HtmlModule div.info-wrapper section.handouts ol li div.hitarea:hover+h4,
+div.info-wrapper section.handouts ol li .xmodule_display.xmodule_HtmlModule div.hitarea:hover+h4,
+.xmodule_display.xmodule_HtmlModule div.info-wrapper section.handouts ol li div.hitarea:focus+h4,
+div.info-wrapper section.handouts ol li .xmodule_display.xmodule_HtmlModule div.hitarea:focus+h4,
+.xmodule_display.xmodule_HtmlModule a:active,
+.xmodule_display.xmodule_HtmlModule a:focus {
+    color: $links-color;
+}
