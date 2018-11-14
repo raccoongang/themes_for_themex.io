@@ -37,14 +37,14 @@
         <div id="discovery-form" role="search" aria-label="course" class="wrapper-search-context">
           <div id="discovery-message" class="search-status-label"></div>
           <form class="wrapper-search-input">
-            <label for="discovery-input" class="sr">${_('Search for a course')}</label>
+            <label for="discovery-input" class="sr">${_("Search for a course")}</label>
             <input id="discovery-input" class="discovery-input" placeholder="${_('Search for a course')}" type="text"/>
             <button type="submit" class="button postfix discovery-submit" title="${_('Search')}">
               <span class="icon fa fa-search" aria-hidden="true"></span>
               <div aria-live="polite" aria-relevant="all">
                 <div id="loading-indicator" class="loading-spinner hidden">
                   <span class="icon fa fa-spinner fa-spin" aria-hidden="true"></span>
-                  <span class="sr">${_('Loading')}</span>
+                  <span class="sr">${_("Loading")}</span>
                 </div>
               </div>
             </button>
@@ -68,7 +68,7 @@
 
         % if course_discovery_enabled:
         <aside aria-label="${_('Refine Your Search')}" class="search-facets phone-menu">
-          <h2 class="header-search-facets">${_('Refine Your Search')}</h2>
+          <h2 class="header-search-facets">${_("Refine Your Search")}</h2>
           <section class="search-facets-lists">
           </section>
         </aside>
