@@ -65,6 +65,7 @@ section.discussion {
 	&:hover {
 		background: $theme-btn-white-bg-hover;
 		color: $theme-btn-white-text-color-hover;
+		border-color: $theme-btn-white-bg-hover;
 	}
 	@media screen and (max-width: 420px) {
 		display: block;
@@ -195,4 +196,13 @@ section.discussion {
 	.forum-nav-sort {
 		width: auto;
 	}
+}
+
+.field-label .field-input:checked+.field-input-label,
+.discussion .post-label.post-label-following {
+	color: $base-color;
+}
+
+.form-control:focus {
+	border-color: $base-color;
 }

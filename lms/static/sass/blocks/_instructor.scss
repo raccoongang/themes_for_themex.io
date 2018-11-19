@@ -232,3 +232,13 @@
 		margin-left: -25px;
 	}
 }
+
+.instructor-dashboard-content-2 .instructor-nav .nav-item .btn-link.active-section,
+.instructor-dashboard-content-2 .instructor-nav .nav-item .btn-link:hover,
+.instructor-dashboard-content-2 .instructor-nav .nav-item .btn-link:focus{
+	border-bottom-color: $base-color;
+}
+
+.open-response-assessment-block .ora-summary-title {
+	color: $base-color;
+}

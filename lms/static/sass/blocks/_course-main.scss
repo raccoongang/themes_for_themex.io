@@ -337,3 +337,35 @@ section.tool-wrapper {
 		margin: 15px 0;
 	}
 }
+
+button.accordion-trigger .fa,
+button.prerequisite-button .fa {
+	color: $base-color;
+}
+
+.xmodule_display.xmodule_SequenceModule .sequence-nav-button.focused,
+.xmodule_display.xmodule_SequenceModule .sequence-nav-button:hover,
+.xmodule_display.xmodule_SequenceModule .sequence-nav-button:active,
+.xmodule_display.xmodule_SequenceModule .sequence-nav-button.active,
+.xmodule_display.xmodule_SequenceModule .sequence-nav button.focused,
+.xmodule_display.xmodule_SequenceModule .sequence-nav button:hover,
+.xmodule_display.xmodule_SequenceModule .sequence-nav button:active,
+.xmodule_display.xmodule_SequenceModule .sequence-nav button.active {
+	background-color: $base-color;
+
+	@media screen and (min-width: 576px) {
+		border-bottom-color: $base-color;
+		background-color: #fff;
+	}
+}
+
+.xmodule_display.xmodule_CapaModule div.problem .choicegroup label:hover,
+.xmodule_display.xmodule_CapaModule div.problem .choicetextgroup label:hover,
+.xmodule_display.xmodule_ConditionalModule div.problem .xmodule_display.xmodule_CapaModule .choicegroup label:hover,
+.xmodule_display.xmodule_ConditionalModule div.problem .xmodule_display.xmodule_CapaModule .choicetextgroup label:hover {
+	border-color: $base-color;
+}
+
+.courses-container .courses .course {
+	border-bottom-color: $base-color;
+}
