@@ -36,3 +36,7 @@
     hyphens: auto;
     word-wrap: break-word;
 }
+
+.wrapper-msg.wrapper-auto-cert .auto-cert-message {
+    border-left-color: $base-color;
+}

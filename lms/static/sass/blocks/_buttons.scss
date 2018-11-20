@@ -15,7 +15,9 @@ input[type="submit"] {
 .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .action-cancel,
 .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .wrapper-tabs .tab.is-selected .toggle-button,
 .view-register .register .btn-login-action,
-.course-info header.course-profile .intro-inner-wrapper .intro .main-cta strong{
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta strong,
+.btn-primary,
+.btn-brand {
 	transition: all 0.2s ease;
 	display: inline-block;
 	background: $theme-btn-bg !important;
@@ -25,13 +27,16 @@ input[type="submit"] {
 	border-radius: 0 !important;
 	text-shadow: none !important;
 	box-shadow: none !important;
+
 	&:active,
 	&:focus {
 		background: $theme-btn-bg !important;
 	}
+
 	&:focus:hover {
 		background: $theme-btn-bg-hover !important;
 	}
+
 	&:hover {
 		background: $theme-btn-bg-hover !important;
 	}
@@ -52,4 +57,69 @@ input[type="submit"] {
 	padding: 8px 17px;
 	text-decoration: none;
 	text-shadow: 0 1px 0 #f9f8f8;
+}
+
+// btn white
+.account-settings-sections .section .account-settings-section-body .u-field .field .u-field-link,
+.account-settings-sections .section .account-deletion-details .btn-outline-primary,
+.btn-primary,
+#expand-collapse-outline-all-button,
+.discussion-module .btn,
+.wmd-prompt-dialog .btn,
+.discussion.inline-discussion .new-post-article .add-post-cancel {
+	background: $theme-btn-white-bg;
+	border-color: $theme-btn-white-border;
+	color: $theme-btn-white-text-color;
+
+	&:hover,
+	&:focus {
+		color: $theme-btn-white-text-color-hover;
+		background: $theme-btn-white-bg-hover;
+		border-color: $theme-btn-white-bg-hover;
+	}
+}
+
+.discussion-module .btn:hover, .wmd-prompt-dialog .btn:hover,
+.discussion-module .btn-brand:hover, .wmd-prompt-dialog .btn-brand:hover,
+.discussion-module .btn:active, .wmd-prompt-dialog .btn:active,
+.discussion-module .btn-brand:active, .wmd-prompt-dialog .btn-brand:active,
+.discussion-module .btn:focus, .wmd-prompt-dialog .btn:focus,
+.discussion-module .btn-brand:focus, .wmd-prompt-dialog .btn-brand:focus {
+	color: $theme-btn-white-text-color-hover !important;
+	background: $theme-btn-white-bg-hover !important;
+	border-color: $theme-btn-white-bg-hover !important;
+}
+
+// btn without border
+.btn-default {
+	color: $theme-btn-white-text-color;
+
+	&:hover,
+	&.is-hovered,
+	&:focus,
+	&.is-focused {
+		color: $theme-btn-white-text-color;
+		border-color: $theme-btn-white-border;
+	}
+}
+
+// "Upgrade to verified" btn
+.wrapper-messages-primary .message.message-upsell .action-upgrade,
+.verification-process .action-primary, .verification-process .action-confirm,
+.verification-process .carousel .wrapper-task .controls .control.approved .action,
+.verification-process .carousel .wrapper-task .controls .control.approved .entitlement-actions-wrapper .entitlement-action,
+.entitlement-actions-wrapper .verification-process .carousel .wrapper-task .controls .control.approved .entitlement-action,
+.verification-process.step-select-track .register-choice-certificate .action-select input, .learner-achievements .learner-message .button,
+.learner-achievements .learner-message .action,
+.learner-achievements .learner-message .entitlement-actions-wrapper .entitlement-action,
+.entitlement-actions-wrapper .learner-achievements .learner-message .entitlement-action,
+.wrapper-msg .has-actions .nav-actions .action-primary, .wrapper-msg .has-actions .msg-actions .action-primary {
+	box-shadow: 0 2px 1px 0 darken($theme-btn-bg, 10%);
+	background: darken($theme-btn-bg, 10%);
+	color: #fff;
+
+	&:hover,
+	&:focus {
+		background: $theme-btn-bg;
+	}
 }

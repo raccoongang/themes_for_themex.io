@@ -160,3 +160,33 @@
 	max-width: 100%;
 	box-sizing: border-box;
 }
+
+.wiki-wrapper section.wiki .nav-tabs a,
+.wiki-wrapper section.wiki .breadcrumb li a{
+	color: $links-color;
+
+	&:hover,
+	&:focus {
+		color: $links-color-hover;
+	}
+}
+
+.wiki-wrapper section.wiki .nav-tabs li.active a {
+	color: $links-color;
+	border-color: $links-color;
+}
+
+.wiki-wrapper section.wiki .nav-tabs a:hover,
+.wiki-wrapper section.wiki .nav-tabs div.info-wrapper section.handouts ol li div.hitarea:hover+h4,
+div.info-wrapper section.handouts ol li .wiki-wrapper section.wiki .nav-tabs div.hitarea:hover+h4,
+.wiki-wrapper section.wiki .nav-tabs div.info-wrapper section.handouts ol li div.hitarea:focus+h4,
+div.info-wrapper section.handouts ol li .wiki-wrapper section.wiki .nav-tabs div.hitarea:focus+h4,
+.wiki-wrapper section.wiki .nav-tabs a:focus,
+.wiki-wrapper section.wiki .article-functions .see-children a:hover,
+.wiki-wrapper section.wiki .article-functions .see-children div.info-wrapper section.handouts ol li div.hitarea:hover+h4,
+div.info-wrapper section.handouts ol li .wiki-wrapper section.wiki .article-functions .see-children div.hitarea:hover+h4,
+.wiki-wrapper section.wiki .article-functions .see-children div.info-wrapper section.handouts ol li div.hitarea:focus+h4,
+div.info-wrapper section.handouts ol li .wiki-wrapper section.wiki .article-functions .see-children div.hitarea:focus+h4,
+.wiki-wrapper section.wiki .article-functions .see-children a:focus{
+	color: $links-color;
+}

@@ -1,6 +1,7 @@
 .login-register-content {
 	background: none;
 }
+
 .login-register {
 	max-width: 1170px;
 	padding: 0 15px;
@@ -55,4 +56,14 @@
 			}
 		}
 	}
+}
+
+.view-register .introduction header .title .title-super,
+.view-login .introduction header .title .title-super,
+.view-passwordreset .introduction header .title .title-super {
+	color: $base-color;
+}
+
+.register .btn-brand.btn-login {
+	background: transparent !important;
 }
