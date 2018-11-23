@@ -110,10 +110,20 @@ from six import string_types
 <section class="course-info">
 
   <%block name="course_about_header">
-  <header class="course-profile">
-    <div class="holder">
-      <div class="intro-inner-wrapper">
-        <div class="table">
+  <header class="course-profile course-profile-promo-box">
+    <div class="holder course-profile-wrapper">
+
+      % if get_course_about_section(request, course, "video"):
+      <a href="#video-modal" class="media" rel="leanModal">
+        <div class="hero">
+          <img src="${course_image_urls['large']}" alt="" />
+          <div class="play-intro"></div>
+        </div>
+      </a>
+      %else:
+          <img src="${course_image_urls['large']}" alt="" class="course-profile_img"/>
+      % endif
+
         <section class="intro">
           <div class="heading-group">
             <h1>
@@ -188,22 +198,6 @@ from six import string_types
           </div>
 
         </section>
-        % if get_course_about_section(request, course, "video"):
-        <a href="#video-modal" class="media" rel="leanModal">
-          <div class="hero">
-            <img src="${course_image_urls['large']}" alt="" />
-            <div class="play-intro"></div>
-          </div>
-        </a>
-        %else:
-        <div class="media">
-          <div class="hero">
-            <img src="${course_image_urls['large']}" alt="" />
-          </div>
-        </div>
-        % endif
-        </div>
-      </div>
     </div>
   </header>
   </%block>

@@ -20,7 +20,7 @@ resume_block = retrieve_last_sitewide_block_completed(username)
 displayname = get_enterprise_learner_generic_name(request) or username
 %>
 
-<div class="nav-item hidden-mobile">
+<div class="nav-item hidden-mobile nav-item-dashboard">
     <a href="${reverse('dashboard')}" class="menu-title">
         <img class="user-image-frame" src="${profile_image_url}" alt="">
         <span class="sr-only">${_("Dashboard for:")}</span>
