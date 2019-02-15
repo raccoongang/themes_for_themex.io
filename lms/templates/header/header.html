@@ -29,32 +29,111 @@ from openedx.core.djangoapps.lang_pref.api import header_language_selector_is_en
     </%block>
 % endif
 
-<header class="global-header ${'slim' if course else ''}">
+<header class="global-header theme-header ${'slim' if course else ''}">
+    <div class="theme-header-info">
+        <div class="theme-header-info_contact">
+            <span class="theme-header-info_text">Have any question?</span>
+            <span class="theme-header-info_phone"><i class="fa fa-phone" aria-hidden="true"></i> +1 857 4533328</span>
+            <a class="theme-header-info_mail" href="mailto:info@raccoongang.com"><i class="fa fa-envelope" aria-hidden="true"></i>info@raccoongang.com</a>
+        </div>
+        <div class="theme-header-info_social">
+            <span class="theme-header-info_text">Find us in social network</span>
+            <ul class="social-list">
+                <li class="social-list_item"><a class="social-list_link" href="https://twitter.com/raccoongangcom" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li class="social-list_item"><a class="social-list_link" href="https://www.facebook.com/raccoongangco" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li class="social-list_item"><a class="social-list_link" href="https://www.linkedin.com/company/raccoon-gang" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+    </div>
     <div class="holder">
-    % if use_cookie_banner:
-        ${static.renderReact(
-            component="CookiePolicyBanner",
-            id="cookie-policy-banner",
-            props={}
-        )}
-    % endif
-    <div class="main-header">
-        <%include file="navbar-logo-header.html" args="online_help_token=online_help_token"/>
-        <div class="hamburger-menu" role="button" aria-label=${_("Options Menu")} aria-expanded="false" aria-controls="mobile-menu" tabindex="0">
+        % if use_cookie_banner:
+            ${static.renderReact(
+                component="CookiePolicyBanner",
+                id="cookie-policy-banner",
+                props={}
+            )}
+        % endif
+        <div class="main-header">
+            <%include file="navbar-logo-header.html" args="online_help_token=online_help_token"/>
+            % if user.is_authenticated:
+                <%include file="navbar-authenticated.html" args="online_help_token=online_help_token"/>
+            % else:
+                <%include file="navbar-not-authenticated.html" args="online_help_token=online_help_token"/>
+            % endif
+        </div>
+        <div class="mobile-menu hidden" aria-label=${_("More Options")} role="menu" id="mobile-menu"></div>
+    </div>
+
+    <div class="theme-main-nav">
+        <div class="theme-main-nav_opener">
             <span class="line"></span>
             <span class="line"></span>
             <span class="line"></span>
             <span class="line"></span>
         </div>
-        % if user.is_authenticated:
-            <%include file="navbar-authenticated.html" args="online_help_token=online_help_token"/>
-        % else:
-            <%include file="navbar-not-authenticated.html" args="online_help_token=online_help_token"/>
-        % endif
-    </div>
-    <div class="mobile-menu hidden" aria-label=${_("More Options")} role="menu" id="mobile-menu"></div>
+        <div class="theme-main-nav_logo">
+            <a href="${marketing_link('ROOT')}">
+          <span class="theme-nav-wrapper_logo-holder theme-nav-wrapper_logo-holder_small">
+              <img src="/static/${settings.FEATURES.get('MARVEL_BLUE_DEFAULT_SITE_THEME', settings.DEFAULT_SITE_THEME)}/images/logo.png" alt="logo">
+          </span>
+            </a>
+        </div>
+        <nav class="theme-main-nav_holder">
+            <ul class="theme-main-nav_list">
+                <li class="theme-main-nav_item"><a href="/about" class="theme-main-nav_link">${_("About The University")}</a></li>
+                <li class="theme-main-nav_item"><a href="/blog" class="theme-main-nav_link">${_("Blog")}</a></li>
+                <li class="theme-main-nav_item"><a href="/contact" class="theme-main-nav_link">${_("Contact Us")}</a></li>
+                % if user.is_authenticated():
+                <%block name="navigation_global_links_authenticated">
+                % if settings.FEATURES.get('COURSES_ARE_BROWSABLE') and not show_program_listing:
+                <li class="theme-main-nav_item">
+                    <a class="theme-main-nav_link" href="${marketing_link('COURSES')}">${_("Explore Courses")}</a>
+                </li>
+                % endif
+                % if show_program_listing:
+                <li class="theme-main-nav_item">
+                    <a class="${'active ' if reverse('dashboard') == request.path else ''}theme-main-nav_link" href="${reverse('dashboard')}">
+                        ${_("Courses")}
+                    </a>
+                </li>
+                <li class="theme-main-nav_item">
+                    <a class="${'active ' if reverse('program_listing_view') in request.path else ''}theme-main-nav_link" href="${reverse('program_listing_view')}">
+                        ${_("Programs")}
+                    </a>
+                </li>
+                % endif
+                %if settings.FEATURES.get('ENABLE_SYSADMIN_DASHBOARD','') and user.is_staff:
+                <li class="theme-main-nav_item">
+                    ## Translators: This is short for "System administration".
+                    <a class="theme-main-nav_link" href="${reverse('sysadmin')}">${_("Sysadmin")}</a>
+                </li>
+                %endif
+            </%block>
+            % else:
+            <%block name="navigation_other_global_links">
+            % if not settings.FEATURES['DISABLE_LOGIN_BUTTON']:
+            % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
+            <li class="theme-main-nav_item">
+                <a class="theme-main-nav_link" href="/courses">${_("Explore Courses")}</a>
+            </li>
+            %endif
+            % endif
+        </%block>
+        %endif
+        </ul>
+        </nav>
     </div>
 </header>
+
+<script>
+    $(".theme-main-nav_opener").on("click", function open(){
+        if ($(this).parent().hasClass("theme-main-nav__open")){
+            $(this).parent().removeClass("theme-main-nav__open");
+        } else {
+            $(this).parent().addClass("theme-main-nav__open");
+        }
+    });
+</script>
 
 % if course:
 <!--[if lte IE 9]>
