@@ -9,6 +9,14 @@
 <%namespace name='static' file='static_content.html'/>
 
 <div class="wrapper wrapper-footer">
+
+  <div class="footer_section footer_section-contact-us">
+    <div class="footer_section-holder">
+      <span class="footer_text">If you have some questions please contact us</span>
+      <a class="footer_btn__contact" href="/contact">Contact us</a>
+    </div>
+  </div>
+
   <footer id="footer-openedx" class="grid-container"
     ## When rendering the footer through the branding API,
     ## the direction may not be set on the parent element,
@@ -18,53 +26,45 @@
     % endif
   >
     <div class="colophon">
+      <div class="footer-nav-wrapper">
+        <div class="footer-col">
+          <div class="footer-title">About the university</div>
+          <ul>
+            <li><a href="https://raccoongang.com/en/raccoon-university/" target="_blank">Raccoon Gang University</a></li>
+            <li><a href="https://raccoongang.com/en/about-us/" target="_blank">About Us</a></li>
+            <li><a href="https://raccoongang.com/#our_services" target="_blank">eDX Services</a></li>
+            <li><a href="https://raccoongang.com/en/blog/" target="_blank">Blog</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <div class="footer-title">courses</div>
+          <ul>
+            <li><a href="https://studio-marvel-hawthorn.raccoongang.com/" target="_blank">Create Course Now</a></li>
+            <li><a href="https://raccoongang.com/en/about-us/" target="_blank">About Us</a></li>
+            <li><a href="https://raccoongang.com/#our_services" target="_blank">eDX Services</a></li>
+            <li><a href="https://raccoongang.com/en/blog/" target="_blank">Blog</a></li>
+          </ul>
+        </div>
 
-      <nav class="nav-colophon" aria-label="${_('About')}">
-        <ol>
-            <li class="nav-colophon-01">
-              <a href="/about">${_("About")}</a>
-            </li>
-            <li class="nav-colophon-02">
-              <a href="/privacy">${_("Privacy Policy")}</a>
-            </li>
-            <li class="nav-colophon-03">
-              <a href="/tos">${_("Terms of Service")}</a>
-            </li>
-        </ol>
-      </nav>
-      <div class="footer-flex">
-        <p class="footer-support">
-          <span>${_("Built on")}</span>
-          <a target="_blank" href="${footer['openedx_link']['url']}">
-            <svg class="svg-edx"  viewBox="0 0 100 70">
-              <use xlink:href="#logo-edx" />
-            </svg>
-          </a>
-          <span>${_("by")}</span>
-          <a target="_blank" href="https://raccoongang.com" class="raccoon__logo">
-            <em>Raccoon Gang</em>
-            <svg class="svg-raccoon"  viewBox="0 0 100 100">
-              <use xlink:href="#logo-raccoon" />
-            </svg>
-          </a>
-        </p>
-        <ul class="icon-list">
-          <li class="icon-list_item"><a href="#" target="_blank" class="icon-list_link">
-            <svg class="icon-list_svg" viewBox="0 0 35 35">
-              <use xlink:href="#ico-facebook" />
-            </svg>
-            </a>
-          </li>
-          <li class="icon-list_item"><a href="#" target="_blank" class="icon-list_link">
-            <svg class="icon-list_svg" viewBox="0 0 35 35">
-              <use xlink:href="#ico-twitter" />
-            </svg></a>
-          </li>
-        </ul>
-        <div class="footer-logo-holder">
-          <a href="/"><img alt="organization logo" src="/static/${settings.DEFAULT_SITE_THEME}/images/footer-logo.png"></a>
+        <div class="footer-col">
+          <div class="footer-title">Contact us</div>
+          <ul>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="https://raccoongang.com/en/contact-us/" target="_blank">Help</a></li>
+          </ul>
         </div>
       </div>
+
+      <div class="footer_section">
+        <div class="footer_copyright-holder">
+          © 2016 Racoongang. All Rights Reserved
+          <a href="${footer['openedx_link']['url']}">
+            <img src="${footer['openedx_link']['image']}" alt="${footer['openedx_link']['title']}" width="140" />
+          </a>
+        </div>
+      </div>
+
     </div>
   </footer>
 </div>

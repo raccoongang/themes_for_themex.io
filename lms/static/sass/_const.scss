@@ -1,14 +1,17 @@
-$base-color: #009be0;
+$base-color: #2b8aff;
 //body background
-$body-bg: #eee;
+$body-bg: #fff;
 //links
 $links-color: $base-color;
 $links-color-hover: lighten($links-color, 10%);
 //settings for header
-$header-bg: #fff;
-$header-nav-link-color: #000;
-$header-nav-link-color-hover: lighten($header-nav-link-color, 20%);
-$dropdown-menu-link-color: $base-color;
+$header-bg: #1f1d20;
+$header-nav-link-default-color:  #a3a3a6;
+$header-nav-link-color: $base-color;
+$header-nav-link-color-hover: #fff;
+$header-nav-link-bg: transparent;
+$header-nav-link-bg-hover: lighten($header-nav-link-color, 10%);
+$dropdown-menu-link-color: #a3a3a6;
 $dropdown-menu-link-color-hover: lighten($dropdown-menu-link-color, 20%);
 //settings for hamburger
 $hamburger-color: $base-color;
@@ -18,11 +21,11 @@ $hamburger-height-line: 5px;
 //settings on promo box
 $promo-box-text-color: #fff;
 $promo-box-text-shadow: 0px 2px 0px rgba(77, 77, 77, 0.4);
-$find-btn-bg: transparent;
-$find-btn-bg-hover: rgba(0, 0, 0, .2);
-$find-btn-border: #fff;
+$find-btn-bg: $base-color;
+$find-btn-bg-hover: #fff;
+$find-btn-border: $base-color;
 $find-btn-color: #fff;
-$find-btn-color-hover: $find-btn-color;
+$find-btn-color-hover: $base-color;
 //search input on promo box
 $search-input-background: rgba(255,255,255,0.25);
 $search-input-border: #fff;
@@ -32,12 +35,16 @@ $search-button-border: #fff;
 $search-button-color: #fff;
 $search-height: 55px;
 //settings for footer
-$footer-bg: #009289;
-$footer-nav-link-color: #fff;
-$footer-nav-link-color-hover: rgba(255,255,255, .8);
+$footer-bg: #1f1d20;
+$footer-title-color: #fff;
+$footer-title-border-color: #2f343b;
+$footer-nav-link-color: #7f848c;
+$footer-nav-link-color-hover: lighten($footer-nav-link-color, 10%);
 $footer-support-text-and-logo: #fff;
 $footer-social-link-bg: #fff;
-$footer-social-link-bg-hover: lighten($footer-social-link-bg, 20%);
+$footer-social-link-bg-hover: lighten($footer-social-link-bg, 10%);
+$footer-copyright-color: #7f848c;
+$footer-copyright-border-color: #2f343b;
 //btn
 $theme-btn-bg: $base-color;
 $theme-btn-text-color: #ffe;
@@ -64,6 +71,7 @@ $theme-input-icon: $base-color;
 $theme-user-link: $base-color;
 $theme-user-link-hover: lighten($theme-user-link, 20%);
 //settings fo courses on main page and search
+$courses-title-color: #0c1e2b;
 $courses-border-color: $base-color;
 $course-hover-bg: rgba(0, 0, 0, .5);
 $course-link-color: $theme-link;
@@ -77,3 +85,30 @@ $img-path: "../images" !default;
 $font-path: "../fonts" !default;
 $delete-button: red;
 $white: #fff;
+
+//theme
+$screen-lg: 1600px;
+$screen-mdp: 1100px;
+$screen-md: 992px;
+$screen-x: 600px;
+$screen-xs: 450px;
+//fonts
+$sans-serif-font: "Muli", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+//header info bar
+$header-info-color: #a3a3a6;
+$header-info-social-icon-color: #2b8aff;
+//header nav bar
+$theme-main-mobile-logo-height: 60px;
+$theme-main-mobile-logo-width: 55px;
+$theme-main-nav: #264fd6;
+$theme-main-nav-link-color: #fff;
+$theme-main-nav-item-border-color: #2f343b;
+// footer contact us
+$footer-contact-us-bg: #fff;
+$footer-contact-us-color: #5a666e;
+$footer-contact-us-border-color: #ececec;
+//about page
+$promo-text-color: #fff;
+$promo-teacher-title-color: #333;
+$promo-teacher-text-color: #ababab;
+
