@@ -16,7 +16,7 @@ from branding import api as branding_api
 <h1 class="header-logo">
   <a href="/">
     <%block name="navigation_logo">
-    <img  class="logo" src="${branding_api.get_logo_url(is_secure)}" alt="${_("{platform_name} Home Page").format(platform_name=static.get_platform_name())}"/>
+    <img  class="logo" src="/static/${settings.FEATURES.get('MARVEL_DEFAULT_HAWTHORN_SITE_THEME', settings.DEFAULT_SITE_THEME)}/images/logo.png" alt="${_("{platform_name} Home Page").format(platform_name=static.get_platform_name())}"/>
     </%block>
   </a>
   % if course:
