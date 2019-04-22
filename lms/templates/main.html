@@ -127,7 +127,7 @@ from pipeline_mako import render_require_js_path_overrides
   <%block name="headextra"/>
   <%block name="head_extra"/>
 
-    <link rel="stylesheet" type="text/css" href="/static/${settings.DEFAULT_SITE_THEME}/css/custom.css"></link>
+    <link rel="stylesheet" type="text/css" href="/static/${settings.FEATURES.get('MARVEL_YELLOW_DEFAULT_HAWTHORN_SITE_THEME', settings.DEFAULT_SITE_THEME)}/css/custom.css"></link>
 
   <%include file="/courseware/experiments.html"/>
   <%include file="user_metadata.html"/>
