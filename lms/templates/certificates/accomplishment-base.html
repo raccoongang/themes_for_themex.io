@@ -18,7 +18,7 @@ course_mode_class = course_mode if course_mode else ''
     <title>${document_title}</title>
 
     <%static:css group='style-certificates'/>
-    <link rel="stylesheet" href="/static/${settings.FEATURES.get('BASE_SITE_THEME', settings.DEFAULT_SITE_THEME)}/css/certificate.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="/static/${settings.FEATURES.get('MARVEL_DEFAULT_HAWTHORN_SITE_THEME', settings.DEFAULT_SITE_THEME)}/css/certificate.css" type="text/css" media="all" />
     <link rel="icon" type="image/x-icon" href="${static.url(static.get_value('favicon_path', settings.FAVICON_PATH))}" />
 </head>
 
