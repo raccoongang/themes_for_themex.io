@@ -19,22 +19,29 @@ from openedx.core.djangolib.markup import HTML, Text
               % if homepage_overlay_html:
                 ${homepage_overlay_html | n, decode.utf8}
               % else:
-                <%include file="index_overlay.html" />
+                ## Translators: 'Open edX' is a registered trademark, please keep this untranslated. See http://open.edx.org for more information.
+                <p>${_("the best theme for education")}</p>
+                ## Translators: 'Open edX' is a registered trademark, please keep this untranslated. See http://open.edx.org for more information.
+                <h1>${_("Welcome to University!")}</h1>
+                <a href="${reverse('dashboard')}" class="slider-btn">${_("Explore courses")}</a>
               % endif
             </div>
-            % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
-              <div class="course-search">
-                <form method="get" action="/courses">
-                  <label><span class="sr">${_("Search for a course")}</span>
-                    <input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
-                  </label>
-                  <button class="search-button" type="submit">
-                    <span class="icon fa fa-search" aria-hidden="true"></span><span class="sr">${_("Search")}</span>
-                  </button>
-                </form>
-              </div>
-            % endif
-
+          </div>
+          <%include file="index_promo_video.html" />
+        </div>
+        <div class="outer-wrapper">
+          <div class="title">
+            <div class="heading-group">
+              % if homepage_overlay_html:
+                ${homepage_overlay_html | n, decode.utf8}
+              % else:
+                ## Translators: 'Open edX' is a registered trademark, please keep this untranslated. See http://open.edx.org for more information.
+                <p>${_("the best theme for education")}</p>
+                ## Translators: 'Open edX' is a registered trademark, please keep this untranslated. See http://open.edx.org for more information.
+                <h1>${_("Welcome to University!")}</h1>
+                <a href="${reverse('dashboard')}" class="slider-btn">${_("Explore courses")}</a>
+              % endif
+            </div>
           </div>
           <%include file="index_promo_video.html" />
         </div>
@@ -44,6 +51,128 @@ from openedx.core.djangolib.markup import HTML, Text
       <script src="${static.url('js/slider.js')}"></script>
 
       <%include file="${courses_list}" />
+
+      <section class="testimonials">
+        <div class="wrap">
+          <div class="testimonials-title section-title">
+            <svg><use xlink:href="#icon-testimonials" /></svg>
+            ${_("Testimonials")}
+          </div>
+          <ul class="testimonials-list">
+            <li class="testimonials-item">
+              <div class="testimonials-item-wrap">
+                <figure class="testimonials-photo" style="background-image: url('/static/${settings.DEFAULT_SITE_THEME}/images/testimonials/testimonial1.jpg')">
+                  <img class="sr" src="/static/${settings.DEFAULT_SITE_THEME}/images/testimonials/testimonial1.jpg" alt="${_("Brian O'grady")}">
+                </figure>
+                <div class="testimonials-name">${_("Brian O'grady")}</div>
+                <div class="testimonials-position">${_("Programme Director")}</div>
+                <div class="testimonials-message">${_("This project-based course explores the process of designing and developing educational games, including issues associated with assessment, implementation and marketing")}...</div>
+              </div>
+            </li>
+            <li class="testimonials-item">
+              <div class="testimonials-item-wrap">
+                <figure class="testimonials-photo" style="background-image: url('/static/${settings.DEFAULT_SITE_THEME}/images/testimonials/testimonial2.jpg')">
+                  <img class="sr" src="/static/${settings.DEFAULT_SITE_THEME}/images/testimonials/testimonial2.jpg" alt="${_("Brian O'grady")}">
+                </figure>
+                <div class="testimonials-name">${_("Brian O'grady")}</div>
+                <div class="testimonials-position">${_("Programme Director")}</div>
+                <div class="testimonials-message">${_("This project-based course explores the process of designing and developing educational games, including issues associated with assessment, implementation and marketing")}...</div>
+              </div>
+            </li>
+            <li class="testimonials-item">
+              <div class="testimonials-item-wrap">
+                <figure class="testimonials-photo" style="background-image: url('/static/${settings.DEFAULT_SITE_THEME}/images/testimonials/testimonial3.jpg')">
+                  <img class="sr" src="/static/${settings.DEFAULT_SITE_THEME}/images/testimonials/testimonial3.jpg" alt="${_("Brian O'grady")}">
+                </figure>
+                <div class="testimonials-name">${_("Brian O'grady")}</div>
+                <div class="testimonials-position">${_("Programme Director")}</div>
+                <div class="testimonials-message">${_("This project-based course explores the process of designing and developing educational games, including issues associated with assessment, implementation and marketing")}...</div>
+              </div>
+            </li>
+            <li class="testimonials-item">
+              <div class="testimonials-item-wrap">
+                <figure class="testimonials-photo" style="background-image: url('/static/${settings.DEFAULT_SITE_THEME}/images/testimonials/testimonial1.jpg')">
+                  <img class="sr" src="/static/${settings.DEFAULT_SITE_THEME}/images/testimonials/testimonial1.jpg" alt="${_("Brian O'grady")}">
+                </figure>
+                <div class="testimonials-name">${_("Brian O'grady")}</div>
+                <div class="testimonials-position">${_("Programme Director")}</div>
+                <div class="testimonials-message">${_("This project-based course explores the process of designing and developing educational games, including issues associated with assessment, implementation and marketing")}...</div>
+              </div>
+            </li>
+            <li class="testimonials-item">
+              <div class="testimonials-item-wrap">
+                <figure class="testimonials-photo" style="background-image: url('/static/${settings.DEFAULT_SITE_THEME}/images/testimonials/testimonial2.jpg')">
+                  <img class="sr" src="/static/${settings.DEFAULT_SITE_THEME}/images/testimonials/testimonial2.jpg" alt="${_("Brian O'grady")}">
+                </figure>
+                <div class="testimonials-name">${_("Brian O'grady")}</div>
+                <div class="testimonials-position">${_("Programme Director")}</div>
+                <div class="testimonials-message">${_("This project-based course explores the process of designing and developing educational games, including issues associated with assessment, implementation and marketing")}...</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="partners">
+        <div class="wrap">
+          <div class="partners-title section-title">
+            <svg><use xlink:href="#icon-partners" /></svg>
+            ${_("Our partners")}
+          </div>
+          <ul class="partners-list">
+            <li class="partners-item">
+              <figure class="partners-link">
+                <img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/partner1.png" alt="${_('Microsoft logo')}" class="partners-logo">
+              </figure>
+            </li>
+            <li class="partners-item">
+              <figure class="partners-link">
+                <img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/partner2.png" alt="${_('edx logo')}" class="partners-logo">
+              </figure>
+            </li>
+            <li class="partners-item">
+              <figure class="partners-link">
+                <img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/partner3.png" alt="${_('prometheus logo')}" class="partners-logo">
+              </figure>
+            </li>
+            <li class="partners-item">
+              <figure class="partners-link">
+                <img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/partner4.png" alt="${_('shindig logo')}" class="partners-logo">
+              </figure>
+            </li>
+            <li class="partners-item">
+              <figure class="partners-link">
+                <img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/partner5.png" alt="${_('UCLA logo')}" class="partners-logo">
+              </figure>
+            </li>
+            <li class="partners-item">
+              <figure class="partners-link">
+                <img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/partner6.png" alt="${_('go-it logo')}" class="partners-logo">
+              </figure>
+            </li>
+            <li class="partners-item">
+              <figure class="partners-link">
+                <img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/partner7.png" alt="${_('labster logo')}" class="partners-logo">
+              </figure>
+            </li>
+            <li class="partners-item">
+              <figure class="partners-link">
+                <img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/partner1.png" alt="${_('Microsoft logo')}" class="partners-logo">
+              </figure>
+            </li>
+            <li class="partners-item">
+              <figure class="partners-link">
+                <img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/partner2.png" alt="${_('edx logo')}" class="partners-logo">
+              </figure>
+            </li>
+            <li class="partners-item">
+              <figure class="partners-link">
+                <img src="/static/${settings.DEFAULT_SITE_THEME}/images/partners/partner3.png" alt="${_('prometheus logo')}" class="partners-logo">
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </section>
 
     </section>
 </main>
@@ -62,7 +191,7 @@ from openedx.core.djangolib.markup import HTML, Text
          if(getParameterByName('next')) {
               $('#login').trigger("click");
          }
-      })
+      });
    </script>
 </%block>
 

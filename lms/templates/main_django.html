@@ -26,6 +26,7 @@
 </head>
 
 <body class="{% block bodyclass %}{% endblock %} lang_{{LANGUAGE_CODE}}">
+    {% include "svg_sprite.html" %}
     {% load render_bundle from webpack_loader %}
     {% render_bundle "commons" %}
   <div class="window-wrap" dir="{{LANGUAGE_BIDI|yesno:'rtl,ltr'}}">
@@ -46,6 +47,7 @@
     {% javascript 'base_application' %}
 
     {% render_block "js" %}
+    <script type="text/javascript" src="{% static js/custom.js %}"></script>
 </body>
 </html>
 

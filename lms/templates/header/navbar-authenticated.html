@@ -26,12 +26,37 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
     help_link = doc_link
 %>
 
+% if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
+<button class="search-btn search-btn_mobile">
+  <svg><use xlink:href="#icon-search"/></svg>
+  <span class="sr">${_("Search")}</span>
+</button>
+% endif
+
 <div class="nav-links">
-  <div class="search">
+  % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
+  <div class="header-search">
     <button class="search-btn">
-      <svg><use xlink:href="#icon-search"/></svg> Search
+      <svg><use xlink:href="#icon-search"/></svg> ${_("Search")}
     </button>
+    <div class="course-search">
+      <form method="get" action="/courses">
+        <label>
+          <span class="sr">${_("Search for a course")}</span>
+          <input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
+        </label>
+        <button class="search-button" type="submit">
+          <svg><use xlink:href="#icon-search"/></svg>
+          <span class="sr">${_("Search")}</span>
+        </button>
+        <button class="search-close" type="button">
+          <svg><use xlink:href="#icon-close"/></svg>
+          <span class="sr">${_("Close search form")}</span>
+        </button>
+      </form>
+    </div>
   </div>
+  % endif
   <div class="main">
     % if show_dashboard_tabs:
       <div class="mobile-nav-item hidden-mobile nav-item nav-tab">

@@ -1,6 +1,11 @@
+#djDebug {
+    display: none !important;
+}
+
 @import "mixin";
 @import "variables";
 @import "blocks/header";
+@import "blocks/footer";
 @import "blocks/home-page";
 @import "blocks/slider";
 
@@ -10,7 +15,7 @@
 @include font-face(Neris, '../fonts/Neris-Black', 900, normal, woff woff2);
 
 *:not(.fa):not(.glyphicon):not([class*='sorting']):not([class*="icon-cc"]) {
-	font-family: Neris, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-family: Neris, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
 .wrap {
@@ -18,9 +23,23 @@
     max-width: 1170px;
     padding: 0 15px;
     margin: 0 auto;
+    box-sizing: border-box;
+
+    @media (max-width: 767px) {
+        padding: 0 10px;
+    }
 
     &_flex {
         display: flex;
         justify-content: space-between;
     }
+
+    &_flex-wrap {
+        flex-wrap: wrap;
+        align-items: center;
+    }
+}
+
+.window-wrap {
+    background: #f2f2f2;
 }
