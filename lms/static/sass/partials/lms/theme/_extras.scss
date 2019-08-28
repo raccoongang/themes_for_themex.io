@@ -1,0 +1,26 @@
+@import "mixin";
+@import "variables";
+@import "blocks/header";
+@import "blocks/home-page";
+@import "blocks/slider";
+
+@include font-face(Neris, '../fonts/Neris-Light', 300, normal, woff woff2);
+@include font-face(Neris, '../fonts/Neris-Light', 400, normal, woff woff2);
+@include font-face(Neris, '../fonts/Neris-SemiBold', 600, normal, woff woff2);
+@include font-face(Neris, '../fonts/Neris-Black', 900, normal, woff woff2);
+
+*:not(.fa):not(.glyphicon):not([class*='sorting']):not([class*="icon-cc"]) {
+	font-family: Neris, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+.wrap {
+    width: 100%;
+    max-width: 1170px;
+    padding: 0 15px;
+    margin: 0 auto;
+
+    &_flex {
+        display: flex;
+        justify-content: space-between;
+    }
+}
