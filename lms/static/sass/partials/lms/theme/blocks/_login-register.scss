@@ -1,0 +1,307 @@
+body.view-login {
+    @include full-page-background-image('../images/login-register.jpg');
+
+    .introduction,
+    .container {
+        background: transparent;
+    }
+
+    .content {
+        margin: 0;
+        width: auto;
+        max-width: 100%;
+
+        @media (max-width: 1150px) {
+            order: 2;
+        }
+    }
+
+    .window-wrap {
+        background: none !important;
+
+        .content-wrapper {
+            background: none !important;
+        }
+    }
+
+    p a:not(.btn),
+    p a:visited:not(.btn) {
+        color: $base-color;
+
+        &:hover,
+        &:focus {
+            color: $base-color;
+            border-bottom-color: $base-color;
+        }
+    }
+
+    .message {
+        &.third-party-signin,
+        &.status {
+            margin-top: 20px;
+        }
+    }
+
+    .login {
+        &.container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 15px 80px;
+            width: 1140px;
+            max-width: 100%;
+
+            @media (max-width: 1150px) {
+                flex-direction: column;
+            }
+        }
+
+        aside {
+            position: absolute;
+            right: 0;
+            top: -7px;
+            max-width: 255px;
+
+            @media (max-width: 1150px) {
+                position: static;
+                margin-bottom: 20px;
+                order: 1;
+                width: 555px;
+                max-width: 100%;
+            }
+
+            h3 {
+                font-size: 14px;
+                text-transform: uppercase;
+                font-weight: 900;
+                color: $base-color;
+                line-height: 1.2;
+                margin-bottom: 5px;
+            }
+
+            p {
+                line-height: 1.3;
+            }
+        }
+    }
+}
+
+#login-form {
+    width: 555px;
+    max-width: 100%;
+    box-sizing: border-box;
+    background: rgba($white, .3);
+    border-radius: 20px;
+    padding: 30px 95px 40px;
+
+    @media (max-width: 767px) {
+        padding: 20px 15px;
+    }
+
+    .introduction {
+        width: auto;
+
+        header {
+            height: auto;
+            background: transparent;
+        }
+
+        .title {
+            position: static;
+            padding-bottom: 0;
+            margin-bottom: 0;
+            text-align: center;
+            color: $field-label-color;
+            line-height: 1.2;
+        }
+
+        .title-super {
+            font-size: 18px;
+            font-weight: 900;
+            color: inherit;
+            text-transform: uppercase;
+        }
+
+        .title-sub {
+            font-size: 14px;
+            font-weight: 600;
+            color: inherit;
+            margin-left: 0;
+        }
+    }
+
+    .field {
+        &.is-focused {
+            label {
+                color: $base-color2;
+            }
+        }
+
+        &.password {
+            .tip {
+                top: -8px;
+                margin-right: 14px;
+            }
+        }
+
+        &.checkbox {
+            input[type="checkbox"] {
+                clip: rect(1px 1px 1px 1px);
+                clip: rect(1px, 1px, 1px, 1px);
+                position: absolute;
+                margin: -1px;
+                height: 1px;
+                width: 1px;
+                border: 0;
+                padding: 0;
+                overflow: hidden;
+                word-wrap: normal;
+            }
+
+            label {
+                padding-left: 0;
+
+                &:before {
+                    content: '';
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border: 2px solid $field-label-color;
+                    border-radius: 2px;
+                    margin-right: 10px;
+                    margin-left: 2px;
+                    vertical-align: middle;
+                }
+            }
+
+            input:checked + label:before {
+                background: $base-color;
+            }
+        }
+
+        label {
+            color: $field-label-color;
+            font-size: 14px;
+            font-weight: 600;
+            padding-left: 12px;
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+
+        input {
+            border-radius: 10px;
+            background: $white;
+            border: 1px solid rgba($base-color2, .5);
+            font-size: 14px;
+            font-weight: 300;
+            transition: all .15s linear;
+
+            &:hover,
+            &:focus {
+                border: 1px solid rgba($base-color2, .8);
+            }
+
+            @include placeholder {
+                color: #959595;
+            }
+        }
+    }
+
+    .action-forgotpw {
+        color: $base-attention-color;
+        font-size: 14px;
+        font-weight: 300;
+
+        &:hover,
+        &:focus {
+            border-bottom: 1px dotted $base-attention-color;
+        }
+    }
+
+    .action-update {
+        background: $base-color;
+        color: #fefefe;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 900 !important;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px 0 rgba(37, 37, 37, 0.1);
+        transition: all .15s linear;
+        padding: 18px 15px;
+
+        &:hover,
+        &:focus {
+            background: $btn-bg-hover;
+        }
+    }
+
+    .login-form-subtitle {
+        font-size: 14px;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: $field-label-color;
+        margin: 15px 0 10px;
+        text-align: center;
+    }
+
+    .login-form-register-btn {
+        font-size: 12px;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: $base-color;
+        text-align: center;
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        border: 2px solid $base-color;
+        border-radius: 10px;
+        padding: 18px 15px;
+        transition: all .15s linear;
+
+        &:hover,
+        &:focus {
+            background: $base-color;
+            color: $white;
+        }
+    }
+
+    .form-actions.form-third-party-auth {
+        text-align: center;
+        margin-bottom: 23px;
+
+        .third-party-auth-title {
+            font-size: 14px;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: $field-label-color;
+            margin: 15px 0 10px;
+        }
+
+        button[type="submit"] {
+            width: auto;
+            height: auto;
+            padding: 0;
+            margin: 0 5px;
+            min-height: 0;
+            border: none;
+            line-height: 1.2;
+            font-size: 14px;
+
+            &:hover,
+            &:focus {
+                background: transparent;
+                border: none;
+                box-shadow: none;
+                opacity: .8;
+            }
+
+            svg {
+                width: 35px;
+                height: 35px;
+                fill: $base-color;
+            }
+        }
+    }
+}
