@@ -356,7 +356,7 @@
                 .course-date {
                     font-size: 14px;
                     font-weight: 600;
-                    color: #394044;
+                    color: $field-label-color;
                     padding: 0 0 0 5px;
                     display: inline-block;
 
@@ -370,7 +370,7 @@
             .course-short-description {
                 font-size: 14px;
                 line-height: 22px;
-                color: #394044;
+                color: $field-label-color;
                 margin-bottom: 18px;
                 overflow: hidden;
                 height: 68px;
@@ -533,7 +533,7 @@
 
     .testimonials-message {
         font-size: 14px;
-        color: #394044;
+        color: $field-label-color;
         padding: 0 10px;
         line-height: 1.3;
     }

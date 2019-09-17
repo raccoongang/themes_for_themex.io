@@ -1,4 +1,5 @@
-body.view-login {
+body.view-login,
+body.view-register {
     @include full-page-background-image('../images/login-register.jpg');
 
     .introduction,
@@ -26,12 +27,13 @@ body.view-login {
 
     p a:not(.btn),
     p a:visited:not(.btn) {
-        color: $base-color;
+        color: $base-attention-color;
+        border-bottom: 1px dotted transparent;
 
         &:hover,
         &:focus {
-            color: $base-color;
-            border-bottom-color: $base-color;
+            color: $base-attention-color;
+            border-bottom: 1px dotted $base-attention-color;
         }
     }
 
@@ -42,7 +44,8 @@ body.view-login {
         }
     }
 
-    .login {
+    .login,
+    .register {
         &.container {
             position: relative;
             display: flex;
@@ -87,16 +90,38 @@ body.view-login {
     }
 }
 
-#login-form {
+#login-form,
+#register-form {
     width: 555px;
     max-width: 100%;
     box-sizing: border-box;
     background: rgba($white, .3);
     border-radius: 20px;
     padding: 30px 95px 40px;
+    position: relative;
 
     @media (max-width: 767px) {
         padding: 20px 15px;
+    }
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('../images/login-register.jpg') no-repeat center center;
+        background-position: center;
+        background-attachment: fixed;
+        filter: blur(5px);
+        z-index: 1;
+    }
+
+    > * {
+        position: relative;
+        z-index: 2;
     }
 
     .introduction {
@@ -131,7 +156,23 @@ body.view-login {
         }
     }
 
+    .btn-brand.btn-login {
+        box-sizing: border-box;
+        background: transparent;
+        border: none;
+        width: 100%;
+        padding: 0;
+
+        .instructions {
+            margin-bottom: 0;
+        }
+    }
+
     .field {
+        margin-right: 0;
+        margin-bottom: 25px;
+        width: 100%;
+
         &.is-focused {
             label {
                 color: $base-color2;
@@ -146,6 +187,8 @@ body.view-login {
         }
 
         &.checkbox {
+            margin-bottom: 10px;
+
             input[type="checkbox"] {
                 clip: rect(1px 1px 1px 1px);
                 clip: rect(1px, 1px, 1px, 1px);
@@ -169,8 +212,7 @@ body.view-login {
                     height: 10px;
                     border: 2px solid $field-label-color;
                     border-radius: 2px;
-                    margin-right: 10px;
-                    margin-left: 2px;
+                    margin: 0 10px 1px 2px;
                     vertical-align: middle;
                 }
             }
@@ -187,15 +229,33 @@ body.view-login {
             padding-left: 12px;
             margin-bottom: 4px;
             line-height: 1.2;
+
+            a {
+                font-weight: 600;
+                color: $base-attention-color;
+                border-bottom: 1px dotted transparent;
+
+                &:hover,
+                &:focus {
+                    border-bottom: 1px dotted $base-attention-color;
+                }
+            }
         }
 
-        input {
+        input,
+        select,
+        textarea {
             border-radius: 10px;
             background: $white;
-            border: 1px solid rgba($base-color2, .5);
+            border: 1px solid rgba($base-color2, .5) !important;
             font-size: 14px;
             font-weight: 300;
+            line-height: 1.4;
+            padding: 11px 15px;
+            height: 40px;
+            box-shadow: none;
             transition: all .15s linear;
+            color: $field-label-color;
 
             &:hover,
             &:focus {
@@ -206,6 +266,57 @@ body.view-login {
                 color: #959595;
             }
         }
+
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            box-shadow: none;
+            box-sizing: border-box;
+            background: $white url(../images/select-arrow.png) no-repeat calc(100% - 15px) 50% !important;
+            background-size: 8px 7px !important;
+            padding: 5px 30px 5px 10px !important;
+            max-width: 100%;
+        }
+
+        textarea {
+            height: auto;
+            min-height: 60px;
+        }
+    }
+
+    .list-input {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .field-group {
+            width: 100%;
+            margin-bottom: 0 !important;
+
+            &.field-education-level,
+            &.field-gender,
+            &.field-yob {
+                margin-bottom: 20px;
+            }
+        }
+
+        .field-gender,
+        .field-yob {
+            width: calc(50% - 10px);
+        }
+    }
+
+    .group-form {
+        padding-bottom: 0;
+    }
+
+    .group-form ~ .form-actions {
+        margin-top: 15px;
+    }
+
+    .group-form-personalinformation {
+        padding-bottom: 0;
     }
 
     .action-forgotpw {
@@ -237,6 +348,7 @@ body.view-login {
         }
     }
 
+    .register-form-subtitle,
     .login-form-subtitle {
         font-size: 14px;
         font-weight: 900;
@@ -246,7 +358,8 @@ body.view-login {
         text-align: center;
     }
 
-    .login-form-register-btn {
+    .login-form-register-btn,
+    .btn-login-action {
         font-size: 12px;
         font-weight: 900;
         text-transform: uppercase;
@@ -255,9 +368,10 @@ body.view-login {
         box-sizing: border-box;
         display: block;
         width: 100%;
+        line-height: 1.2;
         border: 2px solid $base-color;
         border-radius: 10px;
-        padding: 18px 15px;
+        padding: 20px 15px;
         transition: all .15s linear;
 
         &:hover,
@@ -302,6 +416,49 @@ body.view-login {
                 height: 35px;
                 fill: $base-color;
             }
+        }
+    }
+
+    .instructions-btn {
+        font-size: 18px;
+        font-weight: 900;
+        line-height: 1.2;
+        text-align: center;
+        color: $field-label-color;
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        border: 2px solid $field-label-color;
+        border-radius: 10px;
+        padding: 17px 15px;
+        margin-bottom: 10px;
+
+        .note {
+            font-size: 14px;
+            font-weight: 300;
+            margin-top: 8px;
+        }
+
+        strong {
+            font-weight: 300 !important;
+            display: inline;
+        }
+    }
+
+    .deco-divider {
+        margin: 15px 0;
+        border: none;
+        text-align: center;
+
+        .copy {
+            position: static;
+            background: transparent;
+            padding: 0;
+            font-size: 12px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            font-weight: 900;
+            color: $field-label-color;
         }
     }
 }
