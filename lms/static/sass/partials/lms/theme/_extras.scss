@@ -9,6 +9,7 @@
 @import "blocks/home-page";
 @import "blocks/slider";
 @import "blocks/login-register";
+@import "blocks/courses";
 
 @include font-face(Neris, '../fonts/Neris-Light', 300, normal, woff woff2);
 @include font-face(Neris, '../fonts/Neris-Light', 400, normal, woff woff2);
@@ -19,7 +20,8 @@
     font-family: Neris, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
-.wrap {
+.wrap,
+body:not(.home-page) main#main {
     width: 100%;
     max-width: 1170px;
     padding: 0 15px;
