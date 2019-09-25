@@ -104,19 +104,25 @@ body.view-register {
         padding: 20px 15px;
     }
 
-    &:before {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url('../images/login-register.jpg') no-repeat center center;
-        background-position: center;
-        background-attachment: fixed;
-        filter: blur(5px);
-        z-index: 1;
+    @supports not ((-webkit-filter: blur(5px)) or (filter: blur(5px))) {
+        background: rgba($white, .5);
+    }
+
+    @supports (-webkit-filter: blur(5px)) or (filter: blur(5px)) {
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('../images/login-register.jpg') no-repeat center center;
+            background-position: center;
+            background-attachment: fixed;
+            filter: blur(5px);
+            z-index: 1;
+        }
     }
 
     > * {
@@ -243,7 +249,6 @@ body.view-register {
         }
 
         input,
-        select,
         textarea {
             border-radius: 10px;
             background: $white;
@@ -265,18 +270,6 @@ body.view-register {
             @include placeholder {
                 color: #959595;
             }
-        }
-
-        select {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            box-shadow: none;
-            box-sizing: border-box;
-            background: $white url(../images/select-arrow.png) no-repeat calc(100% - 15px) 50% !important;
-            background-size: 8px 7px !important;
-            padding: 5px 30px 5px 10px !important;
-            max-width: 100%;
         }
 
         textarea {

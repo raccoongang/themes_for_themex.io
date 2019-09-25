@@ -1,0 +1,634 @@
+.about-page {
+    .course-info {
+        padding-top: 40px;
+
+        header.course-profile {
+            padding-top: 0;
+            height: auto;
+            background-color: $white;
+            box-shadow: 0 6px 11px 0 rgba(38, 54, 84, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            border: none;
+
+            .intro-inner-wrapper {
+                border: none;
+
+                > div.table {
+                    display: flex;
+                    min-height: 330px;
+
+                    @media (max-width: 991px) {
+                        min-height: 205px;
+                    }
+
+                    @media (max-width: 767px) {
+                        min-height: auto;
+                        flex-direction: column;
+                    }
+                }
+
+                .media {
+                    width: 50%;
+                    display: block;
+                    order: 1;
+                    padding: 0;
+                    background: $course-poster-bg;
+
+                    @media (max-width: 991px) {
+                        width: 47.5%;
+                    }
+
+                    @media (max-width: 767px) {
+                        height: 170px;
+                        width: 100%;
+                    }
+
+                    .hero {
+                        border: none;
+                        background-position: center center;
+                        background-size: cover;
+                        opacity: .7;
+                    }
+                }
+
+                .intro {
+                    width: 50%;
+                    display: block;
+                    order: 2;
+                    padding: 25px 25px 30px 80px;
+                    box-sizing: border-box;
+
+                    @media (max-width: 991px) {
+                        width: 52.5%;
+                        padding: 11px 10px 20px 30px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        justify-content: space-between;
+
+                        &:after {
+                            display: none;
+                        }
+                    }
+
+                    @media (max-width: 767px) {
+                        width: 100%;
+                        padding: 20px;
+                    }
+
+                    .heading-group {
+                        padding-bottom: 40px;
+                        border-bottom: none;
+
+                        @media (max-width: 991px) {
+                            padding-bottom: 10px;
+                            margin-bottom: 10px;
+                        }
+
+                        .course-title {
+                            font-size: 20px;
+                            font-weight: 900;
+                            color: #111827;
+                            text-transform: uppercase;
+                            line-height: 1.2;
+                            margin-top: 10px;
+                            min-height: 48px;
+
+                            @media (max-width: 991px) {
+                                font-size: 16px;
+                                margin-top: 13px;
+                                min-height: auto;
+                            }
+                        }
+
+                        .course-organization {
+                            display: block;
+                            width: 100%;
+                            font-size: 18px;
+                            line-height: normal;
+                            font-weight: 600;
+                            color: $base-color2;
+
+                            @media (max-width: 991px) {
+                                font-size: 14px;
+                            }
+                        }
+
+                        .description-wrapper {
+                            position: relative;
+                            margin-top: 30px;
+
+                            @media (max-width: 991px) {
+                                display: none;
+                            }
+                        }
+
+                        h3 {
+                            color: $field-label-color;
+                            text-shadow: none;
+                            font-size: 14px;
+                            line-height: 22px;
+                            overflow: hidden;
+                            height: 65px;
+                            min-height: 65px;
+                            position: relative;
+
+                            &.toggled {
+                                &:after {
+                                    opacity: 1;
+                                    transition: opacity .1s .5s linear;
+                                }
+                            }
+
+                            &:before {
+                                content: '';
+                                float: left;
+                                width: 5px;
+                                height: 65px;
+                            }
+
+                            &:after {
+                                content: "...";
+                                opacity: 0;
+                                box-sizing: content-box;
+                                float: right;
+                                position: relative;
+                                font-size: 14px;
+                                top: -20px;
+                                left: calc(100% - 15px);
+                                line-height: 22px;
+                                width: 2em;
+                                margin-left: -2em;
+                                padding-right: 5px;
+                                text-align: right;
+                                background-size: 100% 100%;
+                                background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+                            }
+
+                            .wrapper {
+                                float: right;
+                                width: 100%;
+                                margin-left: -5px;
+                            }
+                        }
+
+                        .readmore {
+                            cursor: pointer;
+                            display: none;
+                            color: $base-color;
+                            font-size: 14px;
+                            line-height: normal;
+                            position: absolute;
+                            left: 0;
+                            top: 100%;
+                            padding-right: 10px;
+                            background: linear-gradient(to right, rgba(255, 255, 255, 0), white 25%, white);
+
+                            &:hover,
+                            &:focus {
+                                color: $btn-bg-hover;
+                                text-decoration: none;
+                            }
+
+                            &.shown {
+                                display: inline-block;
+                            }
+                        }
+                    }
+
+                    .main-cta {
+                        @media (max-width: 991px) {
+                            margin-right: 0;
+                        }
+
+                        span {
+                            &.register,
+                            &.add-to-cart {
+                                border: none;
+                                background: transparent;
+
+                                @media (max-width: 991px) {
+                                    width: 100%;
+                                    margin-right: 0;
+                                    text-align: left;
+                                }
+                            }
+                        }
+
+                        a.btn {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+
+                            .disabled {
+                                &:hover {
+                                    cursor: auto;
+                                }
+                            }
+
+                            @media (max-width: 991px) {
+                                flex-wrap: wrap;
+                            }
+
+                            @media (max-width: 767px) {
+                                justify-content: center;
+                            }
+
+                            strong {
+                                font-size: 12px;
+                                line-height: 1.3;
+                                padding: 9px 10px;
+                                border-radius: 10px;
+                                font-weight: 900;
+                                text-transform: uppercase;
+                                text-shadow: none;
+                                box-shadow: none;
+                                min-width: 200px;
+                                text-align: center;
+                                color: $white;
+                                background: $base-color;
+                                border: 1px solid $base-color;
+
+                                &:hover,
+                                &:focus {
+                                    background: $btn-bg-hover;
+                                    border-color: $btn-bg-hover;
+                                }
+
+                                @media (max-width: 991px) {
+                                    min-width: 165px;
+                                }
+
+                                @media (max-width: 767px) {
+                                    width: 100%;
+                                }
+                            }
+                        }
+
+                        .add-to-cart {
+                            width: 100%;
+
+                            a {
+                                color: $base-color;
+
+                                &:hover,
+                                &:focus {
+                                    color: $btn-bg-hover;
+                                }
+                            }
+                        }
+
+                        .full-wrapper {
+                            width: 100%;
+                            margin-right: 0;
+                        }
+
+                        a.add-to-cart,
+                        a.register-btn {
+                            font-size: 12px;
+                            line-height: 1.3;
+                            padding: 9px 10px;
+                            border-radius: 10px;
+                            font-weight: 900;
+                            text-transform: uppercase;
+                            text-shadow: none;
+                            box-shadow: none;
+                            min-width: 200px;
+                            text-align: center;
+                            color: $white;
+                            background: $base-color;
+                            border: 1px solid $base-color;
+                            clear: both;
+
+                            &:hover,
+                            &:focus {
+                                background: $btn-bg-hover;
+                                border-color: $btn-bg-hover;
+                            }
+
+                            @media (max-width: 991px) {
+                                min-width: 165px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .container {
+            padding-top: 20px;
+            padding-bottom: 0;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            @media (max-width: 991px) {
+                flex-direction: column;
+                padding: 10px 0 80px;
+            }
+        }
+
+        .details {
+            padding: 25px 30px;
+            border-radius: 10px 0 0 10px;
+            overflow: hidden;
+            background: $white;
+            box-sizing: border-box;
+            margin-right: 30px;
+            width: calc(67.5% - 20px);
+
+            @media (max-width: 991px) {
+                order: 2;
+                width: 100%;
+                border-radius: 10px;
+                margin-right: 0;
+            }
+
+            @media (max-width: 767px) {
+                padding: 25px 20px;
+            }
+
+            .wrap-instructor-info {
+                text-align: right;
+                margin-top: 0;
+                margin-bottom: 5px;
+
+                .instructor-info-action {
+                    float: none;
+                }
+            }
+
+            .inner-wrapper {
+                > section {
+                    margin-bottom: 36px;
+
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+
+                .course-staff .teacher {
+                    margin-top: 40px;
+
+                    &:not(:last-of-type) {
+                        padding-bottom: 10px;
+                        margin-bottom: 20px;
+                        border-bottom: 1px solid #f2f2f2;
+                    }
+
+                    > *:not(.teacher-image) {
+                        margin-left: 120px;
+
+                        @media (max-width: 767px) {
+                            margin-left: 0;
+                        }
+                    }
+
+                    .teacher-image {
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 5px;
+                        border: 5px solid $base-color;
+                        box-sizing: border-box;
+                        padding: 0;
+
+                        img {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+            .inner-wrapper .faq .response {
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+
+                p {
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            h2 {
+                font-size: 14px;
+                text-transform: uppercase;
+                font-weight: 900;
+                color: $base-color;
+                margin: 0 0 2px;
+            }
+
+            h3,
+            .inner-wrapper .faq .response h3 {
+                font-size: 16px;
+                font-weight: 900;
+                color: $field-label-color;
+                margin-bottom: 2px;
+            }
+
+            p + h3 {
+                margin-top: 22px;
+            }
+
+            ul {
+                padding-left: 0;
+                list-style: none;
+                margin-top: 20px;
+                margin-bottom: 10px;
+
+                li {
+                    padding-left: 18px;
+                    position: relative;
+                    line-height: normal;
+                    margin-bottom: 0;
+
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 11px;
+                        width: 5px;
+                        height: 5px;
+                        border-radius: 50%;
+                        background: $base-attention-color;
+                    }
+                }
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 22px;
+                font-weight: 300;
+                color: $field-label-color;
+            }
+        }
+
+        .course-sidebar {
+            padding: 0;
+            border-radius: 0 10px 0 0;
+            background: $white;
+            box-sizing: border-box;
+            width: calc(32.5% - 10px);
+
+            @media (max-width: 991px) {
+                order: 1;
+                width: 100%;
+                border-radius: 10px;
+                margin-bottom: 10px;
+            }
+
+            .course-summary {
+                @media (max-width: 991px) {
+                    width: 350px;
+                    margin: 0 auto;
+                    max-width: 100%;
+                }
+            }
+
+            .important-dates {
+                padding: 30px 40px 13px;
+                border-bottom: 1px solid #f2f2f2;
+
+                @media (max-width: 767px) {
+                    padding: 30px 20px 13px;
+                }
+            }
+
+            .important-dates-item {
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                border-bottom: none;
+
+                svg {
+                    width: 16px;
+                    height: 16px;
+                    fill: $base-color;
+                    float: left;
+                    margin-right: 10px;
+                    position: relative;
+                    top: 1px;
+                }
+            }
+
+            .prerequisite-course .tip {
+                margin: 10px 0 0;
+            }
+
+            .important-dates-item-title {
+                font-size: 14px;
+                font-weight: 300;
+                color: $field-label-color;
+            }
+
+            .important-dates-item-text {
+                font-size: 14px;
+                font-weight: 600;
+                color: $base-color;
+
+                a {
+                    color: inherit;
+
+                    &:hover,
+                    &:focus {
+                        color: $btn-bg-hover;
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            header {
+                margin-bottom: 0;
+                padding: 25px 30px 30px;
+
+                &:after {
+                    display: none;
+                }
+
+                .social-sharing {
+                    height: auto;
+
+                    &:hover,
+                    &:focus {
+                        .sharing-message {
+                            top: 70px;
+                        }
+                    }
+
+                    .sharing-message {
+                        top: 80px;
+                    }
+
+                    .share {
+                        opacity: 1;
+                        margin-right: 10px;
+
+                        &:hover,
+                        &:focus {
+                            opacity: .5;
+                        }
+                    }
+
+                    svg {
+                        width: 38px;
+                        height: 38px;
+                        fill: $base-attention-color;
+                    }
+                }
+
+                .social-sharing-title {
+                    font-size: 12px;
+                    font-weight: 900;
+                    color: #111827;
+                    text-transform: uppercase;
+                    text-align: center;
+                    margin-bottom: 5px;
+                }
+            }
+
+            .additional-resources {
+                header {
+                    padding-top: 0;
+                    padding-bottom: 10px;
+                }
+
+                h1 {
+                    font-size: 12px;
+                    font-weight: 900;
+                    color: #111827;
+                    text-transform: uppercase;
+                    text-align: center;
+                    margin-bottom: 5px;
+                }
+
+                .block {
+                    margin-bottom: 0;
+                    padding: 0 30px 30px;
+                    font-size: 14px;
+                    font-weight: 300;
+                    color: $field-label-color !important;
+
+                    h2 {
+                        font-size: 14px;
+                        font-weight: 600;
+                        color: #111827;
+                        text-align: center;
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+
+            .about-sidebar-html {
+                padding: 0 30px 30px;
+                font-size: 14px;
+                font-weight: 300;
+                color: $field-label-color;
+            }
+        }
+    }
+}

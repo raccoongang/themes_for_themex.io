@@ -33,6 +33,9 @@
 
 .footer-nav-list {
     width: calc(25% - 23px);
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
 
     @media (max-width: 767px) {
         width: calc(50% - 12px);
@@ -57,14 +60,15 @@
 
     a.footer-nav-link {
         font-weight: 300;
-        color: $footer-nav-link-color;
+        color: $footer-nav-link-color !important;
         padding-bottom: 8px;
+        line-height: 16px;
         display: block;
         margin-bottom: 8px;
 
         &:hover,
         &:focus {
-            color: $footer-nav-link-color;
+            color: $footer-nav-link-color !important;
             opacity: .8;
             text-decoration: none;
         }
@@ -137,6 +141,7 @@
 .social-title {
     color: $white;
     font-size: 12px;
+    line-height: 16px;
     font-weight: 300;
     margin-bottom: 10px;
     text-align: center;
@@ -148,6 +153,7 @@
     justify-content: center;
     list-style: none;
     padding: 0;
+    margin: 16px 0;
 }
 
 .social-link {

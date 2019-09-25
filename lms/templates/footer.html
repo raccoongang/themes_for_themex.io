@@ -9,154 +9,104 @@
 <% footer = get_footer(is_secure=is_secure) %>
 <%namespace name='static' file='static_content.html'/>
 
-% if uses_bootstrap:
-  <div class="container-fluid wrapper-footer">
-    <footer>
-      <div class="row">
-        <div class="col-md-9">
-          <nav class="navbar site-nav navbar-expand-sm" aria-label="${_('About')}">
-            <ul class="navbar-nav">
-              % for item_num, link in enumerate(footer['navigation_links'], start=1):
-                <li class="nav-item">
-                  <a class="nav-link" href="${link['url']}">${link['title']}</a>
-                </li>
-              % endfor
-            </ul>
-          </nav>
-
-          ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
-          <p class="copyright">${footer['copyright']} ${u" | {icp}".format(icp=getattr(settings,'ICP_LICENSE')) if getattr(settings,'ICP_LICENSE',False) else ""}</p>
-
-          <nav class="navbar legal-nav navbar-expand-sm" aria-label="${_('Legal')}">
-            <ul class="navbar-nav">
-              % for item_num, link in enumerate(footer['legal_links'], start=1):
-                <li class="nav-item">
-                  <a class="nav-link" href="${link['url']}">${link['title']}</a>
-                </li>
-              % endfor
-              <li class="nav-item">
-                <a class="nav-link" href="${footer['edx_org_link']['url']}">${footer['edx_org_link']['text']}</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div class="col-md-3">
-          ## Please leave this link and use one of the logos provided
-          ## The OpenEdX link may be hidden when this view is served
-          ## through an API to partner sites (such as marketing sites or blogs),
-          ## which are not technically powered by Open edX.
-          % if not hide_openedx_link:
-            <div class="footer-about-openedx">
-              <p>
-                <a href="${footer['openedx_link']['url']}">
-                  <img src="${footer['openedx_link']['image']}" alt="${footer['openedx_link']['title']}" width="140" />
-                </a>
-              </p>
-            </div>
-          % endif
-        </div>
-      </div>
-    </footer>
-  </div>
-% else:
-  <footer class="footer">
-    <div class="wrap wrap_flex">
-      <nav class="footer-nav">
-        <ul class="footer-nav-list">
-          <li class="footer-nav-item footer-nav-title">${_("About the university")}</li>
-          <li class="footer-nav-item">
-            <a href="/about" class="footer-nav-link">${_("About Us")}</a>
-          </li>
-          <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">${_("eDX Services")}</a>
-          </li>
-          <li class="footer-nav-item">
-            <a href="/blog" class="footer-nav-link">${_("Blog")}</a>
-          </li>
-        </ul>
-        <ul class="footer-nav-list">
-          <li class="footer-nav-item footer-nav-title">${_("Courses")}</li>
-          <li class="footer-nav-item">
-            <a href="/courses" class="footer-nav-link">${_("View courses")}</a>
-          </li>
-          <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">${_("Create Course Now")}</a>
-          </li>
-        </ul>
-        <ul class="footer-nav-list">
-          <li class="footer-nav-item footer-nav-title">${_("Contact us")}</li>
-          <li class="footer-nav-item">
-            <a href="/contact" class="footer-nav-link">${_("Contact Us")}</a>
-          </li>
-          <li class="footer-nav-item">
-            <a href="/help" class="footer-nav-link">${_("Help")}</a>
-          </li>
-          <li class="footer-nav-item">
-            <a href="/faq" class="footer-nav-link">${_("FAQ")}</a>
-          </li>
-        </ul>
-        <ul class="footer-nav-list">
-          <li class="footer-nav-item footer-nav-title">${_("Info")}</li>
-          <li class="footer-nav-item">
-            <a href="/privacy" class="footer-nav-link">${_("Privacy Policy")}</a>
-          </li>
-          <li class="footer-nav-item">
-            <a href="/tos" class="footer-nav-link">${_("Terms of Service")}</a>
-          </li>
-        </ul>
-      </nav>
+<footer class="footer">
+<div class="wrap wrap_flex">
+  <nav class="footer-nav">
+    <ul class="footer-nav-list">
+      <li class="footer-nav-item footer-nav-title">${_("About the university")}</li>
+      <li class="footer-nav-item">
+        <a href="/about" class="footer-nav-link">${_("About Us")}</a>
+      </li>
+      <li class="footer-nav-item">
+        <a href="#" class="footer-nav-link">${_("eDX Services")}</a>
+      </li>
+      <li class="footer-nav-item">
+        <a href="/blog" class="footer-nav-link">${_("Blog")}</a>
+      </li>
+    </ul>
+    <ul class="footer-nav-list">
+      <li class="footer-nav-item footer-nav-title">${_("Courses")}</li>
+      <li class="footer-nav-item">
+        <a href="/courses" class="footer-nav-link">${_("View courses")}</a>
+      </li>
+      <li class="footer-nav-item">
+        <a href="#" class="footer-nav-link">${_("Create Course Now")}</a>
+      </li>
+    </ul>
+    <ul class="footer-nav-list">
+      <li class="footer-nav-item footer-nav-title">${_("Contact us")}</li>
+      <li class="footer-nav-item">
+        <a href="/contact" class="footer-nav-link">${_("Contact Us")}</a>
+      </li>
+      <li class="footer-nav-item">
+        <a href="/help" class="footer-nav-link">${_("Help")}</a>
+      </li>
+      <li class="footer-nav-item">
+        <a href="/faq" class="footer-nav-link">${_("FAQ")}</a>
+      </li>
+    </ul>
+    <ul class="footer-nav-list">
+      <li class="footer-nav-item footer-nav-title">${_("Info")}</li>
+      <li class="footer-nav-item">
+        <a href="/privacy" class="footer-nav-link">${_("Privacy Policy")}</a>
+      </li>
+      <li class="footer-nav-item">
+        <a href="/tos" class="footer-nav-link">${_("Terms of Service")}</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<div class="wrap wrap_flex wrap_flex-wrap">
+  <div class="support">
+        Built on
+        <a href="http://open.edx.org/" target="_blank">
+            <svg class="support-edx-logo"><use xlink:href="#edx-logo"></use></svg>
+        </a>
+        by RACCOONGANG
+        <a href="https://raccoongang.com/" target="_blank">
+            <svg class="support-rg-logo"><use xlink:href="#rg-logo"></use></svg>
+        </a>
     </div>
-    <div class="wrap wrap_flex wrap_flex-wrap">
-      <div class="support">
-            Built on
-            <a href="http://open.edx.org/" target="_blank">
-                <svg class="support-edx-logo"><use xlink:href="#edx-logo"></use></svg>
+    <div class="social">
+        <div class="social-title">Find us in social network</div>
+        <ul class="social-list">
+            <li class="social-item">
+            <a href="#" target="_blank" class="social-link">
+                <svg class="social-icon"><use xlink:href="#icon-facebook"></use></svg>
             </a>
-            by RACCOONGANG
-            <a href="https://raccoongang.com/" target="_blank">
-                <svg class="support-rg-logo"><use xlink:href="#rg-logo"></use></svg>
+        </li>
+        <li class="social-item">
+            <a href="#" target="_blank" class="social-link">
+                <svg class="social-icon"><use xlink:href="#icon-twitter"></use></svg>
             </a>
-        </div>
-        <div class="social">
-            <div class="social-title">Find us in social network</div>
-            <ul class="social-list">
-                <li class="social-item">
-                <a href="#" target="_blank" class="social-link">
-                    <svg class="social-icon"><use xlink:href="#icon-facebook"></use></svg>
-                </a>
-            </li>
-            <li class="social-item">
-                <a href="#" target="_blank" class="social-link">
-                    <svg class="social-icon"><use xlink:href="#icon-twitter"></use></svg>
-                </a>
-            </li>
-            <li class="social-item">
-                <a href="#" target="_blank" class="social-link">
-                    <svg class="social-icon"><use xlink:href="#icon-linkedin"></use></svg>
-                </a>
-            </li>
-            <li class="social-item">
-                <a href="#" target="_blank" class="social-link">
-                    <svg class="social-icon"><use xlink:href="#icon-googleplus"></use></svg>
-                </a>
-            </li>
-            <li class="social-item">
-                <a href="#" target="_blank" class="social-link">
-                    <svg class="social-icon"><use xlink:href="#icon-instagram"></use></svg>
-                </a>
-            </li>
-            <li class="social-item">
-                <a href="#" target="_blank" class="social-link">
-                    <svg class="social-icon"><use xlink:href="#icon-youtube"></use></svg>
-                </a>
-            </li>
-            </ul>
-        </div>
-        <div class="footer-logo-wrapper"></div>
-        <div class="footer-copyright">&copy; ${_("2016-2019. All Rights Reserved")}</div>
+        </li>
+        <li class="social-item">
+            <a href="#" target="_blank" class="social-link">
+                <svg class="social-icon"><use xlink:href="#icon-linkedin"></use></svg>
+            </a>
+        </li>
+        <li class="social-item">
+            <a href="#" target="_blank" class="social-link">
+                <svg class="social-icon"><use xlink:href="#icon-googleplus"></use></svg>
+            </a>
+        </li>
+        <li class="social-item">
+            <a href="#" target="_blank" class="social-link">
+                <svg class="social-icon"><use xlink:href="#icon-instagram"></use></svg>
+            </a>
+        </li>
+        <li class="social-item">
+            <a href="#" target="_blank" class="social-link">
+                <svg class="social-icon"><use xlink:href="#icon-youtube"></use></svg>
+            </a>
+        </li>
+        </ul>
     </div>
-  </footer>
-% endif
+    <div class="footer-logo-wrapper"></div>
+    <div class="footer-copyright">&copy; ${_("2016-2019. All Rights Reserved")}</div>
+</div>
+</footer>
+
 % if include_dependencies:
   <%static:js group='base_vendor'/>
   <%static:css group='style-vendor'/>

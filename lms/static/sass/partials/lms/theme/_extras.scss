@@ -9,8 +9,10 @@
 @import "blocks/home-page";
 @import "blocks/slider";
 @import "blocks/login-register";
+@import "blocks/form-elements";
 @import "blocks/courses";
 @import "blocks/dashboard";
+@import "blocks/about";
 
 @include font-face(Neris, '../fonts/Neris-Light', 300, normal, woff woff2);
 @include font-face(Neris, '../fonts/Neris-Light', 400, normal, woff woff2);
@@ -21,8 +23,17 @@
     font-family: Neris, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
+html, body {
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+}
+
 .wrap,
-body:not(.home-page) main#main {
+body:not(.home-page) #content.main-container,
+.about-page .content-wrapper,
+.global-header ~ .wrapper-preview-menu .preview-menu,
+.view-wiki .wrapper-course-material,
+.view-wiki .wrapper-course-material ~ .container {
     width: 100%;
     max-width: 1170px;
     padding: 0 15px;
@@ -44,6 +55,37 @@ body:not(.home-page) main#main {
     }
 }
 
+body:not(.home-page) #content.main-container,
+.view-wiki #content.content-wrapper {
+    padding-top: 20px;
+    padding-bottom: 80px;
+    margin-top: 0;
+}
+
 .window-wrap {
     background: #f2f2f2;
+}
+
+.modal {
+    box-sizing: border-box !important;
+    max-width: calc(100% - 20px) !important;
+    max-height: calc(100% - 20px) !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+    left: 50% !important;
+    top: 50% !important;
+    overflow: auto !important;
+}
+
+.modal.video-modal .inner-wrapper,
+.video-modal.leanModal_box .inner-wrapper,
+.video-modal.entitlement-unenrollment-modal .inner-wrapper,
+.modal.video-modal .entitlement-unenrollment-modal .entitlement-unenrollment-modal-inner-wrapper,
+.entitlement-unenrollment-modal .modal.video-modal .entitlement-unenrollment-modal-inner-wrapper,
+.video-modal.leanModal_box .entitlement-unenrollment-modal .entitlement-unenrollment-modal-inner-wrapper,
+.entitlement-unenrollment-modal .video-modal.leanModal_box .entitlement-unenrollment-modal-inner-wrapper,
+.video-modal.entitlement-unenrollment-modal .entitlement-unenrollment-modal-inner-wrapper,
+.modal iframe {
+    max-width: 100% !important;
+    box-sizing: border-box;
 }
