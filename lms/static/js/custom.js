@@ -23,8 +23,8 @@ $(document).ready(function () {
     // close search block
     $('.search-close').click(function (e) {
         e.preventDefault;
-        $('.main-header').find('.header-search').toggleClass('search_open');
-        $('#main').find('.content-search').toggleClass('search_open');
+        $('.main-header').find('.header-search').removeClass('search_open');
+        $('#main').find('.content-search').removeClass('search_open');
     });
 
     // show/hide mobile menu
@@ -52,6 +52,5 @@ $(document).ready(function () {
             }
         });
     }
-
 
 });

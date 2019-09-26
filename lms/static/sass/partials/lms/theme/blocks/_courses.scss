@@ -120,6 +120,7 @@
                 padding: 0;
                 position: absolute;
                 top: 0;
+                width: 24px;
                 height: auto;
 
                 &:hover,
@@ -160,17 +161,14 @@
                 }
             }
         }
-
-        .search-btn {
-            @media (max-width: 767px) {
-                display: none;
-            }
-        }
     }
 
     .wrapper-search-context {
+        width: 100%;
+
         @media (max-width: 767px) {
             order: 1;
+            margin-left: 0;
         }
 
         .search-status-label {
@@ -182,7 +180,11 @@
             text-transform: uppercase;
             color: $field-label-color;
             line-height: 22px;
-            margin-top: 15px;
+            margin-top: 35px;
+
+            @media (max-width: 991px) {
+                margin-top: 25px;
+            }
         }
     }
 
@@ -387,9 +389,30 @@
             &:focus {
                 color: $white;
                 background: $base-color;
+                cursor: pointer;
 
                 .count-number {
                     color: $white;
+                }
+            }
+
+            &.selected {
+                background: $base-color2;
+                color: $white;
+
+                .count:before {
+                    color: $white;
+                }
+
+                &:hover,
+                &:focus {
+                    color: $white;
+                    background: $base-color;
+
+                    .count-number,
+                    .count:before {
+                        color: $white;
+                    }
                 }
             }
 
@@ -404,5 +427,95 @@
         color: $base-color;
         background: #f2f2f2;
         top: 2px;
+    }
+
+    .filters {
+        margin-top: 7px;
+        margin-bottom: 30px;
+
+        .filters-inner {
+            border-top: 1px solid rgba($base-color2, .6);
+            border-bottom: 1px solid rgba($base-color2, .6);
+
+            @media (max-width: 991px) {
+                text-align: center;
+                border: none;
+            }
+        }
+
+        ul {
+            @media (max-width: 991px) {
+                display: flex;
+                flex-wrap: wrap;
+                border-top: 1px solid rgba($base-color2, .6);
+                border-bottom: 1px solid rgba($base-color2, .6);
+                padding: 5px 0;
+            }
+        }
+
+        li {
+            background: $base-color2;
+            border-radius: 10px;
+            margin: 12px 5px 12px 0;
+            padding: 9px 15px;
+            transition: background-color .15s linear;
+
+            @media (max-width: 991px) {
+                padding: 7px 15px;
+                margin: 5px 5px 5px 0;
+            }
+
+            &:hover,
+            &:focus {
+                cursor: pointer;
+                background: $base-color2-hover;
+            }
+
+            .facet-option {
+                font-size: 12px;
+                line-height: 1.2;
+                font-weight: 900;
+                text-transform: uppercase;
+                color: $white;
+                padding: 0;
+
+                @media (max-width: 991px) {
+                    font-size: 10px;
+                }
+            }
+
+            span {
+                color: inherit;
+                vertical-align: middle;
+            }
+        }
+
+        .clear-filters {
+            line-height: 1.2;
+            margin: 8px 0 8px 10px;
+            font-size: 14px;
+            font-weight: 900;
+            color: $white;
+            text-align: center;
+            background: $base-attention-color;
+            padding: 13px 20px;
+            border-radius: 10px;
+            text-transform: uppercase;
+            min-width: 255px;
+            transition: background-color .15s linear;
+
+            @media (max-width: 991px) {
+                float: none;
+                min-width: 165px;
+                font-size: 12px;
+                padding: 11px 20px;
+            }
+
+            &:hover,
+            &:focus {
+                cursor: pointer;
+                background: lighten($base-attention-color, 20%);
+            }
+        }
     }
 }
