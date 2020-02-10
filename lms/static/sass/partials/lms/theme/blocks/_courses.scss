@@ -1,9 +1,11 @@
 .find-courses {
+    padding-bottom: 0;
+
     .content-search-wrap {
         position: relative;
         width: 100%;
         text-align: right;
-        padding: 20px 0;
+        padding: 5px 0 11px;
     }
 
     .search-btn {
@@ -44,6 +46,7 @@
             height: 22px;
             fill: $base-color;
             transition: fill 0.15s linear;
+            margin-right: 10px;
         }
     }
 
@@ -166,6 +169,10 @@
     }
 
     .wrapper-search-context {
+        @media (max-width: 767px) {
+            order: 1;
+        }
+
         .search-status-label {
             width: 100%;
             min-height: auto;
@@ -174,36 +181,205 @@
             font-weight: 900;
             text-transform: uppercase;
             color: $field-label-color;
+            line-height: 22px;
+            margin-top: 15px;
         }
     }
 
-    .courses-container .courses .courses-listing .courses-listing-item {
-        margin-top: 0;
-        margin-bottom: 30px;
+    #filter-bar {
+        @media (max-width: 767px) {
+            order: 2;
+        }
+    }
+
+    .courses-container {
+        padding: 0;
+
+        @media (max-width: 767px) {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+
+        .courses {
+            padding: 6px 0 0;
+
+            @media (max-width: 991px) {
+                padding-bottom: 0;
+            }
+
+            @media (max-width: 767px) {
+                order: 4;
+            }
+
+            &:not(.no-course-discovery) {
+                @media (max-width: 541px) {
+                    margin-right: 0;
+                    width: 100%;
+                }
+
+                .courses-listing .courses-listing-item {
+                    @media (min-width: 980px) {
+                        margin-right: 3.4%;
+                        width: 31%;
+                    }
+                }
+            }
+
+            .courses-listing .courses-listing-item {
+                margin-top: 0;
+                margin-bottom: 30px;
+
+                .course {
+                    border-radius: 10px;
+                    overflow: hidden;
+                    box-shadow: 0 6px 11px 0 rgba(38, 54, 84, 0.05);
+                    border: 1px solid $white;
+                    margin-bottom: 0;
+
+                    .cover-image {
+                        background: $course-poster-bg;
+                        height: 150px;
+
+                        @media (max-width: 541px) {
+                            height: 170px;
+                        }
+
+                        &:before {
+                            height: 150px;
+
+                            @media (max-width: 541px) {
+                                height: 170px;
+                            }
+                        }
+
+                        img {
+                            opacity: .7;
+                            min-height: 100%;
+                        }
+                    }
+
+                    .learn-more {
+                        font-size: 12px;
+                        font-weight: 900;
+                        text-transform: uppercase;
+                        color: $white;
+                        background: $base-color;
+                        border: 1px solid $base-color;
+                        padding: 9px 15px;
+                        margin: 0;
+                        line-height: 1.3;
+                        border-radius: 10px;
+                        min-width: 185px;
+                        transition: all 0.15s linear;
+                        height: auto;
+                    }
+
+                    .course-info {
+                        height: auto;
+                        padding: 5px 16px 15px;
+                    }
+
+                    .course-name {
+                        margin-bottom: 6px;
+                    }
+
+                    .course-organization,
+                    .course-code {
+                        color: $base-color2;
+                        font-size: 14px;
+                        line-height: 1.2;
+                        font-weight: 600;
+                        display: inline-block;
+                        padding: 0;
+                    }
+
+                    .course-organization {
+                        margin-right: 2px;
+
+                        &:after {
+                            content: "/";
+                            margin-left: 5px;
+                        }
+                    }
+
+                    .course-title {
+                        padding: 0;
+                        font-size: 14px;
+                        font-weight: 900;
+                        text-transform: uppercase;
+                        color: #111827;
+                        margin-bottom: 10px;
+                        overflow: hidden;
+                    }
+
+                    .course-date {
+                        font-size: 12px;
+                        font-weight: 600;
+                        color: $field-label-color;
+                        padding: 0;
+                        line-height: 1.2;
+
+                        &:before {
+                            content: '';
+                            display: inline-block;
+                            width: 15px;
+                            height: 15px;
+                            background: url('../images/icon-clock.svg') no-repeat center center;
+                            background-size: cover;
+                            position: relative;
+                            top: 2px;
+                            margin-right: 3px;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     .search-facets {
         border-radius: 10px;
         overflow: hidden;
+        margin-top: 6px;
+
+        @media (max-width: 991px) {
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 767px) {
+            order: 3;
+        }
 
         .header-search-facets {
             font-size: 14px;
             font-weight: 900;
             color: $base-attention-color;
             text-transform: uppercase;
-            padding: 20px 15px;
+            padding: 15px;
+        }
+
+        .facet-list {
+            padding: 0 0 15px;
+
+            li {
+                height: auto;
+            }
         }
 
         .header-facet {
             border-top-color: $base-color;
             color: #111827;
             font-size: 12px;
+            line-height: 1.2;
             text-transform: uppercase;
             font-weight: 900;
+            padding: 13px 15px 7px;
         }
 
         .facet-option {
             font-size: 14px;
+            line-height: 1.4;
+            padding: 3px 15px;
             font-weight: 300;
             color: $field-label-color;
 
