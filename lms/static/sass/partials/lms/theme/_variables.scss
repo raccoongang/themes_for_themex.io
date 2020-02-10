@@ -6,6 +6,7 @@ $theme-colors: (
 $blue: #ff9000;
 $base-color: $blue;
 $base-color2: #8888b7;
+$base-color2-hover: lighten($base-color2, 20%);
 $base-attention-color: #ff4e00;
 $btn-bg-hover: lighten($base-color, 20%);
 

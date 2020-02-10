@@ -1,0 +1,232 @@
+.find-courses {
+    .content-search-wrap {
+        position: relative;
+        width: 100%;
+        text-align: right;
+        padding: 20px 0;
+    }
+
+    .search-btn {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        text-shadow: none;
+        color: $base-color;
+        text-transform: uppercase;
+        font-weight: 900;
+        font-size: 12px;
+        padding: 0;
+        line-height: normal;
+        letter-spacing: 0;
+        transition: color 0.15s linear;
+
+        &:focus,
+        &:hover,
+        &:hover:not(:disabled),
+        &:focus:not(:disabled) {
+            color: $link-hover;
+            background: transparent;
+            box-shadow: none;
+
+            svg {
+                fill: $link-hover;
+            }
+        }
+
+        @media (max-width: 991px) {
+            padding-top: 2px;
+        }
+
+        svg {
+            display: inline-block;
+            vertical-align: middle;
+            width: 24px;
+            height: 22px;
+            fill: $base-color;
+            transition: fill 0.15s linear;
+        }
+    }
+
+    .content-search {
+        &.search_open {
+            .course-search {
+                opacity: 1;
+                visibility: visible;
+                padding: 0;
+            }
+
+            .discovery-submit {
+                left: 0;
+            }
+        }
+
+        .course-search {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            right: 0;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            background: #f2f2f2;
+            align-items: center;
+            justify-content: center;
+            transition: opacity .2s linear;
+            overflow: hidden;
+
+            form {
+                position: relative;
+                width: 555px;
+                max-width: 100%;
+            }
+
+            .discovery-input {
+                width: 100%;
+                padding: 5px 25px 5px 35px;
+                box-shadow: none;
+                text-shadow: none;
+                border: none;
+                border-bottom: 2px solid $base-color2;
+                border-radius: 0;
+                background: transparent;
+                color: $field-label-color;
+                font-size: 13px;
+                font-style: normal;
+                height: auto;
+
+                &:focus {
+                    outline: none;
+                }
+
+                &:hover,
+                &:focus {
+                    border-bottom-color: $base-color;
+                }
+
+                &::placeholder {
+                    color: $base-color2;
+                }
+            }
+
+            .discovery-submit {
+                border: none;
+                background: transparent;
+                border-radius: 0;
+                box-shadow: none;
+                padding: 0;
+                position: absolute;
+                top: 0;
+                height: auto;
+
+                &:hover,
+                &:focus {
+                    opacity: .8;
+                }
+
+                svg {
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 24px;
+                    height: 22px;
+                    fill: $base-color;
+                }
+            }
+
+            .search-close {
+                border: none;
+                background: transparent;
+                border-radius: 0;
+                box-shadow: none;
+                padding: 0;
+                position: absolute;
+                right: 0;
+                top: 0;
+
+                &:hover,
+                &:focus {
+                    opacity: .8;
+                }
+
+                svg {
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 16px;
+                    height: 16px;
+                    fill: $base-color;
+                }
+            }
+        }
+
+        .search-btn {
+            @media (max-width: 767px) {
+                display: none;
+            }
+        }
+    }
+
+    .wrapper-search-context {
+        .search-status-label {
+            width: 100%;
+            min-height: auto;
+            margin-right: 0;
+            font-size: 18px;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: $field-label-color;
+        }
+    }
+
+    .courses-container .courses .courses-listing .courses-listing-item {
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+
+    .search-facets {
+        border-radius: 10px;
+        overflow: hidden;
+
+        .header-search-facets {
+            font-size: 14px;
+            font-weight: 900;
+            color: $base-attention-color;
+            text-transform: uppercase;
+            padding: 20px 15px;
+        }
+
+        .header-facet {
+            border-top-color: $base-color;
+            color: #111827;
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+
+        .facet-option {
+            font-size: 14px;
+            font-weight: 300;
+            color: $field-label-color;
+
+            &:hover,
+            &:focus {
+                color: $white;
+                background: $base-color;
+
+                .count-number {
+                    color: $white;
+                }
+            }
+
+            .count-number {
+                font-weight: 600;
+                color: $base-color;
+            }
+        }
+    }
+
+    .loading-spinner {
+        color: $base-color;
+        background: #f2f2f2;
+        top: 2px;
+    }
+}

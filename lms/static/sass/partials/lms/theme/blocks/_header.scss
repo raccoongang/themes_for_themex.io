@@ -138,7 +138,7 @@
     background: $header-main-bg;
     padding: 24px 0 25px;
     position: relative;
-    overflow: hidden;
+    //overflow: hidden;
 
     @media (max-width: 991px) {
         height: auto !important;
@@ -403,6 +403,14 @@
                 width: 100%;
             }
 
+            &_authenticated {
+                @media (max-width: 767px) {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+            }
+
             > div {
                 @media (max-width: 767px) {
                     display: flex;
@@ -413,7 +421,7 @@
             }
 
             .nav-item {
-                margin: 0 0 0 10px;
+                margin: 0 0 0 35px;
                 padding: 0;
                 font-size: 1rem;
                 display: inline-block;
@@ -427,9 +435,51 @@
                 }
             }
 
-            a.register-btn,
-            a.sign-in-btn,
+            .header-nav-item {
+                font-weight: 900;
+                text-transform: uppercase;
+                margin: 0 0 0 10px;
+                padding: 0;
+                display: inline-block;
+                vertical-align: middle;
+
+                &_shopping-cart {
+                    @media (max-width: 767px) {
+                        display: none !important;
+                    }
+                }
+
+                a {
+                    color: $base-color2;
+                    font-size: 12px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    line-height: 1.2;
+
+                    &:hover,
+                    &:focus {
+                        text-decoration: none;
+                        color: $base-color;
+                    }
+                }
+            }
+
+            .header-nav-item-help,
             a.shopping-cart {
+                svg {
+                    width: 18px;
+                    height: 18px;
+                    fill: $base-color;
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-right: 3px;
+                    position: relative;
+                    top: -2px;
+                }
+            }
+
+            a.register-btn,
+            a.sign-in-btn {
                 display: inline-block;
                 vertical-align: middle;
                 background: transparent;
@@ -447,6 +497,119 @@
                     background: transparent;
                     color: $header-btn-bg-hover;
                     border-color: $header-btn-bg-hover;
+                }
+            }
+
+            // user drop-down block
+
+            .header-nav-user-menu-wrapper {
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            .header-nav-user-menu {
+                .menu-title {
+                    &:hover,
+                    &:focus {
+                        .username {
+                            color: $base-color;
+                        }
+
+                        .user-image-frame {
+                            opacity: .8;
+                        }
+                    }
+                }
+
+                .user-image-frame {
+                    width: 35px;
+                    height: 35px;
+                    display: inline-block;
+                    border-radius: 10px;
+                    margin: 0 5px;
+                    background: $header-top-bar-bg;
+                    border: 1px solid $white;
+                    transition: opacity .15s linear;
+                }
+
+                .username {
+                    font-size: 14px;
+                    font-weight: 300;
+                    color: $base-color2;
+                    transition: color .15s linear;
+                    max-width: 150px;
+                    display: inline-block;
+                    overflow: hidden;
+                    vertical-align: middle;
+                    text-overflow: ellipsis;
+                }
+            }
+
+            .nav-item-dropdown {
+                position: relative;
+                margin-left: 0;
+
+                .toggle-user-dropdown {
+                    padding: 5px 0 5px 5px;
+
+                    &:hover,
+                    &:focus {
+                        .fa-caret-down {
+                            color: $base-color;
+                        }
+                    }
+                }
+
+                .fa-caret-down {
+                    font-size: 18px;
+                    display: inline-block;
+                    color: $base-color2;
+                    transition: color .15s linear;
+                }
+
+                .dropdown-user-menu {
+                    position: absolute;
+                    top: 45px;
+                    right: 0;
+                    z-index: 5;
+                    border: 1px solid $white;
+                    background: $white;
+                    padding: 10px 0;
+                    border-radius: 10px;
+                    min-width: 125px;
+                    box-sizing: border-box;
+
+                    a {
+                        box-sizing: border-box;
+                    }
+                }
+
+                .dropdown-item {
+                    &:not(:last-child) {
+                        border-bottom: none;
+                    }
+
+                    &:hover {
+                        background-color: transparent;
+                    }
+
+                    a {
+                        color: #394044;
+                        text-transform: uppercase;
+                        font-size: 12px;
+                        font-weight: 900;
+                        padding: 4px 10px 4px 20px;
+                        line-height: normal;
+                        transition: all .15s linear;
+                        display: block;
+
+                        &:hover,
+                        &:focus {
+                            text-decoration: none;
+                            color: $white;
+                            background: $base-attention-color;
+                        }
+                    }
                 }
             }
         }
@@ -487,6 +650,20 @@ nav.header-nav {
                 display: block;
                 width: 100%;
             }
+        }
+    }
+
+    .header-nav-elem {
+        @media (max-width: 767px) {
+            display: none !important;
+        }
+    }
+
+    .header-nav-elem_mobile {
+        display: none !important;
+
+        @media (max-width: 767px) {
+            display: block !important;
         }
     }
 
@@ -540,6 +717,17 @@ nav.header-nav {
             &:before {
                 opacity: 1;
             }
+        }
+
+        svg {
+            width: 18px;
+            height: 18px;
+            fill: $white;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 3px;
+            position: relative;
+            top: -2px;
         }
     }
 }

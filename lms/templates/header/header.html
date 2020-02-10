@@ -22,6 +22,9 @@ from openedx.core.djangoapps.lang_pref.api import header_language_selector_is_en
   courses_are_browsable = settings.FEATURES.get('COURSES_ARE_BROWSABLE')
   allows_login = not settings.FEATURES['DISABLE_LOGIN_BUTTON'] and not combined_login_and_register
   can_discover_courses = settings.FEATURES.get('ENABLE_COURSE_DISCOVERY')
+  show_explore_courses = settings.FEATURES.get('COURSES_ARE_BROWSABLE') and not show_program_listing
+  show_sysadmin_dashboard = settings.FEATURES.get('ENABLE_SYSADMIN_DASHBOARD','') and user.is_staff
+  self.real_user = getattr(user, 'real_user', user)
 %>
 
 ## Provide a hook for themes to inject branding on top.
@@ -93,12 +96,12 @@ from openedx.core.djangoapps.lang_pref.api import header_language_selector_is_en
         <div class="wrap">
             <%include file="navbar-logo-header.html" args="online_help_token=online_help_token"/>
             <div class="header-inside-block">
-                ##% if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
+                % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY') and not user.is_authenticated:
                 <button class="search-btn search-btn_mobile">
                   <svg><use xlink:href="#icon-search"/></svg>
                   <span class="sr">${_("Search")}</span>
                 </button>
-                ##% endif
+                % endif
                 <div class="hamburger-menu" role="button" aria-label=${_("Options Menu")} aria-expanded="false" aria-controls="mobile-menu" tabindex="0">
                     <span class="line"></span>
                     <span class="line"></span>
@@ -123,7 +126,56 @@ from openedx.core.djangoapps.lang_pref.api import header_language_selector_is_en
                 <li><a class="header-nav__link" href="#">${_("Blog")}</a></li>
                 <li><a class="header-nav__link" href="#">${_("Contact us")}</a></li>
             % if user.is_authenticated:
-                <span>test</span>
+                % if show_dashboard_tabs:
+                  <li>
+                    <a class="${'active ' if reverse('dashboard') == request.path else ''}header-nav__link" href="${reverse('dashboard')}">
+                      ${_("Courses")}
+                    </a>
+                  </li>
+                  % if show_program_listing:
+                    <li>
+                      <a class="${'active ' if reverse('program_listing_view') in request.path else ''}header-nav__link" href="${reverse('program_listing_view')}">
+                        ${_("Programs")}
+                      </a>
+                    </li>
+                  % endif
+                  <li>
+                    <a class="${'active ' if '/u/' in request.path  else ''}header-nav__link" href="${reverse('learner_profile', args=[self.real_user.username])}">
+                      ${_("Profile")}
+                    </a>
+                  </li>
+                % endif
+                % if show_explore_courses:
+                  <li>
+                    <a class="header-nav__link" href="${marketing_link('COURSES')}">${_('Discover New')}</a>
+                  </li>
+                % endif
+                % if show_sysadmin_dashboard:
+                  <li>
+                    ## Translators: This is short for "System administration".
+                    <a class="header-nav__link" href="${reverse('sysadmin')}">${_("Sysadmin")}</a>
+                  </li>
+                % endif
+
+                <!--mobile menu-->
+
+                % if should_display_shopping_cart_func() and not (course and static.is_request_in_themed_site()): # see shoppingcart.context_processor.user_has_cart_context_processor
+                  <li class="header-nav-elem_mobile">
+                    <a class="header-nav__link" href="${reverse('shoppingcart.views.show_cart')}">
+                      <svg><use xlink:href="#icon-basket"></use></svg>
+                      ${_("Shopping Cart")}
+                    </a>
+                  </li>
+                % endif
+
+                <li class="header-nav-elem_mobile">
+                    <a class="header-nav__link" href="#">
+                      <svg><use xlink:href="#icon-basket"></use></svg>
+                      ${_("Shopping Cart")}
+                    </a>
+                  </li>
+
+
             % else:
                 % if mktg_site_enabled:
                     <li>

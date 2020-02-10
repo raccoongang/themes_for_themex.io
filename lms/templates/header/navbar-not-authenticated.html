@@ -17,13 +17,6 @@ from six import text_type
   allow_public_account_creation = static.get_value('ALLOW_PUBLIC_ACCOUNT_CREATION', settings.FEATURES.get('ALLOW_PUBLIC_ACCOUNT_CREATION'))
 %>
 
-% if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
-<button class="search-btn search-btn_mobile">
-  <svg><use xlink:href="#icon-search"/></svg>
-  <span class="sr">${_("Search")}</span>
-</button>
-% endif
-
 <nav class="nav-links" aria-label=${_("Supplemental Links")}>
   % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
   <div class="header-search">

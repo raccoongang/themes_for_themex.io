@@ -36,7 +36,6 @@ from six import text_type
         </div>
       % endif
       <div class="course-short-description"><div class="course-short-description-wrap"><p>${course.short_description}</p></div></div>
-      <!--<div class="course-short-description">This project-based course explores the process of designing and developing educational games, including issues associated with assessment, implementation and marketing...</div>-->
       <a href="${reverse('about_course', args=[text_type(course.id)])}" class="learn-more" aria-hidden="true">${_("view more")}</a>
     </div>
     <div class="sr">
