@@ -1,6 +1,6 @@
 .global-header {
-    padding-bottom: 0;
-    border-bottom: none;
+    padding-bottom: 0 !important;
+    border-bottom: none !important;
     overflow: visible;
     position: relative;
     z-index: 9;
@@ -530,6 +530,7 @@
                     background: $header-top-bar-bg;
                     border: 1px solid $white;
                     transition: opacity .15s linear;
+                    box-sizing: border-box;
                 }
 
                 .username {
@@ -551,6 +552,8 @@
 
                 .toggle-user-dropdown {
                     padding: 5px 0 5px 5px;
+                    position: relative;
+                    top: 4px;
 
                     &:hover,
                     &:focus {
@@ -614,6 +617,13 @@
             }
         }
     }
+
+    .course-header {
+        width: 100%;
+        text-align: center;
+        color: $white;
+        padding-top: 5px;
+    }
 }
 
 nav.header-nav {
@@ -669,9 +679,9 @@ nav.header-nav {
 
     .header-nav__link {
         display: inline-block;
-        font-size: 12px;
+        font-size: 12px !important;
         text-transform: uppercase;
-        color: $white;
+        color: $white !important;
         font-weight: 900;
         padding: 9px 19px;
         position: relative;

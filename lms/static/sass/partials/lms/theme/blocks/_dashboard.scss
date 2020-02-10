@@ -1,6 +1,11 @@
 .dashboard {
     flex-wrap: wrap;
 
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        max-width: 1140px;
+        margin: auto;
+    }
+
     .header-courses {
         width: 100%;
         min-height: auto;
@@ -73,6 +78,10 @@
                     color: $base-color2;
                 }
 
+                @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+                    line-height: 20px;
+                }
+
                 &.is-active {
                     & ~ .search-button {
                         display: block !important;
@@ -92,10 +101,15 @@
                 top: 0;
                 left: 0;
                 height: auto;
+                width: 25px;
 
                 &:hover,
                 &:focus {
                     opacity: .8;
+                }
+
+                @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+                    top: -9px;
                 }
 
                 svg {
@@ -122,6 +136,10 @@
                     opacity: .8;
                 }
 
+                @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+                    top: -9px;
+                }
+
                 svg {
                     display: inline-block;
                     vertical-align: middle;
@@ -143,6 +161,8 @@
         padding: 0;
         box-sizing: border-box;
         max-width: 100%;
+        width: 100%;
+        order: 3;
 
         .my-courses {
             .listing-courses .course-item {
@@ -529,10 +549,36 @@
     }
 
     .side-container {
+        min-width: 100%;
+        order: 2;
+        padding: 0;
+        margin-bottom: 20px;
+
         @media screen and (max-width: 767px) {
             width: 100%;
             min-width: auto;
             margin: 20px auto;
+        }
+
+        ul {
+            border: none;
+            background: $white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .profile-sidebar ul {
+            padding: 15px;
+            list-style: none;
+
+            a {
+                color: $base-color;
+
+                &:hover,
+                &:focus {
+                    color: $btn-bg-hover;
+                }
+            }
         }
     }
 

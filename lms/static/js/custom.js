@@ -32,4 +32,26 @@ $(document).ready(function () {
         $('.header-nav').slideToggle(300);
     });
 
+    // read more for about texts
+    if ($('.heading-group h3').length) {
+        var realHeight = $('.heading-group h3').get(0).scrollHeight;
+
+        if (realHeight > 65) {
+            $('.heading-group h3').addClass("toggled").css("max-height", "none");
+            $('.readmore').text($('.readmore').data('more')).addClass("shown");
+        }
+
+        $(".readmore").click(function (event) {
+            event.preventDefault();
+            if ($(".heading-group h3").hasClass("toggled")) {
+                $(".heading-group h3").animate({"height": realHeight + "px"}).removeClass("toggled");
+                $(this).text($(this).data('less'))
+            } else {
+                $(".heading-group h3").animate({"height": "65px"}).addClass("toggled");
+                $(this).text($(this).data('more'));
+            }
+        });
+    }
+
+
 });

@@ -115,6 +115,22 @@ from openedx.core.djangoapps.lang_pref.api import header_language_selector_is_en
                 <%include file="navbar-not-authenticated.html" args="online_help_token=online_help_token"/>
             % endif
         </div>
+        <div class="wrap">
+            % if course:
+            <div class="course-header">
+              <span class="provider">${course.display_org_with_default}:</span>
+              <span class="course-number">${course.display_number_with_default}</span>
+              <%
+              display_name = course.display_name_with_default
+              if settings.FEATURES.get('CUSTOM_COURSES_EDX', False):
+                ccx = get_current_ccx(course.id)
+                if ccx:
+                  display_name = ccx.display_name
+              %>
+              <span class="course-name">${display_name}</span>
+            </div>
+            % endif
+        </div>
     </div>
     <nav class="header-nav">
         <div class="wrap">
@@ -156,9 +172,6 @@ from openedx.core.djangoapps.lang_pref.api import header_language_selector_is_en
                     <a class="header-nav__link" href="${reverse('sysadmin')}">${_("Sysadmin")}</a>
                   </li>
                 % endif
-
-                <!--mobile menu-->
-
                 % if should_display_shopping_cart_func() and not (course and static.is_request_in_themed_site()): # see shoppingcart.context_processor.user_has_cart_context_processor
                   <li class="header-nav-elem_mobile">
                     <a class="header-nav__link" href="${reverse('shoppingcart.views.show_cart')}">
@@ -167,15 +180,6 @@ from openedx.core.djangoapps.lang_pref.api import header_language_selector_is_en
                     </a>
                   </li>
                 % endif
-
-                <li class="header-nav-elem_mobile">
-                    <a class="header-nav__link" href="#">
-                      <svg><use xlink:href="#icon-basket"></use></svg>
-                      ${_("Shopping Cart")}
-                    </a>
-                  </li>
-
-
             % else:
                 % if mktg_site_enabled:
                     <li>
