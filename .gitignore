@@ -1,0 +1,7 @@
+*.css
+lms/static/css/*
+lms/static/.sass-cache/
+.DS_Store
+lms/static/config.rb
+lms/static/edx-pattern-library
+lms/static/css/*

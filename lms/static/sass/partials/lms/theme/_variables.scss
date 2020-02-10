@@ -1,0 +1,66 @@
+//main stack of collors
+$theme-colors: (
+  "primary": #ff9000,
+  "inverse": #fffefe,
+);
+$blue: #ff9000;
+$base-color: $blue;
+$base-color2: #8888b7;
+$base-attention-color: #ff4e00;
+$btn-bg-hover: lighten($base-color, 20%);
+
+
+$shadow-color: $base-color;
+$button-color: $base-color;
+$action-primary-focused-bg: $btn-bg-hover;
+$courseware-border-bottom-color: $base-color;
+$forum-color-primary: $base-color;
+$forum-color-hover: $btn-bg-hover;
+$staff-color: $base-color;
+$pink: $base-attention-color;
+$white: #fff;
+
+$link-color: #1f1f1f;
+$link-hover: lighten($base-color, 20%);
+
+// blue primary button, for
+// :hover, :active - background and border-color;
+// &.current, &.active - background and border-color;
+// &.current:hover, &.active:hover - background and border-color;
+// &.current:active, &.active:active - background and border-color;
+$uxpl-blue-hover-active: $btn-bg-hover;
+// &.current, &.active - color;
+$blue-l4: lighten($base-color, 80%);
+//=//=//=//=//=//=//=//=//=//=//=//=//=//=//=//=//=//=//
+
+// btn-pl-white-base (btn like on dashboard in course box "View Course")
+// btn-pl-white-base - background
+$action-primary-fg: #fff;
+// btn-pl-white-base - color
+$action-primary-bg: $base-color;
+//=//=//=//=//=//=//=//=//=//=//=//=//=//=//=//=//=//=//
+
+$m-blue-d3: $blue;
+
+@import 'edx-bootstrap/sass/open-edx/theme';
+
+//=//=//=//=//=//=//=//=//=//=//=//=//=//=//=//=//=//=//
+
+$header-top-bar-bg: #191d24;
+$header-top-bar-color: #9b9bc0;
+
+$header-main-bg: #263654;
+$header-btn-bg: $base-attention-color;
+$header-btn-bg-hover: lighten($header-btn-bg, 20%);
+
+$course-poster-bg: #263654;
+
+$footer-bg: #263654;
+$footer-nav-title-color: $base-attention-color;
+$footer-nav-link-color: $base-color2;
+$footer-social-color: $base-color;
+$footer-support-color: $base-color2;
+$footer-copyright-color: $base-color2;
+
+
+$breakpoint-header-transform-to-mobile: 767px;
