@@ -1,3 +1,4 @@
+
 <%page expression_filter="h"/>
 <%! from django.utils.translation import ugettext as _ %>
 <%inherit file="../main.html" />
@@ -6,14 +7,98 @@
 
 <main id="main" aria-label="Content" tabindex="-1">
     <section class="container about line-height">
-        <h1>${_("FAQ")}</h1>
-        <h2>${_("How to register to lear.mehackit.org?")}</h2>
+        <h2>${_("FAQs")}</h2>
+        <h3>${_("1. How to register to Sibasi Academy?")}</h3>
         <p>${_("Go to")}
             <a href="/register">${_("register")}</a> ${_("and create an account")}.</p>
-        <h2>${_("Who can join Mehackit courses?")}</h2>
-        <p>${_("Our material is free to use for all curious minds.")}
-            ${_("Our material is built for classes with a Mehackit instructor, but you are free to use these materials also outside the class room, with or without an instructor.")}
-            ${_("If you are a teacher and wish to organize a Mehackit course, please contact us at hello at")} <a href="http://mehackit.org/" target="_blank">mehackit.org</a>.
+	<br>
+        <h3>${_("2. Who can join Sibasi Academy courses")}</h3>
+        <p> ${_("Our material is free to use for all curious minds.")}
+            ${_("Our material is built for classes with a Sibasi Academy instructor, but you are free to use these materials also outside the class room, with or without an instructor.")}
+            ${_("If you are a teacher and wish to organize a Sibasi Academy course, please contact us at ")} <a href="/contact" target="_blank">contact</a>.
         </p>
+	<br>
+	<h3>${_("3. Support Hours")}</h3>
+	<p>${_("Time Zone: Eastern African Time (EAT)")}
+    	   ${_("Period: Monday to Friday, EXCLUDING HOLIDAYS")}
+    	   ${_("Hours: 9:00 AM - 5:00 PM, ONE DAY RESPONSE TIME")}
+	</p>   	 
+   	<br>    
+    	<h3>${_("4. BROWSER COMPATIBILITY")}</h3>
+    	<p>${_("The following table shows details about the operating systems and browser support.")}</p>
+	<br>         
+    <style type="text/css">
+         .tg  {border-collapse:collapse;border-spacing:0;outline-style:solid;outline-color:#5882FA;outline-width: 1px;}
+         .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-width:1px;border-bottom-style:solid;overflow:hidden;word-break:normal;border-color:#5882FA;}
+         .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-bottom-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#5882FA;}
+        
+         .tg .tg-yw4l{vertical-align:top;}
+    </style>
+
+    <table class="tg">
+                <tr bgcolor="#5882FA">
+                <th class="tg-yw4l"></th>
+                <th class="tg-yw4l"><b>Edge</b></th>
+                <th class="tg-yw4l"><b>IE11</b></th>
+                <th class="tg-yw4l"><b>Chrome*</b></th>
+                <th class="tg-yw4l"><b>Firefox*</b></th>
+                <th class="tg-yw4l"><b>Safari*</b></th>  
+            </tr>
+            <tr bgcolor="#A9D0F5">
+                <td class="tg-yw4l"><b>Windows 8/10</b></td>
+                <td class="tg-yw4l">Yes</td>
+                <td class="tg-yw4l">Yes</td>
+                <td class="tg-yw4l">Yes</td>
+                <td class="tg-yw4l">Yes</td>
+                <td class="tg-yw4l">N/A</td>
+            </tr>
+            <tr>
+                <td class="tg-yw4l"><b>Mac OSX <br>Mavericks or <br> Yosemite</b></td>
+                <td class="tg-yw4l">N/A</td>
+                <td class="tg-yw4l">N/A</td>
+                <td class="tg-yw4l">Yes</td>
+                <td class="tg-yw4l">Yes</td>
+                <td class="tg-yw4l">Yes</td>
+            </tr>
+            <tr>
+                <td class="tg-yw4l"><b>Linux</b></td>
+                <td class="tg-yw4l">N/A</td>
+                <td class="tg-yw4l">N/A</td>
+                <td class="tg-yw4l">Yes</td>
+                <td class="tg-yw4l">Yes</td>
+                <td class="tg-yw4l">N/A</td>
+            </tr>
+    </table>
+    	<p><i>${_("*Latest versions of Chrome, Firefox and Safari")}</i></p>
+    <h2>${_("GET HELP")}</h2>
+    	<p>${_("Please read the FAQs below first.")}</p>
+    	<p>${_("If you don't find the answer to your questions, please write to our team")}<a href="info@sibasi.com" target="_blank">info@sibasi.com</a></p><br>   
+    <h3>${_("(i). Who is eligible?")}</h3>
+    	<p>${_("This program is open for all. Anyone who has interest in learning about the latest tech is welcome.")}</p>
+    	<br> 
+    <h3>${_("(ii). Who owns the Siabsi Academy platform?")}</h3>
+    	<p>${_("Sibasi Academy is an initiative of Sibasi Ltd. Training content is provided by various partners of Sibasi Ltd such as Microsoft.")}</p>
+    	<br>
+    <h3>${_("(iii). Is this offered in languages other than English?")}</h3>
+    	<p>${_("Currently, the program is only available in English. Support for other languages is coming soon.")}</p>
+    	<br>    
+    <h3>${_("(iv). Are courses only available online?")}</h3>
+    	<p>${_("Yes, the courses are available online only. Through the mobile app, videos can be downloaded for offline study.")}</p>
+    	<br>
+    <h3>${_("(v). Is there any limit on the duration to complete the course?")}</h3>
+    	<p>${_("You need to complete the course within the specific dates set for each course.")}</p>
+    	<br>
+    <h3>${_("(vi). What is the minimum percentage required to pass the course?")}</h3>
+    	<p>${_("Your score must be at least 70% to get a passing grade. This may vary from one course to another.")}</p>
+    	<br>
+    <h3>${_("(vii). How do I track my course progress?")}</h3>
+    	<p>${_("Open your course and select the Progress tab.")} </p>
+    	<br>
+    <h3>${_("(viii). How do I obtain my course completion certificate?")}</h3>
+    	<p>${_("Once you have achieved a passing score, you can select 'Request Certificate' in the Progress tab of your course. You may then select 'View Certificate' from your dashboard or from the progress tab of the course itself.")}</p>
+    	<br>
+    <h3>${_("(ix). How can I share my course completion certificate with others?")}</h3>
+    	<p>${_("All certificates have a unique URL that can be shared digitally. You can save the certificate as PDF file that can be sent over an electronic mail. Learners can add that URL to their LinkedIn profile with a link that appears on the certificate. Learners can also download the certificate as a PDF if they wish.")}</p>
+  	<br>    
     </section>
 </main>

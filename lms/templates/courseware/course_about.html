@@ -57,8 +57,8 @@ from openedx.core.lib.courses import course_image_url
     ## making the conditional around this entire JS block for sanity
     %if settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
       <%
-        perms_error = _('The currently logged-in user account does not have permission to enroll in this course. '
-                        'You may need to {start_logout_tag}log out{end_tag} then try the enroll button again. '
+        perms_error = _('The currently logged-in user account does not have permission to enroll in this course. ',
+                        'You may need to {start_logout_tag}log out{end_tag} then try the enroll button again. ',
                         'Please visit the {start_help_tag}help page{end_tag} for a possible solution.').format(
                           start_help_tag="<a href='{url}'>".format(url=marketing_link('FAQ')), end_tag='</a>',
                           start_logout_tag="<a href='{url}'>".format(url=reverse('logout'))

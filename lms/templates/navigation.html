@@ -52,15 +52,17 @@ site_status_msg = get_site_status_msg(course_id)
     <div class="theme-main-nav_logo">
       <a href="${marketing_link('ROOT')}">
         <span class="theme-nav-wrapper_logo-holder theme-nav-wrapper_logo-holder_small">
-            <img src="/static/${settings.FEATURES.get('MARVEL_BLUE_DEFAULT_SITE_THEME', settings.DEFAULT_SITE_THEME)}/images/header-info/logo-racoon.png" alt="logo" />
+            <img src="/static/${settings.FEATURES.get('MARVEL_BLUE_DEFAULT_SITE_THEME', settings.DEFAULT_SITE_THEME)}/images/header-info/sibasiAcademy.png" alt="Sibasi Academy Logo" />
         </span>
       </a>
     </div>
     <nav class="theme-main-nav_holder">
         <ul class="theme-main-nav_list">
-            <li class="theme-main-nav_item"><a href="/about" class="theme-main-nav_link">${_('About The University')}</a></li>
-            <li class="theme-main-nav_item"><a href="/blog" class="theme-main-nav_link">${_('Blog')}</a></li>
+            <li class="theme-main-nav_item"><a href="/about" class="theme-main-nav_link">${_('About Us' )}</a></li>
+            <li class="theme-main-nav_item"><a href="/faq" class="theme-main-nav_link">${_('FAQ')}</a></li>
             <li class="theme-main-nav_item"><a href="/contact" class="theme-main-nav_link">${_('Contact Us')}</a></li>
+	    <li class="theme-main-nav_item"><a href="/tos" class="theme-main-nav_link">${_('TOS')}</a></li>
+
             % if user.is_authenticated():
               <%block name="navigation_global_links_authenticated">
                 % if settings.FEATURES.get('COURSES_ARE_BROWSABLE') and not show_program_listing:
@@ -103,34 +105,34 @@ site_status_msg = get_site_status_msg(course_id)
     <div class="theme-header-info theme-header-info_mobile">
         <div class="theme-header-info_contact">
             <span class="theme-header-info_text">Have any question?</span>
-            <span class="theme-header-info_phone">+1 857 4533328</span>
-            <a class="theme-header-info_mail" href="mailto:&#105;&#110;&#102;&#111;&#064;&#114;&#097;&#099;&#099;&#111;&#111;&#110;&#103;&#097;&#110;&#103;&#046;&#099;&#111;&#109;"><i class="fa fa-envelope" aria-hidden="true"></i>info@raccoongang.com</a>
+            <span class="theme-header-info_phone">+254 706095443</span>
+            <!-- <a class="theme-header-info_mail" href="mailto:&#105;&#110;&#102;&#111;&#064;&#114;&#097;&#099;&#099;&#111;&#111;&#110;&#103;&#097;&#110;&#103;&#046;&#099;&#111;&#109;"><i class="fa fa-envelope" aria-hidden="true"></i>info@raccoongang.com</a> -->
         </div>
         <div class="theme-header-info_social">
             <span class="theme-header-info_text">Find us in social network</span>
             <ul class="social-list">
-                <li class="social-list_item social-list_item__first"><a class="social-list_link theme-header-info_mail" href="mailto:&#105;&#110;&#102;&#111;&#064;&#114;&#097;&#099;&#099;&#111;&#111;&#110;&#103;&#097;&#110;&#103;&#046;&#099;&#111;&#109;"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-                <li class="social-list_item"><a class="social-list_link" href="https://twitter.com/raccoongangcom" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li class="social-list_item"><a class="social-list_link" href="https://www.facebook.com/raccoongangco" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li class="social-list_item"><a class="social-list_link" href="https://www.linkedin.com/company/raccoon-gang" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                <!-- <li class="social-list_item social-list_item__first"><a class="social-list_link theme-header-info_mail" href="mailto:&#105;&#110;&#102;&#111;&#064;&#114;&#097;&#099;&#099;&#111;&#111;&#110;&#103;&#097;&#110;&#103;&#046;&#099;&#111;&#109;"><i class="fa fa-envelope" aria-hidden="true"></i></a></li> -->
+                <li class="social-list_item"><a class="social-list_link" href="https://twitter.com/sibasiltd" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li class="social-list_item"><a class="social-list_link" href="https://web.facebook.com/sibasiltd" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li class="social-list_item"><a class="social-list_link" href="https://www.linkedin.com/company/sibasiltd" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
             </ul>
-            <span class="theme-header-info_phone">+1 857 4533328</span>
+            <span class="theme-header-info_phone">+254 706095443</span>
         </div>
     </div>
     <header id="global-navigation" class="theme-header header-global" >
       <div class="theme-header-info">
         <div class="theme-header-info_contact">
             <span class="theme-header-info_text">Have any question?</span>
-            <span class="theme-header-info_phone">+1 857 4533328</span>
-            <a class="theme-header-info_mail" href="mailto:&#105;&#110;&#102;&#111;&#064;&#114;&#097;&#099;&#099;&#111;&#111;&#110;&#103;&#097;&#110;&#103;&#046;&#099;&#111;&#109;"><i class="fa fa-envelope" aria-hidden="true"></i>info@raccoongang.com</a>
+            <span class="theme-header-info_phone">+254 706095 443</span>
+            <!-- <a class="theme-header-info_mail" href="mailto:&#105;&#110;&#102;&#111;&#064;&#114;&#097;&#099;&#099;&#111;&#111;&#110;&#103;&#097;&#110;&#103;&#046;&#099;&#111;&#109;"><i class="fa fa-envelope" aria-hidden="true"></i>info@raccoongang.com</a> -->
         </div>
           <div class="theme-header-info_social">
               <span class="theme-header-info_text">Find us in social network</span>
             <ul class="social-list">
-                <li class="social-list_item social-list_item__first"><a class="social-list_link theme-header-info_mail" href="mailto:&#105;&#110;&#102;&#111;&#064;&#114;&#097;&#099;&#099;&#111;&#111;&#110;&#103;&#097;&#110;&#103;&#046;&#099;&#111;&#109;"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-                <li class="social-list_item"><a class="social-list_link" href="https://twitter.com/raccoongangcom" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li class="social-list_item"><a class="social-list_link" href="https://www.facebook.com/raccoongangco" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li class="social-list_item"><a class="social-list_link" href="https://www.linkedin.com/company/raccoon-gang" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                <!-- <li class="social-list_item social-list_item__first"><a class="social-list_link theme-header-info_mail" href="mailto:&#105;&#110;&#102;&#111;&#064;&#114;&#097;&#099;&#099;&#111;&#111;&#110;&#103;&#097;&#110;&#103;&#046;&#099;&#111;&#109;"><i class="fa fa-envelope" aria-hidden="true"></i></a></li> -->
+                <li class="social-list_item"><a class="social-list_link" href="https://twitter.com/sibasiltd" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li class="social-list_item"><a class="social-list_link" href="https://web.facebook.com/sibasiltd" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li class="social-list_item"><a class="social-list_link" href="https://www.linkedin.com/company/sibasiltd" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
             </ul>
           </div>
       </div>
@@ -138,7 +140,7 @@ site_status_msg = get_site_status_msg(course_id)
       <a href="${marketing_link('ROOT')}">
         <%block name="navigation_logo">
             <span class="theme-nav-wrapper_logo-holder">
-              <img src="/static/${settings.FEATURES.get('MARVEL_BLUE_DEFAULT_SITE_THEME', settings.DEFAULT_SITE_THEME)}/images/header-info/logo-racoon.png" alt="racoon logo" >
+              <img src="/static/${settings.FEATURES.get('MARVEL_BLUE_DEFAULT_SITE_THEME', settings.DEFAULT_SITE_THEME)}/images/header-info/sibasiAcademy.png" alt="sibasi academy logo" >
             </span>
         </%block>
       </a>

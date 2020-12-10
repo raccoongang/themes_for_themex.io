@@ -1,0 +1,33 @@
+## mako
+<%!
+  from django.core.urlresolvers import reverse
+  from django.utils.translation import ugettext as _
+%>
+<%namespace name='static' file='/static_content.html'/>
+
+<%inherit file="/main.html" />
+
+<%block name="title"><title>${_('About')}</title></%block>
+
+<main id="main" aria-label="Content" tabindex="-1">
+  <section class="container about">
+      <h1>
+          <%block name="pageheader">${page_header or _("Sibasi Academy")}</%block>
+      </h1>
+      <p>The learning platform for Africa’s digital future – powered by <a href="https://www.sibasi.com/" target="_blank">Sibasi Ltd</a></p>
+      
+      <h2 style="margin-top: 16px;">About Sibasi Academy</h2>
+      <p>
+          Sibasi Academy is a learning platform specially designed to help Africa’s technology workers
+          develop the skills they need to succeed in the 21 st century. We live in a world of rapid
+          technological change and complex data set. Our platform provides training skills and development programmes in these areas for
+          African students, techies and entrepreneurs, who are set to play a starring role in Africa’s Fourth
+          Industrial Revolution.
+          Siabasi Academy is an initiative of Sibasi Ltd.
+      </p>
+      <h2 style="margin-top: 16px;">Sibasi Ltd.</h2>
+      <p>
+          <a href="https://sibasi.com/" target="_blank">Sibasi Ltd.</a> Sibasi Ltd is a technology company specializing in consulting services, software engineering and deployment services. Sibasi Ltd has a passionate team that has over 20 years combined experience in consulting, development and deployment of ICT solutions.
+      </p>
+  </section>
+</main>
